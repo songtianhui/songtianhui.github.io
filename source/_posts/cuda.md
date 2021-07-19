@@ -1,12 +1,12 @@
 ---
 title: cuda 安装教程
-typora-root-url: cuda
 date: 2021-07-19 23:11:09
+categories: python
 tags:
 ---
 
 
-一直是个电脑配置盲，显卡啥的都不太懂，~~大概学了个假cs~~。正在学习ML，DL，要用到pytorch, tenserflo啥的，需要用到 Nvidia cuda，正好安装一下，也捋一捋配置。
+一直是个电脑配置盲，显卡啥的都不太懂，~~大概学了个假cs~~。正在学习ML，DL，要用到pytorch, tenserflow啥的，需要用到 Nvidia cuda，正好安装一下，也捋一捋配置。
 
 
 
