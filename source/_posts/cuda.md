@@ -3,6 +3,7 @@ title: cuda 安装教程
 date: 2021-07-19 23:11:09
 categories: python
 tags:
+typora-root-url: cuda
 ---
 
 
@@ -98,7 +99,7 @@ tags:
 
 安装成功之后，重启。
 
-`$ nvidia-setting` 检查一下，出现这个界面就成功了。
+`$ nvidia-smi` 检查一下，出现这个界面就成功了。
 
 ![驱动安装成功](driver_succ.png)
 
@@ -124,7 +125,7 @@ tags:
 
 - 最后设置一下环境变量，`$ sudo vim ~/.zshrc` 中添加：
 
-  - `export PATH=/usr/local/cuda-11.4/bin:/usr/local/cuda-10.1/NsightCompute-2019.1${PATH:+:${PATH}}` （注意这里的cuda-xx.x文件夹要看下载的是什么版本）
+  - `export PATH=/usr/local/cuda-11.4/bin${PATH:+:${PATH}}` （注意这里的cuda-xx.x文件夹要看下载的是什么版本）
 
   - `export LD_LIBRARY_PATH=/usr/local/cuda-11.4/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}`
 

@@ -65,8 +65,8 @@ $j=1$ 时：$\dfrac{\partial}{\partial \theta_{1}}J(\theta_{0}, \theta_{1}) = \d
 
 则算法改写成:
 **repeat until convergence{**
-$$\theta_{0} := \theta_{0} - \alpha \dfrac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})$$
-$$\theta_{1} := \theta_{1} - \alpha \dfrac{1}{m}\sum\limits_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)}) \cdot x^{(i)})$$
+$\qquad \theta_{0} := \theta_{0} - \alpha \dfrac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})$
+$\qquad \theta_{1} := \theta_{1} - \alpha \dfrac{1}{m}\sum\limits_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)}) \cdot x^{(i)})$
 ​               **}**
 
 - 如果你之前学过线性代数, 你应该知道有一种计算代价函数$J$最小值的数值解法, 这是另一种称为正规方程(**normal equations**)的方法。
@@ -100,11 +100,11 @@ $$\theta_{j}:=\theta_{j}-\alpha \dfrac{\partial}{\partial \theta_{j}} J\left(\th
 **}**
 即:
 **repeat until convergence{**
-$$\theta_{j}:=\theta_{j}-\alpha \dfrac{\partial}{\partial \theta_{j}} \dfrac{1}{2m} \sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)}) ^{2}$$
+$$\theta_{j}:=\theta_{j}-\alpha \dfrac{\partial}{\partial \theta_{j}} \dfrac{1}{2m} \sum\limits_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)}) ^{2}$$
 **}**
 求导后得:
 **repeat until convergence{**
-$$\theta_{j}:=\theta_{j}-\alpha \dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)}) * x_{j}^{(i)})$$
+$$\theta_{j}:=\theta_{j}-\alpha \dfrac{1}{m} \sum\limits_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)}) * x_{j}^{(i)})$$
 (simultaneously update $\theta_{j}$ for $i = 1,2,...,n$)
 
 **}**
@@ -1062,4 +1062,102 @@ $$
 然后我们利用这个新的 $Y$ 矩阵来训练算法。
 
 如果我们要用新训练出的算法来预测评分，则需要将平均值重新加回去，预测$(\theta^{(j)})^T x^{(i)}+\mu_i$。
+
+
+
+---
+
+# Lecture 17
+
+本章主要介绍大规模机器学习中提升效率的一些技巧。
+
+## 大型数据集的学习 Learning With Large Datasets
+
+首先应该做的事是去检查一个这么大规模的训练集是否真的必要，也许我们只用一个较小的训练集也能获得较好的效果，我们可以绘制学习曲线来帮助判断。
+
+
+
+## 随机梯度下降法 Stochastic Gradient Descent
+
+在随机梯度下降法中，我们定义代价函数为一个单一训练实例的代价：
+$$
+cost\left(  \theta, \left( x^{(i)} , y^{(i)} \right)  \right) = \dfrac{1}{2}\left( h_{\theta}\left(x^{(i)}\right)-y^{(i)} \right)^{2}
+$$
+随机梯度算法为：首先对训练集要进行随机“洗牌”，然后
+
+ **Repeat** (usually anywhere between1-10) {
+
+$\qquad$ for $i = 1 \text{ to } m$ {
+
+$\qquad \qquad \theta_j := \theta_j - \alpha (h_\theta(x^{(i)} ) - y^{(i)}) x_j^{(i)}$ (for $j = 0 \text{ to } n$)
+
+$\qquad$ }
+
+}
+
+随机梯度下降算法在每一次计算之后便更新参数 ${{\theta }}$ ，而不需要首先将所有的训练集求和，在梯度下降算法还没有完成一次迭代时，随机梯度下降算法便已经走出了很远。但是这样的算法存在的问题是，不是每一步都是朝着”正确”的方向迈出的。因此算法虽然会逐渐走向全局最小值的位置，但是可能无法站到那个最小值的那一点，而是在最小值点附近徘徊。
+
+
+
+## 小批量梯度下降 Mini-Batch Gradient Descent
+
+小批量梯度下降算法是介于批量梯度下降算法和随机梯度下降算法之间的算法，每计算常数$b$次训练实例，便更新一次参数  $\theta$ 。
+
+ **Repeat** (usually anywhere between1-10) {
+
+$\qquad$ for $i = 1 \text{ to } m$ {
+
+$\qquad \qquad \theta_j := \theta_j - \alpha \dfrac{1}{b} \sum\limits_{k = i}^{i + b -1} (h_\theta(x^{(k)} ) - y^{(k)}) x_j^{(k)}$ (for $j = 0 \text{ to } n$)
+
+$\qquad \qquad i += 10$
+
+$\qquad$ }
+
+}
+
+通常我们会令 $b$ 在 2-100 之间。这样做的好处在于，我们可以用向量化的方式来循环 $b$个训练实例，如果我们用的线性代数函数库比较好，能够支持平行处理，那么算法的总体表现将不受影响（与随机梯度下降相同）。
+
+
+
+## 随机梯度下降收敛 Stochastic Gradient Descent Convergence
+
+在随机梯度下降中，我们在每一次更新 $\theta $ 之前都计算一次代价，然后每$x$次迭代后，求出这 $x$ 次对训练实例计算代价的平均值，然后绘制这些平均值与$x$次迭代的次数之间的函数图表。
+
+我们可以令学习率随着迭代次数的增加而减小，例如令：
+
+​							$$\alpha = \dfrac{const1}{iterationNumber + const2}$$
+
+随着我们不断地靠近全局最小值，通过减小学习率，我们迫使算法收敛而非在最小值附近徘徊。
+
+我们介绍了一种方法，近似地监测出随机梯度下降算法在最优化代价函数中的表现，这种方法不需要定时地扫描整个训练集，来算出整个样本集的代价函数，而是只需要每次对最后一些个，求一下平均值。应用这种方法，既可以保证随机梯度下降法正在正常运转和收敛，也可以用它来调整学习速率$α$的大小。
+
+
+
+## 在线学习 Online Learning
+
+一个算法来从中学习的时候来模型化问题，在线学习算法指的是对数据流而非离线的静态数据集的学习。许多在线网站都有持续不断的用户流，对于每一个用户，网站希望能在不将数据存储到数据库中便顺利地进行算法学习。
+
+在线学习的算法与随机梯度下降算法有些类似，我们对单一的实例进行学习，而非对一个提前定义的训练集进行循环。
+
+**Repeat** forever (as long as the website is running) {
+
+$\qquad$Get $\left(x,y\right)$ corresponding to the current user 
+
+$\qquad \theta:=\theta_{j}-\alpha\left(h_{\theta}\left(x\right)-y \right)x_{j}$  (for $j=0 \text{ to }n$) 
+
+}
+
+一旦对一个数据的学习完成了，我们便可以丢弃该数据，不需要再存储它了。这种方式的好处在于，我们的算法可以很好的适应用户的倾向性，算法可以针对用户的当前行为不断地更新模型以适应该用户。
+
+*在线学习的一个优点就是，如果你有一个变化的用户群，又或者你在尝试预测的事情，在缓慢变化，就像你的用户的品味在缓慢变化，这个在线学习算法，可以慢慢地调试你所学习到的假设，将其调节更新到最新的用户行为。*
+
+
+
+## 映射化简和数据并行 Map Reduce and Data Parallelism
+
+如果我们能够将我们的数据集分配给不多台计算机，让每一台计算机处理数据集的一个子集，然后我们将计所的结果汇总在求和。这样的方法叫做映射简化。
+
+具体而言，如果任何学习算法能够表达为，对训练集的函数的求和，那么便能将这个任务分配给多台计算机（或者同一台计算机的不同**CPU** 核心），以达到加速处理的目的。
+
+很多高级的线性代数函数库已经能够利用多核**CPU**的多个核心来并行地处理矩阵运算，这也是算法的向量化实现如此重要的缘故（比调用循环快）。
 
