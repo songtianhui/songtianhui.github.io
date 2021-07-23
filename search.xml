@@ -496,6 +496,7 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
 <p><img data-src="driver_succ.png" alt="驱动安装成功"></p>
 <p><code>$ nvidia-setting</code> 打开驱动设置。</p>
 <p><code>$ sudo prime-select nvidia/intel</code> 可以切换显卡。</p>
+<p>（有趣的是过了几天我的 <code>$ nvidia-smi</code> 突然打不开了，显示什么 <code>communicate failed</code>，解决方法是在 <code>intel</code> 和 <code>nvidia</code> 之间切换一下再重启就可以了。）</p>
 <h1 id="装-Cuda"><a href="#装-Cuda" class="headerlink" title="装 Cuda"></a>装 Cuda</h1><p>终于一切准别就绪，开始安装cuda。</p>
 <p><a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/">官方文档</a></p>
 <ul>
@@ -524,6 +525,75 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
 ]]></content>
       <categories>
         <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>问题求解笔记-群同态基本定理与正规子群</title>
+    <url>/2021/03/11/group-isomorphism-and-normal-subgroups/</url>
+    <content><![CDATA[<hr>
+<h1 id="同构-Isomorphisms"><a href="#同构-Isomorphisms" class="headerlink" title="同构 Isomorphisms"></a>同构 Isomorphisms</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>群$(G, \cdot )$ 和 $(H, \circ)$ <strong>同构（isomorphic）</strong>，如果存在一个双射 $\phi: G \rightarrow H$ 且满足</p>
+<script type="math/tex; mode=display">\forall a, b \in G, \phi(a \cdot b) = \phi(a) \circ \phi(b)</script><p>记作 $G \cong H$。映射 $\phi$ 称为<strong>同构（isomorphism）</strong>。</p>
+<a id="more"></a>
+<p><strong>定理 9.6.</strong> $\phi: G \rightarrow H$ 是两个群上的同构，则有</p>
+<ol>
+<li>$\phi^{-1}: H \rightarrow G$ 也是一个同构。</li>
+<li>$|G| = |H|$</li>
+<li>$G$ 是阿贝尔群 $\Rightarrow$ $H$ 是阿贝尔群。</li>
+<li>$G$ 是循环群 $\Rightarrow$ $H$ 是循环群。</li>
+<li>$G$有一个 $n$ 阶子群 $\Rightarrow$ $H$ 有一个 $n$ 阶子群。</li>
+</ol>
+<p><strong>定理 9.7.</strong> 所有无限循环群和 $\mathbb{Z}$ 同构。</p>
+<p><strong>定理 9.8.</strong> 所有 $n$ 阶循环群和 $\mathbb{Z}_{n}$ 同构。</p>
+<p><strong>推论 9.9.</strong> $G$ 是一个 $p$ 阶群，$p$ 是一个质数，则 $G$ 同构于 $\mathbb{Z}_{p}$。</p>
+<p><strong>定理 9.10.</strong> 群上的同构形成了所有群的类型的等价关系。</p>
+<h3 id="凯利定理-Cayley’s-Theorem"><a href="#凯利定理-Cayley’s-Theorem" class="headerlink" title="凯利定理 Cayley’s Theorem"></a>凯利定理 Cayley’s Theorem</h3><p><strong>定理 9.12. Cayley</strong> 每个群都同构于一个置换群。</p>
+<h2 id="外直积-External-Direct-Products"><a href="#外直积-External-Direct-Products" class="headerlink" title="外直积 External Direct Products"></a>外直积 External Direct Products</h2><p><strong>命题 9.13.</strong> $(G, \cdot), (H, \circ)$ 是两个群，$(g, h) \in G \times H, g \in G, h \in H$, 定义 $G \times H$ 上的二元运算：$(g_1, h_1)(g_2, h_2) = (g_1 \cdot g_2, h_1 \circ h_2)$，是一个群。</p>
+<p>群 $G \times H$ 叫做 $G$ 和 $H$ 的<strong>外直积（external direct product）</strong>。</p>
+<p><strong>定理 9.17.</strong> $(g, h) \in G \times H$，$g, h$ 都有有限的序数 $r, s$，则 $(g,h)$ 的序数是 $r$ 和 $s$ 的最小公倍数。</p>
+<p><strong>定理 9.21.</strong> $\mathbb{Z}_m \times \mathbb{Z}_n \cong \mathbb{Z}_{mn} \Leftrightarrow gcd(m,n) = 1$</p>
+<h2 id="内直积-Internal-Direct-Products"><a href="#内直积-Internal-Direct-Products" class="headerlink" title="内直积 Internal Direct Products"></a>内直积 Internal Direct Products</h2><p>如果群 $G$ 的两个子群 $H$ 和 $K$ 满足以下条件：</p>
+<ul>
+<li>$ G= HK = \{ hk: h \in H, k \in K \}$</li>
+<li>$H \cap K = \{ e \}$</li>
+<li>$\forall k \in K, \forall h \in H, hk = kh$</li>
+</ul>
+<p>则 $G$ 叫做 $H$ 和 $K$ 的<strong>内直积（internal direct product）</strong>。</p>
+<p><strong>定理 9.27.</strong> $G$ 是 $H$ 和 $K$ 的内直积 $\Rightarrow G \cong H \times K$。</p>
+<hr>
+<h1 id="正规子群和商群"><a href="#正规子群和商群" class="headerlink" title="正规子群和商群"></a>正规子群和商群</h1><h2 id="正规子群-Normal-Subgroups"><a href="#正规子群-Normal-Subgroups" class="headerlink" title="正规子群 Normal Subgroups"></a>正规子群 Normal Subgroups</h2><p>群 $G$ 的一个子群 $H$ 是<strong>正规的（normal）</strong>，如果 $\forall g \in G, gH = Hg$</p>
+<p><strong>定理 10.3.</strong> $N$ 为群 $G$ 的一个子群，则以下命题等价：</p>
+<ol>
+<li>$N$ 是正规的。</li>
+<li>$\forall g \in G, g N g^{-1} \subseteq N$</li>
+<li>$\forall g \in G, g N g^{-1} = N$</li>
+</ol>
+<h2 id="商群-Factor-Groups"><a href="#商群-Factor-Groups" class="headerlink" title="商群 Factor Groups"></a>商群 Factor Groups</h2><p>$N$ 为群 $G$ 的一个子群，则 $N$ 的所有陪集形成了一个群 $G/N$，二元运算为 $(aN)(bN) = abN$。这个群叫做 $G$ 和 $N$ 的<strong>因子（factor）</strong>或<strong>商群（quotient group）</strong>。</p>
+<p><strong>定理 10.4.</strong> $N$ 为群 $G$ 的一个子群，则 $N$ 的所有陪集形成了一个 $[G:N]$ 阶群 $G/N$。</p>
+<h2 id="对换群的simplicity"><a href="#对换群的simplicity" class="headerlink" title="对换群的simplicity"></a>对换群的simplicity</h2><p>没有非平凡正规子群的群叫做<strong>（simple group）</strong>。</p>
+<p><strong>引理 10.8.</strong> 对换群 $A_n$ 由三元环（3-cycles）生成。</p>
+<p><strong>引理 10.9.</strong> $N$ 为群 $A_n$ 的一个子群。如果 $N$ 包含一个三元环，则 $N = A_n$。</p>
+<p><strong>引理 10.10.</strong> 对于 $n \geq 5$，$A_n$ 的每个非平凡正规子群 $N$ 包含一个三元环。</p>
+<p><strong>定理 10.11.</strong> 置换群 $A_n(n \geq 5)$ 是simple的。</p>
+<hr>
+<h1 id="同态"><a href="#同态" class="headerlink" title="同态"></a>同态</h1><h2 id="群同态-Group-Homomorphisms"><a href="#群同态-Group-Homomorphisms" class="headerlink" title="群同态 Group Homomorphisms"></a>群同态 Group Homomorphisms</h2><p>群 $(G, \cdot )$ 和 $(H, \circ)$ 间的<strong>同态（homomorphisms）</strong>是一个映射（不一定双射） $\phi: G \rightarrow H$ 且满足</p>
+<script type="math/tex; mode=display">\phi(a \cdot b) = \phi(a) \circ \phi(b)</script><p>$\phi$ 在 $H$ 中的值域叫做<strong>同态像（homomorphic image）</strong>。</p>
+<p><strong>命题 11.4.</strong> $\phi: G_1 \rightarrow G_2$ 是一个同态，则：</p>
+<ol>
+<li>$e$ 是 $G_1$ 的单位元 $\Rightarrow \phi(e) $ 是 $G_2$ 的单位元。</li>
+<li>$\forall g \in G_1, \phi(g^{-1}) = [\phi(g)]^{-1}$</li>
+<li>$H_1$ 是 $G_1$ 的子群 $\Rightarrow \phi(H_1)$ 是 $G_2$ 的子群。</li>
+<li>$H_2$ 是 $G_2$ 的子群 $\Rightarrow \phi^{-1}(H_2) = \{ g \in G: \phi(g) \in H_2 \}$ 是 $G_1$ 的子群。进一步，$H_2$ 是 $G_2$ 的正规子群 $\Rightarrow \phi^{-1}(H_2)$ 是 $G_1$ 的正规子群。</li>
+</ol>
+<p>$\phi : G \Rightarrow H$ 是一个同态，$\phi^{-1}(\{ e \})$ 是 $G$ 的一个子集，叫做 $\phi$ 的<strong>核（kernel）</strong>，记作 $ker~\phi$。</p>
+<p><strong>定理 11.5.</strong> $\phi :G \to H$ 是一个同态，则 $\phi$ 的核是 $G$ 的一个正规子群。</p>
+<h2 id="同构定理-Isomorphism-Theorems"><a href="#同构定理-Isomorphism-Theorems" class="headerlink" title="同构定理 Isomorphism Theorems"></a>同构定理 Isomorphism Theorems</h2><p>$H$ 为群 $G$ 的一个正规子群，定义<strong>自然同态（natural homomorphism）</strong> $\phi: G \rightarrow G / H, \phi(g) = gH$。</p>
+<p><strong>定理 11.10. 同构第一定理</strong> $\psi: G \rightarrow H$ 是一个群同态，核为 $K = ker~\psi$ 是一个正规子群。$\phi:G \rightarrow G /K$ 为自然同态，则存在一个唯一同构 $\eta: G / K \rightarrow \psi(G)$，使得 $\psi = \eta \phi$。</p>
+<p><strong>定理 11.12. 同构第二定理</strong> $H$ 是群 $G$ 的子群（不一定是正规的），$N$ 是 $G$ 的正规子群，则 $HN$ 是 $G$ 的子群，$H \cap N$ 是 $H$ 的正规子群，且</p>
+<script type="math/tex; mode=display">H / (H \cap N) \cong (HN) / N</script><p><strong>定理 11.13 一致定理</strong> $N$ 是群 $G$ 的正规子群，则 $H \rightarrow H /N$ 是一个从 $G$ 的包含 $N$ 的子群的集合到 $G /N$ 的子群的集合的满射。进一步，从 $G$ 的包含 $N$ 的<strong>正规</strong>子群的集合到 $G /N$ 的子群的集合是双射。</p>
+<p><strong>定理 11.14. 同构第三定理</strong> $G$ 是一个群，$N$ 和 $H$ 是正规子群且有 $N \subset H$，则 $G / H \cong \dfrac{GN}{HN}$.</p>
+]]></content>
+      <categories>
+        <category>problem-solving</category>
       </categories>
   </entry>
   <entry>
@@ -593,75 +663,6 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
 <p><strong>A</strong> 称作从 $L_1$ 到 $L_2$ 的多项式时间规约（reduction）。（说明 $L_2$ 至少和 $L_1$ 一样难。）</p>
 <p>一个语言 $L$ 是 <strong>NP-hard</strong>，如果对于任意 $U \in NP, U \leq_p L$。</p>
 <p>一个语言 $L$ 是 <strong>NP-complete</strong>，如果 $L \in NP$ 且 $L$ 是 NP-$hard$。</p>
-]]></content>
-      <categories>
-        <category>problem-solving</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>问题求解笔记-群同态基本定理与正规子群</title>
-    <url>/2021/03/11/group-isomorphism-and-normal-subgroups/</url>
-    <content><![CDATA[<hr>
-<h1 id="同构-Isomorphisms"><a href="#同构-Isomorphisms" class="headerlink" title="同构 Isomorphisms"></a>同构 Isomorphisms</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>群$(G, \cdot )$ 和 $(H, \circ)$ <strong>同构（isomorphic）</strong>，如果存在一个双射 $\phi: G \rightarrow H$ 且满足</p>
-<script type="math/tex; mode=display">\forall a, b \in G, \phi(a \cdot b) = \phi(a) \circ \phi(b)</script><p>记作 $G \cong H$。映射 $\phi$ 称为<strong>同构（isomorphism）</strong>。</p>
-<a id="more"></a>
-<p><strong>定理 9.6.</strong> $\phi: G \rightarrow H$ 是两个群上的同构，则有</p>
-<ol>
-<li>$\phi^{-1}: H \rightarrow G$ 也是一个同构。</li>
-<li>$|G| = |H|$</li>
-<li>$G$ 是阿贝尔群 $\Rightarrow$ $H$ 是阿贝尔群。</li>
-<li>$G$ 是循环群 $\Rightarrow$ $H$ 是循环群。</li>
-<li>$G$有一个 $n$ 阶子群 $\Rightarrow$ $H$ 有一个 $n$ 阶子群。</li>
-</ol>
-<p><strong>定理 9.7.</strong> 所有无限循环群和 $\mathbb{Z}$ 同构。</p>
-<p><strong>定理 9.8.</strong> 所有 $n$ 阶循环群和 $\mathbb{Z}_{n}$ 同构。</p>
-<p><strong>推论 9.9.</strong> $G$ 是一个 $p$ 阶群，$p$ 是一个质数，则 $G$ 同构于 $\mathbb{Z}_{p}$。</p>
-<p><strong>定理 9.10.</strong> 群上的同构形成了所有群的类型的等价关系。</p>
-<h3 id="凯利定理-Cayley’s-Theorem"><a href="#凯利定理-Cayley’s-Theorem" class="headerlink" title="凯利定理 Cayley’s Theorem"></a>凯利定理 Cayley’s Theorem</h3><p><strong>定理 9.12. Cayley</strong> 每个群都同构于一个置换群。</p>
-<h2 id="外直积-External-Direct-Products"><a href="#外直积-External-Direct-Products" class="headerlink" title="外直积 External Direct Products"></a>外直积 External Direct Products</h2><p><strong>命题 9.13.</strong> $(G, \cdot), (H, \circ)$ 是两个群，$(g, h) \in G \times H, g \in G, h \in H$, 定义 $G \times H$ 上的二元运算：$(g_1, h_1)(g_2, h_2) = (g_1 \cdot g_2, h_1 \circ h_2)$，是一个群。</p>
-<p>群 $G \times H$ 叫做 $G$ 和 $H$ 的<strong>外直积（external direct product）</strong>。</p>
-<p><strong>定理 9.17.</strong> $(g, h) \in G \times H$，$g, h$ 都有有限的序数 $r, s$，则 $(g,h)$ 的序数是 $r$ 和 $s$ 的最小公倍数。</p>
-<p><strong>定理 9.21.</strong> $\mathbb{Z}_m \times \mathbb{Z}_n \cong \mathbb{Z}_{mn} \Leftrightarrow gcd(m,n) = 1$</p>
-<h2 id="内直积-Internal-Direct-Products"><a href="#内直积-Internal-Direct-Products" class="headerlink" title="内直积 Internal Direct Products"></a>内直积 Internal Direct Products</h2><p>如果群 $G$ 的两个子群 $H$ 和 $K$ 满足以下条件：</p>
-<ul>
-<li>$ G= HK = \{ hk: h \in H, k \in K \}$</li>
-<li>$H \cap K = \{ e \}$</li>
-<li>$\forall k \in K, \forall h \in H, hk = kh$</li>
-</ul>
-<p>则 $G$ 叫做 $H$ 和 $K$ 的<strong>内直积（internal direct product）</strong>。</p>
-<p><strong>定理 9.27.</strong> $G$ 是 $H$ 和 $K$ 的内直积 $\Rightarrow G \cong H \times K$。</p>
-<hr>
-<h1 id="正规子群和商群"><a href="#正规子群和商群" class="headerlink" title="正规子群和商群"></a>正规子群和商群</h1><h2 id="正规子群-Normal-Subgroups"><a href="#正规子群-Normal-Subgroups" class="headerlink" title="正规子群 Normal Subgroups"></a>正规子群 Normal Subgroups</h2><p>群 $G$ 的一个子群 $H$ 是<strong>正规的（normal）</strong>，如果 $\forall g \in G, gH = Hg$</p>
-<p><strong>定理 10.3.</strong> $N$ 为群 $G$ 的一个子群，则以下命题等价：</p>
-<ol>
-<li>$N$ 是正规的。</li>
-<li>$\forall g \in G, g N g^{-1} \subseteq N$</li>
-<li>$\forall g \in G, g N g^{-1} = N$</li>
-</ol>
-<h2 id="商群-Factor-Groups"><a href="#商群-Factor-Groups" class="headerlink" title="商群 Factor Groups"></a>商群 Factor Groups</h2><p>$N$ 为群 $G$ 的一个子群，则 $N$ 的所有陪集形成了一个群 $G/N$，二元运算为 $(aN)(bN) = abN$。这个群叫做 $G$ 和 $N$ 的<strong>因子（factor）</strong>或<strong>商群（quotient group）</strong>。</p>
-<p><strong>定理 10.4.</strong> $N$ 为群 $G$ 的一个子群，则 $N$ 的所有陪集形成了一个 $[G:N]$ 阶群 $G/N$。</p>
-<h2 id="对换群的simplicity"><a href="#对换群的simplicity" class="headerlink" title="对换群的simplicity"></a>对换群的simplicity</h2><p>没有非平凡正规子群的群叫做<strong>（simple group）</strong>。</p>
-<p><strong>引理 10.8.</strong> 对换群 $A_n$ 由三元环（3-cycles）生成。</p>
-<p><strong>引理 10.9.</strong> $N$ 为群 $A_n$ 的一个子群。如果 $N$ 包含一个三元环，则 $N = A_n$。</p>
-<p><strong>引理 10.10.</strong> 对于 $n \geq 5$，$A_n$ 的每个非平凡正规子群 $N$ 包含一个三元环。</p>
-<p><strong>定理 10.11.</strong> 置换群 $A_n(n \geq 5)$ 是simple的。</p>
-<hr>
-<h1 id="同态"><a href="#同态" class="headerlink" title="同态"></a>同态</h1><h2 id="群同态-Group-Homomorphisms"><a href="#群同态-Group-Homomorphisms" class="headerlink" title="群同态 Group Homomorphisms"></a>群同态 Group Homomorphisms</h2><p>群 $(G, \cdot )$ 和 $(H, \circ)$ 间的<strong>同态（homomorphisms）</strong>是一个映射（不一定双射） $\phi: G \rightarrow H$ 且满足</p>
-<script type="math/tex; mode=display">\phi(a \cdot b) = \phi(a) \circ \phi(b)</script><p>$\phi$ 在 $H$ 中的值域叫做<strong>同态像（homomorphic image）</strong>。</p>
-<p><strong>命题 11.4.</strong> $\phi: G_1 \rightarrow G_2$ 是一个同态，则：</p>
-<ol>
-<li>$e$ 是 $G_1$ 的单位元 $\Rightarrow \phi(e) $ 是 $G_2$ 的单位元。</li>
-<li>$\forall g \in G_1, \phi(g^{-1}) = [\phi(g)]^{-1}$</li>
-<li>$H_1$ 是 $G_1$ 的子群 $\Rightarrow \phi(H_1)$ 是 $G_2$ 的子群。</li>
-<li>$H_2$ 是 $G_2$ 的子群 $\Rightarrow \phi^{-1}(H_2) = \{ g \in G: \phi(g) \in H_2 \}$ 是 $G_1$ 的子群。进一步，$H_2$ 是 $G_2$ 的正规子群 $\Rightarrow \phi^{-1}(H_2)$ 是 $G_1$ 的正规子群。</li>
-</ol>
-<p>$\phi : G \Rightarrow H$ 是一个同态，$\phi^{-1}(\{ e \})$ 是 $G$ 的一个子集，叫做 $\phi$ 的<strong>核（kernel）</strong>，记作 $ker~\phi$。</p>
-<p><strong>定理 11.5.</strong> $\phi :G \to H$ 是一个同态，则 $\phi$ 的核是 $G$ 的一个正规子群。</p>
-<h2 id="同构定理-Isomorphism-Theorems"><a href="#同构定理-Isomorphism-Theorems" class="headerlink" title="同构定理 Isomorphism Theorems"></a>同构定理 Isomorphism Theorems</h2><p>$H$ 为群 $G$ 的一个正规子群，定义<strong>自然同态（natural homomorphism）</strong> $\phi: G \rightarrow G / H, \phi(g) = gH$。</p>
-<p><strong>定理 11.10. 同构第一定理</strong> $\psi: G \rightarrow H$ 是一个群同态，核为 $K = ker~\psi$ 是一个正规子群。$\phi:G \rightarrow G /K$ 为自然同态，则存在一个唯一同构 $\eta: G / K \rightarrow \psi(G)$，使得 $\psi = \eta \phi$。</p>
-<p><strong>定理 11.12. 同构第二定理</strong> $H$ 是群 $G$ 的子群（不一定是正规的），$N$ 是 $G$ 的正规子群，则 $HN$ 是 $G$ 的子群，$H \cap N$ 是 $H$ 的正规子群，且</p>
-<script type="math/tex; mode=display">H / (H \cap N) \cong (HN) / N</script><p><strong>定理 11.13 一致定理</strong> $N$ 是群 $G$ 的正规子群，则 $H \rightarrow H /N$ 是一个从 $G$ 的包含 $N$ 的子群的集合到 $G /N$ 的子群的集合的满射。进一步，从 $G$ 的包含 $N$ 的<strong>正规</strong>子群的集合到 $G /N$ 的子群的集合是双射。</p>
-<p><strong>定理 11.14. 同构第三定理</strong> $G$ 是一个群，$N$ 和 $H$ 是正规子群且有 $N \subset H$，则 $G / H \cong \dfrac{GN}{HN}$.</p>
 ]]></content>
       <categories>
         <category>problem-solving</category>
@@ -1400,6 +1401,7 @@ E[Z_{t+1}] \geq Fit\text{-}ratio(s, P_t) \cdot \dfrac{n-  length(s)}{n} \cdot (1
     <url>/2021/07/20/pytorch/</url>
     <content><![CDATA[<p>之前已经安装好了 cuda，现在来安装 pytorch，顺便再装一个 anaconda。同样的，本篇是针对 Ubuntu </p>
 <p>20.04 LTS 的 pytorch 和 anaconda 安装流程。</p>
+<a id="more"></a>
 <h1 id="安装-anaconda"><a href="#安装-anaconda" class="headerlink" title="安装 anaconda"></a>安装 anaconda</h1><p>以前一直没搞清已经安装的 python pip 和 anaconda 有什么区别，会不会有冲突，所以一直没敢装 anaconda，现在好像弄清楚了，它们基本上是两个独立的程序，conda会使用它自己的虚拟环境，所以影响应该不大，那我们就开始吧。</p>
 <p><a href="https://docs.anaconda.com/anaconda/install/linux/">官方教程</a></p>
 <p>首先到<a href="https://www.anaconda.com/products/individual#Downloads">官网下载</a>安装包，可以用 <code>sha256sum</code> 检查一下。</p>
@@ -1418,6 +1420,9 @@ E[Z_{t+1}] \geq Fit\text{-}ratio(s, P_t) \cdot \dfrac{n-  length(s)}{n} \cdot (1
 <p><img data-src="pytorch_org.png" alt></p>
 <p>出现这个就是开始下载了，有一点慢：</p>
 <p><img data-src="pytorch_succ.png" alt></p>
+<p>把里面所有东西都下好了基本上就完成了。我们可以在 Python 里面直接使用 <code>torch</code> 包辣：</p>
+<p><img data-src="torch_comp.png" alt="torch complete"></p>
+<p>也可以通过 <code>torch.cuda.is_available()</code> 看到我们的 cuda 是否可用。</p>
 ]]></content>
   </entry>
   <entry>
