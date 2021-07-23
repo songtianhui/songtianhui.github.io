@@ -9,7 +9,7 @@ typora-root-url: pytorch
 
 20.04 LTS 的 pytorch 和 anaconda 安装流程。
 
-
+<!--more -->
 
 # 安装 anaconda
 
@@ -59,3 +59,8 @@ $ conda config --set show_channel_urls yes
 
 ![](pytorch_succ.png)
 
+把里面所有东西都下好了基本上就完成了。我们可以在 Python 里面直接使用 `torch` 包辣：
+
+![torch complete](torch_comp.png)
+
+也可以通过 `torch.cuda.is_available()` 看到我们的 cuda 是否可用。

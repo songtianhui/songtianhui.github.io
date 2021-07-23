@@ -107,6 +107,8 @@ typora-root-url: cuda
 
 `$ sudo prime-select nvidia/intel` 可以切换显卡。
 
+（有趣的是过了几天我的 `$ nvidia-smi` 突然打不开了，显示什么 `communicate failed`，解决方法是在 `intel` 和 `nvidia` 之间切换一下再重启就可以了。）
+
 
 
 # 装 Cuda
