@@ -216,8 +216,9 @@ $$\theta_{j}:=\theta_{j}-\alpha \dfrac{\partial}{\partial \theta_{j}} J\left(\th
 **}**
 
 考虑$h_{\theta}(x) = \dfrac{1}{1 + e^{-\theta^{T}X}}$, 有：
-$$\dfrac{\partial}{\partial \theta_{j}} J(\theta) = \dfrac{1}{m} \sum\limits_{i=1}^{n} [(h_{\theta}(x^{(i)}) -y^{(i)}) x_{j}^{(i)}]$$
+$$\dfrac{\partial}{\partial \theta_{j}} J(\theta) = \dfrac{1}{m} \sum\limits_{i=1}^{n} \left[(h_{\theta}(x^{(i)}) -y^{(i)}) x_{j}^{(i)}\right]$$
 ~~推导略，不信的话自己去算算~~
+
 - 虽然得到的梯度下降算法表面上看上去与线性回归的梯度下降算法一样，但是这里的$h_{\theta}(x)$与线性回归中不同，所以实际上是不一样的。另外，在运行梯度下降算法之前，进行特征缩放依旧是非常必要的。
 
 除了梯度下降算法以外，还有一些常被用来令代价函数最小的算法，这些算法更加复杂和优越，而且通常不需要人工选择学习率，通常比梯度下降算法要更加快速。这些算法有：**共轭梯度**（**Conjugate Gradient**），**局部优化法**(**Broyden fletcher goldfarb shann,BFGS**)和**有限内存局部优化法**(**LBFGS**) 
@@ -241,13 +242,13 @@ $$\dfrac{\partial}{\partial \theta_{j}} J(\theta) = \dfrac{1}{m} \sum\limits_{i=
 某些项导致了过拟合的产生，所以如果我们能让这些项系数接近于0的话，我们就能很好的拟合了。
 所以我们要做的就是在一定程度上减小这些参数$\theta$ 的值，这就是正则化的基本方法。我们要做的便是修改代价函数，为$\theta$设置一点惩罚。
 假如我们有非常多的特征，我们并不知道其中哪些特征我们要惩罚，我们将对所有的特征进行惩罚，并且让代价函数最优化的软件来选择这些惩罚的程度。这样的结果是得到了一个较为简单的能防止过拟合问题的假设：
-$$J(\theta) = \dfrac{1}{2m}[\sum\limits_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})^{2} + \lambda \sum\limits_{j=1}^{n} \theta_{j}^{2}]$$
+$$J(\theta) = \dfrac{1}{2m}\left[\sum\limits_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})^{2} + \lambda \sum\limits_{j=1}^{n} \theta_{j}^{2}\right]$$
 其中$\lambda$又称为正则化参数（**Regularization Parameter**）。 注：根据惯例，我们不对$\theta_{0}$ 进行惩罚。
 
 ## 正则化线性回归 Regularized Linear Regression
 **repeat until convergence{**
 $$\theta_{0}:=\theta_{0}-\alpha \dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)})$$
-$$\theta_{j}:=\theta_{j}-\alpha [\dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)}) * x_{j}^{(i)}) + \dfrac{\lambda}{m}\theta_{j}] \quad (for~j=1,2,...,n)$$
+$$\theta_{j}:=\theta_{j}-\alpha \left[\dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)}) * x_{j}^{(i)}) + \dfrac{\lambda}{m}\theta_{j}\right] \quad (for~j=1,2,...,n)$$
 **}**
 对$j=1,2,...,n$时的更新式子整理得：
 $$\theta_{j}:=\theta_{j}(1 - \alpha \dfrac{\lambda}{m})-\alpha \dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)}) * x_{j}^{(i)})$$
@@ -282,7 +283,7 @@ def costReg(theta, X, y, learningRate):
 梯度下降：
 **repeat until convergence{**
 $$\theta_{0}:=\theta_{0}-\alpha \dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)})$$
-$$\theta_{j}:=\theta_{j}-\alpha [\dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)}) * x_{j}^{(i)}) + \dfrac{\lambda}{m}\theta_{j}] \quad (for~j=1,2,...,n)$$
+$$\theta_{j}:=\theta_{j}-\alpha \left[\dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)}) * x_{j}^{(i)}) + \dfrac{\lambda}{m}\theta_{j}\right] \quad (for~j=1,2,...,n)$$
 **}**
 注：看上去同线性回归一样，但是知道 $h_\theta ( x )=g( \theta^{T} X )$，所以与线性回归不同。
 
@@ -1201,9 +1202,9 @@ graph LR;
 
 有关获得更多数据的几种方法：
 
-    1. 人工数据合成
-    2. 手动收集、标记数据
-    3. 众包
+1. 人工数据合成
+2. 手动收集、标记数据
+3. 众包
 
 
 
