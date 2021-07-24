@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://songtianhui.github.io/2021/02/03/ML-AN/high_variance.png">
 <meta property="og:image" content="https://songtianhui.github.io/neutral_overfitting.png">
 <meta property="article:published_time" content="2021-02-03T07:04:20.000Z">
-<meta property="article:modified_time" content="2021-07-24T18:03:44.874Z">
+<meta property="article:modified_time" content="2021-07-24T18:19:38.619Z">
 <meta property="article:author" content="Hui hui">
 <meta property="article:tag" content="ML">
 <meta name="twitter:card" content="summary">
@@ -233,7 +233,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-25 02:03:44" itemprop="dateModified" datetime="2021-07-25T02:03:44+08:00">2021-07-25</time>
+                <time title="Modified: 2021-07-25 02:19:38" itemprop="dateModified" datetime="2021-07-25T02:19:38+08:00">2021-07-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -347,7 +347,7 @@
 <p>在得到这样一个代价函数以后，我们便可以用梯度下降算法来求得能使代价函数最小的参数了。<br><strong>repeat until convergence{</strong></p>
 <script type="math/tex; mode=display">\theta_{j}:=\theta_{j}-\alpha \dfrac{\partial}{\partial \theta_{j}} J\left(\theta \right)</script><p><strong>}</strong></p>
 <p>考虑$h_{\theta}(x) = \dfrac{1}{1 + e^{-\theta^{T}X}}$, 有：</p>
-<script type="math/tex; mode=display">\dfrac{\partial}{\partial \theta_{j}} J(\theta) = \dfrac{1}{m} \sum\limits_{i=1}^{n} [(h_{\theta}(x^{(i)}) -y^{(i)}) x_{j}^{(i)}]</script><p><del>推导略，不信的话自己去算算</del></p>
+<script type="math/tex; mode=display">\dfrac{\partial}{\partial \theta_{j}} J(\theta) = \dfrac{1}{m} \sum\limits_{i=1}^{n} \left[(h_{\theta}(x^{(i)}) -y^{(i)}) x_{j}^{(i)}\right]</script><p><del>推导略，不信的话自己去算算</del></p>
 <ul>
 <li>虽然得到的梯度下降算法表面上看上去与线性回归的梯度下降算法一样，但是这里的$h_{\theta}(x)$与线性回归中不同，所以实际上是不一样的。另外，在运行梯度下降算法之前，进行特征缩放依旧是非常必要的。</li>
 </ul>
@@ -360,9 +360,9 @@
 <li>正则化。 保留所有的特征，但是减少参数的大小（<strong>magnitude</strong>）。</li>
 </ul>
 <h2 id="代价函数-1"><a href="#代价函数-1" class="headerlink" title="代价函数"></a>代价函数</h2><p>某些项导致了过拟合的产生，所以如果我们能让这些项系数接近于0的话，我们就能很好的拟合了。<br>所以我们要做的就是在一定程度上减小这些参数$\theta$ 的值，这就是正则化的基本方法。我们要做的便是修改代价函数，为$\theta$设置一点惩罚。<br>假如我们有非常多的特征，我们并不知道其中哪些特征我们要惩罚，我们将对所有的特征进行惩罚，并且让代价函数最优化的软件来选择这些惩罚的程度。这样的结果是得到了一个较为简单的能防止过拟合问题的假设：</p>
-<script type="math/tex; mode=display">J(\theta) = \dfrac{1}{2m}[\sum\limits_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})^{2} + \lambda \sum\limits_{j=1}^{n} \theta_{j}^{2}]</script><p>其中$\lambda$又称为正则化参数（<strong>Regularization Parameter</strong>）。 注：根据惯例，我们不对$\theta_{0}$ 进行惩罚。</p>
+<script type="math/tex; mode=display">J(\theta) = \dfrac{1}{2m}\left[\sum\limits_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})^{2} + \lambda \sum\limits_{j=1}^{n} \theta_{j}^{2}\right]</script><p>其中$\lambda$又称为正则化参数（<strong>Regularization Parameter</strong>）。 注：根据惯例，我们不对$\theta_{0}$ 进行惩罚。</p>
 <h2 id="正则化线性回归-Regularized-Linear-Regression"><a href="#正则化线性回归-Regularized-Linear-Regression" class="headerlink" title="正则化线性回归 Regularized Linear Regression"></a>正则化线性回归 Regularized Linear Regression</h2><p><strong>repeat until convergence{</strong></p>
-<script type="math/tex; mode=display">\theta_{0}:=\theta_{0}-\alpha \dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)})</script><script type="math/tex; mode=display">\theta_{j}:=\theta_{j}-\alpha [\dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)}) * x_{j}^{(i)}) + \dfrac{\lambda}{m}\theta_{j}] \quad (for~j=1,2,...,n)</script><p><strong>}</strong><br>对$j=1,2,…,n$时的更新式子整理得：</p>
+<script type="math/tex; mode=display">\theta_{0}:=\theta_{0}-\alpha \dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)})</script><script type="math/tex; mode=display">\theta_{j}:=\theta_{j}-\alpha \left[\dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)}) * x_{j}^{(i)}) + \dfrac{\lambda}{m}\theta_{j}\right] \quad (for~j=1,2,...,n)</script><p><strong>}</strong><br>对$j=1,2,…,n$时的更新式子整理得：</p>
 <script type="math/tex; mode=display">\theta_{j}:=\theta_{j}(1 - \alpha \dfrac{\lambda}{m})-\alpha \dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)}) * x_{j}^{(i)})</script><p>可以看出，正则化线性回归的梯度下降算法的变化在于，每次都在原有算法更新规则的基础上令$\theta$值减少了一个额外的值。</p>
 <p>我们同样也可以利用正规方程来求解正则化线性回归模型：</p>
 <script type="math/tex; mode=display">\theta=\left(X^{T} X+\lambda\left[\begin{array}{cccc}
@@ -374,7 +374,7 @@
 \end{array}\right]\right)^{-1} X^{T} y</script><p>矩阵尺寸为 $(n+1)*(n+1)$。</p>
 <h2 id="正则化的逻辑回归模型-Regularized-Logistic-Regression"><a href="#正则化的逻辑回归模型-Regularized-Logistic-Regression" class="headerlink" title="正则化的逻辑回归模型 Regularized Logistic Regression"></a>正则化的逻辑回归模型 Regularized Logistic Regression</h2><script type="math/tex; mode=display">J(\theta) = -\dfrac{1}{m}\sum\limits_{i=1}^{n} [y \times \log{(h_{\theta}(x))} + (1 - y) \times \log{(1- h_{\theta}(x))}] + \dfrac{\lambda}{2m} \sum\limits_{j=1}^{n}\theta_{j}^{2}</script><figure class="highlight python"><figcaption><span>python代码</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">costReg</span>(<span class="params">theta, X, y, learningRate</span>):</span></span><br><span class="line">    theta = np.matrix(theta)</span><br><span class="line">    X = np.matrix(X)</span><br><span class="line">    y = np.matrix(y)</span><br><span class="line">    first = np.multiply(-y, np.log(sigmoid(X*theta.T)))</span><br><span class="line">    second = np.multiply((<span class="number">1</span> - y), np.log(<span class="number">1</span> - sigmoid(X*theta.T)))</span><br><span class="line">    reg = (learningRate / (<span class="number">2</span> * <span class="built_in">len</span>(X))* np.<span class="built_in">sum</span>(np.power(theta[:,<span class="number">1</span>:theta.shape[<span class="number">1</span>]],<span class="number">2</span>))</span><br><span class="line">    <span class="keyword">return</span> np.<span class="built_in">sum</span>(first - second) / (<span class="built_in">len</span>(X)) + reg</span><br></pre></td></tr></table></figure>
 <p>梯度下降：<br><strong>repeat until convergence{</strong></p>
-<script type="math/tex; mode=display">\theta_{0}:=\theta_{0}-\alpha \dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)})</script><script type="math/tex; mode=display">\theta_{j}:=\theta_{j}-\alpha [\dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)}) * x_{j}^{(i)}) + \dfrac{\lambda}{m}\theta_{j}] \quad (for~j=1,2,...,n)</script><p><strong>}</strong><br>注：看上去同线性回归一样，但是知道 $h_\theta ( x )=g( \theta^{T} X )$，所以与线性回归不同。</p>
+<script type="math/tex; mode=display">\theta_{0}:=\theta_{0}-\alpha \dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)})</script><script type="math/tex; mode=display">\theta_{j}:=\theta_{j}-\alpha \left[\dfrac{1}{m} \sum_{i=1}^{m}((h_{\theta}(x^{(i)}) - y^{(i)}) * x_{j}^{(i)}) + \dfrac{\lambda}{m}\theta_{j}\right] \quad (for~j=1,2,...,n)</script><p><strong>}</strong><br>注：看上去同线性回归一样，但是知道 $h_\theta ( x )=g( \theta^{T} X )$，所以与线性回归不同。</p>
 <hr>
 <h1 id="Lecture-8"><a href="#Lecture-8" class="headerlink" title="Lecture 8"></a>Lecture 8</h1><p>本章主要对<strong>神经网络Neural Network</strong>进行表述。</p>
 <h2 id="非线性假设-Non-linear-Hypotheses"><a href="#非线性假设-Non-linear-Hypotheses" class="headerlink" title="非线性假设 Non-linear Hypotheses"></a>非线性假设 Non-linear Hypotheses</h2><p>当特征太多时，计算的负荷会非常大。<br>普通的逻辑回归模型，不能有效地处理这么多的特征，这时候我们需要神经网络。</p>
@@ -900,16 +900,22 @@ cost\left(  \theta, \left( x^{(i)} , y^{(i)} \right)  \right) = \dfrac{1}{2}\lef
 <li>字符切分（<strong>Character segmentation</strong>）——将文字分割成一个个单一的字符</li>
 <li>字符分类（<strong>Character classification</strong>）——确定每一个字符是什么<br>可以用任务流程图来表达这个问题，每一项任务可以由一个单独的小队来负责解决：</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">  A(Image) --&gt; B(Text detection)</span><br><span class="line">  B --&gt; C(Character segmentation)</span><br><span class="line">  C --&gt; D(Character classification)</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">graph LR;
+  A(Image) --> B(Text detection)
+  B --> C(Character segmentation)
+  C --> D(Character classification)</pre>
+
 <h2 id="滑动窗口-Sliding-Windows"><a href="#滑动窗口-Sliding-Windows" class="headerlink" title="滑动窗口 Sliding Windows"></a>滑动窗口 Sliding Windows</h2><p>滑动窗口是一项用来从图像中抽取对象的技术。假使我们需要在一张图片中识别行人，首先要做的是用许多固定尺寸的图片来训练一个能够准确识别行人的模型。然后我们用之前训练识别行人的模型时所采用的图片尺寸在我们要进行行人识别的图片上进行剪裁，然后将剪裁得到的切片交给模型，让模型判断是否为行人，然后在图片上滑动剪裁区域重新进行剪裁，将新剪裁的切片也交给模型进行判断，如此循环直至将图片全部检测完。</p>
 <p>一旦完成后，我们按比例放大剪裁的区域，再以新的尺寸对图片进行剪裁，将新剪裁的切片按比例缩小至模型所采纳的尺寸，交给模型进行判断，如此循环。</p>
 <p>滑动窗口技术也被用于文字识别，首先训练模型能够区分字符与非字符，然后，运用滑动窗口技术识别字符，一旦完成了字符的识别，我们将识别得出的区域进行一些扩展，然后将重叠的区域进行合并。接着我们以宽高比作为过滤条件，过滤掉高度比宽度更大的区域（认为单词的长度通常比高度要大）。</p>
 <h2 id="获取大量数据和人工数据-Getting-Lots-of-Data-and-Artificial-Data"><a href="#获取大量数据和人工数据-Getting-Lots-of-Data-and-Artificial-Data" class="headerlink" title="获取大量数据和人工数据 Getting Lots of Data and Artificial Data"></a>获取大量数据和人工数据 Getting Lots of Data and Artificial Data</h2><p>数据不总是可以直接获得的，我们有可能需要人工地创造一些数据。</p>
 <p>有关获得更多数据的几种方法：</p>
-<pre><code>1. 人工数据合成
-2. 手动收集、标记数据
-3. 众包
-</code></pre><h2 id="上限分析-Ceiling-Analysis"><a href="#上限分析-Ceiling-Analysis" class="headerlink" title="上限分析 Ceiling Analysis"></a>上限分析 Ceiling Analysis</h2><p>在机器学习的应用中，我们通常需要通过几个步骤才能进行最终的预测，上限分析是用来判断哪一部分最值得我们花时间和精力去改善。</p>
+<ol>
+<li>人工数据合成</li>
+<li>手动收集、标记数据</li>
+<li>众包</li>
+</ol>
+<h2 id="上限分析-Ceiling-Analysis"><a href="#上限分析-Ceiling-Analysis" class="headerlink" title="上限分析 Ceiling Analysis"></a>上限分析 Ceiling Analysis</h2><p>在机器学习的应用中，我们通常需要通过几个步骤才能进行最终的预测，上限分析是用来判断哪一部分最值得我们花时间和精力去改善。</p>
 <p>总体就是一个调试的过程，我们按照流程一步一步手工提供100%正确的输入，看哪一个步骤的提升最多，就意味着有改进空间。</p>
 <h1 id="Lecture-19"><a href="#Lecture-19" class="headerlink" title="Lecture 19"></a>Lecture 19</h1><p>完结撒花！<span class="github-emoji" alias="rose" style fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f339.png?v8">&#x1f339;</span></p>
 <h2 id="一个自己的-Conclusion"><a href="#一个自己的-Conclusion" class="headerlink" title="一个自己的 Conclusion"></a>一个自己的 Conclusion</h2><p>首先反省一下自己的拖沓，本来其实能很快看完的一套课硬是看了一年。。。</p>
@@ -1109,6 +1115,8 @@ def normalEqn(X, y):
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
+
+
 
         
 
