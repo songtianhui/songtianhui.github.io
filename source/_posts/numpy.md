@@ -3,6 +3,7 @@ title: numpy
 date: 2021-07-09 14:37:45
 tags:
 categories: python
+mathjax: true
 ---
 
 本文主要是对于python库`numpy`的学习使用笔记。
@@ -159,6 +160,109 @@ array([[2, 0],
 array([[5, 4],
        [3, 4]])
 ```
+
+
+
+- ndarray 乘法操作的一些探究
+
+事实上我在向量化操作的时候遇到了挺多问题，有一些模糊的地方，在此测试阐明一些东西。
+
+首先 `numpy` 中是有 `matrix` 类型的，主要用于线性代数中，不过在绝大部分场合 `ndarray` 可以完全替代 `matrix`，所以我们决定基本弃用 `matrix`。
+
+- 对于最简单的向量，也就是一个长度为 n 的 array。
+  - 其转置始终是它自己，`*` 是逐元素相乘，返回相同长度的向量；
+  - `@` 是矩阵乘法，返回向量内积也就是一个数。
+  - 这也就要求两个向量的长度相同。
+  - `A @ v` 将 `v` 视为列向量，而 `v @ A` 将 `v` 视为行向量。这可以节省键入许多转置。
+
+``` python
+>>> a
+array([0, 1, 2, 3, 4])
+>>> b
+array([5, 6, 7, 8, 9])
+>>> a * b
+array([ 0,  6, 14, 24, 36])
+>>> a @ b
+80
+>>> c = np.array([10, 20])
+>>> a * c
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: operands could not be broadcast together with shapes (5,) (2,) 
+>>> a @ c
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 5)
+
+```
+
+当我们尝试多维向量时，就可以把这个 `ndarray` 看作矩阵来用了，$N \times 1$ 和 $1 \times N$ 和 $N$ 都是不一样的 array。
+
+`*` 其实是一个广播操作，两个矩阵不一定是要 $m \times k$ 和 $k \times n$，但也不是随意的。
+
+``` python
+>>> A
+array([[0, 1],
+       [2, 3]])
+>>> B
+array([4])
+>>> A * B
+array([[ 0,  4],
+       [ 8, 12]])
+# 广播到每个元素
+>>> C 
+array([4, 5])
+>>> A * C
+array([[ 0,  5],
+       [ 8, 15]])
+# 逐元素相乘
+>>> D 
+array([4, 5, 6])
+>>> A * D
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: operands could not be broadcast together with shapes (2,2) (3,) 
+# 广播不了了
+
+>>> E
+array([[4],
+       [5]])
+>>> A * E
+array([[ 0,  4],
+       [10, 15]])
+>>> F
+array([[4],
+       [5],
+       [6]])
+>>> A * F
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: operands could not be broadcast together with shapes (2,2) (3,1) 
+```
+
+所以可以看出来其实是要符合**广播的规则**，所相乘的矩阵行或列的个数要么是1（广播到每一个元素），要么和原矩阵行列元素个数相等（逐元素操作）。这套规则其实不止是乘法，`+-/` 都是一样的。
+
+- 当 `ndarray` 多维时，可以作为矩阵，用 `@` 进行运算，这时候就不会帮你自动转置了，要符合矩阵相乘条件也就是 $(m,k) \times (k,n)$。
+
+``` python
+>>> G
+array([[4, 6],
+       [5, 7]])
+>>> A @ G
+array([[ 5,  7],
+       [23, 33]])
+
+>>> H
+array([[4, 7],
+       [5, 8],
+       [6, 9]])
+>>> A @ H
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 3 is different from 2)
+```
+
+
 
 `ndarray` 还提供了很多一元操作
 

@@ -8,6 +8,35 @@ tags:
 
 <!--more -->
 
+# 基本常见算法
+
+## 两数之和
+
+> 给定一个整数数组 `nums` 和一个整数目标值 `target`，请你在该数组中找出 **和为目标值** `target` 的那 **两个** 整数，并返回它们的数组下标。
+
+首先肯定有一个 $O(n^2)$ 的朴素解法，然后我想到先排序然后用首尾指针向中间移动，$O(n\log{n})$。但是需要一个哈希来存排序前的下标，既然这样其实就可以直接用哈希 $O(n)$ 解了。
+
+``` c++
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n = nums.size();
+        for (int i = 0; i < n; ++i) {
+            for (int j = i + 1; j < n; ++j) {
+                if (nums[i] + nums[j] == target) {
+                    return {i, j};
+                }
+            }
+        }
+        return {};
+    }
+};
+```
+
+
+
+
+
 # 剑指offer系列
 
 ## 04. 二维数组中查找
@@ -44,4 +73,3 @@ public:
     }
 };
 ```
-

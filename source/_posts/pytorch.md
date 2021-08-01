@@ -3,6 +3,7 @@ title: pytorch 安装教程
 date: 2021-07-20 15:35:56
 tags:
 typora-root-url: pytorch
+categories: python
 ---
 
 之前已经安装好了 cuda，现在来安装 pytorch，顺便再装一个 anaconda。同样的，本篇是针对 Ubuntu 
