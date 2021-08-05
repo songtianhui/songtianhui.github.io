@@ -22,19 +22,21 @@
     var CONFIG = {"hostname":"songtianhui.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="群 Group整数等价类 Integer Equivalence模运算下整数等价类的性质:  加法乘法交换律 加法乘法结合律 加法(0)乘法(1)单位元 乘法分配律 任意元素存在加法逆元 $a$为非零整数，$gcd(a,n) &#x3D; 1 \Leftrightarrow a$存在乘法逆元">
+  <meta name="description" content="Lesson 1.1本章是对深度学习神经网络的一个介绍，课程的概览。 Lesson 1.2本章主要讲了一下 logisitic 回归，梯度下降，在ML中已经学习了。 然后介绍了 python 中的一些知识，向量化、广播、numpy、jupyter notebook等，都可以 rtfm，不在此赘述。 唯一有一点就是符号上的表示，andrew 喜欢用 $m$ 表示样本个数，$n$ 表示特征数。我习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="问题求解笔记-群论初步">
-<meta property="og:url" content="https://songtianhui.github.io/2021/02/26/group/index.html">
+<meta property="og:title" content="吴恩达深度学习笔记">
+<meta property="og:url" content="https://songtianhui.github.io/2021/08/04/DL-AN/index.html">
 <meta property="og:site_name" content="Songtianhui&#39;s Blog">
-<meta property="og:description" content="群 Group整数等价类 Integer Equivalence模运算下整数等价类的性质:  加法乘法交换律 加法乘法结合律 加法(0)乘法(1)单位元 乘法分配律 任意元素存在加法逆元 $a$为非零整数，$gcd(a,n) &#x3D; 1 \Leftrightarrow a$存在乘法逆元">
+<meta property="og:description" content="Lesson 1.1本章是对深度学习神经网络的一个介绍，课程的概览。 Lesson 1.2本章主要讲了一下 logisitic 回归，梯度下降，在ML中已经学习了。 然后介绍了 python 中的一些知识，向量化、广播、numpy、jupyter notebook等，都可以 rtfm，不在此赘述。 唯一有一点就是符号上的表示，andrew 喜欢用 $m$ 表示样本个数，$n$ 表示特征数。我习">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-02-26T07:53:33.000Z">
-<meta property="article:modified_time" content="2021-06-15T09:09:49.084Z">
+<meta property="og:image" content="https://songtianhui.github.io/2021/08/04/DL-AN/L1_week3_6.png">
+<meta property="article:published_time" content="2021-08-04T14:51:29.000Z">
+<meta property="article:modified_time" content="2021-08-04T17:48:50.400Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://songtianhui.github.io/2021/08/04/DL-AN/L1_week3_6.png">
 
-<link rel="canonical" href="https://songtianhui.github.io/2021/02/26/group/">
+<link rel="canonical" href="https://songtianhui.github.io/2021/08/04/DL-AN/">
 
 
 <script id="page-configurations">
@@ -47,7 +49,7 @@
   };
 </script>
 
-  <title>问题求解笔记-群论初步 | Songtianhui's Blog</title>
+  <title>吴恩达深度学习笔记 | Songtianhui's Blog</title>
   
 
 
@@ -192,7 +194,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/02/26/group/">
+    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/08/04/DL-AN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -205,7 +207,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          问题求解笔记-群论初步
+          吴恩达深度学习笔记
         </h1>
 
         <div class="post-meta">
@@ -215,14 +217,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-02-26 15:53:33" itemprop="dateCreated datePublished" datetime="2021-02-26T15:53:33+08:00">2021-02-26</time>
+              <time title="Created: 2021-08-04 22:51:29" itemprop="dateCreated datePublished" datetime="2021-08-04T22:51:29+08:00">2021-08-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-15 17:09:49" itemprop="dateModified" datetime="2021-06-15T17:09:49+08:00">2021-06-15</time>
+                <time title="Modified: 2021-08-05 01:48:50" itemprop="dateModified" datetime="2021-08-05T01:48:50+08:00">2021-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -230,7 +232,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/problem-solving/" itemprop="url" rel="index"><span itemprop="name">problem-solving</span></a>
+                  <a href="/categories/ML/" itemprop="url" rel="index"><span itemprop="name">ML</span></a>
                 </span>
             </span>
 
@@ -245,72 +247,102 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="群-Group"><a href="#群-Group" class="headerlink" title="群 Group"></a>群 Group</h1><h2 id="整数等价类-Integer-Equivalence"><a href="#整数等价类-Integer-Equivalence" class="headerlink" title="整数等价类 Integer Equivalence"></a>整数等价类 Integer Equivalence</h2><p>模运算下整数等价类的性质:</p>
-<ol>
-<li>加法乘法交换律</li>
-<li>加法乘法结合律</li>
-<li>加法(0)乘法(1)单位元</li>
-<li>乘法分配律</li>
-<li>任意元素存在加法逆元</li>
-<li>$a$为非零整数，$gcd(a,n) = 1 \Leftrightarrow a$存在乘法逆元</li>
-</ol>
-<a id="more"></a>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul>
-<li>集合$G$上的一个<strong>二元运算(binary operation)</strong>或者一个<strong>合成律(law of composition)</strong>: 一个函数$f : G \times G \rightarrow G$, $f(a,b) = a \circ b$ or $ab$</li>
-<li><strong>群</strong>$(G, \circ)$: 带有一个合成律的集合$G$, 且该合成律$(a, b) \rightarrowtail a \circ b$满足:<ul>
-<li><strong>结合律(associative)</strong>: $\forall a, b, c \in G, (a \circ b) \circ c = a \circ (b \circ c)$</li>
-<li><strong>单位元(identity element)</strong>: $\exists e \in G, \forall a \in G, a \circ e = e \circ a = a$</li>
-<li><strong>逆元(inverse element)</strong>: $\forall a \in G, \exists a^{-1}\in G, a \circ a^{-1} = a^{-1}\circ a = e$</li>
-</ul>
-</li>
-<li><strong>阿贝尔群(abelian)</strong>: 群$G$, $\forall  a, b \in G, a\circ b = b \circ a$</li>
-<li><strong>凯利表(Cayley table)</strong>或<strong>交换群(commutative)</strong>: 通过加法或乘法来描述一个群的表格。</li>
-<li><strong>可逆元素群(group of units)</strong>: 拥有逆元的元素（即所有和 $n$ 互质的数）组成的乘法群</li>
-<li>一般线性群(general linear group)</li>
-<li>四元群(quaternion group)</li>
-<li>群是有限的(finite)，或者说有有限序数(has finite order)，当它具有有限个元素，否则是无限的(infinite)或有无限序数(infinite order)</li>
-</ul>
-<h2 id="群的基本性质"><a href="#群的基本性质" class="headerlink" title="群的基本性质"></a>群的基本性质</h2><p><strong>命题3.17.</strong> 单位元唯一<br><strong>命题3.18.</strong> 逆元唯一<br><strong>命题3.19.</strong> $\forall a, b \in G, (ab)^{-1} = b^{-1}a^{-1}$</p>
-<p><strong>命题3.20.</strong> $\forall a \in G, (a^{-1})^{-1} = a$</p>
-<p><strong>命题3.21.</strong> $\forall a, b \in G,$ 方程$ax=b$和$xa=b$有唯一解</p>
-<p><strong>命题3.22.</strong> $\forall a, b,bc \in G, ab=ac \Rightarrow b=c$, $ba=ca  \Rightarrow b= c$（左右约分）</p>
-<p><strong>定理3.23.</strong> 基本指数运算都成立，$\forall g, h \in G$,</p>
-<ol>
-<li>$g^{m}g^{n} = g ^{m+n}$</li>
-<li>$(g^{m})^{n} = g^{mn}$</li>
-<li>$(gh)^{n} = (h^{-1}g^{-1})^{-n}$. $G$ is an abelian $\Rightarrow (gh)^{n} = g^{n}h^{n}$</li>
-</ol>
-<h2 id="子群-Subgroups"><a href="#子群-Subgroups" class="headerlink" title="子群 Subgroups"></a>子群 Subgroups</h2><ul>
-<li>子群是父群的子集，也是个群</li>
-<li><strong>平凡子群(trivival subgroup)</strong>: $H = \{ e \}$</li>
-<li>真子群</li>
-</ul>
-<p><strong>定理3.30.</strong> $H$是$G$的子群$\Leftrightarrow$</p>
-<ol>
-<li>$G$的单位元$e \in H$</li>
-<li>$\forall h_{1}, h_{2} \in H, h_{1}h_{2} \in H$</li>
-<li>$\forall h \in H,  h^{-1} \in H$</li>
-</ol>
-<p><strong>定理3.31.</strong> $H \subset G$是$G$的子群$\Leftrightarrow H \neq \emptyset \wedge \forall g,h\in H, gh^{-1} \in H$</p>
+        <a id="more"></a>
 <hr>
-<h1 id="循环群-Cyclic-Groups"><a href="#循环群-Cyclic-Groups" class="headerlink" title="循环群 Cyclic Groups"></a>循环群 Cyclic Groups</h1><p><strong>定理4.3.</strong>  Let $G$ be a group and $a$ be any element in $G$. Then the set $\langle a\rangle =\{a^{k}:k\in\mathbb{Z}\}$ is a subgroup of $G$. Furthermore, $⟨a⟩$ is the smallest subgroup of $G$ that contains $a$.</p>
+<h1 id="Lesson-1-1"><a href="#Lesson-1-1" class="headerlink" title="Lesson 1.1"></a>Lesson 1.1</h1><p>本章是对深度学习神经网络的一个介绍，课程的概览。</p>
+<h1 id="Lesson-1-2"><a href="#Lesson-1-2" class="headerlink" title="Lesson 1.2"></a>Lesson 1.2</h1><p>本章主要讲了一下 logisitic 回归，梯度下降，在ML中已经学习了。</p>
+<p>然后介绍了 <code>python</code> 中的一些知识，向量化、广播、<code>numpy</code>、jupyter notebook等，都可以 <strong>rtfm</strong>，不在此赘述。</p>
+<p>唯一有一点就是符号上的表示，andrew 喜欢用 $m$ 表示样本个数，$n$ 表示特征数。我习惯 mit 的课教的 $n$ 表示样本数，$d$ 表示特征维数。</p>
+<h1 id="Lession-1-3"><a href="#Lession-1-3" class="headerlink" title="Lession 1.3"></a>Lession 1.3</h1><p>本章算是一个神经网络的引入，介绍一些基本概念，浅层神经网络（shallow neural network）。</p>
+<p><img data-src="L1_week3_6.png" alt></p>
+<p>每个神经单元就是这么个计算过程，有输入 $x$，权重 $w$，偏移 $b$，激活函数（activation function） $h$。</p>
 <ul>
-<li><strong>循环子群(Cyclic Subgroups)</strong>: $\langle a \rangle$</li>
-<li><strong>循环群</strong>: 包含了某个元素$a$，使得$G=⟨a⟩$.此时$⟨a⟩$是$G$的<strong>生成元(generator)</strong>.</li>
-<li>$a$的<strong>序数(order)</strong>: 最小的正整数$n$, s.t. $a^{n} = e$, 记作$|a| = n$. 如果不存在，则为正无穷。</li>
+<li>$z = w^T x + b$</li>
+<li>$a = h(z)$</li>
 </ul>
-<p><strong>定理4.9.</strong> 所有循环群都是阿贝尔群。</p>
-<h2 id="循环群的子群"><a href="#循环群的子群" class="headerlink" title="循环群的子群"></a>循环群的子群</h2><p><strong>定理4.10.</strong> 循环群的子群也都是循环群。<br><strong>推论4.11.</strong> $\mathbb{Z}$的所有子群就是$n\mathbb{Z}, n = 0,1,2,…$</p>
-<p><strong>命题4.12.</strong> $G$为一个$n$阶循环群，$a$是$G$的一个生成元。则$a^{k} = e \Leftrightarrow n | k$（$k$是$n$的倍数）。</p>
-<p><strong>定理4.13.</strong> $G$为一个$n$阶循环群，$a$是$G$的一个生成元。$b = a^{k} \Rightarrow b$的序数为$n / d, d = gcd(k,n)$。</p>
-<p><strong>推论4.14.</strong> $\mathbb{Z}_{n}$的所有生成元$r$满足$1 \leq r &lt; n \wedge gcd(n,r) = 1$。</p>
-<h2 id="复数乘法群-Multiplicative-Group-of-Complex-Numbers"><a href="#复数乘法群-Multiplicative-Group-of-Complex-Numbers" class="headerlink" title="复数乘法群  Multiplicative Group of Complex Numbers"></a>复数乘法群  Multiplicative Group of Complex Numbers</h2><p>复数知识</p>
-<ul>
-<li>$\cos \theta + i \sin \theta$ 记作 $cis\theta$<br><strong>定理2.22. DeMoivre</strong> $(r~cis\theta)^{n} = r^{n}~cis(n\theta)$</li>
+<p>符号：$a_1^{<a href="1">1</a>}$，右上角中括号表示层数，右上角括号中表示第几个样本，右下角表示该层第几个神经元。</p>
+<p>对于一个输入样本，避免一层内的 for 循环，向量化计算：</p>
+<script type="math/tex; mode=display">
+z^{[i]} = W^{[i]} a^{[i-1]} + b^{[i]}\\
+a^{[i]} = h(z^{[i]})</script><p>$W^[i]$ 是第 $i$ 层每个神经元的权重排成的矩阵。</p>
+<p>举例图示：</p>
+<script type="math/tex; mode=display">
+\left[
+        \begin{array}{c}
+        z^{[1]}_{1}\\
+        z^{[1]}_{2}\\
+        z^{[1]}_{3}\\
+        z^{[1]}_{4}\\
+        \end{array}
+        \right]
+         =
+    \overbrace{
+    \left[
+        \begin{array}{c}
+        ...W^{[1]T}_{1}...\\
+        ...W^{[1]T}_{2}...\\
+        ...W^{[1]T}_{3}...\\
+        ...W^{[1]T}_{4}...
+        \end{array}
+        \right]
+        }^{W^{[1]}}
+        *
+    \overbrace{
+    \left[
+        \begin{array}{c}
+        x_1\\
+        x_2\\
+        x_3\\
+        \end{array}
+        \right]
+        }^{input}
+        +
+    \overbrace{
+    \left[
+        \begin{array}{c}
+        b^{[1]}_1\\
+        b^{[1]}_2\\
+        b^{[1]}_3\\
+        b^{[1]}_4\\
+        \end{array}
+        \right]
+        }^{b^{[1]}}</script><p>对于所有样本，避免 for 遍历样本，向量化计算：</p>
+<script type="math/tex; mode=display">
+Z^{[i]} = W^{[i]}A^{[i-1]} + b^{[i]}\\
+A^{[i]} = h(Z^{[i]})</script><p>其中 $Z^{[i]},A^{[i]}$ 是第 $i$ 层所有样本输出排成的矩阵。</p>
+<p>激活函数：<strong>sigmoid</strong>（主要在二分类）, <strong>tanh</strong>（比 sigmoid 常用），<strong>ReLU</strong>（在神经网络中很常用），Leaky ReLU。</p>
+<p>前两个有梯度消失的风险。</p>
+<p>这里提到一个很重要的问题就是为什么要使用非线性函数而不是直接 $a = z$。因为全用线性激活函数（identity）会使神经网络退化成一个单层模型。</p>
+<h2 id="反向传播-Back-Propagation"><a href="#反向传播-Back-Propagation" class="headerlink" title="反向传播 Back Propagation"></a>反向传播 Back Propagation</h2><p>也就是神经网络的梯度下降（Gradient Descent）。比较重要，理解一下推倒，本质上是函数求导的链式法则。</p>
+<p>代价函数：</p>
+<script type="math/tex; mode=display">
+J(W, b) = \dfrac{1}{m}\sum\limits_{i= 1}^{m}L(\hat{y}, y)</script><p>当参数初始化成某些值后，每次梯度下降都会循环计算以下预测值：$\hat{y}^{(i)},(i=1,2,…,m)$。</p>
+<p>有 $dW^{[i]} = \dfrac{\partial J}{\partial W^{[i]}}$, $d b^{[i]} = \dfrac{\partial J}{\partial b^{[i]}}$。</p>
+<p>在梯度下降时每一次更新：$W^{[i]}\implies{W^{[i]} - \eta dW^{[1]}},b^{[i]}\implies{b^{[i]} -\eta db^{[1]}}$, $\eta$ 为步长。</p>
+<p>反向传播时，就是一个链式求导：</p>
+<script type="math/tex; mode=display">
+\underbrace{
+    \left.
+    \begin{array}{l}
+    x \\
+    w \\
+    b 
+    \end{array}
+    \right\}
+    }_{dw=dz \cdot x, db =dz}
+    \impliedby \underbrace{z=w^Tx+b}_{dz=da\cdot g^{'}(z),
+    g(z)=\sigma(z),
+    \frac{dL}{dz}} = \frac{dL}{da} \cdot \frac{da}{dz},
+    \frac{d}{ dz} g(z)=g^{'}(z)
+    \impliedby \underbrace{a = \sigma(z) 
+    \impliedby L(a,y)}_{da=\frac{d}{da}L\left(a,y \right)=(-y\log{\alpha} - (1 - y)\log(1 - a))^{'}=-\frac{y}{a} + \frac{1 - y}{1 - a} }</script><p>所以有：</p>
+<p>$dz^{[L]} = A^{[L]} - Y$</p>
+<p>$dW^{[i]} = \dfrac{1}{m} dZ^{[i]}A^{[i-1]T}$</p>
+<p>$db^{[i]} = \dfrac{1}{m}np.sum(dZ^{[i]}, axis=1)$</p>
+<script type="math/tex; mode=display">
+dz^{[i]} = \underbrace{W^{[i + 1]T} dz^{[i+1]}}_{(n^{[i]},m)}\quad \times  \underbrace{g^{[i]'}}_{activation \; function \; of \; hidden \; layer}\times  \quad\underbrace{(z^{[i]})}_{(n^{[1]},m)}</script><ul>
+<li>随机初始化，不要初始化成相同的参数。</li>
 </ul>
-<h2 id="圆群-Circle-Group"><a href="#圆群-Circle-Group" class="headerlink" title="圆群 Circle Group"></a>圆群 Circle Group</h2><p>$\mathbb{T}: \{ z \in \mathbb{C}: |z| = 1 \}$<br><strong>命题4.24.</strong> 圆群是$\mathbb{C}^{*}$的一个子群。</p>
-<p>满足$z^{n} = 1$的复数$z$称为$n$次<strong>单位根($n$-th roots of unity)</strong>。<br><strong>定理4.25.</strong> $z^{n} = 1 \Rightarrow z = cis(\dfrac{2k\pi}{n}), k = 0, 1, … , n-1$. $n$次单位根构成$\mathbb{T}$的一个圆子群。</p>
-<h2 id="重复平方法-The-Method-of-Repeated-Squares"><a href="#重复平方法-The-Method-of-Repeated-Squares" class="headerlink" title="重复平方法 The Method of Repeated Squares"></a>重复平方法 The Method of Repeated Squares</h2><p>快速幂。</p>
 
     </div>
 
@@ -326,13 +358,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/02/25/build-in-module/" rel="prev" title="Python常用内建模块">
-      <i class="fa fa-chevron-left"></i> Python常用内建模块
+    <a href="/2021/08/02/scikit-learn/" rel="prev" title="scikit-learn">
+      <i class="fa fa-chevron-left"></i> scikit-learn
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/03/06/pandas/" rel="next" title="pandas">
-      pandas <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -391,7 +420,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BE%A4-Group"><span class="nav-number">1.</span> <span class="nav-text">群 Group</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E6%95%B0%E7%AD%89%E4%BB%B7%E7%B1%BB-Integer-Equivalence"><span class="nav-number">1.1.</span> <span class="nav-text">整数等价类 Integer Equivalence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="nav-number">1.3.</span> <span class="nav-text">群的基本性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E7%BE%A4-Subgroups"><span class="nav-number">1.4.</span> <span class="nav-text">子群 Subgroups</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%BE%A4-Cyclic-Groups"><span class="nav-number">2.</span> <span class="nav-text">循环群 Cyclic Groups</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%BE%A4%E7%9A%84%E5%AD%90%E7%BE%A4"><span class="nav-number">2.1.</span> <span class="nav-text">循环群的子群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%95%B0%E4%B9%98%E6%B3%95%E7%BE%A4-Multiplicative-Group-of-Complex-Numbers"><span class="nav-number">2.2.</span> <span class="nav-text">复数乘法群  Multiplicative Group of Complex Numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%86%E7%BE%A4-Circle-Group"><span class="nav-number">2.3.</span> <span class="nav-text">圆群 Circle Group</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%A4%8D%E5%B9%B3%E6%96%B9%E6%B3%95-The-Method-of-Repeated-Squares"><span class="nav-number">2.4.</span> <span class="nav-text">重复平方法 The Method of Repeated Squares</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson-1-1"><span class="nav-number">1.</span> <span class="nav-text">Lesson 1.1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson-1-2"><span class="nav-number">2.</span> <span class="nav-text">Lesson 1.2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lession-1-3"><span class="nav-number">3.</span> <span class="nav-text">Lession 1.3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD-Back-Propagation"><span class="nav-number">3.1.</span> <span class="nav-text">反向传播 Back Propagation</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
