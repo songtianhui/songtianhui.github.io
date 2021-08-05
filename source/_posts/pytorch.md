@@ -65,3 +65,56 @@ $ conda config --set show_channel_urls yes
 ![torch complete](torch_comp.png)
 
 也可以通过 `torch.cuda.is_available()` 看到我们的 cuda 是否可用。
+
+
+
+# 安装 TensorFlow
+
+既然装了 pytorch 也把 TensorFlow 装一下（其实是mit和andrew的课都用的 TensorFlow）。
+
+[TensorFlow 官方文档](https://www.tensorflow.org/install)
+
+[conda安装tensorflow的官方文档](https://docs.anaconda.com/anaconda/user-guide/tasks/tensorflow/)
+
+首先新建一个 conda 的虚拟环境：
+
+```shell
+$ conda create -n tf-gpu python=3.8.8	# 初始装一个python
+```
+
+这里正好了解一下 conda 对虚拟环境的管理，其实就是对所有包的管理。新建一个虚拟环境就是创一个什么包都没有的新环境（当然你可以初始安装包），达到不同工作环境间的隔离。
+
+```shell
+$ conda activate tf-gpu		# 转移到这个环境
+$ conda deactivate		# 取消当前环境，回到 base
+```
+
+
+
+然后在新环境中安装 `tensorflow` 中即可，还需要一些常用的包 `numpy`, `pandas`, `matplotlib`等。
+
+tensorflow 已经出到第2版了，和第一版还是有一些区别的。`tensorflow1` 是区分 CPU 和 GPU 的，分别是 `tensorflow` 和 `tensorflow-gpu`，`tensorflow2` 同时支持 CPU 和 GPU。
+
+在安装时不显式指定版本即 `tensorflow=x.x` 默认安装最新版，也即 2.x 版不区分是否带 `-gpu`。
+
+其实用 conda 也可以直接安装：
+
+```shell
+$ conda install tensorflow
+```
+
+但是官方建议用 pip 安装（但我不知道为啥）：
+
+```shell
+$ pip install tensorflow
+```
+
+这里其实又涉及到 conda 和 pip 的区别，默认 pip 是会调用 `/bin/...` 下的程序，这个 pip 下载的不归 conda 管理。但是 conda 又是包含 pip 的，即可以 `$ conda install pip`，也是在新环境中装 `python` 时自带的，这个 pip 本身就归 conda 管，执行的是 `~/anaconda/bin/...` 下的程序（因为它在我们的环境变量 `$PATH` 中，优先找到它）。并且这个 pip 所下载的包也是归 conda 管理的，可以在 `conda list` 中看到。
+
+*至此大概将 conda 和 pip 的区别搞清楚了，不过是我的个人理解，可能有误，欢迎也感谢指正。*
+
+最后 check 一下：
+
+![tf complete](tf_complete.png)
+
+我的 zsh 可以显示当前的环境，是我们创建的 `tf-gpu`，TensorFlow 可以被成功 import，查看到版本，以及可以在 cuda下工作。
