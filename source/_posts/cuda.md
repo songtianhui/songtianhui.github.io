@@ -3,6 +3,7 @@ title: cuda 安装教程
 date: 2021-07-19 23:11:09
 categories: python
 tags:
+typora-root-url: cuda
 ---
 
 
@@ -30,9 +31,9 @@ tags:
 - **显卡（Vedio Card , Graphics Card）**，也叫显示适配器，主机里的数据要显示在屏幕上就需要显卡。因此，显卡是电脑进行数模信号转换的设备，承担输出显示图形的任务。具体来说，**显卡接在电脑主板上，它将电脑的数字信号转换成模拟信号让显示器显示出来**。
   - 集成显卡，是指显卡集成在主板上，不能随意更换。而独立显卡是作为一个独立的器件插在主板的AGP接口上的，可以随时更换升级。集成显卡使用物理内存，而独立显卡有自己的显存。
 - **VGA(Video Graphics Array)**，是视频图形阵列，就是显示输出接口，能够输出一个分辨率下的色彩rgb数据。
-
 - **GPU(Graphics Processing Unit)**，这个就是显卡上的一块芯片，就像 CPU 是主板上的一块芯片。关于GPU的作用。。。这个其实ics和os里都讲过(，指路[jyy的slides](http://jyywiki.cn/OS/2021/slides/13.slides#/4)。就是一个用于画图的硬件，进行大量的显存操作的像素计算（矩阵运算），能够加速图形渲染显示。当人们发现它的强大算力之后就有了。。。
 - **CUDA(Compute Unified Device Architecture)**，通用并行计算架构，是一种运算平台。它包含CUDA指令集架构以及GPU内部的并行计算引擎。你只要使用一种类似于C语言的**CUDA C语言**，就可以开发CUDA程序，从而可以更加方便的利用GPU强大的计算能力，而不是像以前那样先将计算任务包装成图形渲染任务，再交由GPU处理。（炼丹）
+- **cuDNN**，NVIDIA cuDNN是用于深度神经网络的GPU加速库。它强调性能、易用性和低内存开销。NVIDIA cuDNN可以集成到更高级别的机器学习框架中，如谷歌的Tensorflow。
 
 
 
@@ -138,17 +139,56 @@ tags:
 
 
 
+# 装 cuDNN
+
+[官方文档](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html)
+
+首先需要一个nvidia的账号，自己注册一个。
+
+首先要在[这](https://developer.nvidia.com/rdp/cudnn-download)下载cuDNN，完成一个调查表，点击同意协议就可以出现了，选择自己的版本的下载。
+
+下载这几个：
+
+![cudnn list](cudnn.png)
 
 
 
+- 将 `cuDNN Library for Linux` 解压，复制到 cuda 环境中。
 
+``` shell
+$ tar -xzvf cudnn-x.x-linux-x64-v8.x.x.x.tgz
+$ sudo cp cuda/include/cudnn*.h /usr/local/cuda/include 
+$ sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64 
+$ sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
+```
 
+- 将 `.deb` 文件安装。
 
+```shell
+$ sudo dpkg -i libcudnn8_x.x.x-1+cudax.x_amd64.deb	# runtime library
+$ sudo dpkg -i libcudnn8-dev_8.x.x.x-1+cudax.x_amd64.deb	# developer librarty
+$ sudo dpkg -i libcudnn8-samples_8.x.x.x-1+cudax.x_amd64.deb	# samples and doc
+```
 
+- 检查一下。
 
+```shell
+$ cp -r /usr/src/cudnn_samples_v8/ $HOME
+$ cd  $HOME/cudnn_samples_v8/mnistCUDNN
+$make clean && make
+```
 
+我遇到一个报错：
 
+```shell
+>>> WARNING - FreeImage is not set up correctly. Please ensure FreeImage is set up correctly. <<<
+```
 
+检查一下是一个包没有安装，装一下就行。
 
+```shell
+sudo apt-get install libfreeimage3 libfreeimage-dev
+```
 
+编译完之后运行一下可执行文件，出现 `Test passed!` 就说明 cuDNN 已经正确安装辣！:happy:
 
