@@ -96,7 +96,7 @@ A^{[i]} = h(Z^{[i]})</script><p>其中 $Z^{[i]},A^{[i]}$ 是第 $i$ 层所有样
 <script type="math/tex; mode=display">
 J(W, b) = \dfrac{1}{m}\sum\limits_{i= 1}^{m}L(\hat{y}, y)</script><p>当参数初始化成某些值后，每次梯度下降都会循环计算以下预测值：$\hat{y}^{(i)},(i=1,2,…,m)$。</p>
 <p>有 $dW^{[i]} = \dfrac{\partial J}{\partial W^{[i]}}$, $d b^{[i]} = \dfrac{\partial J}{\partial b^{[i]}}$。</p>
-<p>在梯度下降时每一次更新：$W^{[i]}\implies{W^{[i]} - \eta dW^{[1]}},b^{[i]}\implies{b^{[i]} -\eta db^{[1]}}$, $\eta$ 为步长。</p>
+<p>在梯度下降时每一次更新：$W^{[i]}\implies{W^{[i]} - \eta dW^{[i]}},b^{[i]}\implies{b^{[i]} -\eta db^{[i]}}$, $\eta$ 为步长。</p>
 <p>反向传播时，就是一个链式求导：</p>
 <script type="math/tex; mode=display">
 \underbrace{
@@ -121,6 +121,21 @@ J(W, b) = \dfrac{1}{m}\sum\limits_{i= 1}^{m}L(\hat{y}, y)</script><p>当参数�
 dz^{[i]} = \underbrace{W^{[i + 1]T} dz^{[i+1]}}_{(n^{[i]},m)}\quad \times  \underbrace{g^{[i]'}}_{activation \; function \; of \; hidden \; layer}\times  \quad\underbrace{(z^{[i]})}_{(n^{[1]},m)}</script><ul>
 <li>随机初始化，不要初始化成相同的参数。</li>
 </ul>
+<h1 id="Lesson-1-4"><a href="#Lesson-1-4" class="headerlink" title="Lesson 1.4"></a>Lesson 1.4</h1><p>本章介绍深层神经网络，主要就是把前一章讲的只有两层的网络更推广一下，而我们在上一章其实已经推广过了。</p>
+<h2 id="为什么使用深层表示？"><a href="#为什么使用深层表示？" class="headerlink" title="为什么使用深层表示？"></a>为什么使用深层表示？</h2><p>深度神经网络的这许多隐藏层中，较早的前几层能学习一些低层次的简单特征，等到后几层，就能把简单的特征结合起来，去探测更加复杂的东西。</p>
+<p>深层的网络隐藏单元数量相对较少，隐藏层数目较多，如果浅层的网络想要达到同样的计算结果则需要指数级增长的单元数量才能达到。</p>
+<blockquote>
+<p>说实话，我认为“深度学习”这个名字挺唬人的，这些概念以前都统称为有很多隐藏层的神经网络，但是深度学习听起来多高大上，太深奥了，对么？这个词流传出去以后，这是神经网络的重新包装或是多隐藏层神经网络的重新包装，激发了大众的想象力。    ——Andrew</p>
+</blockquote>
+<h2 id="搭建神经网络块"><a href="#搭建神经网络块" class="headerlink" title="搭建神经网络块"></a>搭建神经网络块</h2><p>其实就是对于每一层，权重矩阵，偏移值，激活函数，在前向传播的时候缓存（cache）好 $z,a$ 等值，用反向传播时计算 $dW,db$ 等。</p>
+<p>就放一张老师的板书吧（</p>
+<p><img data-src="network.png" alt="building blocks"></p>
+<h2 id="参数和超参数"><a href="#参数和超参数" class="headerlink" title="参数和超参数"></a>参数和超参数</h2><p>算法中的<strong>learning rate</strong> $a$（学习率）、<strong>iterations</strong>(梯度下降法循环的数量)、$L$（隐藏层数目）、$n^{[l]}$（隐藏层单元数目）、<strong>choice of activation function</strong>（激活函数的选择）都需要你来设置，这些数字实际上控制了最后的参数$W$和$b$的值，所以它们被称作超参数（Hyperparameter）。</p>
+<p>如何寻找超参数：走<strong>Idea—Code—Experiment—Idea</strong>这个循环，尝试各种不同的参数，实现模型并观察是否成功，然后再迭代。</p>
+<blockquote>
+<p>应用深度学习领域，一个很大程度基于经验的过程，凭经验的过程通俗来说，就是试直到你找到合适的数值。</p>
+<p>如果你所解决的问题需要很多年时间，只要经常试试不同的超参数，勤于检验结果，看看有没有更好的超参数数值，相信你慢慢会得到设定超参数的直觉，知道你的问题最好用什么数值。</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>ML</category>
@@ -1720,7 +1735,19 @@ Prob(A_k(x) \in Output_U(x)) = 1 - [Prob(A(x) \notin Output_U(x))]^k,</script><p
 <p><a href="https://scikit-learn.org/stable/index.html">sklearn官方网站</a></p>
 <p><a href="https://scikit-learn.org.cn/">官网汉化</a></p>
 <p><a href="https://sklearn.apachecn.org/">一个中文文档</a></p>
+<a id="more"></a>
 <h1 id="scikit-learn-是啥"><a href="#scikit-learn-是啥" class="headerlink" title="scikit-learn 是啥"></a>scikit-learn 是啥</h1><p><code>scikit-learn</code> 是一个开源的机器学习库，它支持有监督和无监督的学习。它还提供了用于模型拟合，数据预处理，模型选择和评估以及许多其他实用程序的各种工具。</p>
+<h1 id="拟合和预测"><a href="#拟合和预测" class="headerlink" title="拟合和预测"></a>拟合和预测</h1><p><code>sklearn</code> 提供了数十种内置的机器学习算法和模型，称为估算器。每个估算器可以使用其拟合方法拟合到一些数据。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>clf = RandomForestClassifier(random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># clf 就是一个分类器(classifier)</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X = [[ <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>],  <span class="comment">#2个样本，3个特征</span></span><br><span class="line"><span class="meta">... </span>     [<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = [<span class="number">0</span>, <span class="number">1</span>]  <span class="comment">#每一个样本的类别</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>clf.fit(X, y)	<span class="comment"># 一般通过 .fit 方法来拟合</span></span><br></pre></td></tr></table></figure>
+<p>我们可以直接调用这些模型，给定一些超参数，获得一个分类器/估算器。然后使用 <code>.fit</code> 方法来进行拟合，所有计算、优化过程都在这个方法中，（而且基本上这个库里的实现比自己手撸的要好）。</p>
+<p>拟合方法通常有两个输入：</p>
+<ul>
+<li>样本矩阵（或设计矩阵）X。<code>X</code>的大小通常为<code>(n_samples, n_features)</code>，这意味着样本表示为行，特征表示为列。</li>
+<li>目标值y是用于回归任务的真实数字，或者是用于分类的整数（或任何其他离散值）。对于无监督学习，<code>y</code>无需指定。<code>y</code>通常是1d数组，其中<code>i</code>对应于目标<code>X</code>的 第<code>i</code>个样本（行）。</li>
+<li>虽然某些估算器可以使用其他格式（例如稀疏矩阵），但是通常，两者<code>X</code>和<code>y</code>预计都是numpy数组或等效的类似数组的数据类型。</li>
+</ul>
+<p>拟合完成之后，就可以直接用它预测啦。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>clf.predict(X)  <span class="comment"># 预测训练数据的标签</span></span><br><span class="line">array([<span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>clf.predict([[<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], [<span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>]])  <span class="comment"># 预测新数据的标签</span></span><br><span class="line">array([<span class="number">0</span>, <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>python</category>

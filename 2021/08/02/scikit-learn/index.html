@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"songtianhui.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本文主要是对 python 库 sklearn 的学习笔记。 参考网站： sklearn官方网站 官网汉化 一个中文文档 scikit-learn 是啥scikit-learn 是一个开源的机器学习库，它支持有监督和无监督的学习。它还提供了用于模型拟合，数据预处理，模型选择和评估以及许多其他实用程序的各种工具。">
+  <meta name="description" content="本文主要是对 python 库 sklearn 的学习笔记。 参考网站： sklearn官方网站 官网汉化 一个中文文档">
 <meta property="og:type" content="article">
 <meta property="og:title" content="scikit-learn">
 <meta property="og:url" content="https://songtianhui.github.io/2021/08/02/scikit-learn/index.html">
 <meta property="og:site_name" content="Songtianhui&#39;s Blog">
-<meta property="og:description" content="本文主要是对 python 库 sklearn 的学习笔记。 参考网站： sklearn官方网站 官网汉化 一个中文文档 scikit-learn 是啥scikit-learn 是一个开源的机器学习库，它支持有监督和无监督的学习。它还提供了用于模型拟合，数据预处理，模型选择和评估以及许多其他实用程序的各种工具。">
+<meta property="og:description" content="本文主要是对 python 库 sklearn 的学习笔记。 参考网站： sklearn官方网站 官网汉化 一个中文文档">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-01T18:58:19.000Z">
-<meta property="article:modified_time" content="2021-08-01T19:03:48.532Z">
+<meta property="article:modified_time" content="2021-08-07T19:15:28.982Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
 
@@ -214,10 +214,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-08-02 02:58:19 / Modified: 03:03:48" itemprop="dateCreated datePublished" datetime="2021-08-02T02:58:19+08:00">2021-08-02</time>
+              <time title="Created: 2021-08-02 02:58:19" itemprop="dateCreated datePublished" datetime="2021-08-02T02:58:19+08:00">2021-08-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-08 03:15:28" itemprop="dateModified" datetime="2021-08-08T03:15:28+08:00">2021-08-08</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -244,7 +250,19 @@
 <p><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/index.html">sklearn官方网站</a></p>
 <p><a target="_blank" rel="noopener" href="https://scikit-learn.org.cn/">官网汉化</a></p>
 <p><a target="_blank" rel="noopener" href="https://sklearn.apachecn.org/">一个中文文档</a></p>
+<a id="more"></a>
 <h1 id="scikit-learn-是啥"><a href="#scikit-learn-是啥" class="headerlink" title="scikit-learn 是啥"></a>scikit-learn 是啥</h1><p><code>scikit-learn</code> 是一个开源的机器学习库，它支持有监督和无监督的学习。它还提供了用于模型拟合，数据预处理，模型选择和评估以及许多其他实用程序的各种工具。</p>
+<h1 id="拟合和预测"><a href="#拟合和预测" class="headerlink" title="拟合和预测"></a>拟合和预测</h1><p><code>sklearn</code> 提供了数十种内置的机器学习算法和模型，称为估算器。每个估算器可以使用其拟合方法拟合到一些数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>clf = RandomForestClassifier(random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># clf 就是一个分类器(classifier)</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X = [[ <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>],  <span class="comment">#2个样本，3个特征</span></span><br><span class="line"><span class="meta">... </span>     [<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = [<span class="number">0</span>, <span class="number">1</span>]  <span class="comment">#每一个样本的类别</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>clf.fit(X, y)	<span class="comment"># 一般通过 .fit 方法来拟合</span></span><br></pre></td></tr></table></figure>
+<p>我们可以直接调用这些模型，给定一些超参数，获得一个分类器/估算器。然后使用 <code>.fit</code> 方法来进行拟合，所有计算、优化过程都在这个方法中，（而且基本上这个库里的实现比自己手撸的要好）。</p>
+<p>拟合方法通常有两个输入：</p>
+<ul>
+<li>样本矩阵（或设计矩阵）X。<code>X</code>的大小通常为<code>(n_samples, n_features)</code>，这意味着样本表示为行，特征表示为列。</li>
+<li>目标值y是用于回归任务的真实数字，或者是用于分类的整数（或任何其他离散值）。对于无监督学习，<code>y</code>无需指定。<code>y</code>通常是1d数组，其中<code>i</code>对应于目标<code>X</code>的 第<code>i</code>个样本（行）。</li>
+<li>虽然某些估算器可以使用其他格式（例如稀疏矩阵），但是通常，两者<code>X</code>和<code>y</code>预计都是numpy数组或等效的类似数组的数据类型。</li>
+</ul>
+<p>拟合完成之后，就可以直接用它预测啦。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>clf.predict(X)  <span class="comment"># 预测训练数据的标签</span></span><br><span class="line">array([<span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>clf.predict([[<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], [<span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>]])  <span class="comment"># 预测新数据的标签</span></span><br><span class="line">array([<span class="number">0</span>, <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -325,7 +343,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#scikit-learn-%E6%98%AF%E5%95%A5"><span class="nav-number">1.</span> <span class="nav-text">scikit-learn 是啥</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#scikit-learn-%E6%98%AF%E5%95%A5"><span class="nav-number">1.</span> <span class="nav-text">scikit-learn 是啥</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8B%9F%E5%90%88%E5%92%8C%E9%A2%84%E6%B5%8B"><span class="nav-number">2.</span> <span class="nav-text">拟合和预测</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
