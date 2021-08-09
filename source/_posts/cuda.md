@@ -146,10 +146,10 @@ typora-root-url: cuda
 我在之后回看的时候发现了一些问题，在知乎上找到一篇[很好的文章](https://zhuanlan.zhihu.com/p/91334380)讲清楚了基本所有涉及到的概念。
 
 - 一个是在上上那张图里的 warning 中说没有配上 driver，并且至少要 470 的驱动。
-  - 但是我的 sample 中的样例都可以跑。。。所以暂时不严谨地认为 cuda 还是能用的（，驱动和cuda版本不兼容的为题暂时还没有暴露出来。
+  - 但是我的 sample 中的样例都可以跑。。。所以暂时不严谨地认为 cuda 还是能用的（，驱动和cuda版本不兼容的问题暂时还没有暴露出来。
   - 不过我不知道跑 sample 是否需要 drive 的正确参与，如果不一定的话还是说明只有一个没有兼容上驱动的 cuda壳子。
-  - 如果到时候出现了版本兼容的问题，考虑的解决方法是将 cuda 和驱动全卸了按照版本对应重装。这就提到了我在上面装 cuda 的那个步骤中，其实运行 `.run` 文件的时候就可以在那里装驱动了，它版本应该是帮我比配好了的。
-  - 不过其实电脑上是可以装上多个驱动和多个 cuda 的。不过多个驱动好像 ubuntu 上会崩，yls就这么翻车了（。多个 cuda 可以通过在 `$PATH` 中放那个 `...\cuda\bin` 路径而不是带版本号的 `...\cudax.x\bin`路径，然后通过 cuda 的符号链接来控制多个版本。不过一是为了避免复杂性二是我这电脑磁盘真不够了qwq，会考虑全卸了重装。
+  - 如果到时候出现了版本兼容的问题，考虑的解决方法是将 cuda 和驱动全卸了按照版本对应重装。这就提到了我在上面装 cuda 的那个步骤中，其实运行 `.run` 文件的时候就可以在那里装驱动了，它版本应该是帮我配好了的。
+  - 其实电脑上是可以装上多个驱动和多个 cuda 的。不过多个驱动好像 ubuntu 上会崩，yls就这么翻车了（。多个 cuda 可以通过在 `$PATH` 中放那个 `...\cuda\bin` 路径而不是带版本号的 `...\cudax.x\bin`路径，然后通过 cuda 的符号链接来控制多个版本。不过一是为了避免复杂性二是我这电脑磁盘真不够了qwq，会考虑全卸了重装。
 
 - 另一个问题其实是在装 `pytorch` 时遇到的，在 `conda install` 时会装一个也叫 `cudatoolkit` 的包，搞不懂这个和 Nvidia 官网下的有啥区别。并且 conda 装的 `pytorch` 和 `cudatoolkit` 版本都是11.1的，不知道和我那个大 cuda 又有什么区别。
   - 这个其实就在我上面提到的那个文章以及它引用的[另一篇](https://www.cnblogs.com/yhjoker/p/10972795.html)中有详细的阐释。总之就是 Nvidia 官方下的那个大 cuda 是个完整的工具包；而像 pytorch 这样的框架，只要用到 cuda 中的动态链接库。所以 conda 在下 `pytorch` 时 ，就会装一个 “mini cuda toolkit”（其实是和大 cuda 有重叠的），只要有和这个小 cuda 兼容的驱动，pytorch 就能跑。
@@ -197,7 +197,7 @@ $ sudo dpkg -i libcudnn8-samples_8.x.x.x-1+cudax.x_amd64.deb	# samples and doc
 ```shell
 $ cp -r /usr/src/cudnn_samples_v8/ $HOME
 $ cd  $HOME/cudnn_samples_v8/mnistCUDNN
-$make clean && make
+$ make clean && make
 ```
 
 我遇到一个报错：
