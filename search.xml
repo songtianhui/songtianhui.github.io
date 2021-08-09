@@ -727,6 +727,7 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
 <p><code>$ nvidia-setting</code> 打开驱动设置。</p>
 <p><code>$ sudo prime-select nvidia/intel</code> 可以切换显卡。</p>
 <p>（有趣的是过了几天我的 <code>$ nvidia-smi</code> 突然打不开了，显示什么 <code>communicate failed</code>，解决方法是在 <code>intel</code> 和 <code>nvidia</code> 之间切换一下再重启就可以了。）</p>
+<hr>
 <h1 id="装-Cuda"><a href="#装-Cuda" class="headerlink" title="装 Cuda"></a>装 Cuda</h1><p>终于一切准别就绪，开始安装cuda。</p>
 <p><a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/">官方文档</a></p>
 <ul>
@@ -752,6 +753,25 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
 <p>到这里其实就差不多完成了，运行一下 <code>$ nvcc -V</code> 如下显示就可以了。</p>
 <p><img data-src="nvcc.png" alt="nvcc"></p>
 <p>然后在 <code>/usr/local/cuda-11.4/samples</code> 中有一些测试用例，可以自己玩一玩。</p>
+<h2 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h2><p>我在之后回看的时候发现了一些问题，在知乎上找到一篇<a href="https://zhuanlan.zhihu.com/p/91334380">很好的文章</a>讲清楚了基本所有涉及到的概念。</p>
+<ul>
+<li><p>一个是在上上那张图里的 warning 中说没有配上 driver，并且至少要 470 的驱动。</p>
+<ul>
+<li>但是我的 sample 中的样例都可以跑。。。所以暂时不严谨地认为 cuda 还是能用的（，驱动和cuda版本不兼容的为题暂时还没有暴露出来。</li>
+<li>不过我不知道跑 sample 是否需要 drive 的正确参与，如果不一定的话还是说明只有一个没有兼容上驱动的 cuda壳子。</li>
+<li>如果到时候出现了版本兼容的问题，考虑的解决方法是将 cuda 和驱动全卸了按照版本对应重装。这就提到了我在上面装 cuda 的那个步骤中，其实运行 <code>.run</code> 文件的时候就可以在那里装驱动了，它版本应该是帮我比配好了的。</li>
+<li>不过其实电脑上是可以装上多个驱动和多个 cuda 的。不过多个驱动好像 ubuntu 上会崩，yls就这么翻车了（。多个 cuda 可以通过在 <code>$PATH</code> 中放那个 <code>...\cuda\bin</code> 路径而不是带版本号的 <code>...\cudax.x\bin</code>路径，然后通过 cuda 的符号链接来控制多个版本。不过一是为了避免复杂性二是我这电脑磁盘真不够了qwq，会考虑全卸了重装。</li>
+</ul>
+</li>
+<li><p>另一个问题其实是在装 <code>pytorch</code> 时遇到的，在 <code>conda install</code> 时会装一个也叫 <code>cudatoolkit</code> 的包，搞不懂这个和 Nvidia 官网下的有啥区别。并且 conda 装的 <code>pytorch</code> 和 <code>cudatoolkit</code> 版本都是11.1的，不知道和我那个大 cuda 又有什么区别。</p>
+<ul>
+<li>这个其实就在我上面提到的那个文章以及它引用的<a href="https://www.cnblogs.com/yhjoker/p/10972795.html">另一篇</a>中有详细的阐释。总之就是 Nvidia 官方下的那个大 cuda 是个完整的工具包；而像 pytorch 这样的框架，只要用到 cuda 中的动态链接库。所以 conda 在下 <code>pytorch</code> 时 ，就会装一个 “mini cuda toolkit”（其实是和大 cuda 有重叠的），只要有和这个小 cuda 兼容的驱动，pytorch 就能跑。</li>
+<li>所以其实如果我们还没装大 cuda，<code>torch.cuda.is_avaliable()</code> 应该也是 <code>True</code>，<code>pytorch</code> 没有大开发需求的话基本可以正常用的。这也因为小 cuda 的版本是 11.1，应该是和我们 460 的驱动兼容的。</li>
+</ul>
+</li>
+</ul>
+<p>总之，大 cuda （用大小来外号这两个cuda好像也是个好方法<span class="github-emoji" alias="joy" style fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8">&#x1f602;</span>）和 driver 好像就是没兼容上的，不过我们有兼容好的小 cuda，跑 <code>pytorch</code> 是基本没问题的。出了问题再说（挖坑）。</p>
+<hr>
 <h1 id="装-cuDNN"><a href="#装-cuDNN" class="headerlink" title="装 cuDNN"></a>装 cuDNN</h1><p><a href="https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html">官方文档</a></p>
 <p>首先需要一个nvidia的账号，自己注册一个。</p>
 <p>首先要在<a href="https://developer.nvidia.com/rdp/cudnn-download">这</a>下载cuDNN，完成一个调查表，点击同意协议就可以出现了，选择自己的版本的下载。</p>
@@ -772,7 +792,7 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
 <p>我遇到一个报错：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; WARNING - FreeImage is not <span class="built_in">set</span> up correctly. Please ensure FreeImage is <span class="built_in">set</span> up correctly. &lt;&lt;&lt;</span></span><br></pre></td></tr></table></figure>
 <p>检查一下是一个包没有安装，装一下就行。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install libfreeimage3 libfreeimage-dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install libfreeimage3 libfreeimage-dev</span></span><br></pre></td></tr></table></figure>
 <p>编译完之后运行一下可执行文件，出现 <code>Test passed!</code> 就说明 cuDNN 已经正确安装辣！:happy:</p>
 ]]></content>
       <categories>
