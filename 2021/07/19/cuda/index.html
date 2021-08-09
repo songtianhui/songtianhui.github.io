@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://songtianhui.github.io/2021/07/19/cuda/nvcc.png">
 <meta property="og:image" content="https://songtianhui.github.io/2021/07/19/cuda/cudnn.png">
 <meta property="article:published_time" content="2021-07-19T15:11:09.000Z">
-<meta property="article:modified_time" content="2021-08-09T17:12:35.872Z">
+<meta property="article:modified_time" content="2021-08-09T18:09:41.713Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://songtianhui.github.io/2021/07/19/cuda/fetch.png">
@@ -233,7 +233,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-10 01:12:35" itemprop="dateModified" datetime="2021-08-10T01:12:35+08:00">2021-08-10</time>
+                <time title="Modified: 2021-08-10 02:09:41" itemprop="dateModified" datetime="2021-08-10T02:09:41+08:00">2021-08-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -348,10 +348,10 @@
 <ul>
 <li><p>一个是在上上那张图里的 warning 中说没有配上 driver，并且至少要 470 的驱动。</p>
 <ul>
-<li>但是我的 sample 中的样例都可以跑。。。所以暂时不严谨地认为 cuda 还是能用的（，驱动和cuda版本不兼容的为题暂时还没有暴露出来。</li>
+<li>但是我的 sample 中的样例都可以跑。。。所以暂时不严谨地认为 cuda 还是能用的（，驱动和cuda版本不兼容的问题暂时还没有暴露出来。</li>
 <li>不过我不知道跑 sample 是否需要 drive 的正确参与，如果不一定的话还是说明只有一个没有兼容上驱动的 cuda壳子。</li>
-<li>如果到时候出现了版本兼容的问题，考虑的解决方法是将 cuda 和驱动全卸了按照版本对应重装。这就提到了我在上面装 cuda 的那个步骤中，其实运行 <code>.run</code> 文件的时候就可以在那里装驱动了，它版本应该是帮我比配好了的。</li>
-<li>不过其实电脑上是可以装上多个驱动和多个 cuda 的。不过多个驱动好像 ubuntu 上会崩，yls就这么翻车了（。多个 cuda 可以通过在 <code>$PATH</code> 中放那个 <code>...\cuda\bin</code> 路径而不是带版本号的 <code>...\cudax.x\bin</code>路径，然后通过 cuda 的符号链接来控制多个版本。不过一是为了避免复杂性二是我这电脑磁盘真不够了qwq，会考虑全卸了重装。</li>
+<li>如果到时候出现了版本兼容的问题，考虑的解决方法是将 cuda 和驱动全卸了按照版本对应重装。这就提到了我在上面装 cuda 的那个步骤中，其实运行 <code>.run</code> 文件的时候就可以在那里装驱动了，它版本应该是帮我配好了的。</li>
+<li>其实电脑上是可以装上多个驱动和多个 cuda 的。不过多个驱动好像 ubuntu 上会崩，yls就这么翻车了（。多个 cuda 可以通过在 <code>$PATH</code> 中放那个 <code>...\cuda\bin</code> 路径而不是带版本号的 <code>...\cudax.x\bin</code>路径，然后通过 cuda 的符号链接来控制多个版本。不过一是为了避免复杂性二是我这电脑磁盘真不够了qwq，会考虑全卸了重装。</li>
 </ul>
 </li>
 <li><p>另一个问题其实是在装 <code>pytorch</code> 时遇到的，在 <code>conda install</code> 时会装一个也叫 <code>cudatoolkit</code> 的包，搞不懂这个和 Nvidia 官网下的有啥区别。并且 conda 装的 <code>pytorch</code> 和 <code>cudatoolkit</code> 版本都是11.1的，不知道和我那个大 cuda 又有什么区别。</p>
@@ -379,7 +379,7 @@
 <ul>
 <li>检查一下。</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cp -r /usr/src/cudnn_samples_v8/ <span class="variable">$HOME</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span>  <span class="variable">$HOME</span>/cudnn_samples_v8/mnistCUDNN</span></span><br><span class="line"><span class="meta">$</span><span class="bash">make clean &amp;&amp; make</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cp -r /usr/src/cudnn_samples_v8/ <span class="variable">$HOME</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span>  <span class="variable">$HOME</span>/cudnn_samples_v8/mnistCUDNN</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> make clean &amp;&amp; make</span></span><br></pre></td></tr></table></figure>
 <p>我遇到一个报错：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; WARNING - FreeImage is not <span class="built_in">set</span> up correctly. Please ensure FreeImage is <span class="built_in">set</span> up correctly. &lt;&lt;&lt;</span></span><br></pre></td></tr></table></figure>
 <p>检查一下是一个包没有安装，装一下就行。</p>
