@@ -212,10 +212,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-08-10 17:46:40 / Modified: 23:01:55" itemprop="dateCreated datePublished" datetime="2021-08-10T17:46:40+08:00">2021-08-10</time>
+              <time title="Created: 2021-08-10 17:46:40" itemprop="dateCreated datePublished" datetime="2021-08-10T17:46:40+08:00">2021-08-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-11 00:53:02" itemprop="dateModified" datetime="2021-08-11T00:53:02+08:00">2021-08-11</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -238,104 +244,14 @@
 
       
           <p>暑假上了mit的机器学习课程，虽然时间很短内容不多，但觉得第二部分cv的老师讲得很好，所以做一篇笔记。</p>
-<h1 id="lecture-1"><a href="#lecture-1" class="headerlink" title="lecture 1"></a>lecture 1</h1><p>第一节课是对 deep learning 和 computer vision 的一个介绍。计算机视觉，就是指观察图像，像素，理解图像里出现了是什么，预测会发生什么。</p>
-<h2 id="神经元（Perceptron）"><a href="#神经元（Perceptron）" class="headerlink" title="神经元（Perceptron）"></a>神经元（Perceptron）</h2><p>具体概念已经看了太多遍了，不再赘述。</p>
-<p>对于优化的概念，$W \leftarrow W - \eta \frac{\partial J(W)}{\partial W}$，他解释的很好。这个偏导项就是代价函数随着 $W$ 的变化增长最快的方向，再加上一个小步长，就是移动一点点，因为是最小值所以是反方向移动，是负号。</p>
-<h2 id="边缘检测-Edges"><a href="#边缘检测-Edges" class="headerlink" title="边缘检测 Edges"></a>边缘检测 Edges</h2><p>图上的边特征：</p>
-<ul>
-<li>图像梯度 Image gradient: $\nabla I = \left( \dfrac{\partial I}{\partial x}, \dfrac{\partial I}{\partial y} \right)$</li>
-<li>图像导数的估算 Approximation image derivative: $\dfrac{\partial I}{\partial x} \simeq I(x, y) - I(x - 1, y)$</li>
-<li>边缘强度 Edge strength: $E(x, y) = |\nabla I(x, y)|$</li>
-<li>边缘取向 Edge orientation: $\theta(x, y) = \angle \nabla I = \arctan{\dfrac{\partial I /\partial y}{\partial I / \partial x}}$</li>
-<li>边缘法线 Edge normal: $n = \dfrac{\nabla I}{|\nabla I|}$</li>
-</ul>
-<p>如果我们使用梯度算法，并绘制出边缘的强度，我们可以看到所有的边缘都暴露出来了。我们可以将这些微分方程或公式转换成图像强度的离散线性约束，这对于定义图像变化非常重要。</p>
-<h2 id="卷积-Convolution"><a href="#卷积-Convolution" class="headerlink" title="卷积 Convolution"></a>卷积 Convolution</h2><p>卷积是一个操作两个函数的数学操作，输入两个函数输出一个（函数复合）。</p>
-<p>通过滑动函数来计算，一个函数（kernel）划过另一个函数（template），在每一步把他们相乘再相加。</p>
-<script type="math/tex; mode=display">
-f[n] = h \circ g = \sum\limits_{k = 0}^{N - 1} h[n - k] g[k]</script><p>我们就可以用卷积来计算图像导数。</p>
-<p>比如用</p>
-<script type="math/tex; mode=display">
-(E \otimes k)(x, y)=\sum\limits_{i=0}^{m-1} \sum\limits_{j=0}^{n-1} E(x+i, y+j) k(i, j)</script><p>能用来计算</p>
-<script type="math/tex; mode=display">
-\dfrac{\partial E(x, y)}{\partial x}=E(x+1, y)-E(x, y)</script><p>当 $k = [-1, 1]$。</p>
-<p>然后我们可以对图像导数的定义再扩展，运用卷积计算更加复杂的一些特征。</p>
-<p><img data-src="image_dev.png" alt></p>
-<p>然后已知两个方向的导数，就可以用三角函数计算出任意方向的导数而不是真的创造任意方向的导数。</p>
-<p>将导数可视化：</p>
-<p><img data-src="Screenshot from 2021-08-10 18-51-05.png" alt></p>
-<p>甚至我们可以创造不同类型的过滤器，不只是计算导数，实现更多的图像处理技术。</p>
-<p><img data-src="Screenshot from 2021-08-10 18-57-36.png" alt></p>
-<p><em>这是我对卷积和图像处理认识的第一步，我感到非常震撼，原来我们所在ps等图像处理软件上所做的处理，其原理真的就是矩阵对于像素的计算。不由得想到jyy的名言：计算机世界没有魔法(。</em></p>
-<p>而我们在这节课学的是如何去学习卷积的参数而不是导数卷积，也就是说找到最好的 kernel。</p>
-<p>我们可以把很多层卷基层堆积在一起，形成一个卷积块（我自己起的名字），维度是 $H \times W \times D$，$D$ 深度是过滤层的个数。</p>
-<p>步幅（stride）。</p>
-<p>卷基层的特点：</p>
-<ul>
-<li>空间不变性（Spatial invariance）</li>
-<li>批量处理，高效并行</li>
-<li>图像过滤</li>
-<li>共享参数，高效</li>
-<li>多种大小输入</li>
-</ul>
-<p><strong>gabor filters</strong></p>
-<h2 id="池化-Pooling"><a href="#池化-Pooling" class="headerlink" title="池化 Pooling"></a>池化 Pooling</h2><p>Pooling 和 convolution 不一样的地方是，卷积在于从一块像素中提取信息，而 pooling 是为了将信息压缩，使得一块像素塌缩成一个单位，也是对数据的抽样，对信息流的限制。</p>
-<p><strong>max pooling</strong></p>
-<h2 id="结合起来"><a href="#结合起来" class="headerlink" title="结合起来"></a>结合起来</h2><p>我们就可以叠buff，一层conv一层relu一层pooling，一层conv一层relu一层pooling。。。实现一个端对端模型，一层层提取结构。</p>
-<p>General CNN architecture:</p>
-<p><img data-src="Screenshot from 2021-08-10 21-35-47.png" alt></p>
-<h1 id="Lecture-2"><a href="#Lecture-2" class="headerlink" title="Lecture 2"></a>Lecture 2</h1><h2 id="CNN-Architectures"><a href="#CNN-Architectures" class="headerlink" title="CNN Architectures"></a>CNN Architectures</h2><ul>
-<li>LeNet: LeCun et al. 1998. <ul>
-<li>第一个视觉神经网络。</li>
-</ul>
-</li>
-<li>AlexNet: Krizhevsky et al. NeurIPS 2012. <ul>
-<li>两个信息流并行，更深度。</li>
-</ul>
-</li>
-<li>GoogLeNet/Inception: Szegedy et al. CVPR 2015. <ul>
-<li>Inception module</li>
-<li>更小的卷积，更深，更精确。</li>
-</ul>
-</li>
-<li>VGGNet: Simonyan et al. ICLR 2015.</li>
-</ul>
-<p><del>CV历史</del></p>
-<h2 id="残差连接-Scaling-CNNs-residual-connections"><a href="#残差连接-Scaling-CNNs-residual-connections" class="headerlink" title="残差连接 Scaling CNNs: residual connections"></a>残差连接 Scaling CNNs: residual connections</h2><p>普通的卷积层的代价函数过于复杂，容易陷入局部最优，很难找到全局最优。简单的卷积加池化无法使模型更好。</p>
-<p>我们需要学习残差的变化而不是实际的端对端函数。</p>
-<h2 id="残差区块-Residual-blocks"><a href="#残差区块-Residual-blocks" class="headerlink" title="残差区块 Residual blocks"></a>残差区块 Residual blocks</h2><p><img data-src="Screenshot from 2021-08-10 22-47-54.png" alt></p>
-<p>不是只学习从 $x$ 到输出，我们学习的是变化、残差，以达到输出的目的。它能够把问题变得更简单。</p>
-<p>优点：</p>
-<ul>
-<li>更快的梯度传输。</li>
-<li>只应用少量的残余值而不是整个函数值。</li>
-<li>保持输入的结构。</li>
-</ul>
-<p>当输出和输入的结构不一样时，加一个权重层来投影到正确的维度。</p>
-<p>有各种各样的残差连接。</p>
-<ul>
-<li>ResNet: He et al. CVPR 2016.<ul>
-<li>使得机器图片识别准确性开始超过人类。</li>
-<li>突破计算机可以训练的层数，$25 \to 150$。</li>
-<li>代价函数更佳平滑，容易找到全局最优。</li>
-</ul>
-</li>
-</ul>
-<h2 id="数据集-Dataset"><a href="#数据集-Dataset" class="headerlink" title="数据集 Dataset"></a>数据集 Dataset</h2><p>深度学习不是什么都能学的，要仔细选择数据集，不能往里面“扔垃圾”。</p>
-<blockquote>
-<p>Garbage in, Garbage out.</p>
-</blockquote>
-<ul>
-<li>MNIST</li>
-<li>Image NET</li>
-<li>CIFAR  10/100<ul>
-<li>Facet: tool for vusualization of train data</li>
-</ul>
-</li>
-<li>Object Net</li>
-<li>MiniPlaces: scene recognition</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/10/mit-cv/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

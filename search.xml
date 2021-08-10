@@ -2989,6 +2989,7 @@ cost\left(  \theta, \left( x^{(i)} , y^{(i)} \right)  \right) = \dfrac{1}{2}\lef
     <title>mit机器学习cv</title>
     <url>/2021/08/10/mit-cv/</url>
     <content><![CDATA[<p>暑假上了mit的机器学习课程，虽然时间很短内容不多，但觉得第二部分cv的老师讲得很好，所以做一篇笔记。</p>
+<a id="more"></a>
 <h1 id="lecture-1"><a href="#lecture-1" class="headerlink" title="lecture 1"></a>lecture 1</h1><p>第一节课是对 deep learning 和 computer vision 的一个介绍。计算机视觉，就是指观察图像，像素，理解图像里出现了是什么，预测会发生什么。</p>
 <h2 id="神经元（Perceptron）"><a href="#神经元（Perceptron）" class="headerlink" title="神经元（Perceptron）"></a>神经元（Perceptron）</h2><p>具体概念已经看了太多遍了，不再赘述。</p>
 <p>对于优化的概念，$W \leftarrow W - \eta \frac{\partial J(W)}{\partial W}$，他解释的很好。这个偏导项就是代价函数随着 $W$ 的变化增长最快的方向，再加上一个小步长，就是移动一点点，因为是最小值所以是反方向移动，是负号。</p>
