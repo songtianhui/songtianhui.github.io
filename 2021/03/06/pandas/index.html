@@ -30,7 +30,7 @@
 <meta property="og:description" content="本文主要是对于python库pandas的学习使用笔记。参考网站：pandas官方网站一个不错的pandas中文网站">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-06T15:41:55.000Z">
-<meta property="article:modified_time" content="2021-03-11T06:47:46.835Z">
+<meta property="article:modified_time" content="2021-08-10T16:50:04.073Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
 
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-11 14:47:46" itemprop="dateModified" datetime="2021-03-11T14:47:46+08:00">2021-03-11</time>
+                <time title="Modified: 2021-08-11 00:50:04" itemprop="dateModified" datetime="2021-08-11T00:50:04+08:00">2021-08-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -328,7 +328,10 @@
 <li>Series 与 DataFrame 可使用 log、exp、sqrt 等多种元素级 NumPy 通用函数（ufunc）</li>
 <li>DataFrame 不是多维数组的替代品，它的索引语义和数据模型与多维数组都不同。</li>
 </ul>
-
+<h1 id="怎么总结呢？"><a href="#怎么总结呢？" class="headerlink" title="怎么总结呢？"></a>怎么总结呢？</h1><p>我一直在思考怎么来总结这些库的技巧，毕竟不可能对于每个方法API和参数都详尽地记录下来，我们有手册可以 <strong>rtfm</strong>，把手册再抄一遍没有意义。但是每次在用到一些方法时还是很难很快反应过来怎么用，或者不知道一些常用的方法来解决一些问题。</p>
+<p>所以我选择用一种问题或任务驱动的方式来进行总结，在编程的时候遇到一些任务，或者在阅读优秀代码时看到的一些数据结构和方法参数时，看不懂就查手册总结下来，得到一些常用的方法。</p>
+<p>这个方法不止在本篇 <code>pandas</code> 中，在其他几个包的教程中也如此。</p>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1>
     </div>
 
     
@@ -408,7 +411,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas%E6%98%AF%E5%95%A5"><span class="nav-number">1.</span> <span class="nav-text">pandas是啥</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Series"><span class="nav-number">2.1.</span> <span class="nav-text">Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E7%9F%A2%E9%87%8F%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.1.</span> <span class="nav-text">支持矢量操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8D%E7%A7%B0"><span class="nav-number">2.1.2.</span> <span class="nav-text">名称</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataFrame"><span class="nav-number">2.2.</span> <span class="nav-text">DataFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8-Series-%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90-DataFrame"><span class="nav-number">2.2.1.</span> <span class="nav-text">用 Series 字典生成 DataFrame</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E9%80%89%E6%9E%84%E5%BB%BA%E5%99%A8"><span class="nav-number">2.2.2.</span> <span class="nav-text">备选构建器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E3%80%81%E6%B7%BB%E5%8A%A0%E3%80%81%E5%88%A0%E9%99%A4%E5%88%97"><span class="nav-number">2.2.3.</span> <span class="nav-text">提取、添加、删除列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asign%E5%88%86%E9%85%8D%E6%96%B0%E9%93%BE"><span class="nav-number">2.2.4.</span> <span class="nav-text">asign分配新链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%EF%BC%8C%E9%80%89%E6%8B%A9"><span class="nav-number">2.2.5.</span> <span class="nav-text">索引，选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%AF%B9%E9%BD%90%E5%92%8C%E8%BF%90%E7%AE%97"><span class="nav-number">2.2.6.</span> <span class="nav-text">数据对齐和运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E7%BD%AE"><span class="nav-number">2.2.7.</span> <span class="nav-text">转置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DataFrame-%E5%BA%94%E7%94%A8-Numpy-%E5%87%BD%E6%95%B0"><span class="nav-number">2.2.8.</span> <span class="nav-text">DataFrame 应用 Numpy 函数</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas%E6%98%AF%E5%95%A5"><span class="nav-number">1.</span> <span class="nav-text">pandas是啥</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Series"><span class="nav-number">2.1.</span> <span class="nav-text">Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E7%9F%A2%E9%87%8F%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.1.</span> <span class="nav-text">支持矢量操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8D%E7%A7%B0"><span class="nav-number">2.1.2.</span> <span class="nav-text">名称</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataFrame"><span class="nav-number">2.2.</span> <span class="nav-text">DataFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8-Series-%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90-DataFrame"><span class="nav-number">2.2.1.</span> <span class="nav-text">用 Series 字典生成 DataFrame</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E9%80%89%E6%9E%84%E5%BB%BA%E5%99%A8"><span class="nav-number">2.2.2.</span> <span class="nav-text">备选构建器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E3%80%81%E6%B7%BB%E5%8A%A0%E3%80%81%E5%88%A0%E9%99%A4%E5%88%97"><span class="nav-number">2.2.3.</span> <span class="nav-text">提取、添加、删除列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asign%E5%88%86%E9%85%8D%E6%96%B0%E9%93%BE"><span class="nav-number">2.2.4.</span> <span class="nav-text">asign分配新链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%EF%BC%8C%E9%80%89%E6%8B%A9"><span class="nav-number">2.2.5.</span> <span class="nav-text">索引，选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%AF%B9%E9%BD%90%E5%92%8C%E8%BF%90%E7%AE%97"><span class="nav-number">2.2.6.</span> <span class="nav-text">数据对齐和运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E7%BD%AE"><span class="nav-number">2.2.7.</span> <span class="nav-text">转置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DataFrame-%E5%BA%94%E7%94%A8-Numpy-%E5%87%BD%E6%95%B0"><span class="nav-number">2.2.8.</span> <span class="nav-text">DataFrame 应用 Numpy 函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E6%80%BB%E7%BB%93%E5%91%A2%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">怎么总结呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B"><span class="nav-number">4.</span> <span class="nav-text">开始</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -424,7 +427,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
