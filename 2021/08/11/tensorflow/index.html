@@ -22,19 +22,19 @@
     var CONFIG = {"hostname":"songtianhui.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="检错和纠错码最大似然编码（maximum-likelihood decoding​）所有的纠错建立在这个基础上，按最大概率出错位纠错。 二进制对称信道（binary symmetric channel）">
+  <meta name="description" content="本篇是对python库 tensorflow 的学习笔记。 tensorflow官方网站 tensorflow 是啥TensorFlow是一个开源软件库，用于各种感知和语言理解任务的机器学习。 数据结构张量tensorflow 最重要的数据类型就是张量 tf.tensor，是具有统一类型的多维数组，其实和 numpy.arrays 和相似。 可以用 tf.constant() 输入一个 list">
 <meta property="og:type" content="article">
-<meta property="og:title" content="问题求解笔记-代数编码">
-<meta property="og:url" content="https://songtianhui.github.io/2021/04/25/codeing/index.html">
+<meta property="og:title" content="tensorflow">
+<meta property="og:url" content="https://songtianhui.github.io/2021/08/11/tensorflow/index.html">
 <meta property="og:site_name" content="Songtianhui&#39;s Blog">
-<meta property="og:description" content="检错和纠错码最大似然编码（maximum-likelihood decoding​）所有的纠错建立在这个基础上，按最大概率出错位纠错。 二进制对称信道（binary symmetric channel）">
+<meta property="og:description" content="本篇是对python库 tensorflow 的学习笔记。 tensorflow官方网站 tensorflow 是啥TensorFlow是一个开源软件库，用于各种感知和语言理解任务的机器学习。 数据结构张量tensorflow 最重要的数据类型就是张量 tf.tensor，是具有统一类型的多维数组，其实和 numpy.arrays 和相似。 可以用 tf.constant() 输入一个 list">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-04-25T15:10:21.000Z">
-<meta property="article:modified_time" content="2021-06-17T06:31:47.096Z">
+<meta property="article:published_time" content="2021-08-10T18:03:58.000Z">
+<meta property="article:modified_time" content="2021-08-11T08:57:39.018Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://songtianhui.github.io/2021/04/25/codeing/">
+<link rel="canonical" href="https://songtianhui.github.io/2021/08/11/tensorflow/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>问题求解笔记-代数编码 | Songtianhui's Blog</title>
+  <title>tensorflow | Songtianhui's Blog</title>
   
 
 
@@ -192,7 +192,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/04/25/codeing/">
+    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/08/11/tensorflow/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -205,7 +205,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          问题求解笔记-代数编码
+          tensorflow
         </h1>
 
         <div class="post-meta">
@@ -214,23 +214,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2021-04-25 23:10:21" itemprop="dateCreated datePublished" datetime="2021-04-25T23:10:21+08:00">2021-04-25</time>
+              <time title="Created: 2021-08-11 02:03:58 / Modified: 16:57:39" itemprop="dateCreated datePublished" datetime="2021-08-11T02:03:58+08:00">2021-08-11</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-17 14:31:47" itemprop="dateModified" datetime="2021-06-17T14:31:47+08:00">2021-06-17</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/problem-solving/" itemprop="url" rel="index"><span itemprop="name">problem-solving</span></a>
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
                 </span>
             </span>
 
@@ -245,68 +239,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="检错和纠错码"><a href="#检错和纠错码" class="headerlink" title="检错和纠错码"></a>检错和纠错码</h1><h2 id="最大似然编码（maximum-likelihood-decoding​）"><a href="#最大似然编码（maximum-likelihood-decoding​）" class="headerlink" title="最大似然编码（maximum-likelihood decoding​）"></a>最大似然编码（maximum-likelihood decoding​）</h2><p>所有的纠错建立在这个基础上，按最大概率出错位纠错。</p>
-<p><strong>二进制对称信道</strong>（binary symmetric channel）</p>
-<a id="more"></a>
-<h2 id="分块码-（Block-Codes​）"><a href="#分块码-（Block-Codes​）" class="headerlink" title="分块码 （Block Codes​）"></a>分块码 （Block Codes​）</h2><p>($n,m$)-<strong>分块码</strong>：被编码的信息可以被分成多块 $m$ 位二进制数，每块会被编码成 $n$ 位二进制数。</p>
+        <p>本篇是对python库 <code>tensorflow</code> 的学习笔记。</p>
+<p><a target="_blank" rel="noopener" href="https://www.tensorflow.org/">tensorflow官方网站</a></p>
+<h1 id="tensorflow-是啥"><a href="#tensorflow-是啥" class="headerlink" title="tensorflow 是啥"></a>tensorflow 是啥</h1><p><strong>TensorFlow</strong>是一个开源软件库，用于各种感知和语言理解任务的机器学习。</p>
+<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="张量"><a href="#张量" class="headerlink" title="张量"></a>张量</h2><p><code>tensorflow</code> 最重要的数据类型就是<strong>张量</strong> <code>tf.tensor</code>，是具有统一类型的多维数组，其实和 <code>numpy.arrays</code> 和相似。</p>
+<p>可以用 <code>tf.constant()</code> 输入一个 list 来创建一个张量。</p>
+<p>张量有一些基本数学运算，和 <code>numpy</code> 差不多，不赘述。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">a = tf.constant([[<span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">                 [<span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line">b = tf.constant([[<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">                 [<span class="number">1</span>, <span class="number">1</span>]]) <span class="comment"># Could have also said `tf.ones([2,2])`</span></span><br><span class="line"></span><br><span class="line">print(a + b, <span class="string">&quot;\n&quot;</span>) <span class="comment"># element-wise addition</span></span><br><span class="line">print(a * b, <span class="string">&quot;\n&quot;</span>) <span class="comment"># element-wise multiplication</span></span><br><span class="line">print(a @ b, <span class="string">&quot;\n&quot;</span>) <span class="comment"># matrix multiplication</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Find the largest value</span></span><br><span class="line">print(tf.reduce_max(c))</span><br><span class="line"><span class="comment"># Find the index of the largest value</span></span><br><span class="line">print(tf.argmax(c))</span><br><span class="line"><span class="comment"># Compute the softmax</span></span><br><span class="line">print(tf.nn.softmax(c))</span><br></pre></td></tr></table></figure>
+<p>张量有形状。下面是几个相关术语：</p>
 <ul>
-<li>编码函数$E:\mathbb{Z}_2^m \rightarrow \mathbb{Z}_2^n$</li>
-<li><p>解码函数 $D: \mathbb{Z}_2^n \rightarrow \mathbb{Z}_2^m$</p>
-</li>
-<li><p>编码字(codeword)：$E$ 的像中的一个元素</p>
-</li>
+<li><strong>形状</strong>：张量的每个维度的长度（元素数量）。</li>
+<li><strong>秩</strong>：张量的维度数量。标量的秩为 0，向量的秩为 1，矩阵的秩为 2。</li>
+<li><strong>轴</strong>或<strong>维度</strong>：张量的一个特殊维度。</li>
+<li><strong>大小</strong>：张量的总项数，即乘积形状向量</li>
 </ul>
-<p><strong>汉明距离</strong>（Hamming distance）：$d(x,y)$，$x$ 和 $y$ 不相同的位数。</p>
-<p><strong>最小距离</strong>：$d_{min}$，所有不同有效编码字 $x,y$ 的距离最小的。</p>
-<p><strong>权重</strong>：$w(x)$，$x$ 中 $1$ 的位数。</p>
-<p>一些性质：</p>
-<ul>
-<li>$w(x) = d(x, 0)$</li>
-<li>$d(x,y) \geq 0$</li>
-<li>$d(x, y ) = 0 \Leftrightarrow x = y$</li>
-<li>$d(x, y) = d(y,x)$</li>
-<li>$d(x,y) \leq d(x,z) + d(z,y)$</li>
-</ul>
-<p><strong>定理 8.13.</strong> $C$ 是 $d_{min} = 2n+1$ 的编码，则 $C$ 可以纠 $n$ 位错，可以检测 $2n$ 位错。</p>
-<p><em>所以码字空间分布越均匀，最小码字距离越大，查纠错能力越强。</em></p>
-<hr>
-<h1 id="线性码（Linear-Codes）"><a href="#线性码（Linear-Codes）" class="headerlink" title="线性码（Linear Codes）"></a>线性码（Linear Codes）</h1><p><strong>群码</strong>（group code）：$\mathbb{Z}_2^n$ 的子群的编码。</p>
-<p><strong>引理 8.17.</strong> $x,y$ 为 $n$ 位码字，则 $w(x  +y) = d(x,y)$。</p>
-<p><strong>定理 8.18.</strong> 群码 $C$ 的 $d_{min}$ 是所有非零码字的最小的权重。</p>
-<p><em>码字的运算，还是码字，群封闭性。</em></p>
-<h2 id="线性码"><a href="#线性码" class="headerlink" title="线性码"></a>线性码</h2><p><strong>内积</strong>：</p>
-<p> $\begin{aligned} \textbf{x}\cdot \textbf{y}  &amp;= \textbf{x}^t \textbf{y} \\ &amp;= \begin{pmatrix} x_1 &amp; x_2 &amp;\cdots &amp;x_n \end{pmatrix} \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_n  \end{pmatrix} \\ &amp;= x_1y_1 + x_2y_2 + \cdots + x_ny_n \end{aligned}$</p>
-<p>记 $\mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 为所有 $m$ 行 $n$ 列且元素属于 $\mathbb{Z}_2$ 的矩阵的集合。</p>
-<p>$H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$  的<strong>空域</strong>（null space我自己瞎起的名字）：$\{\textbf{x} \in \mathbb{Z}_2^n : H \textbf{x} = 0 \}$；记为 Null$(H)$。</p>
-<p><strong>定理 8.21.</strong> $H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 的 $null ~space$ 一定是群码。</p>
-<p><strong>线性码</strong>：通过某个 $H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 的 $null ~space$ 生成的编码。</p>
-<p><em>对于 $n$ 为编码，我们需要找到一个好的矩阵 $H$，使得我们的编码空间（$H$ 的 null space）的 $d_{min}$ 尽可能大。</em></p>
-<hr>
-<h1 id="奇偶校验和生成矩阵（Parity-Check-and-Generator-Matrices）"><a href="#奇偶校验和生成矩阵（Parity-Check-and-Generator-Matrices）" class="headerlink" title="奇偶校验和生成矩阵（Parity-Check and Generator Matrices）"></a>奇偶校验和生成矩阵（Parity-Check and Generator Matrices）</h1><p><strong>规范奇偶校验矩阵</strong>（canonical parity-check matrix）：$H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 且 $n &gt; m$，且最后 $m$ 列形成的 $m \times m$ 子矩阵是单位阵 $I_m$，即 $H = \left( A | I_m \right)$。</p>
-<p>每个规范奇偶校验阵 $H$ 都有一个 $n \times (n - m)$ 阶标准<strong>生成阵</strong>（standard generator matrix）: $G = \left( \dfrac{I_{n-m}}{A} \right)$。</p>
-<p><strong>定理 8.25.</strong> $H$ 是一个规范奇偶校验阵，则 Null$(H)$ 包含了满足 前 $n-m$ 位随便取，但后 $m$ 位由 $H\textbf{x} = \textbf{0}$ 决定的 所有向量 $\textbf{x} \in \mathbb{Z}_2^n$。后 $m$ 位每个作为某个前 $n-m$ 位的偶校验位。所以，$H$ 可以给出一个 $(n, n-m)$ -分块码。</p>
-<ul>
-<li>前 $n-m$ 位叫<strong>信息位</strong>（information bit），后 $m$ 位叫校验位</li>
-</ul>
-<p><strong>定理 8.26.</strong>  $G$ 是一个 $n \times k$ 阶标准生成阵，则 $C = \{ \textbf{y} : G\textbf{x} = \textbf{y}, x \in \mathbb{Z}_2^n \}$ 是一个 $(n,k)$-分块码。</p>
-<p><strong>引理 8.27.</strong> $H = (A | I_m)$ 是一个 $m \times n$ 规范奇偶校验阵, $G = \left( \dfrac{I_{n - m}}{A} \right)$ 是对应的 $n \times (n - m)$ 阶标准生成阵，则 $HG = 0$。</p>
-<p><strong>定理8.28.</strong>  $H = (A | I_m)$ 是一个 $m \times n$ 规范奇偶校验阵, $G = \left( \dfrac{I_{n - m}}{A} \right)$ 是对应的 $n \times (n - m)$ 阶标准生成阵，$C$ 是由 $G$ 生成的编码。则 $\textbf{y} \in C \Leftrightarrow H\textbf{y} = 0$，也就是说，$C$ 是有规范奇偶校验矩阵的线性码。</p>
-<p><em>偶校验矩阵的来处：在H的右侧 $m \star m$设置单位矩阵，就是要用相应位对A中相应行上的非0位进行偶校验.。</em></p>
-<p><em>生成矩阵的来处：当给定任意的A，可以使用相应的偶校验矩阵来通过解线性方程的方式得到群码，但是不如构造G矩阵，对待传输数据直接进行计算得到相应的群码和编码对应。效率更高。</em></p>
-<p><em>可证码字能够覆盖所有待编码位串。后m位可以完成对待编码位串中非0位的偶校验！</em></p>
-<p><em>如何完成偶校验，取决于A矩阵和待编码信息。</em></p>
-<p><strong>定理 8.31.</strong> $H$ 为一个 $m \times n$ 矩阵，$H$ 的空域是一个单检错码 当且仅当 $H$ 没有列是全零。（$e_i$ 不在空域中，$d_{min} &gt; 1$）</p>
-<p><strong>定理 8.34.</strong> $H$ 为一个 $m \times n$ 矩阵，$H$ 的空域是一个单纠错码 当且仅当 $H$ 没有列是全零并且没有两列是相同的。（$e_i + e_j$ 不在空域中，$d_{min} \geq 3$）</p>
-<p>所以一个 $m \times n$ 的规范奇偶校验阵，要检一位错、纠一位错，除了 $\textbf{0}, \textbf{e_i}$，剩余 $2^m - (1 + m)$ 个为信息列。</p>
-<hr>
-<h1 id="高效解码"><a href="#高效解码" class="headerlink" title="高效解码"></a>高效解码</h1><p><strong>x</strong>的<strong>像</strong>（syndrome）：$H\textbf{x}$</p>
-<p><strong>命题 8.36.</strong> 矩阵 $H$ 决定了一套线性码，$\textbf{x} = \textbf{c} + \textbf{e} $ 为接收到的$n$-位串，$\textbf{c}$ 为正确码字，$\textbf{e}$ 为错误，则 $H\textbf{x} = H\textbf{e}$。</p>
-<ul>
-<li>这个命题说明接受到的信息由错误决定而不是由正确码字决定。</li>
-</ul>
-<p><strong>定理 8.37.</strong> $H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 并且假设 $H$ 的编码是一个单检错码，$\textbf{r}$ 是接收到的 $n$-位码，如果 $H\textbf{r} = \textbf{0}$，则没有错；否则，如果 $H\textbf{r} $ 等于 $H$ 的第 $i$ 列，则第 $i$ 位出错。</p>
-<h2 id="陪集解码（Coset-Decoding）"><a href="#陪集解码（Coset-Decoding）" class="headerlink" title="陪集解码（Coset Decoding）"></a>陪集解码（Coset Decoding）</h2><p>把所有陪集表示（$\textbf{e} +     C$）列表列出来，查表解码纠错。</p>
-<p>按最大似然，总是取权最小的出错 $\textbf{e}$ ，叫做 <strong>coset leader</strong>。</p>
+<p>索引，形状操作，广播等也不赘述。</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p><strong>变量</strong> <code>tf.Variable</code> 是用于表示程序处理的共享持久状态的推荐方法。变量通过 <code>tf.Variable</code> 类进行创建和跟踪<code>tf.Variable</code>。表示张量，对它执行运算可以改变其值。利用特定运算可以读取和修改此张量的值。更高级的库（如<code>tf.keras</code>）使用 <code>tf.Variable</code> 来存储模型参数。</p>
+<p>可以用 <code>tf.Variable()</code> 来初始化一个变量，都和 <code>tf.constant()</code> 很相似。</p>
+<p>可以使用 <code>tf.Variable.assign</code> 重新分配张量。调用 <code>assign</code>（通常）不会分配新张量，而会重用现有张量的内存。</p>
+<p>虽然变量对微分很重要，但某些变量不需要进行微分。在创建时，通过将 <code>trainable</code> 设置为 False 可以关闭梯度。</p>
+<p>为了提高性能，TensorFlow 会尝试将张量和变量放在与其 <code>dtype</code> 兼容的最快设备上。这意味着如果有 GPU，那么大部分变量都会放置在 GPU 上。</p>
+<h2 id="自动微分"><a href="#自动微分" class="headerlink" title="自动微分"></a>自动微分</h2><p>这也是 <code>tensorflow</code> 最重要的功能之一，它使得神经网络不需要手动计算梯度来更新参数。</p>
+<p>TensorFlow 为自动微分提供了 <a target="_blank" rel="noopener" href="https://tensorflow.google.cn/api_docs/python/tf/GradientTape?hl=zh_cn"><code>tf.GradientTape</code></a> API ，根据某个函数的输入变量来计算它的导数。Tensorflow 会把 ‘tf.GradientTape’ 上下文中执行的所有操作都记录在一个磁带上 (“tape”)。 然后基于这个磁带和每次操作产生的导数，用反向微分法（”reverse mode differentiation”）来计算这些被“记录在案”的函数的导数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">x = tf.ones((<span class="number">2</span>, <span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.GradientTape() <span class="keyword">as</span> t:</span><br><span class="line">  t.watch(x)</span><br><span class="line">  y = tf.reduce_sum(x)</span><br><span class="line">  z = tf.multiply(y, y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Derivative of z with respect to the original input tensor x</span></span><br><span class="line">dz_dx = t.gradient(z, x)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">1</span>]:</span><br><span class="line">  <span class="keyword">for</span> j <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">1</span>]:</span><br><span class="line">    <span class="keyword">assert</span> dz_dx[i][j].numpy() == <span class="number">8.0</span></span><br><span class="line">    </span><br><span class="line"><span class="comment"># Use the tape to compute the derivative of z with respect to the</span></span><br><span class="line"><span class="comment"># intermediate value y.</span></span><br><span class="line">dz_dy = t.gradient(z, y)</span><br><span class="line"><span class="keyword">assert</span> dz_dy.numpy() == <span class="number">8.0</span></span><br></pre></td></tr></table></figure>
+<p>默认情况下，调用 GradientTape.gradient() 方法时， GradientTape 占用的资源会立即得到释放。通过创建一个持久的梯度带 <code>tf.GradientTape(persistent=True)</code>，可以计算同个函数的多个导数。这样在磁带对象被垃圾回收时，就可以多次调用 ‘gradient()’ 方法。</p>
+<p>由于磁带会记录所有执行的操作，Python 控制流（如使用 if 和 while 的代码段）自然得到了处理。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">x, y</span>):</span></span><br><span class="line">  output = <span class="number">1.0</span></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(y):</span><br><span class="line">    <span class="keyword">if</span> i &gt; <span class="number">1</span> <span class="keyword">and</span> i &lt; <span class="number">5</span>:</span><br><span class="line">      output = tf.multiply(output, x)</span><br><span class="line">  <span class="keyword">return</span> output</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">grad</span>(<span class="params">x, y</span>):</span></span><br><span class="line">  <span class="keyword">with</span> tf.GradientTape() <span class="keyword">as</span> t:</span><br><span class="line">    t.watch(x)</span><br><span class="line">    out = f(x, y)</span><br><span class="line">  <span class="keyword">return</span> t.gradient(out, x)</span><br><span class="line"></span><br><span class="line">x = tf.convert_to_tensor(<span class="number">2.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">assert</span> grad(x, <span class="number">6</span>).numpy() == <span class="number">12.0</span></span><br><span class="line"><span class="keyword">assert</span> grad(x, <span class="number">5</span>).numpy() == <span class="number">12.0</span></span><br><span class="line"><span class="keyword">assert</span> grad(x, <span class="number">4</span>).numpy() == <span class="number">4.0</span></span><br></pre></td></tr></table></figure>
+<p>在 ‘GradientTape’ 上下文管理器中记录的操作会用于自动微分。如果导数是在上下文中计算的，导数的函数也会被记录下来。因此，同个 API 可以用于高阶导数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">x = tf.Variable(<span class="number">1.0</span>)  <span class="comment"># Create a Tensorflow variable initialized to 1.0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.GradientTape() <span class="keyword">as</span> t:</span><br><span class="line">  <span class="keyword">with</span> tf.GradientTape() <span class="keyword">as</span> t2:</span><br><span class="line">    y = x * x * x</span><br><span class="line">  <span class="comment"># Compute the gradient inside the &#x27;t&#x27; context manager</span></span><br><span class="line">  <span class="comment"># which means the gradient computation is differentiable as well.</span></span><br><span class="line">  dy_dx = t2.gradient(y, x)</span><br><span class="line">d2y_dx2 = t.gradient(dy_dx, x)</span><br><span class="line"></span><br><span class="line"><span class="keyword">assert</span> dy_dx.numpy() == <span class="number">3.0</span></span><br><span class="line"><span class="keyword">assert</span> d2y_dx2.numpy() == <span class="number">6.0</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -322,13 +282,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/04/18/cryptography/" rel="prev" title="问题求解笔记-密码算法">
-      <i class="fa fa-chevron-left"></i> 问题求解笔记-密码算法
+    <a href="/2021/08/10/mit-cv/" rel="prev" title="mit机器学习cv">
+      <i class="fa fa-chevron-left"></i> mit机器学习cv
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/04/28/formalization/" rel="next" title="问题求解笔记-问题的形式化描述">
-      问题求解笔记-问题的形式化描述 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -387,7 +344,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A3%80%E9%94%99%E5%92%8C%E7%BA%A0%E9%94%99%E7%A0%81"><span class="nav-number">1.</span> <span class="nav-text">检错和纠错码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E7%BC%96%E7%A0%81%EF%BC%88maximum-likelihood-decoding%E2%80%8B%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">最大似然编码（maximum-likelihood decoding​）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%9D%97%E7%A0%81-%EF%BC%88Block-Codes%E2%80%8B%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">分块码 （Block Codes​）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%A0%81%EF%BC%88Linear-Codes%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">线性码（Linear Codes）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%A0%81"><span class="nav-number">2.1.</span> <span class="nav-text">线性码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C%E5%92%8C%E7%94%9F%E6%88%90%E7%9F%A9%E9%98%B5%EF%BC%88Parity-Check-and-Generator-Matrices%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">奇偶校验和生成矩阵（Parity-Check and Generator Matrices）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E6%95%88%E8%A7%A3%E7%A0%81"><span class="nav-number">4.</span> <span class="nav-text">高效解码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%AA%E9%9B%86%E8%A7%A3%E7%A0%81%EF%BC%88Coset-Decoding%EF%BC%89"><span class="nav-number">4.1.</span> <span class="nav-text">陪集解码（Coset Decoding）</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tensorflow-%E6%98%AF%E5%95%A5"><span class="nav-number">1.</span> <span class="nav-text">tensorflow 是啥</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F"><span class="nav-number">2.1.</span> <span class="nav-text">张量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">2.2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%BE%AE%E5%88%86"><span class="nav-number">2.3.</span> <span class="nav-text">自动微分</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

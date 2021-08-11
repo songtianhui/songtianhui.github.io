@@ -34,8 +34,13 @@
 <meta property="og:image" content="https://songtianhui.github.io/2021/08/10/mit-cv/Screenshot%20from%202021-08-10%2018-57-36.png">
 <meta property="og:image" content="https://songtianhui.github.io/2021/08/10/mit-cv/Screenshot%20from%202021-08-10%2021-35-47.png">
 <meta property="og:image" content="https://songtianhui.github.io/2021/08/10/mit-cv/Screenshot%20from%202021-08-10%2022-47-54.png">
+<meta property="og:image" content="https://songtianhui.github.io/Screenshot%20from%202021-08-11%2018-07-27.png">
+<meta property="og:image" content="https://songtianhui.github.io/2021/08/10/mit-cv/Screenshot%20from%202021-08-11%2018-47-07.png">
+<meta property="og:image" content="https://songtianhui.github.io/2021/08/10/mit-cv/Screenshot%20from%202021-08-11%2021-44-11.png">
+<meta property="og:image" content="https://songtianhui.github.io/2021/08/10/mit-cv/Screenshot%20from%202021-08-11%2021-44-40.png">
+<meta property="og:image" content="https://songtianhui.github.io/2021/08/10/mit-cv/Screenshot%20from%202021-08-11%2021-53-42.png">
 <meta property="article:published_time" content="2021-08-10T09:46:40.000Z">
-<meta property="article:modified_time" content="2021-08-10T16:54:26.557Z">
+<meta property="article:modified_time" content="2021-08-11T13:54:56.129Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://songtianhui.github.io/2021/08/10/mit-cv/image_dev.png">
@@ -228,7 +233,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-11 00:54:26" itemprop="dateModified" datetime="2021-08-11T00:54:26+08:00">2021-08-11</time>
+                <time title="Modified: 2021-08-11 21:54:56" itemprop="dateModified" datetime="2021-08-11T21:54:56+08:00">2021-08-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -350,6 +355,51 @@ f[n] = h \circ g = \sum\limits_{k = 0}^{N - 1} h[n - k] g[k]</script><p>我们�
 <li>Object Net</li>
 <li>MiniPlaces: scene recognition</li>
 </ul>
+<h1 id="Lecture-3"><a href="#Lecture-3" class="headerlink" title="Lecture 3"></a>Lecture 3</h1><p>本节主要讲图像序列，连续图像的处理。</p>
+<h2 id="循环神经网络-Recurrent-neural-network"><a href="#循环神经网络-Recurrent-neural-network" class="headerlink" title="循环神经网络 Recurrent neural network"></a>循环神经网络 Recurrent neural network</h2><p>为了建模序列，我们需要：</p>
+<ol>
+<li>处理变化长度的序列。</li>
+<li>跟踪长期的依赖关系。</li>
+<li>保持信息的时间顺序。</li>
+<li>在序列中的共享参数。</li>
+</ol>
+<p>原本我们的模型都是一对一的，现在我妈们可以考虑一对多、多对一、多对多预测，多对多分类。我们需要更新我们的模型，使得能够整合连续序列信息。</p>
+<h3 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h3><p>老师在这门课上并没有详细地讲解 RNN 的数学理论，简单介绍一下。</p>
+<p>在 RNN 中，我们有时间 $t$ 这个概念，在每个时间点会有一个输入 $x_t$，然后有一个隐藏状态 $h_t$ 在每个时间点，状态序列就通过一个循环过程产生：</p>
+<script type="math/tex; mode=display">
+h_t = f_W(h_{t - 1}, x_t)</script><p>注意每个时间点所用的函数都是一样（保持时间对称性），也就是当前状态由前一个状态和当前输入决定，其实很像数电中状态机、时序的概念。</p>
+<p>具体的，会由两个矩阵来线性组合出当前状态：</p>
+<script type="math/tex; mode=display">
+h_t = \tanh{(W_{hh}^Th_{t-1} + W_{xh}^{T}x_t)}\\
+\hat{y}_t = W_{hy}^{T}h_t</script><p>这个 $\hat{y}$ 是对当前状态产生的一个输出，因为 $h$ 可以看作只是状态的一个编码。</p>
+<p>然后其中的权重矩阵就会由学习得到。</p>
+<p><img data-src="/Screenshot from 2021-08-11 18-07-27.png" alt></p>
+<p>如果我们考虑将所有时间的信息都记录下来，长距离的依赖会导致问题：</p>
+<ul>
+<li>需要记录的东西和内存会随着时间不断增加。</li>
+<li>没有无限大的参数集来建模所有依赖。</li>
+<li>RNN假设：当前隐藏层状态只依赖于前一个时间点的状态。</li>
+<li>想法是建立隐藏状态来建模长距离的依赖。</li>
+</ul>
+<p>这些想法促使了我们需要一个有更好建模长距离依赖能力的新模型架构。</p>
+<h3 id="长短时记忆单元-Long-short-term-memory-unit"><a href="#长短时记忆单元-Long-short-term-memory-unit" class="headerlink" title="长短时记忆单元 Long short term memory unit"></a>长短时记忆单元 Long short term memory unit</h3><p>也没有仔细描述 LSTM 的细节，主要思想是 not to forget &amp; learn to forget。</p>
+<p>LSTM 使用<strong>门（gates）</strong> 来控制信息流：</p>
+<ul>
+<li><strong>遗忘</strong> 来减少无关信息</li>
+<li><strong>储存</strong> 相关信息从当前输入</li>
+<li>选择性 <strong>更新</strong> 单元状态</li>
+<li><strong>输出</strong>一个过滤版本状态</li>
+</ul>
+<h2 id="RNNs-CNNs"><a href="#RNNs-CNNs" class="headerlink" title="RNNs + CNNs"></a>RNNs + CNNs</h2><p>核心思想就是 CNNs 来学习出2D图像的特征提取器，压缩后的特征喂入 RNNs 分析序列。</p>
+<p><img data-src="Screenshot from 2021-08-11 18-47-07.png" alt></p>
+<h2 id="CV中的应用"><a href="#CV中的应用" class="headerlink" title="CV中的应用"></a>CV中的应用</h2><h3 id="视频分类"><a href="#视频分类" class="headerlink" title="视频分类"></a>视频分类</h3><p><img data-src="Screenshot from 2021-08-11 21-44-11.png" alt></p>
+<p>有多种整合特征的方法。</p>
+<h3 id="图像标题-imgae-captioning"><a href="#图像标题-imgae-captioning" class="headerlink" title="图像标题 imgae captioning"></a>图像标题 imgae captioning</h3><p>目标是生成准确捕捉图像内容的句子。</p>
+<ul>
+<li>生成模型</li>
+</ul>
+<p><img data-src="Screenshot from 2021-08-11 21-44-40.png" alt></p>
+<h3 id="动作预测"><a href="#动作预测" class="headerlink" title="动作预测"></a>动作预测</h3><p><img data-src="Screenshot from 2021-08-11 21-53-42.png" alt></p>
 
     </div>
 
@@ -368,7 +418,10 @@ f[n] = h \circ g = \sum\limits_{k = 0}^{N - 1} h[n - k] g[k]</script><p>我们�
     <a href="/2021/08/04/DL-AN/" rel="prev" title="吴恩达深度学习笔记">
       <i class="fa fa-chevron-left"></i> 吴恩达深度学习笔记
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/11/tensorflow/" rel="next" title="tensorflow">
+      tensorflow <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -427,7 +480,7 @@ f[n] = h \circ g = \sum\limits_{k = 0}^{N - 1} h[n - k] g[k]</script><p>我们�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-1"><span class="nav-number">1.</span> <span class="nav-text">lecture 1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E5%85%83%EF%BC%88Perceptron%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">神经元（Perceptron）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B-Edges"><span class="nav-number">1.2.</span> <span class="nav-text">边缘检测 Edges</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B7%E7%A7%AF-Convolution"><span class="nav-number">1.3.</span> <span class="nav-text">卷积 Convolution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%A0%E5%8C%96-Pooling"><span class="nav-number">1.4.</span> <span class="nav-text">池化 Pooling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E5%90%88%E8%B5%B7%E6%9D%A5"><span class="nav-number">1.5.</span> <span class="nav-text">结合起来</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-2"><span class="nav-number">2.</span> <span class="nav-text">Lecture 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN-Architectures"><span class="nav-number">2.1.</span> <span class="nav-text">CNN Architectures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5-Scaling-CNNs-residual-connections"><span class="nav-number">2.2.</span> <span class="nav-text">残差连接 Scaling CNNs: residual connections</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%8B%E5%B7%AE%E5%8C%BA%E5%9D%97-Residual-blocks"><span class="nav-number">2.3.</span> <span class="nav-text">残差区块 Residual blocks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86-Dataset"><span class="nav-number">2.4.</span> <span class="nav-text">数据集 Dataset</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-1"><span class="nav-number">1.</span> <span class="nav-text">lecture 1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E5%85%83%EF%BC%88Perceptron%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">神经元（Perceptron）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B-Edges"><span class="nav-number">1.2.</span> <span class="nav-text">边缘检测 Edges</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B7%E7%A7%AF-Convolution"><span class="nav-number">1.3.</span> <span class="nav-text">卷积 Convolution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%A0%E5%8C%96-Pooling"><span class="nav-number">1.4.</span> <span class="nav-text">池化 Pooling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E5%90%88%E8%B5%B7%E6%9D%A5"><span class="nav-number">1.5.</span> <span class="nav-text">结合起来</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-2"><span class="nav-number">2.</span> <span class="nav-text">Lecture 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN-Architectures"><span class="nav-number">2.1.</span> <span class="nav-text">CNN Architectures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5-Scaling-CNNs-residual-connections"><span class="nav-number">2.2.</span> <span class="nav-text">残差连接 Scaling CNNs: residual connections</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%8B%E5%B7%AE%E5%8C%BA%E5%9D%97-Residual-blocks"><span class="nav-number">2.3.</span> <span class="nav-text">残差区块 Residual blocks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86-Dataset"><span class="nav-number">2.4.</span> <span class="nav-text">数据集 Dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-3"><span class="nav-number">3.</span> <span class="nav-text">Lecture 3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-Recurrent-neural-network"><span class="nav-number">3.1.</span> <span class="nav-text">循环神经网络 Recurrent neural network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RNN"><span class="nav-number">3.1.1.</span> <span class="nav-text">RNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%95%BF%E7%9F%AD%E6%97%B6%E8%AE%B0%E5%BF%86%E5%8D%95%E5%85%83-Long-short-term-memory-unit"><span class="nav-number">3.1.2.</span> <span class="nav-text">长短时记忆单元 Long short term memory unit</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNNs-CNNs"><span class="nav-number">3.2.</span> <span class="nav-text">RNNs + CNNs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CV%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">3.3.</span> <span class="nav-text">CV中的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB"><span class="nav-number">3.3.1.</span> <span class="nav-text">视频分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%A0%87%E9%A2%98-imgae-captioning"><span class="nav-number">3.3.2.</span> <span class="nav-text">图像标题 imgae captioning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E4%BD%9C%E9%A2%84%E6%B5%8B"><span class="nav-number">3.3.3.</span> <span class="nav-text">动作预测</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -443,7 +496,7 @@ f[n] = h \circ g = \sum\limits_{k = 0}^{N - 1} h[n - k] g[k]</script><p>我们�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
