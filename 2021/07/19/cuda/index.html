@@ -286,9 +286,9 @@
 <ul>
 <li>NVIDIA GeForce MX250</li>
 <li>Intel UHD Graphics 620</li>
-<li>等等为什么有两个？！:no_mouth:</li>
+<li>等等为什么有两个？！<span class="github-emoji" alias="no_mouth" style fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f636.png?v8">&#x1f636;</span></li>
 </ul>
-<p>上网搜了一下，是可以有双显卡的，一个集显一个独显。不做调整的话默认开机使用用的是核显，使用到一定量，会自动切换到独立显卡。不过也有些因为驱动问题，导致一直默认核显。（啊我好像没装驱动！:joy:）</p>
+<p>上网搜了一下，是可以有双显卡的，一个集显一个独显。不做调整的话默认开机使用用的是核显，使用到一定量，会自动切换到独立显卡。不过也有些因为驱动问题，导致一直默认核显。（啊我好像没装驱动！<span class="github-emoji" alias="joy" style fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8">&#x1f602;</span>）</p>
 <h3 id="Intel-UHD-Graphics-620"><a href="#Intel-UHD-Graphics-620" class="headerlink" title="Intel UHD Graphics 620"></a>Intel UHD Graphics 620</h3><p><code>$ lspci | grep -i UHD</code> 看一下：</p>
 <p><img data-src="UHD.png" alt="Intel 显卡"></p>
 <p>这就是那个集成显卡，是集成在 i5 的那个 CPU 里的。UHD不适用于硬核游戏。相反，它提供了用于管理笔记本电脑的屏幕和一些轻便游戏的基本性能。</p>
@@ -297,7 +297,7 @@
 <p><img data-src="Nvidia.png" alt="Nvidia 显卡"></p>
 <p>查了一下这个显卡也不咋地，只能说比集显好一点。功耗低性能差，游戏绘图设计就别考虑了。<strong>彳亍</strong>。</p>
 <p>然后我意外地发现这个 Nvidia 的好像在这没装驱动，也就是说一直没用上。。。</p>
-<h1 id="装驱动"><a href="#装驱动" class="headerlink" title="装驱动"></a>装驱动</h1><p>发现连显卡驱动都没有赶紧装一下:disappointed_relieved:</p>
+<h1 id="装驱动"><a href="#装驱动" class="headerlink" title="装驱动"></a>装驱动</h1><p>发现连显卡驱动都没有赶紧装一下<span class="github-emoji" alias="disappointed_relieved" style fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f625.png?v8">&#x1f625;</span></p>
 <p><a target="_blank" rel="noopener" href="https://phoenixnap.com/kb/install-nvidia-drivers-ubuntu">找了一篇教程</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.cyberciti.biz/faq/ubuntu-linux-install-nvidia-driver-latest-proprietary-driver/#verification">另一篇教程</a></p>
 <p>直接GUI图形化安装吧。</p>
@@ -361,7 +361,7 @@
 </ul>
 </li>
 </ul>
-<p>总之，大 cuda （用大小来外号这两个cuda好像也是个好方法:joy:）和 driver 好像就是没兼容上的，不过我们有兼容好的小 cuda，跑 <code>pytorch</code> 是基本没问题的。出了问题再说（挖坑）。</p>
+<p>总之，大 cuda （用大小来外号这两个cuda好像也是个好方法<span class="github-emoji" alias="joy" style fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8">&#x1f602;</span>）和 driver 好像就是没兼容上的，不过我们有兼容好的小 cuda，跑 <code>pytorch</code> 是基本没问题的。出了问题再说（挖坑）。</p>
 <hr>
 <h1 id="装-cuDNN"><a href="#装-cuDNN" class="headerlink" title="装 cuDNN"></a>装 cuDNN</h1><p><a target="_blank" rel="noopener" href="https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html">官方文档</a></p>
 <p>首先需要一个nvidia的账号，自己注册一个。</p>
