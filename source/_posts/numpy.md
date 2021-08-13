@@ -483,3 +483,82 @@ array([[   0,   10,   10,    3],
 ```
 
 有时，如果不再需要原始数组，则应在切片后调用 `copy`。
+
+
+
+
+
+# np.random
+
+## np.random.choice
+
+`random.choice(a, size=None, replace=True, p=None)`
+
+从一个给定1维向量生成一个随机样本。
+
+- `a` 是一个list或整数，如果是整数则 `np.arrange(a)`，从这个范围中随机生成。
+- `size` 是输出的形状。
+
+
+
+# np.expand_dims()
+
+`np.expand_dims(a, axis)`
+
+扩展 array 的形状，在 axis 处插入一个新轴。
+
+``` python
+>>> x = np.array([1, 2])
+>>> y = np.expand_dims(x, axis=0)
+>>> y
+array([[1, 2]])
+>>> y.shape
+(1, 2)
+>>> y = np.expand_dims(x, axis=1)
+y
+>>> array([[1],
+           [2]])
+>>> y.shape
+(2, 1)
+>>> y = np.expand_dims(x, axis=(0, 1))
+>>> y
+array([[[1, 2]]])
+>>> y = np.expand_dims(x, axis=(2, 0))
+>>> y
+array([[[1],
+        [2]]])
+```
+
+
+
+# np.squeeze()
+
+`np.squeeze(a, axis)`
+
+删除 array 的一个轴。
+
+``` python
+>>> x = np.array([[[0], [1], [2]]])
+>>> x.shape
+(1, 3, 1)
+>>> np.squeeze(x).shape
+(3,)
+>>> np.squeeze(x, axis=0).shape
+(3, 1)
+>>> np.squeeze(x, axis=1).shape
+Traceback (most recent call last):
+...
+ValueError: cannot select an axis to squeeze out which has size not equal to one
+>>> np.squeeze(x, axis=2).shape
+(1, 3)
+>>> x = np.array([[1234]])
+>>> x.shape
+(1, 1)
+>>> np.squeeze(x)
+>>> array(1234)  # 0d array
+>>> np.squeeze(x).shape
+()
+>>> np.squeeze(x)[()]
+1234
+```
+

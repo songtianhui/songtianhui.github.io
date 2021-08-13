@@ -382,3 +382,101 @@ $$
 - CycleGAN: domain transfer
 
 ![](Screenshot from 2021-08-13 01-05-39.png)
+
+
+
+
+
+# Lecture 5
+
+本章主要讲的是神经绘图和渲染（Neural Graphics and Rendering）。
+
+**神经渲染（Neural Rendering）**：是将计算机图形学的物理知识和生成模型机器学习结合起来，通过融合不同的渲染到网络训练中。
+
+- 生成网络负责合成原始像素。
+- 可解释的参数来控制输出。
+- 光影，相机，位置，动作，结构。。
+
+
+
+## 经典计算机图形学 Classical computer graphics
+
+![](Screenshot from 2021-08-13 16-28-23.png)
+
+两个方向，一个forward从模型到图片的渲染，一个backward从图片到模型的重建。
+
+forward 过程，对于一个模型，它可能有很多属性，光源、材料、相机等等，通过 CG 计算机绘图的函数，输出一张合理的从照相机视角看到的一个图片。
+
+### 渲染方程
+
+有一个渲染方程不过我看不懂：
+$$
+L_{\mathrm{o}}\left(\mathbf{p}, \omega_{\mathrm{o}}\right)=L_{\mathrm{e}}\left(\mathbf{p}, \omega_{\mathrm{o}}\right)+\int_{\Omega} L_{\mathrm{i}}\left(\mathbf{p}, \omega_{\mathrm{i}}\right) f_{\mathrm{r}}\left(\mathbf{p}, \omega_{\mathrm{i}}, \omega_{\mathrm{o}}\right)\left(\omega_{\mathrm{i}} \cdot \mathbf{n}\right) \mathrm{d} \omega_{\mathrm{i}}
+$$
+简单理解就是等号左边是 Outgoing radiance，该点的出射光；右边第一项是该点的光源；积分项是入射光和一个 BRDF函数。总之这个方程非常强大，可以递归。
+
+### BRDF
+
+它可以捕捉材料的变化，就可以处理反射特性，进行材料光泽的渲染。
+
+
+
+## 神经图像表示 Neural scene representations
+
+### 语义渲染 Semantic rendering
+
+思想是通过一种语义合理的方式，控制并合成场景的外观。
+
+![](Screenshot from 2021-08-13 17-01-47.png)
+
+
+
+### pix2pix 生成模型
+
+通过不仅将生成器生成的合成图片喂入识别器，还喂入原始的输入，来让识别器判断真假。
+
+这个模型工作地得很好，但它的问题是不能在高质量图片上表现得不错。
+
+所以我们要增强模型的鲁棒性，渲染更高质量的图片。
+
+- 动态增长模型（progressive growing of generative models）
+- 实时渲染
+
+
+
+### 渲染风格的控制
+
+我们将输入编码到潜空间，单这个潜空间遵循更高维参数的分布，这些高阶参数可以用 **KL分离损失**来约束。
+
+也就是说他们是概率的，我们可以在这个概率分布中取样，决定了渲染的风格，即使他们都是语义正确的。
+
+![](Screenshot from 2021-08-14 01-11-02.png)
+
+
+
+## Implicit neural rendering
+
+对于反向重建，是一个端对端的神经渲染训练。
+
+![](Screenshot from 2021-08-14 01-26-54.png)
+
+### 基于图像的复制 Image-based reprojection
+
+场景表示：RGB值+深度
+
+
+
+### Point-based rendering
+
+**神经隐式渲染（Neural implicit rendering）**。
+
+![](Screenshot from 2021-08-14 01-41-48.png)
+
+- 如何得到数据？
+- 什么是神经渲染的模型？
+
+## 结合起来
+
+![](Screenshot from 2021-08-14 01-57-13.png)
+
+总之这节课所讲的内容，太过于前沿，模型太过于复杂，我基本上属于听不懂的状态，很难跟上，只能放一些slides的思路图。希望以后能懂orz。
