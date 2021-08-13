@@ -23,6 +23,30 @@
       </tags>
   </entry>
   <entry>
+    <title>2021寒假计划</title>
+    <url>/2021/01/28/Flags-for-winter-holiday/</url>
+    <content><![CDATA[<h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><pre><code>先把这个blog基础设施搭建好，配置到一个最顺手好看的亚子。
+</code></pre><h1 id="装系统"><a href="#装系统" class="headerlink" title="装系统"></a>装系统</h1><pre><code>用了一个学期虚拟机真的太累了，真是又慢又卡orz
+准备装一个Ununtu比Debian用起来优雅多了，不过电脑磁盘不够了得买个移动硬盘。。。
+</code></pre><a id="more"></a>
+<h1 id="学习篇"><a href="#学习篇" class="headerlink" title="学习篇"></a>学习篇</h1><p>有想学很多东西但可能只能停留在想的阶段。。。</p>
+<h2 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h2><pre><code>学个python吧，python是世界上最好的语言!
+</code></pre><p><a href="https://www.liaoxuefeng.com/wiki/1016959663602400">廖雪峰python教程</a></p>
+<h2 id="ML"><a href="#ML" class="headerlink" title="ML"></a>ML</h2><pre><code>看看吴恩达？机器学习好像很多地方都有用。
+</code></pre><p><a href="https://www.bilibili.com/video/BV164411b7dx?from=search&amp;seid=11011536408088050441">吴恩达机器学习</a></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code>LeetCode做做题吧，算法比别人差太多了orz
+</code></pre><h2 id="Mathematical-modeling"><a href="#Mathematical-modeling" class="headerlink" title="Mathematical modeling"></a>Mathematical modeling</h2><pre><code>那可能还要顺手学一下mathlab?
+才知道有美赛这个玩意儿。。。现在着手可能晚了，也组不到人也没人要我这个啥都不会的菜鸡w
+</code></pre><h2 id="Operating-System"><a href="#Operating-System" class="headerlink" title="Operating System"></a>Operating System</h2><pre><code>既然可能学不到什么新技能，不如预习预习下学期的os...这学期ics已经炸掉了，保住成绩也不错。
+</code></pre><h2 id="Teaching"><a href="#Teaching" class="headerlink" title="Teaching"></a>Teaching</h2><pre><code>估计师说那还是要找我去上课的，既然没有动力学习把时间转换成money也行。
+</code></pre><h2 id="Hobbies"><a href="#Hobbies" class="headerlink" title="Hobbies"></a>Hobbies</h2><pre><code>搞点课外兴趣，procreate画点画。可能再学点剪辑(?)
+</code></pre><h1 id="谈恋爱"><a href="#谈恋爱" class="headerlink" title="谈恋爱"></a>谈恋爱</h1><p><strong>好！</strong><br><strong>我爱npy!</strong></p>
+]]></content>
+      <tags>
+        <tag>flags</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>吴恩达深度学习笔记</title>
     <url>/2021/08/04/DL-AN/</url>
     <content><![CDATA[<p><a href="https://www.bilibili.com/video/BV1FT4y1E74V?from=search&amp;seid=7469215768123017337">视频指路</a></p>
@@ -252,30 +276,6 @@ W^{[l]} :&= W^{[l]}  - \alpha \times \left[(\text{from backpap}) + \dfrac{\lambd
       <categories>
         <category>ML</category>
       </categories>
-  </entry>
-  <entry>
-    <title>2021寒假计划</title>
-    <url>/2021/01/28/Flags-for-winter-holiday/</url>
-    <content><![CDATA[<h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><pre><code>先把这个blog基础设施搭建好，配置到一个最顺手好看的亚子。
-</code></pre><h1 id="装系统"><a href="#装系统" class="headerlink" title="装系统"></a>装系统</h1><pre><code>用了一个学期虚拟机真的太累了，真是又慢又卡orz
-准备装一个Ununtu比Debian用起来优雅多了，不过电脑磁盘不够了得买个移动硬盘。。。
-</code></pre><a id="more"></a>
-<h1 id="学习篇"><a href="#学习篇" class="headerlink" title="学习篇"></a>学习篇</h1><p>有想学很多东西但可能只能停留在想的阶段。。。</p>
-<h2 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h2><pre><code>学个python吧，python是世界上最好的语言!
-</code></pre><p><a href="https://www.liaoxuefeng.com/wiki/1016959663602400">廖雪峰python教程</a></p>
-<h2 id="ML"><a href="#ML" class="headerlink" title="ML"></a>ML</h2><pre><code>看看吴恩达？机器学习好像很多地方都有用。
-</code></pre><p><a href="https://www.bilibili.com/video/BV164411b7dx?from=search&amp;seid=11011536408088050441">吴恩达机器学习</a></p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code>LeetCode做做题吧，算法比别人差太多了orz
-</code></pre><h2 id="Mathematical-modeling"><a href="#Mathematical-modeling" class="headerlink" title="Mathematical modeling"></a>Mathematical modeling</h2><pre><code>那可能还要顺手学一下mathlab?
-才知道有美赛这个玩意儿。。。现在着手可能晚了，也组不到人也没人要我这个啥都不会的菜鸡w
-</code></pre><h2 id="Operating-System"><a href="#Operating-System" class="headerlink" title="Operating System"></a>Operating System</h2><pre><code>既然可能学不到什么新技能，不如预习预习下学期的os...这学期ics已经炸掉了，保住成绩也不错。
-</code></pre><h2 id="Teaching"><a href="#Teaching" class="headerlink" title="Teaching"></a>Teaching</h2><pre><code>估计师说那还是要找我去上课的，既然没有动力学习把时间转换成money也行。
-</code></pre><h2 id="Hobbies"><a href="#Hobbies" class="headerlink" title="Hobbies"></a>Hobbies</h2><pre><code>搞点课外兴趣，procreate画点画。可能再学点剪辑(?)
-</code></pre><h1 id="谈恋爱"><a href="#谈恋爱" class="headerlink" title="谈恋爱"></a>谈恋爱</h1><p><strong>好！</strong><br><strong>我爱npy!</strong></p>
-]]></content>
-      <tags>
-        <tag>flags</tag>
-      </tags>
   </entry>
   <entry>
     <title>Markdown test</title>
@@ -532,6 +532,76 @@ W^{[l]} :&= W^{[l]}  - \alpha \times \left[(\text{from backpap}) + \dfrac{\lambd
       </tags>
   </entry>
   <entry>
+    <title>问题求解笔记-代数编码</title>
+    <url>/2021/04/25/codeing/</url>
+    <content><![CDATA[<h1 id="检错和纠错码"><a href="#检错和纠错码" class="headerlink" title="检错和纠错码"></a>检错和纠错码</h1><h2 id="最大似然编码（maximum-likelihood-decoding​）"><a href="#最大似然编码（maximum-likelihood-decoding​）" class="headerlink" title="最大似然编码（maximum-likelihood decoding​）"></a>最大似然编码（maximum-likelihood decoding​）</h2><p>所有的纠错建立在这个基础上，按最大概率出错位纠错。</p>
+<p><strong>二进制对称信道</strong>（binary symmetric channel）</p>
+<a id="more"></a>
+<h2 id="分块码-（Block-Codes​）"><a href="#分块码-（Block-Codes​）" class="headerlink" title="分块码 （Block Codes​）"></a>分块码 （Block Codes​）</h2><p>($n,m$)-<strong>分块码</strong>：被编码的信息可以被分成多块 $m$ 位二进制数，每块会被编码成 $n$ 位二进制数。</p>
+<ul>
+<li>编码函数$E:\mathbb{Z}_2^m \rightarrow \mathbb{Z}_2^n$</li>
+<li><p>解码函数 $D: \mathbb{Z}_2^n \rightarrow \mathbb{Z}_2^m$</p>
+</li>
+<li><p>编码字(codeword)：$E$ 的像中的一个元素</p>
+</li>
+</ul>
+<p><strong>汉明距离</strong>（Hamming distance）：$d(x,y)$，$x$ 和 $y$ 不相同的位数。</p>
+<p><strong>最小距离</strong>：$d_{min}$，所有不同有效编码字 $x,y$ 的距离最小的。</p>
+<p><strong>权重</strong>：$w(x)$，$x$ 中 $1$ 的位数。</p>
+<p>一些性质：</p>
+<ul>
+<li>$w(x) = d(x, 0)$</li>
+<li>$d(x,y) \geq 0$</li>
+<li>$d(x, y ) = 0 \Leftrightarrow x = y$</li>
+<li>$d(x, y) = d(y,x)$</li>
+<li>$d(x,y) \leq d(x,z) + d(z,y)$</li>
+</ul>
+<p><strong>定理 8.13.</strong> $C$ 是 $d_{min} = 2n+1$ 的编码，则 $C$ 可以纠 $n$ 位错，可以检测 $2n$ 位错。</p>
+<p><em>所以码字空间分布越均匀，最小码字距离越大，查纠错能力越强。</em></p>
+<hr>
+<h1 id="线性码（Linear-Codes）"><a href="#线性码（Linear-Codes）" class="headerlink" title="线性码（Linear Codes）"></a>线性码（Linear Codes）</h1><p><strong>群码</strong>（group code）：$\mathbb{Z}_2^n$ 的子群的编码。</p>
+<p><strong>引理 8.17.</strong> $x,y$ 为 $n$ 位码字，则 $w(x  +y) = d(x,y)$。</p>
+<p><strong>定理 8.18.</strong> 群码 $C$ 的 $d_{min}$ 是所有非零码字的最小的权重。</p>
+<p><em>码字的运算，还是码字，群封闭性。</em></p>
+<h2 id="线性码"><a href="#线性码" class="headerlink" title="线性码"></a>线性码</h2><p><strong>内积</strong>：</p>
+<p> $\begin{aligned} \textbf{x}\cdot \textbf{y}  &amp;= \textbf{x}^t \textbf{y} \\ &amp;= \begin{pmatrix} x_1 &amp; x_2 &amp;\cdots &amp;x_n \end{pmatrix} \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_n  \end{pmatrix} \\ &amp;= x_1y_1 + x_2y_2 + \cdots + x_ny_n \end{aligned}$</p>
+<p>记 $\mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 为所有 $m$ 行 $n$ 列且元素属于 $\mathbb{Z}_2$ 的矩阵的集合。</p>
+<p>$H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$  的<strong>空域</strong>（null space我自己瞎起的名字）：$\{\textbf{x} \in \mathbb{Z}_2^n : H \textbf{x} = 0 \}$；记为 Null$(H)$。</p>
+<p><strong>定理 8.21.</strong> $H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 的 $null ~space$ 一定是群码。</p>
+<p><strong>线性码</strong>：通过某个 $H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 的 $null ~space$ 生成的编码。</p>
+<p><em>对于 $n$ 为编码，我们需要找到一个好的矩阵 $H$，使得我们的编码空间（$H$ 的 null space）的 $d_{min}$ 尽可能大。</em></p>
+<hr>
+<h1 id="奇偶校验和生成矩阵（Parity-Check-and-Generator-Matrices）"><a href="#奇偶校验和生成矩阵（Parity-Check-and-Generator-Matrices）" class="headerlink" title="奇偶校验和生成矩阵（Parity-Check and Generator Matrices）"></a>奇偶校验和生成矩阵（Parity-Check and Generator Matrices）</h1><p><strong>规范奇偶校验矩阵</strong>（canonical parity-check matrix）：$H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 且 $n &gt; m$，且最后 $m$ 列形成的 $m \times m$ 子矩阵是单位阵 $I_m$，即 $H = \left( A | I_m \right)$。</p>
+<p>每个规范奇偶校验阵 $H$ 都有一个 $n \times (n - m)$ 阶标准<strong>生成阵</strong>（standard generator matrix）: $G = \left( \dfrac{I_{n-m}}{A} \right)$。</p>
+<p><strong>定理 8.25.</strong> $H$ 是一个规范奇偶校验阵，则 Null$(H)$ 包含了满足 前 $n-m$ 位随便取，但后 $m$ 位由 $H\textbf{x} = \textbf{0}$ 决定的 所有向量 $\textbf{x} \in \mathbb{Z}_2^n$。后 $m$ 位每个作为某个前 $n-m$ 位的偶校验位。所以，$H$ 可以给出一个 $(n, n-m)$ -分块码。</p>
+<ul>
+<li>前 $n-m$ 位叫<strong>信息位</strong>（information bit），后 $m$ 位叫校验位</li>
+</ul>
+<p><strong>定理 8.26.</strong>  $G$ 是一个 $n \times k$ 阶标准生成阵，则 $C = \{ \textbf{y} : G\textbf{x} = \textbf{y}, x \in \mathbb{Z}_2^n \}$ 是一个 $(n,k)$-分块码。</p>
+<p><strong>引理 8.27.</strong> $H = (A | I_m)$ 是一个 $m \times n$ 规范奇偶校验阵, $G = \left( \dfrac{I_{n - m}}{A} \right)$ 是对应的 $n \times (n - m)$ 阶标准生成阵，则 $HG = 0$。</p>
+<p><strong>定理8.28.</strong>  $H = (A | I_m)$ 是一个 $m \times n$ 规范奇偶校验阵, $G = \left( \dfrac{I_{n - m}}{A} \right)$ 是对应的 $n \times (n - m)$ 阶标准生成阵，$C$ 是由 $G$ 生成的编码。则 $\textbf{y} \in C \Leftrightarrow H\textbf{y} = 0$，也就是说，$C$ 是有规范奇偶校验矩阵的线性码。</p>
+<p><em>偶校验矩阵的来处：在H的右侧 $m \star m$设置单位矩阵，就是要用相应位对A中相应行上的非0位进行偶校验.。</em></p>
+<p><em>生成矩阵的来处：当给定任意的A，可以使用相应的偶校验矩阵来通过解线性方程的方式得到群码，但是不如构造G矩阵，对待传输数据直接进行计算得到相应的群码和编码对应。效率更高。</em></p>
+<p><em>可证码字能够覆盖所有待编码位串。后m位可以完成对待编码位串中非0位的偶校验！</em></p>
+<p><em>如何完成偶校验，取决于A矩阵和待编码信息。</em></p>
+<p><strong>定理 8.31.</strong> $H$ 为一个 $m \times n$ 矩阵，$H$ 的空域是一个单检错码 当且仅当 $H$ 没有列是全零。（$e_i$ 不在空域中，$d_{min} &gt; 1$）</p>
+<p><strong>定理 8.34.</strong> $H$ 为一个 $m \times n$ 矩阵，$H$ 的空域是一个单纠错码 当且仅当 $H$ 没有列是全零并且没有两列是相同的。（$e_i + e_j$ 不在空域中，$d_{min} \geq 3$）</p>
+<p>所以一个 $m \times n$ 的规范奇偶校验阵，要检一位错、纠一位错，除了 $\textbf{0}, \textbf{e_i}$，剩余 $2^m - (1 + m)$ 个为信息列。</p>
+<hr>
+<h1 id="高效解码"><a href="#高效解码" class="headerlink" title="高效解码"></a>高效解码</h1><p><strong>x</strong>的<strong>像</strong>（syndrome）：$H\textbf{x}$</p>
+<p><strong>命题 8.36.</strong> 矩阵 $H$ 决定了一套线性码，$\textbf{x} = \textbf{c} + \textbf{e} $ 为接收到的$n$-位串，$\textbf{c}$ 为正确码字，$\textbf{e}$ 为错误，则 $H\textbf{x} = H\textbf{e}$。</p>
+<ul>
+<li>这个命题说明接受到的信息由错误决定而不是由正确码字决定。</li>
+</ul>
+<p><strong>定理 8.37.</strong> $H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 并且假设 $H$ 的编码是一个单检错码，$\textbf{r}$ 是接收到的 $n$-位码，如果 $H\textbf{r} = \textbf{0}$，则没有错；否则，如果 $H\textbf{r} $ 等于 $H$ 的第 $i$ 列，则第 $i$ 位出错。</p>
+<h2 id="陪集解码（Coset-Decoding）"><a href="#陪集解码（Coset-Decoding）" class="headerlink" title="陪集解码（Coset Decoding）"></a>陪集解码（Coset Decoding）</h2><p>把所有陪集表示（$\textbf{e} +     C$）列表列出来，查表解码纠错。</p>
+<p>按最大似然，总是取权最小的出错 $\textbf{e}$ ，叫做 <strong>coset leader</strong>。</p>
+]]></content>
+      <categories>
+        <category>problem-solving</category>
+      </categories>
+  </entry>
+  <entry>
     <title>问题求解笔记-密码算法</title>
     <url>/2021/04/18/cryptography/</url>
     <content><![CDATA[<h1 id="公钥加密系统"><a href="#公钥加密系统" class="headerlink" title="公钥加密系统"></a>公钥加密系统</h1><p>一个公钥加密系统中，每个参与者都拥有一把<strong>公钥</strong>$P$和<strong>私钥</strong>$S$，密钥需要保密，公钥可以公之于众。</p>
@@ -727,76 +797,6 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
 ]]></content>
       <categories>
         <category>python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>问题求解笔记-代数编码</title>
-    <url>/2021/04/25/codeing/</url>
-    <content><![CDATA[<h1 id="检错和纠错码"><a href="#检错和纠错码" class="headerlink" title="检错和纠错码"></a>检错和纠错码</h1><h2 id="最大似然编码（maximum-likelihood-decoding​）"><a href="#最大似然编码（maximum-likelihood-decoding​）" class="headerlink" title="最大似然编码（maximum-likelihood decoding​）"></a>最大似然编码（maximum-likelihood decoding​）</h2><p>所有的纠错建立在这个基础上，按最大概率出错位纠错。</p>
-<p><strong>二进制对称信道</strong>（binary symmetric channel）</p>
-<a id="more"></a>
-<h2 id="分块码-（Block-Codes​）"><a href="#分块码-（Block-Codes​）" class="headerlink" title="分块码 （Block Codes​）"></a>分块码 （Block Codes​）</h2><p>($n,m$)-<strong>分块码</strong>：被编码的信息可以被分成多块 $m$ 位二进制数，每块会被编码成 $n$ 位二进制数。</p>
-<ul>
-<li>编码函数$E:\mathbb{Z}_2^m \rightarrow \mathbb{Z}_2^n$</li>
-<li><p>解码函数 $D: \mathbb{Z}_2^n \rightarrow \mathbb{Z}_2^m$</p>
-</li>
-<li><p>编码字(codeword)：$E$ 的像中的一个元素</p>
-</li>
-</ul>
-<p><strong>汉明距离</strong>（Hamming distance）：$d(x,y)$，$x$ 和 $y$ 不相同的位数。</p>
-<p><strong>最小距离</strong>：$d_{min}$，所有不同有效编码字 $x,y$ 的距离最小的。</p>
-<p><strong>权重</strong>：$w(x)$，$x$ 中 $1$ 的位数。</p>
-<p>一些性质：</p>
-<ul>
-<li>$w(x) = d(x, 0)$</li>
-<li>$d(x,y) \geq 0$</li>
-<li>$d(x, y ) = 0 \Leftrightarrow x = y$</li>
-<li>$d(x, y) = d(y,x)$</li>
-<li>$d(x,y) \leq d(x,z) + d(z,y)$</li>
-</ul>
-<p><strong>定理 8.13.</strong> $C$ 是 $d_{min} = 2n+1$ 的编码，则 $C$ 可以纠 $n$ 位错，可以检测 $2n$ 位错。</p>
-<p><em>所以码字空间分布越均匀，最小码字距离越大，查纠错能力越强。</em></p>
-<hr>
-<h1 id="线性码（Linear-Codes）"><a href="#线性码（Linear-Codes）" class="headerlink" title="线性码（Linear Codes）"></a>线性码（Linear Codes）</h1><p><strong>群码</strong>（group code）：$\mathbb{Z}_2^n$ 的子群的编码。</p>
-<p><strong>引理 8.17.</strong> $x,y$ 为 $n$ 位码字，则 $w(x  +y) = d(x,y)$。</p>
-<p><strong>定理 8.18.</strong> 群码 $C$ 的 $d_{min}$ 是所有非零码字的最小的权重。</p>
-<p><em>码字的运算，还是码字，群封闭性。</em></p>
-<h2 id="线性码"><a href="#线性码" class="headerlink" title="线性码"></a>线性码</h2><p><strong>内积</strong>：</p>
-<p> $\begin{aligned} \textbf{x}\cdot \textbf{y}  &amp;= \textbf{x}^t \textbf{y} \\ &amp;= \begin{pmatrix} x_1 &amp; x_2 &amp;\cdots &amp;x_n \end{pmatrix} \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_n  \end{pmatrix} \\ &amp;= x_1y_1 + x_2y_2 + \cdots + x_ny_n \end{aligned}$</p>
-<p>记 $\mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 为所有 $m$ 行 $n$ 列且元素属于 $\mathbb{Z}_2$ 的矩阵的集合。</p>
-<p>$H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$  的<strong>空域</strong>（null space我自己瞎起的名字）：$\{\textbf{x} \in \mathbb{Z}_2^n : H \textbf{x} = 0 \}$；记为 Null$(H)$。</p>
-<p><strong>定理 8.21.</strong> $H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 的 $null ~space$ 一定是群码。</p>
-<p><strong>线性码</strong>：通过某个 $H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 的 $null ~space$ 生成的编码。</p>
-<p><em>对于 $n$ 为编码，我们需要找到一个好的矩阵 $H$，使得我们的编码空间（$H$ 的 null space）的 $d_{min}$ 尽可能大。</em></p>
-<hr>
-<h1 id="奇偶校验和生成矩阵（Parity-Check-and-Generator-Matrices）"><a href="#奇偶校验和生成矩阵（Parity-Check-and-Generator-Matrices）" class="headerlink" title="奇偶校验和生成矩阵（Parity-Check and Generator Matrices）"></a>奇偶校验和生成矩阵（Parity-Check and Generator Matrices）</h1><p><strong>规范奇偶校验矩阵</strong>（canonical parity-check matrix）：$H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 且 $n &gt; m$，且最后 $m$ 列形成的 $m \times m$ 子矩阵是单位阵 $I_m$，即 $H = \left( A | I_m \right)$。</p>
-<p>每个规范奇偶校验阵 $H$ 都有一个 $n \times (n - m)$ 阶标准<strong>生成阵</strong>（standard generator matrix）: $G = \left( \dfrac{I_{n-m}}{A} \right)$。</p>
-<p><strong>定理 8.25.</strong> $H$ 是一个规范奇偶校验阵，则 Null$(H)$ 包含了满足 前 $n-m$ 位随便取，但后 $m$ 位由 $H\textbf{x} = \textbf{0}$ 决定的 所有向量 $\textbf{x} \in \mathbb{Z}_2^n$。后 $m$ 位每个作为某个前 $n-m$ 位的偶校验位。所以，$H$ 可以给出一个 $(n, n-m)$ -分块码。</p>
-<ul>
-<li>前 $n-m$ 位叫<strong>信息位</strong>（information bit），后 $m$ 位叫校验位</li>
-</ul>
-<p><strong>定理 8.26.</strong>  $G$ 是一个 $n \times k$ 阶标准生成阵，则 $C = \{ \textbf{y} : G\textbf{x} = \textbf{y}, x \in \mathbb{Z}_2^n \}$ 是一个 $(n,k)$-分块码。</p>
-<p><strong>引理 8.27.</strong> $H = (A | I_m)$ 是一个 $m \times n$ 规范奇偶校验阵, $G = \left( \dfrac{I_{n - m}}{A} \right)$ 是对应的 $n \times (n - m)$ 阶标准生成阵，则 $HG = 0$。</p>
-<p><strong>定理8.28.</strong>  $H = (A | I_m)$ 是一个 $m \times n$ 规范奇偶校验阵, $G = \left( \dfrac{I_{n - m}}{A} \right)$ 是对应的 $n \times (n - m)$ 阶标准生成阵，$C$ 是由 $G$ 生成的编码。则 $\textbf{y} \in C \Leftrightarrow H\textbf{y} = 0$，也就是说，$C$ 是有规范奇偶校验矩阵的线性码。</p>
-<p><em>偶校验矩阵的来处：在H的右侧 $m \star m$设置单位矩阵，就是要用相应位对A中相应行上的非0位进行偶校验.。</em></p>
-<p><em>生成矩阵的来处：当给定任意的A，可以使用相应的偶校验矩阵来通过解线性方程的方式得到群码，但是不如构造G矩阵，对待传输数据直接进行计算得到相应的群码和编码对应。效率更高。</em></p>
-<p><em>可证码字能够覆盖所有待编码位串。后m位可以完成对待编码位串中非0位的偶校验！</em></p>
-<p><em>如何完成偶校验，取决于A矩阵和待编码信息。</em></p>
-<p><strong>定理 8.31.</strong> $H$ 为一个 $m \times n$ 矩阵，$H$ 的空域是一个单检错码 当且仅当 $H$ 没有列是全零。（$e_i$ 不在空域中，$d_{min} &gt; 1$）</p>
-<p><strong>定理 8.34.</strong> $H$ 为一个 $m \times n$ 矩阵，$H$ 的空域是一个单纠错码 当且仅当 $H$ 没有列是全零并且没有两列是相同的。（$e_i + e_j$ 不在空域中，$d_{min} \geq 3$）</p>
-<p>所以一个 $m \times n$ 的规范奇偶校验阵，要检一位错、纠一位错，除了 $\textbf{0}, \textbf{e_i}$，剩余 $2^m - (1 + m)$ 个为信息列。</p>
-<hr>
-<h1 id="高效解码"><a href="#高效解码" class="headerlink" title="高效解码"></a>高效解码</h1><p><strong>x</strong>的<strong>像</strong>（syndrome）：$H\textbf{x}$</p>
-<p><strong>命题 8.36.</strong> 矩阵 $H$ 决定了一套线性码，$\textbf{x} = \textbf{c} + \textbf{e} $ 为接收到的$n$-位串，$\textbf{c}$ 为正确码字，$\textbf{e}$ 为错误，则 $H\textbf{x} = H\textbf{e}$。</p>
-<ul>
-<li>这个命题说明接受到的信息由错误决定而不是由正确码字决定。</li>
-</ul>
-<p><strong>定理 8.37.</strong> $H \in \mathbb{M}_{m\times n}(\mathbb{Z}_2)$ 并且假设 $H$ 的编码是一个单检错码，$\textbf{r}$ 是接收到的 $n$-位码，如果 $H\textbf{r} = \textbf{0}$，则没有错；否则，如果 $H\textbf{r} $ 等于 $H$ 的第 $i$ 列，则第 $i$ 位出错。</p>
-<h2 id="陪集解码（Coset-Decoding）"><a href="#陪集解码（Coset-Decoding）" class="headerlink" title="陪集解码（Coset Decoding）"></a>陪集解码（Coset Decoding）</h2><p>把所有陪集表示（$\textbf{e} +     C$）列表列出来，查表解码纠错。</p>
-<p>按最大似然，总是取权最小的出错 $\textbf{e}$ ，叫做 <strong>coset leader</strong>。</p>
-]]></content>
-      <categories>
-        <category>problem-solving</category>
       </categories>
   </entry>
   <entry>
@@ -1013,6 +1013,20 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
       <categories>
         <category>problem-solving</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/02/15/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="中文"><a href="#中文" class="headerlink" title="中文"></a>中文</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>问题求解笔记-启发式算法</title>
@@ -1237,20 +1251,6 @@ E[Z_{t+1}] \geq Fit\text{-}ratio(s, P_t) \cdot \dfrac{n-  length(s)}{n} \cdot (1
       </categories>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/02/15/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="中文"><a href="#中文" class="headerlink" title="中文"></a>中文</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>leetcode 刷题笔记</title>
     <url>/2021/07/05/leetcode/</url>
     <content><![CDATA[<p>问求上完了，依然不能放松对数据结构和算法的训练，要坚持不懈的刷题。着重对一些经典题型和方法进行总结。</p>
@@ -1267,226 +1267,6 @@ E[Z_{t+1}] \geq Fit\text{-}ratio(s, P_t) \cdot \dfrac{n-  length(s)}{n} \cdot (1
 <p>其实也是一个压缩解空间的思想，比如我从右上角开始，当前元素比target大，说明在该元素下面所有的元素都不符合，只能向左移动一位。</p>
 <p>注意边界条件<code>matrix = []</code>。复杂度 $O(m + n)$。</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">findNumberIn2DArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len1 = matrix.size();</span><br><span class="line">        <span class="keyword">if</span> (len1 == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> len2 = matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">int</span> h = <span class="number">0</span>, v = len2 - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (h &lt; len1 &amp;&amp; v &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> p = matrix[h][v];</span><br><span class="line">            <span class="keyword">if</span> (p == target) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span> (p &gt; target) &#123;</span><br><span class="line">                v--;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (p &lt; target) &#123;</span><br><span class="line">                h++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>mit机器学习cv</title>
-    <url>/2021/08/10/mit-cv/</url>
-    <content><![CDATA[<p>暑假上了mit的机器学习课程，虽然时间很短内容不多，但觉得第二部分cv的老师讲得很好，所以做一篇笔记。</p>
-<a id="more"></a>
-<h1 id="lecture-1"><a href="#lecture-1" class="headerlink" title="lecture 1"></a>lecture 1</h1><p>第一节课是对 deep learning 和 computer vision 的一个介绍。计算机视觉，就是指观察图像，像素，理解图像里出现了是什么，预测会发生什么。</p>
-<h2 id="神经元（Perceptron）"><a href="#神经元（Perceptron）" class="headerlink" title="神经元（Perceptron）"></a>神经元（Perceptron）</h2><p>具体概念已经看了太多遍了，不再赘述。</p>
-<p>对于优化的概念，$W \leftarrow W - \eta \frac{\partial J(W)}{\partial W}$，他解释的很好。这个偏导项就是代价函数随着 $W$ 的变化增长最快的方向，再加上一个小步长，就是移动一点点，因为是最小值所以是反方向移动，是负号。</p>
-<h2 id="边缘检测-Edges"><a href="#边缘检测-Edges" class="headerlink" title="边缘检测 Edges"></a>边缘检测 Edges</h2><p>图上的边特征：</p>
-<ul>
-<li>图像梯度 Image gradient: $\nabla I = \left( \dfrac{\partial I}{\partial x}, \dfrac{\partial I}{\partial y} \right)$</li>
-<li>图像导数的估算 Approximation image derivative: $\dfrac{\partial I}{\partial x} \simeq I(x, y) - I(x - 1, y)$</li>
-<li>边缘强度 Edge strength: $E(x, y) = |\nabla I(x, y)|$</li>
-<li>边缘取向 Edge orientation: $\theta(x, y) = \angle \nabla I = \arctan{\dfrac{\partial I /\partial y}{\partial I / \partial x}}$</li>
-<li>边缘法线 Edge normal: $n = \dfrac{\nabla I}{|\nabla I|}$</li>
-</ul>
-<p>如果我们使用梯度算法，并绘制出边缘的强度，我们可以看到所有的边缘都暴露出来了。我们可以将这些微分方程或公式转换成图像强度的离散线性约束，这对于定义图像变化非常重要。</p>
-<h2 id="卷积-Convolution"><a href="#卷积-Convolution" class="headerlink" title="卷积 Convolution"></a>卷积 Convolution</h2><p>卷积是一个操作两个函数的数学操作，输入两个函数输出一个（函数复合）。</p>
-<p>通过滑动函数来计算，一个函数（kernel）划过另一个函数（template），在每一步把他们相乘再相加。</p>
-<script type="math/tex; mode=display">
-f[n] = h \circ g = \sum\limits_{k = 0}^{N - 1} h[n - k] g[k]</script><p>我们就可以用卷积来计算图像导数。</p>
-<p>比如用</p>
-<script type="math/tex; mode=display">
-(E \otimes k)(x, y)=\sum\limits_{i=0}^{m-1} \sum\limits_{j=0}^{n-1} E(x+i, y+j) k(i, j)</script><p>能用来计算</p>
-<script type="math/tex; mode=display">
-\dfrac{\partial E(x, y)}{\partial x}=E(x+1, y)-E(x, y)</script><p>当 $k = [-1, 1]$。</p>
-<p>然后我们可以对图像导数的定义再扩展，运用卷积计算更加复杂的一些特征。</p>
-<p><img data-src="image_dev.png" alt></p>
-<p>然后已知两个方向的导数，就可以用三角函数计算出任意方向的导数而不是真的创造任意方向的导数。</p>
-<p>将导数可视化：</p>
-<p><img data-src="Screenshot from 2021-08-10 18-51-05.png" alt></p>
-<p>甚至我们可以创造不同类型的过滤器，不只是计算导数，实现更多的图像处理技术。</p>
-<p><img data-src="Screenshot from 2021-08-10 18-57-36.png" alt></p>
-<p><em>这是我对卷积和图像处理认识的第一步，我感到非常震撼，原来我们所在ps等图像处理软件上所做的处理，其原理真的就是矩阵对于像素的计算。不由得想到jyy的名言：计算机世界没有魔法(。</em></p>
-<p>而我们在这节课学的是如何去学习卷积的参数而不是导数卷积，也就是说找到最好的 kernel。</p>
-<p>我们可以把很多层卷基层堆积在一起，形成一个卷积块（我自己起的名字），维度是 $H \times W \times D$，$D$ 深度是过滤层的个数。</p>
-<p>步幅（stride）。</p>
-<p>卷基层的特点：</p>
-<ul>
-<li>空间不变性（Spatial invariance）</li>
-<li>批量处理，高效并行</li>
-<li>图像过滤</li>
-<li>共享参数，高效</li>
-<li>多种大小输入</li>
-</ul>
-<p><strong>gabor filters</strong></p>
-<h2 id="池化-Pooling"><a href="#池化-Pooling" class="headerlink" title="池化 Pooling"></a>池化 Pooling</h2><p>Pooling 和 convolution 不一样的地方是，卷积在于从一块像素中提取信息，而 pooling 是为了将信息压缩，使得一块像素塌缩成一个单位，也是对数据的抽样，对信息流的限制。</p>
-<p><strong>max pooling</strong></p>
-<h2 id="结合起来"><a href="#结合起来" class="headerlink" title="结合起来"></a>结合起来</h2><p>我们就可以叠buff，一层conv一层relu一层pooling，一层conv一层relu一层pooling。。。实现一个端对端模型，一层层提取结构。</p>
-<p>General CNN architecture:</p>
-<p><img data-src="Screenshot from 2021-08-10 21-35-47.png" alt></p>
-<h1 id="Lecture-2"><a href="#Lecture-2" class="headerlink" title="Lecture 2"></a>Lecture 2</h1><h2 id="CNN-Architectures"><a href="#CNN-Architectures" class="headerlink" title="CNN Architectures"></a>CNN Architectures</h2><ul>
-<li>LeNet: LeCun et al. 1998. <ul>
-<li>第一个视觉神经网络。</li>
-</ul>
-</li>
-<li>AlexNet: Krizhevsky et al. NeurIPS 2012. <ul>
-<li>两个信息流并行，更深度。</li>
-</ul>
-</li>
-<li>GoogLeNet/Inception: Szegedy et al. CVPR 2015. <ul>
-<li>Inception module</li>
-<li>更小的卷积，更深，更精确。</li>
-</ul>
-</li>
-<li>VGGNet: Simonyan et al. ICLR 2015.</li>
-</ul>
-<p><del>CV历史</del></p>
-<h2 id="残差连接-Scaling-CNNs-residual-connections"><a href="#残差连接-Scaling-CNNs-residual-connections" class="headerlink" title="残差连接 Scaling CNNs: residual connections"></a>残差连接 Scaling CNNs: residual connections</h2><p>普通的卷积层的代价函数过于复杂，容易陷入局部最优，很难找到全局最优。简单的卷积加池化无法使模型更好。</p>
-<p>我们需要学习残差的变化而不是实际的端对端函数。</p>
-<h2 id="残差区块-Residual-blocks"><a href="#残差区块-Residual-blocks" class="headerlink" title="残差区块 Residual blocks"></a>残差区块 Residual blocks</h2><p><img data-src="Screenshot from 2021-08-10 22-47-54.png" alt></p>
-<p>不是只学习从 $x$ 到输出，我们学习的是变化、残差，以达到输出的目的。它能够把问题变得更简单。</p>
-<p>优点：</p>
-<ul>
-<li>更快的梯度传输。</li>
-<li>只应用少量的残余值而不是整个函数值。</li>
-<li>保持输入的结构。</li>
-</ul>
-<p>当输出和输入的结构不一样时，加一个权重层来投影到正确的维度。</p>
-<p>有各种各样的残差连接。</p>
-<ul>
-<li>ResNet: He et al. CVPR 2016.<ul>
-<li>使得机器图片识别准确性开始超过人类。</li>
-<li>突破计算机可以训练的层数，$25 \to 150$。</li>
-<li>代价函数更佳平滑，容易找到全局最优。</li>
-</ul>
-</li>
-</ul>
-<h2 id="数据集-Dataset"><a href="#数据集-Dataset" class="headerlink" title="数据集 Dataset"></a>数据集 Dataset</h2><p>深度学习不是什么都能学的，要仔细选择数据集，不能往里面“扔垃圾”。</p>
-<blockquote>
-<p>Garbage in, Garbage out.</p>
-</blockquote>
-<ul>
-<li>MNIST</li>
-<li>Image NET</li>
-<li>CIFAR  10/100<ul>
-<li>Facet: tool for vusualization of train data</li>
-</ul>
-</li>
-<li>Object Net</li>
-<li>MiniPlaces: scene recognition</li>
-</ul>
-<h1 id="Lecture-3"><a href="#Lecture-3" class="headerlink" title="Lecture 3"></a>Lecture 3</h1><p>本节主要讲图像序列，连续图像的处理。</p>
-<h2 id="循环神经网络-Recurrent-neural-network"><a href="#循环神经网络-Recurrent-neural-network" class="headerlink" title="循环神经网络 Recurrent neural network"></a>循环神经网络 Recurrent neural network</h2><p>为了建模序列，我们需要：</p>
-<ol>
-<li>处理变化长度的序列。</li>
-<li>跟踪长期的依赖关系。</li>
-<li>保持信息的时间顺序。</li>
-<li>在序列中的共享参数。</li>
-</ol>
-<p>原本我们的模型都是一对一的，现在我妈们可以考虑一对多、多对一、多对多预测，多对多分类。我们需要更新我们的模型，使得能够整合连续序列信息。</p>
-<h3 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h3><p>老师在这门课上并没有详细地讲解 RNN 的数学理论，简单介绍一下。</p>
-<p>在 RNN 中，我们有时间 $t$ 这个概念，在每个时间点会有一个输入 $x_t$，然后有一个隐藏状态 $h_t$ 在每个时间点，状态序列就通过一个循环过程产生：</p>
-<script type="math/tex; mode=display">
-h_t = f_W(h_{t - 1}, x_t)</script><p>注意每个时间点所用的函数都是一样（保持时间对称性），也就是当前状态由前一个状态和当前输入决定，其实很像数电中状态机、时序的概念。</p>
-<p>具体的，会由两个矩阵来线性组合出当前状态：</p>
-<script type="math/tex; mode=display">
-h_t = \tanh{(W_{hh}^Th_{t-1} + W_{xh}^{T}x_t)}\\
-\hat{y}_t = W_{hy}^{T}h_t</script><p>这个 $\hat{y}$ 是对当前状态产生的一个输出，因为 $h$ 可以看作只是状态的一个编码。</p>
-<p>然后其中的权重矩阵就会由学习得到。</p>
-<p><img data-src="Screenshot from 2021-08-11 18-07-27.png" alt></p>
-<p>如果我们考虑将所有时间的信息都记录下来，长距离的依赖会导致问题：</p>
-<ul>
-<li>需要记录的东西和内存会随着时间不断增加。</li>
-<li>没有无限大的参数集来建模所有依赖。</li>
-<li>RNN假设：当前隐藏层状态只依赖于前一个时间点的状态。</li>
-<li>想法是建立隐藏状态来建模长距离的依赖。</li>
-</ul>
-<p>这些想法促使了我们需要一个有更好建模长距离依赖能力的新模型架构。</p>
-<h3 id="长短时记忆单元-Long-short-term-memory-unit"><a href="#长短时记忆单元-Long-short-term-memory-unit" class="headerlink" title="长短时记忆单元 Long short term memory unit"></a>长短时记忆单元 Long short term memory unit</h3><p>也没有仔细描述 LSTM 的细节，主要思想是 not to forget &amp; learn to forget。</p>
-<p>LSTM 使用<strong>门（gates）</strong> 来控制信息流：</p>
-<ul>
-<li><strong>遗忘</strong> 来减少无关信息</li>
-<li><strong>储存</strong> 相关信息从当前输入</li>
-<li>选择性 <strong>更新</strong> 单元状态</li>
-<li><strong>输出</strong>一个过滤版本状态</li>
-</ul>
-<h2 id="RNNs-CNNs"><a href="#RNNs-CNNs" class="headerlink" title="RNNs + CNNs"></a>RNNs + CNNs</h2><p>核心思想就是 CNNs 来学习出2D图像的特征提取器，压缩后的特征喂入 RNNs 分析序列。</p>
-<p><img data-src="Screenshot from 2021-08-11 18-47-07.png" alt></p>
-<h2 id="CV中的应用"><a href="#CV中的应用" class="headerlink" title="CV中的应用"></a>CV中的应用</h2><h3 id="视频分类"><a href="#视频分类" class="headerlink" title="视频分类"></a>视频分类</h3><p><img data-src="Screenshot from 2021-08-11 21-44-11.png" alt></p>
-<p>有多种整合特征的方法。</p>
-<h3 id="图像标题-imgae-captioning"><a href="#图像标题-imgae-captioning" class="headerlink" title="图像标题 imgae captioning"></a>图像标题 imgae captioning</h3><p>目标是生成准确捕捉图像内容的句子。</p>
-<ul>
-<li>生成模型</li>
-</ul>
-<p><img data-src="Screenshot from 2021-08-11 21-44-40.png" alt></p>
-<h3 id="动作预测"><a href="#动作预测" class="headerlink" title="动作预测"></a>动作预测</h3><p><img data-src="Screenshot from 2021-08-11 21-53-42.png" alt></p>
-<h1 id="Lecture-4"><a href="#Lecture-4" class="headerlink" title="Lecture 4"></a>Lecture 4</h1><p>本章主要介绍<strong>图像生成模型（Generative Image Modeling）</strong>。</p>
-<h2 id="生成模型-Generative-modeling"><a href="#生成模型-Generative-modeling" class="headerlink" title="生成模型 Generative modeling"></a>生成模型 Generative modeling</h2><p>在第二节课中我们学到了图像分类，我们思考能不能将这个一对一映射反过来，根据标签去生成图像。</p>
-<p><strong>图像合成（image synthesis）</strong></p>
-<p><strong>图像翻译（image translation）</strong></p>
-<p>生成模型的目标就是：学习出一个代表并捕捉了一些控制相关数据的潜在概率分布深度学习模型。</p>
-<p>在计算机视觉中：</p>
-<ul>
-<li>学习拟合一个数据流形（data manifold）。</li>
-<li>从习得的分布产生新的样例。</li>
-</ul>
-<p>挑战：</p>
-<ul>
-<li>高维。</li>
-<li>潜在分布的复杂性。</li>
-</ul>
-<p>所以我们用深度学习来建模因为它的数据驱动的拟合函数方式。</p>
-<h2 id="模型架构-Architecture"><a href="#模型架构-Architecture" class="headerlink" title="模型架构 Architecture"></a>模型架构 Architecture</h2><p>分布转化（distribution transformers）</p>
-<p><img data-src="Screenshot from 2021-08-12 18-36-59.png" alt></p>
-<p>我们需要神经网络上非常聪明的方法，来实现端对端的动态模型。</p>
-<p>我们从一个可以使低维的概率分布，习得一个神经网络模型，从原来的分布到目标数据的分布。在这个过程中我们可以生产落在目标数据中的合成图像，这就是生成模型的关键。</p>
-<p><img data-src="Screenshot from 2021-08-12 18-43-11.png" alt></p>
-<p>关于建立这种模型可以分为两类，一种是明确估计概率函数的，另一种是不明确地学习密度函数的，从隐式的学习到实现生成。我们将会主要讨论 <strong>VAE</strong> 和 <strong>GAN</strong>。</p>
-<p><img data-src="Screenshot from 2021-08-12 18-46-16.png" alt></p>
-<h3 id="变分自编码-Variational-autoencoders"><a href="#变分自编码-Variational-autoencoders" class="headerlink" title="变分自编码 Variational autoencoders"></a>变分自编码 Variational autoencoders</h3><p>我们是想要从真实的数据空间，模拟生成合成样本或真正数据空间的重构，能够概括数据的形态。</p>
-<p><strong>VAE</strong> 先将真实数据编码成低维特征空间或隐空间（latent space），由一组隐变量编码而成，我们可以去学习这个特征空间而不需要任何监督。</p>
-<p><strong>VAE</strong> 将问题分成两个部分，一个就是对于原来的高维的真实数据编码（encode）成低维的数据空间，从而来限制提取出有用的特征。基于此，我们要从这个低维的数据空间解码（decode）或习得一个重构的数据空间。</p>
-<p>所以对于图像数据，编码和解码网络就可以由卷积结构来构建。</p>
-<p><img data-src="Screenshot from 2021-08-12 18-57-17.png" alt></p>
-<p>我们算出隐空间 $z$ 的概率分布，根据输入数据 $x$，它将被编码网络的权重矩阵参数化，我们用 $\phi$ 来表示。然后反向地我们可以做出解码网络，根据 $z$ 计算出 $x$，解码参数为 $\theta$。把两部分连起来。</p>
-<p>训练的方法就是将两部分整合进代价函数，参数为 $\phi$ 和 $\theta$，一项是正则化项。</p>
-<p>为了训练这个模型，我们需要预先给定一些概率分布，这取决于我们希望这些隐变量采取怎样的形态。我们会在每一个隐变量 $z$ 上加上一个高斯分布（Gaussian prior）。</p>
-<p>为了不是绝对重建，我们还得想办法从 $z$ 中取样，我们要参数化 $z$，用均值和标准差根据之前的正太高斯分布，把标准差按照一个噪声因子进行缩放，该因子包含了随机性、概率元素和变分元素，使我们可以用 <strong>VAE</strong> 生成合成的数据实例。</p>
-<p>更具体地说，当我们施加高斯分布，并将隐变量参数化为平均值和标准差并缩放一个噪声系数，这样子我们就可以算出代价函数，根据重建项和一个正则化项，其中正则化项可以得到我们根据隐变量学习解码出的结果和根据高斯分布指定的隐变量分布形态之间的差距。</p>
-<script type="math/tex; mode=display">
-\mathcal{L}(\phi, \theta, x) = \| x - \hat{x} \|^2 + D(q_\phi(z|x) | p(z))</script><script type="math/tex; mode=display">
-z = \mu + \sigma \odot \varepsilon</script><p>这是一个很好的可跟踪的方法，来检查网络并理解网络到底学了什么信息。我们要做的，就是<strong>潜变量摄动（latent variable perturbation）</strong>就是改变 $z$ 然后观察输出结果，得到前变量的属性，是否相互独立等。</p>
-<p>总结：</p>
-<ol>
-<li>压缩数据的表示到低维空间。</li>
-<li>重建允许了无监督学习。</li>
-<li>重参数化技巧来训练。</li>
-<li>通过摄动解释潜变量。</li>
-<li>生成新实例。</li>
-</ol>
-<h3 id="生成对抗网络-Generative-adversarial-networks"><a href="#生成对抗网络-Generative-adversarial-networks" class="headerlink" title="生成对抗网络 Generative adversarial networks"></a>生成对抗网络 Generative adversarial networks</h3><p>核心理念是：<br>我们先从完全高斯噪声作为初始的 $z$ 分布开始，去生成符合的图像数据。制定一条端到端的流水线，它们由两个网络组成，一个是<strong>生成器（generator）</strong>，一个是<strong>识别器（discriminator）</strong>，它们在一个敌对博弈中相互竞争。我们从一个高斯噪声输入开始，生成器生成合成图像，然后被喂到分类网络中，这个网路被训练去思考这个实例是真实的或人造的。整个过程通过迭代，训练识别器和生成器通过相互竞争实现优化。全局最优就是识别器识别不出来了。</p>
-<p><img data-src="Screenshot from 2021-08-13 00-33-13.png" alt></p>
-<p>从高斯噪声开始，生成器生成的合成图片被输入识别器，同时真实的图片也会被输入识别器，识别器被训练来判断输入的图像是真的还是假的，对于我们可以优化的损失这些损失都是交叉熵损失：</p>
-<script type="math/tex; mode=display">
-\arg \max\limits_{D} \mathbb{E}_{\mathbf{z}, \mathbf{x}}[\log D(G(\mathbf{z}))+\log (1-D(\mathbf{x}))</script><p>前一项描述的是识别器对于生成器的图像的真假判断的概率，后一项刻画的是一个给定的图片是否与一个真标签相关联。我们利用交叉熵损失和最大化分离目标来训练识别器。</p>
-<script type="math/tex; mode=display">
-\arg \min\limits_{G} \mathbb{E}_{\mathbf{z}, \mathbf{x}}[\log D(G(\mathbf{z}))+\log (1-D(\mathbf{x}))]</script><p>相反地，我们可以用同样的交叉熵，用最小化代替最大化，也就是说让它与识别器为敌。</p>
-<p>我们可以通过内插，在高斯噪声中的两个数据点，实现由 GAN 生成的合成图像的扰动，观察其在学习到的数据空间流形中的距离，来调试 GAN。优点是保证了映射的条理性。</p>
-<p>对传统 GAN 的优化：</p>
-<ul>
-<li><p>StyleGAN, Karras+ 2019</p>
-</li>
-<li><p>我看不懂（</p>
-</li>
-</ul>
-<p><img data-src="Screenshot from 2021-08-13 00-54-23.png" alt></p>
-<h2 id="Recent-Advances"><a href="#Recent-Advances" class="headerlink" title="Recent Advances"></a>Recent Advances</h2><ul>
-<li>Paired translation<ul>
-<li>pix2pix</li>
-</ul>
-</li>
-<li>CycleGAN: domain transfer</li>
-</ul>
-<p><img data-src="Screenshot from 2021-08-13 01-05-39.png" alt></p>
-]]></content>
-      <categories>
-        <category>ML</category>
-      </categories>
   </entry>
   <entry>
     <title>问题求解笔记-NP完全性</title>
@@ -1722,6 +1502,18 @@ z = \mu + \sigma \odot \varepsilon</script><p>这是一个很好的可跟踪的�
 <p>深拷贝。该<code>copy</code>方法生成数组及其数据的完整副本。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = a.copy()                          <span class="comment"># a new array object with new data is created</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d <span class="keyword">is</span> a</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.base <span class="keyword">is</span> a                           <span class="comment"># d doesn&#x27;t share anything with a</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d[<span class="number">0</span>,<span class="number">0</span>] = <span class="number">9999</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">array([[   <span class="number">0</span>,   <span class="number">10</span>,   <span class="number">10</span>,    <span class="number">3</span>],</span><br><span class="line">       [<span class="number">1234</span>,   <span class="number">10</span>,   <span class="number">10</span>,    <span class="number">7</span>],</span><br><span class="line">       [   <span class="number">8</span>,   <span class="number">10</span>,   <span class="number">10</span>,   <span class="number">11</span>]])</span><br></pre></td></tr></table></figure>
 <p>有时，如果不再需要原始数组，则应在切片后调用 <code>copy</code>。</p>
+<h1 id="np-random"><a href="#np-random" class="headerlink" title="np.random"></a>np.random</h1><h2 id="np-random-choice"><a href="#np-random-choice" class="headerlink" title="np.random.choice"></a>np.random.choice</h2><p><code>random.choice(a, size=None, replace=True, p=None)</code></p>
+<p>从一个给定1维向量生成一个随机样本。</p>
+<ul>
+<li><code>a</code> 是一个list或整数，如果是整数则 <code>np.arrange(a)</code>，从这个范围中随机生成。</li>
+<li><code>size</code> 是输出的形状。</li>
+</ul>
+<h1 id="np-expand-dims"><a href="#np-expand-dims" class="headerlink" title="np.expand_dims()"></a>np.expand_dims()</h1><p><code>np.expand_dims(a, axis)</code></p>
+<p>扩展 array 的形状，在 axis 处插入一个新轴。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.array([<span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = np.expand_dims(x, axis=<span class="number">0</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y.shape</span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = np.expand_dims(x, axis=<span class="number">1</span>)</span><br><span class="line">y</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>array([[<span class="number">1</span>],</span><br><span class="line">           [<span class="number">2</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y.shape</span><br><span class="line">(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = np.expand_dims(x, axis=(<span class="number">0</span>, <span class="number">1</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y</span><br><span class="line">array([[[<span class="number">1</span>, <span class="number">2</span>]]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = np.expand_dims(x, axis=(<span class="number">2</span>, <span class="number">0</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y</span><br><span class="line">array([[[<span class="number">1</span>],</span><br><span class="line">        [<span class="number">2</span>]]])</span><br></pre></td></tr></table></figure>
+<h1 id="np-squeeze"><a href="#np-squeeze" class="headerlink" title="np.squeeze()"></a>np.squeeze()</h1><p><code>np.squeeze(a, axis)</code></p>
+<p>删除 array 的一个轴。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.array([[[<span class="number">0</span>], [<span class="number">1</span>], [<span class="number">2</span>]]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.shape</span><br><span class="line">(<span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.squeeze(x).shape</span><br><span class="line">(<span class="number">3</span>,)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.squeeze(x, axis=<span class="number">0</span>).shape</span><br><span class="line">(<span class="number">3</span>, <span class="number">1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.squeeze(x, axis=<span class="number">1</span>).shape</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">...</span><br><span class="line">ValueError: cannot select an axis to squeeze out which has size <span class="keyword">not</span> equal to one</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.squeeze(x, axis=<span class="number">2</span>).shape</span><br><span class="line">(<span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.array([[<span class="number">1234</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.shape</span><br><span class="line">(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.squeeze(x)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>array(<span class="number">1234</span>)  <span class="comment"># 0d array</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.squeeze(x).shape</span><br><span class="line">()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.squeeze(x)[()]</span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>python</category>
@@ -2143,6 +1935,263 @@ Prob(A_k(x) \in Output_U(x)) = 1 - [Prob(A(x) \notin Output_U(x))]^k,</script><p
 ]]></content>
       <categories>
         <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>mit机器学习cv</title>
+    <url>/2021/08/10/mit-cv/</url>
+    <content><![CDATA[<p>暑假上了mit的机器学习课程，虽然时间很短内容不多，但觉得第二部分cv的老师讲得很好，所以做一篇笔记。</p>
+<a id="more"></a>
+<h1 id="lecture-1"><a href="#lecture-1" class="headerlink" title="lecture 1"></a>lecture 1</h1><p>第一节课是对 deep learning 和 computer vision 的一个介绍。计算机视觉，就是指观察图像，像素，理解图像里出现了是什么，预测会发生什么。</p>
+<h2 id="神经元（Perceptron）"><a href="#神经元（Perceptron）" class="headerlink" title="神经元（Perceptron）"></a>神经元（Perceptron）</h2><p>具体概念已经看了太多遍了，不再赘述。</p>
+<p>对于优化的概念，$W \leftarrow W - \eta \frac{\partial J(W)}{\partial W}$，他解释的很好。这个偏导项就是代价函数随着 $W$ 的变化增长最快的方向，再加上一个小步长，就是移动一点点，因为是最小值所以是反方向移动，是负号。</p>
+<h2 id="边缘检测-Edges"><a href="#边缘检测-Edges" class="headerlink" title="边缘检测 Edges"></a>边缘检测 Edges</h2><p>图上的边特征：</p>
+<ul>
+<li>图像梯度 Image gradient: $\nabla I = \left( \dfrac{\partial I}{\partial x}, \dfrac{\partial I}{\partial y} \right)$</li>
+<li>图像导数的估算 Approximation image derivative: $\dfrac{\partial I}{\partial x} \simeq I(x, y) - I(x - 1, y)$</li>
+<li>边缘强度 Edge strength: $E(x, y) = |\nabla I(x, y)|$</li>
+<li>边缘取向 Edge orientation: $\theta(x, y) = \angle \nabla I = \arctan{\dfrac{\partial I /\partial y}{\partial I / \partial x}}$</li>
+<li>边缘法线 Edge normal: $n = \dfrac{\nabla I}{|\nabla I|}$</li>
+</ul>
+<p>如果我们使用梯度算法，并绘制出边缘的强度，我们可以看到所有的边缘都暴露出来了。我们可以将这些微分方程或公式转换成图像强度的离散线性约束，这对于定义图像变化非常重要。</p>
+<h2 id="卷积-Convolution"><a href="#卷积-Convolution" class="headerlink" title="卷积 Convolution"></a>卷积 Convolution</h2><p>卷积是一个操作两个函数的数学操作，输入两个函数输出一个（函数复合）。</p>
+<p>通过滑动函数来计算，一个函数（kernel）划过另一个函数（template），在每一步把他们相乘再相加。</p>
+<script type="math/tex; mode=display">
+f[n] = h \circ g = \sum\limits_{k = 0}^{N - 1} h[n - k] g[k]</script><p>我们就可以用卷积来计算图像导数。</p>
+<p>比如用</p>
+<script type="math/tex; mode=display">
+(E \otimes k)(x, y)=\sum\limits_{i=0}^{m-1} \sum\limits_{j=0}^{n-1} E(x+i, y+j) k(i, j)</script><p>能用来计算</p>
+<script type="math/tex; mode=display">
+\dfrac{\partial E(x, y)}{\partial x}=E(x+1, y)-E(x, y)</script><p>当 $k = [-1, 1]$。</p>
+<p>然后我们可以对图像导数的定义再扩展，运用卷积计算更加复杂的一些特征。</p>
+<p><img data-src="image_dev.png" alt></p>
+<p>然后已知两个方向的导数，就可以用三角函数计算出任意方向的导数而不是真的创造任意方向的导数。</p>
+<p>将导数可视化：</p>
+<p><img data-src="Screenshot from 2021-08-10 18-51-05.png" alt></p>
+<p>甚至我们可以创造不同类型的过滤器，不只是计算导数，实现更多的图像处理技术。</p>
+<p><img data-src="Screenshot from 2021-08-10 18-57-36.png" alt></p>
+<p><em>这是我对卷积和图像处理认识的第一步，我感到非常震撼，原来我们所在ps等图像处理软件上所做的处理，其原理真的就是矩阵对于像素的计算。不由得想到jyy的名言：计算机世界没有魔法(。</em></p>
+<p>而我们在这节课学的是如何去学习卷积的参数而不是导数卷积，也就是说找到最好的 kernel。</p>
+<p>我们可以把很多层卷基层堆积在一起，形成一个卷积块（我自己起的名字），维度是 $H \times W \times D$，$D$ 深度是过滤层的个数。</p>
+<p>步幅（stride）。</p>
+<p>卷基层的特点：</p>
+<ul>
+<li>空间不变性（Spatial invariance）</li>
+<li>批量处理，高效并行</li>
+<li>图像过滤</li>
+<li>共享参数，高效</li>
+<li>多种大小输入</li>
+</ul>
+<p><strong>gabor filters</strong></p>
+<h2 id="池化-Pooling"><a href="#池化-Pooling" class="headerlink" title="池化 Pooling"></a>池化 Pooling</h2><p>Pooling 和 convolution 不一样的地方是，卷积在于从一块像素中提取信息，而 pooling 是为了将信息压缩，使得一块像素塌缩成一个单位，也是对数据的抽样，对信息流的限制。</p>
+<p><strong>max pooling</strong></p>
+<h2 id="结合起来"><a href="#结合起来" class="headerlink" title="结合起来"></a>结合起来</h2><p>我们就可以叠buff，一层conv一层relu一层pooling，一层conv一层relu一层pooling。。。实现一个端对端模型，一层层提取结构。</p>
+<p>General CNN architecture:</p>
+<p><img data-src="Screenshot from 2021-08-10 21-35-47.png" alt></p>
+<h1 id="Lecture-2"><a href="#Lecture-2" class="headerlink" title="Lecture 2"></a>Lecture 2</h1><h2 id="CNN-Architectures"><a href="#CNN-Architectures" class="headerlink" title="CNN Architectures"></a>CNN Architectures</h2><ul>
+<li>LeNet: LeCun et al. 1998. <ul>
+<li>第一个视觉神经网络。</li>
+</ul>
+</li>
+<li>AlexNet: Krizhevsky et al. NeurIPS 2012. <ul>
+<li>两个信息流并行，更深度。</li>
+</ul>
+</li>
+<li>GoogLeNet/Inception: Szegedy et al. CVPR 2015. <ul>
+<li>Inception module</li>
+<li>更小的卷积，更深，更精确。</li>
+</ul>
+</li>
+<li>VGGNet: Simonyan et al. ICLR 2015.</li>
+</ul>
+<p><del>CV历史</del></p>
+<h2 id="残差连接-Scaling-CNNs-residual-connections"><a href="#残差连接-Scaling-CNNs-residual-connections" class="headerlink" title="残差连接 Scaling CNNs: residual connections"></a>残差连接 Scaling CNNs: residual connections</h2><p>普通的卷积层的代价函数过于复杂，容易陷入局部最优，很难找到全局最优。简单的卷积加池化无法使模型更好。</p>
+<p>我们需要学习残差的变化而不是实际的端对端函数。</p>
+<h2 id="残差区块-Residual-blocks"><a href="#残差区块-Residual-blocks" class="headerlink" title="残差区块 Residual blocks"></a>残差区块 Residual blocks</h2><p><img data-src="Screenshot from 2021-08-10 22-47-54.png" alt></p>
+<p>不是只学习从 $x$ 到输出，我们学习的是变化、残差，以达到输出的目的。它能够把问题变得更简单。</p>
+<p>优点：</p>
+<ul>
+<li>更快的梯度传输。</li>
+<li>只应用少量的残余值而不是整个函数值。</li>
+<li>保持输入的结构。</li>
+</ul>
+<p>当输出和输入的结构不一样时，加一个权重层来投影到正确的维度。</p>
+<p>有各种各样的残差连接。</p>
+<ul>
+<li>ResNet: He et al. CVPR 2016.<ul>
+<li>使得机器图片识别准确性开始超过人类。</li>
+<li>突破计算机可以训练的层数，$25 \to 150$。</li>
+<li>代价函数更佳平滑，容易找到全局最优。</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据集-Dataset"><a href="#数据集-Dataset" class="headerlink" title="数据集 Dataset"></a>数据集 Dataset</h2><p>深度学习不是什么都能学的，要仔细选择数据集，不能往里面“扔垃圾”。</p>
+<blockquote>
+<p>Garbage in, Garbage out.</p>
+</blockquote>
+<ul>
+<li>MNIST</li>
+<li>Image NET</li>
+<li>CIFAR  10/100<ul>
+<li>Facet: tool for vusualization of train data</li>
+</ul>
+</li>
+<li>Object Net</li>
+<li>MiniPlaces: scene recognition</li>
+</ul>
+<h1 id="Lecture-3"><a href="#Lecture-3" class="headerlink" title="Lecture 3"></a>Lecture 3</h1><p>本节主要讲图像序列，连续图像的处理。</p>
+<h2 id="循环神经网络-Recurrent-neural-network"><a href="#循环神经网络-Recurrent-neural-network" class="headerlink" title="循环神经网络 Recurrent neural network"></a>循环神经网络 Recurrent neural network</h2><p>为了建模序列，我们需要：</p>
+<ol>
+<li>处理变化长度的序列。</li>
+<li>跟踪长期的依赖关系。</li>
+<li>保持信息的时间顺序。</li>
+<li>在序列中的共享参数。</li>
+</ol>
+<p>原本我们的模型都是一对一的，现在我妈们可以考虑一对多、多对一、多对多预测，多对多分类。我们需要更新我们的模型，使得能够整合连续序列信息。</p>
+<h3 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h3><p>老师在这门课上并没有详细地讲解 RNN 的数学理论，简单介绍一下。</p>
+<p>在 RNN 中，我们有时间 $t$ 这个概念，在每个时间点会有一个输入 $x_t$，然后有一个隐藏状态 $h_t$ 在每个时间点，状态序列就通过一个循环过程产生：</p>
+<script type="math/tex; mode=display">
+h_t = f_W(h_{t - 1}, x_t)</script><p>注意每个时间点所用的函数都是一样（保持时间对称性），也就是当前状态由前一个状态和当前输入决定，其实很像数电中状态机、时序的概念。</p>
+<p>具体的，会由两个矩阵来线性组合出当前状态：</p>
+<script type="math/tex; mode=display">
+h_t = \tanh{(W_{hh}^Th_{t-1} + W_{xh}^{T}x_t)}\\
+\hat{y}_t = W_{hy}^{T}h_t</script><p>这个 $\hat{y}$ 是对当前状态产生的一个输出，因为 $h$ 可以看作只是状态的一个编码。</p>
+<p>然后其中的权重矩阵就会由学习得到。</p>
+<p><img data-src="Screenshot from 2021-08-11 18-07-27.png" alt></p>
+<p>如果我们考虑将所有时间的信息都记录下来，长距离的依赖会导致问题：</p>
+<ul>
+<li>需要记录的东西和内存会随着时间不断增加。</li>
+<li>没有无限大的参数集来建模所有依赖。</li>
+<li>RNN假设：当前隐藏层状态只依赖于前一个时间点的状态。</li>
+<li>想法是建立隐藏状态来建模长距离的依赖。</li>
+</ul>
+<p>这些想法促使了我们需要一个有更好建模长距离依赖能力的新模型架构。</p>
+<h3 id="长短时记忆单元-Long-short-term-memory-unit"><a href="#长短时记忆单元-Long-short-term-memory-unit" class="headerlink" title="长短时记忆单元 Long short term memory unit"></a>长短时记忆单元 Long short term memory unit</h3><p>也没有仔细描述 LSTM 的细节，主要思想是 not to forget &amp; learn to forget。</p>
+<p>LSTM 使用<strong>门（gates）</strong> 来控制信息流：</p>
+<ul>
+<li><strong>遗忘</strong> 来减少无关信息</li>
+<li><strong>储存</strong> 相关信息从当前输入</li>
+<li>选择性 <strong>更新</strong> 单元状态</li>
+<li><strong>输出</strong>一个过滤版本状态</li>
+</ul>
+<h2 id="RNNs-CNNs"><a href="#RNNs-CNNs" class="headerlink" title="RNNs + CNNs"></a>RNNs + CNNs</h2><p>核心思想就是 CNNs 来学习出2D图像的特征提取器，压缩后的特征喂入 RNNs 分析序列。</p>
+<p><img data-src="Screenshot from 2021-08-11 18-47-07.png" alt></p>
+<h2 id="CV中的应用"><a href="#CV中的应用" class="headerlink" title="CV中的应用"></a>CV中的应用</h2><h3 id="视频分类"><a href="#视频分类" class="headerlink" title="视频分类"></a>视频分类</h3><p><img data-src="Screenshot from 2021-08-11 21-44-11.png" alt></p>
+<p>有多种整合特征的方法。</p>
+<h3 id="图像标题-imgae-captioning"><a href="#图像标题-imgae-captioning" class="headerlink" title="图像标题 imgae captioning"></a>图像标题 imgae captioning</h3><p>目标是生成准确捕捉图像内容的句子。</p>
+<ul>
+<li>生成模型</li>
+</ul>
+<p><img data-src="Screenshot from 2021-08-11 21-44-40.png" alt></p>
+<h3 id="动作预测"><a href="#动作预测" class="headerlink" title="动作预测"></a>动作预测</h3><p><img data-src="Screenshot from 2021-08-11 21-53-42.png" alt></p>
+<h1 id="Lecture-4"><a href="#Lecture-4" class="headerlink" title="Lecture 4"></a>Lecture 4</h1><p>本章主要介绍<strong>图像生成模型（Generative Image Modeling）</strong>。</p>
+<h2 id="生成模型-Generative-modeling"><a href="#生成模型-Generative-modeling" class="headerlink" title="生成模型 Generative modeling"></a>生成模型 Generative modeling</h2><p>在第二节课中我们学到了图像分类，我们思考能不能将这个一对一映射反过来，根据标签去生成图像。</p>
+<p><strong>图像合成（image synthesis）</strong></p>
+<p><strong>图像翻译（image translation）</strong></p>
+<p>生成模型的目标就是：学习出一个代表并捕捉了一些控制相关数据的潜在概率分布深度学习模型。</p>
+<p>在计算机视觉中：</p>
+<ul>
+<li>学习拟合一个数据流形（data manifold）。</li>
+<li>从习得的分布产生新的样例。</li>
+</ul>
+<p>挑战：</p>
+<ul>
+<li>高维。</li>
+<li>潜在分布的复杂性。</li>
+</ul>
+<p>所以我们用深度学习来建模因为它的数据驱动的拟合函数方式。</p>
+<h2 id="模型架构-Architecture"><a href="#模型架构-Architecture" class="headerlink" title="模型架构 Architecture"></a>模型架构 Architecture</h2><p>分布转化（distribution transformers）</p>
+<p><img data-src="Screenshot from 2021-08-12 18-36-59.png" alt></p>
+<p>我们需要神经网络上非常聪明的方法，来实现端对端的动态模型。</p>
+<p>我们从一个可以使低维的概率分布，习得一个神经网络模型，从原来的分布到目标数据的分布。在这个过程中我们可以生产落在目标数据中的合成图像，这就是生成模型的关键。</p>
+<p><img data-src="Screenshot from 2021-08-12 18-43-11.png" alt></p>
+<p>关于建立这种模型可以分为两类，一种是明确估计概率函数的，另一种是不明确地学习密度函数的，从隐式的学习到实现生成。我们将会主要讨论 <strong>VAE</strong> 和 <strong>GAN</strong>。</p>
+<p><img data-src="Screenshot from 2021-08-12 18-46-16.png" alt></p>
+<h3 id="变分自编码-Variational-autoencoders"><a href="#变分自编码-Variational-autoencoders" class="headerlink" title="变分自编码 Variational autoencoders"></a>变分自编码 Variational autoencoders</h3><p>我们是想要从真实的数据空间，模拟生成合成样本或真正数据空间的重构，能够概括数据的形态。</p>
+<p><strong>VAE</strong> 先将真实数据编码成低维特征空间或隐空间（latent space），由一组隐变量编码而成，我们可以去学习这个特征空间而不需要任何监督。</p>
+<p><strong>VAE</strong> 将问题分成两个部分，一个就是对于原来的高维的真实数据编码（encode）成低维的数据空间，从而来限制提取出有用的特征。基于此，我们要从这个低维的数据空间解码（decode）或习得一个重构的数据空间。</p>
+<p>所以对于图像数据，编码和解码网络就可以由卷积结构来构建。</p>
+<p><img data-src="Screenshot from 2021-08-12 18-57-17.png" alt></p>
+<p>我们算出隐空间 $z$ 的概率分布，根据输入数据 $x$，它将被编码网络的权重矩阵参数化，我们用 $\phi$ 来表示。然后反向地我们可以做出解码网络，根据 $z$ 计算出 $x$，解码参数为 $\theta$。把两部分连起来。</p>
+<p>训练的方法就是将两部分整合进代价函数，参数为 $\phi$ 和 $\theta$，一项是正则化项。</p>
+<p>为了训练这个模型，我们需要预先给定一些概率分布，这取决于我们希望这些隐变量采取怎样的形态。我们会在每一个隐变量 $z$ 上加上一个高斯分布（Gaussian prior）。</p>
+<p>为了不是绝对重建，我们还得想办法从 $z$ 中取样，我们要参数化 $z$，用均值和标准差根据之前的正太高斯分布，把标准差按照一个噪声因子进行缩放，该因子包含了随机性、概率元素和变分元素，使我们可以用 <strong>VAE</strong> 生成合成的数据实例。</p>
+<p>更具体地说，当我们施加高斯分布，并将隐变量参数化为平均值和标准差并缩放一个噪声系数，这样子我们就可以算出代价函数，根据重建项和一个正则化项，其中正则化项可以得到我们根据隐变量学习解码出的结果和根据高斯分布指定的隐变量分布形态之间的差距。</p>
+<script type="math/tex; mode=display">
+\mathcal{L}(\phi, \theta, x) = \| x - \hat{x} \|^2 + D(q_\phi(z|x) | p(z))</script><script type="math/tex; mode=display">
+z = \mu + \sigma \odot \varepsilon</script><p>这是一个很好的可跟踪的方法，来检查网络并理解网络到底学了什么信息。我们要做的，就是<strong>潜变量摄动（latent variable perturbation）</strong>就是改变 $z$ 然后观察输出结果，得到前变量的属性，是否相互独立等。</p>
+<p>总结：</p>
+<ol>
+<li>压缩数据的表示到低维空间。</li>
+<li>重建允许了无监督学习。</li>
+<li>重参数化技巧来训练。</li>
+<li>通过摄动解释潜变量。</li>
+<li>生成新实例。</li>
+</ol>
+<h3 id="生成对抗网络-Generative-adversarial-networks"><a href="#生成对抗网络-Generative-adversarial-networks" class="headerlink" title="生成对抗网络 Generative adversarial networks"></a>生成对抗网络 Generative adversarial networks</h3><p>核心理念是：<br>我们先从完全高斯噪声作为初始的 $z$ 分布开始，去生成符合的图像数据。制定一条端到端的流水线，它们由两个网络组成，一个是<strong>生成器（generator）</strong>，一个是<strong>识别器（discriminator）</strong>，它们在一个敌对博弈中相互竞争。我们从一个高斯噪声输入开始，生成器生成合成图像，然后被喂到分类网络中，这个网路被训练去思考这个实例是真实的或人造的。整个过程通过迭代，训练识别器和生成器通过相互竞争实现优化。全局最优就是识别器识别不出来了。</p>
+<p><img data-src="Screenshot from 2021-08-13 00-33-13.png" alt></p>
+<p>从高斯噪声开始，生成器生成的合成图片被输入识别器，同时真实的图片也会被输入识别器，识别器被训练来判断输入的图像是真的还是假的，对于我们可以优化的损失这些损失都是交叉熵损失：</p>
+<script type="math/tex; mode=display">
+\arg \max\limits_{D} \mathbb{E}_{\mathbf{z}, \mathbf{x}}[\log D(G(\mathbf{z}))+\log (1-D(\mathbf{x}))</script><p>前一项描述的是识别器对于生成器的图像的真假判断的概率，后一项刻画的是一个给定的图片是否与一个真标签相关联。我们利用交叉熵损失和最大化分离目标来训练识别器。</p>
+<script type="math/tex; mode=display">
+\arg \min\limits_{G} \mathbb{E}_{\mathbf{z}, \mathbf{x}}[\log D(G(\mathbf{z}))+\log (1-D(\mathbf{x}))]</script><p>相反地，我们可以用同样的交叉熵，用最小化代替最大化，也就是说让它与识别器为敌。</p>
+<p>我们可以通过内插，在高斯噪声中的两个数据点，实现由 GAN 生成的合成图像的扰动，观察其在学习到的数据空间流形中的距离，来调试 GAN。优点是保证了映射的条理性。</p>
+<p>对传统 GAN 的优化：</p>
+<ul>
+<li><p>StyleGAN, Karras+ 2019</p>
+</li>
+<li><p>我看不懂（</p>
+</li>
+</ul>
+<p><img data-src="Screenshot from 2021-08-13 00-54-23.png" alt></p>
+<h2 id="Recent-Advances"><a href="#Recent-Advances" class="headerlink" title="Recent Advances"></a>Recent Advances</h2><ul>
+<li>Paired translation<ul>
+<li>pix2pix</li>
+</ul>
+</li>
+<li>CycleGAN: domain transfer</li>
+</ul>
+<p><img data-src="Screenshot from 2021-08-13 01-05-39.png" alt></p>
+<h1 id="Lecture-5"><a href="#Lecture-5" class="headerlink" title="Lecture 5"></a>Lecture 5</h1><p>本章主要讲的是神经绘图和渲染（Neural Graphics and Rendering）。</p>
+<p><strong>神经渲染（Neural Rendering）</strong>：是将计算机图形学的物理知识和生成模型机器学习结合起来，通过融合不同的渲染到网络训练中。</p>
+<ul>
+<li>生成网络负责合成原始像素。</li>
+<li>可解释的参数来控制输出。</li>
+<li>光影，相机，位置，动作，结构。。</li>
+</ul>
+<h2 id="经典计算机图形学-Classical-computer-graphics"><a href="#经典计算机图形学-Classical-computer-graphics" class="headerlink" title="经典计算机图形学 Classical computer graphics"></a>经典计算机图形学 Classical computer graphics</h2><p><img data-src="Screenshot from 2021-08-13 16-28-23.png" alt></p>
+<p>两个方向，一个forward从模型到图片的渲染，一个backward从图片到模型的重建。</p>
+<p>forward 过程，对于一个模型，它可能有很多属性，光源、材料、相机等等，通过 CG 计算机绘图的函数，输出一张合理的从照相机视角看到的一个图片。</p>
+<h3 id="渲染方程"><a href="#渲染方程" class="headerlink" title="渲染方程"></a>渲染方程</h3><p>有一个渲染方程不过我看不懂：</p>
+<script type="math/tex; mode=display">
+L_{\mathrm{o}}\left(\mathbf{p}, \omega_{\mathrm{o}}\right)=L_{\mathrm{e}}\left(\mathbf{p}, \omega_{\mathrm{o}}\right)+\int_{\Omega} L_{\mathrm{i}}\left(\mathbf{p}, \omega_{\mathrm{i}}\right) f_{\mathrm{r}}\left(\mathbf{p}, \omega_{\mathrm{i}}, \omega_{\mathrm{o}}\right)\left(\omega_{\mathrm{i}} \cdot \mathbf{n}\right) \mathrm{d} \omega_{\mathrm{i}}</script><p>简单理解就是等号左边是 Outgoing radiance，该点的出射光；右边第一项是该点的光源；积分项是入射光和一个 BRDF函数。总之这个方程非常强大，可以递归。</p>
+<h3 id="BRDF"><a href="#BRDF" class="headerlink" title="BRDF"></a>BRDF</h3><p>它可以捕捉材料的变化，就可以处理反射特性，进行材料光泽的渲染。</p>
+<h2 id="神经图像表示-Neural-scene-representations"><a href="#神经图像表示-Neural-scene-representations" class="headerlink" title="神经图像表示 Neural scene representations"></a>神经图像表示 Neural scene representations</h2><h3 id="语义渲染-Semantic-rendering"><a href="#语义渲染-Semantic-rendering" class="headerlink" title="语义渲染 Semantic rendering"></a>语义渲染 Semantic rendering</h3><p>思想是通过一种语义合理的方式，控制并合成场景的外观。</p>
+<p><img data-src="Screenshot from 2021-08-13 17-01-47.png" alt></p>
+<h3 id="pix2pix-生成模型"><a href="#pix2pix-生成模型" class="headerlink" title="pix2pix 生成模型"></a>pix2pix 生成模型</h3><p>通过不仅将生成器生成的合成图片喂入识别器，还喂入原始的输入，来让识别器判断真假。</p>
+<p>这个模型工作地得很好，但它的问题是不能在高质量图片上表现得不错。</p>
+<p>所以我们要增强模型的鲁棒性，渲染更高质量的图片。</p>
+<ul>
+<li>动态增长模型（progressive growing of generative models）</li>
+<li>实时渲染</li>
+</ul>
+<h3 id="渲染风格的控制"><a href="#渲染风格的控制" class="headerlink" title="渲染风格的控制"></a>渲染风格的控制</h3><p>我们将输入编码到潜空间，单这个潜空间遵循更高维参数的分布，这些高阶参数可以用 <strong>KL分离损失</strong>来约束。</p>
+<p>也就是说他们是概率的，我们可以在这个概率分布中取样，决定了渲染的风格，即使他们都是语义正确的。</p>
+<p><img data-src="Screenshot from 2021-08-14 01-11-02.png" alt></p>
+<h2 id="Implicit-neural-rendering"><a href="#Implicit-neural-rendering" class="headerlink" title="Implicit neural rendering"></a>Implicit neural rendering</h2><p>对于反向重建，是一个端对端的神经渲染训练。</p>
+<p><img data-src="Screenshot from 2021-08-14 01-26-54.png" alt></p>
+<h3 id="基于图像的复制-Image-based-reprojection"><a href="#基于图像的复制-Image-based-reprojection" class="headerlink" title="基于图像的复制 Image-based reprojection"></a>基于图像的复制 Image-based reprojection</h3><p>场景表示：RGB值+深度</p>
+<h3 id="Point-based-rendering"><a href="#Point-based-rendering" class="headerlink" title="Point-based rendering"></a>Point-based rendering</h3><p><strong>神经隐式渲染（Neural implicit rendering）</strong>。</p>
+<p><img data-src="Screenshot from 2021-08-14 01-41-48.png" alt></p>
+<ul>
+<li>如何得到数据？</li>
+<li>什么是神经渲染的模型？</li>
+</ul>
+<h2 id="结合起来-1"><a href="#结合起来-1" class="headerlink" title="结合起来"></a>结合起来</h2><p><img data-src="Screenshot from 2021-08-14 01-57-13.png" alt></p>
+<p>总之这节课所讲的内容，太过于前沿，模型太过于复杂，我基本上属于听不懂的状态，很难跟上，只能放一些slides的思路图。希望以后能懂orz。</p>
+]]></content>
+      <categories>
+        <category>ML</category>
       </categories>
   </entry>
   <entry>
