@@ -23,30 +23,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2021寒假计划</title>
-    <url>/2021/01/28/Flags-for-winter-holiday/</url>
-    <content><![CDATA[<h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><pre><code>先把这个blog基础设施搭建好，配置到一个最顺手好看的亚子。
-</code></pre><h1 id="装系统"><a href="#装系统" class="headerlink" title="装系统"></a>装系统</h1><pre><code>用了一个学期虚拟机真的太累了，真是又慢又卡orz
-准备装一个Ununtu比Debian用起来优雅多了，不过电脑磁盘不够了得买个移动硬盘。。。
-</code></pre><a id="more"></a>
-<h1 id="学习篇"><a href="#学习篇" class="headerlink" title="学习篇"></a>学习篇</h1><p>有想学很多东西但可能只能停留在想的阶段。。。</p>
-<h2 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h2><pre><code>学个python吧，python是世界上最好的语言!
-</code></pre><p><a href="https://www.liaoxuefeng.com/wiki/1016959663602400">廖雪峰python教程</a></p>
-<h2 id="ML"><a href="#ML" class="headerlink" title="ML"></a>ML</h2><pre><code>看看吴恩达？机器学习好像很多地方都有用。
-</code></pre><p><a href="https://www.bilibili.com/video/BV164411b7dx?from=search&amp;seid=11011536408088050441">吴恩达机器学习</a></p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code>LeetCode做做题吧，算法比别人差太多了orz
-</code></pre><h2 id="Mathematical-modeling"><a href="#Mathematical-modeling" class="headerlink" title="Mathematical modeling"></a>Mathematical modeling</h2><pre><code>那可能还要顺手学一下mathlab?
-才知道有美赛这个玩意儿。。。现在着手可能晚了，也组不到人也没人要我这个啥都不会的菜鸡w
-</code></pre><h2 id="Operating-System"><a href="#Operating-System" class="headerlink" title="Operating System"></a>Operating System</h2><pre><code>既然可能学不到什么新技能，不如预习预习下学期的os...这学期ics已经炸掉了，保住成绩也不错。
-</code></pre><h2 id="Teaching"><a href="#Teaching" class="headerlink" title="Teaching"></a>Teaching</h2><pre><code>估计师说那还是要找我去上课的，既然没有动力学习把时间转换成money也行。
-</code></pre><h2 id="Hobbies"><a href="#Hobbies" class="headerlink" title="Hobbies"></a>Hobbies</h2><pre><code>搞点课外兴趣，procreate画点画。可能再学点剪辑(?)
-</code></pre><h1 id="谈恋爱"><a href="#谈恋爱" class="headerlink" title="谈恋爱"></a>谈恋爱</h1><p><strong>好！</strong><br><strong>我爱npy!</strong></p>
-]]></content>
-      <tags>
-        <tag>flags</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>吴恩达深度学习笔记</title>
     <url>/2021/08/04/DL-AN/</url>
     <content><![CDATA[<p><a href="https://www.bilibili.com/video/BV1FT4y1E74V?from=search&amp;seid=7469215768123017337">视频指路</a></p>
@@ -276,6 +252,30 @@ W^{[l]} :&= W^{[l]}  - \alpha \times \left[(\text{from backpap}) + \dfrac{\lambd
       <categories>
         <category>ML</category>
       </categories>
+  </entry>
+  <entry>
+    <title>2021寒假计划</title>
+    <url>/2021/01/28/Flags-for-winter-holiday/</url>
+    <content><![CDATA[<h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><pre><code>先把这个blog基础设施搭建好，配置到一个最顺手好看的亚子。
+</code></pre><h1 id="装系统"><a href="#装系统" class="headerlink" title="装系统"></a>装系统</h1><pre><code>用了一个学期虚拟机真的太累了，真是又慢又卡orz
+准备装一个Ununtu比Debian用起来优雅多了，不过电脑磁盘不够了得买个移动硬盘。。。
+</code></pre><a id="more"></a>
+<h1 id="学习篇"><a href="#学习篇" class="headerlink" title="学习篇"></a>学习篇</h1><p>有想学很多东西但可能只能停留在想的阶段。。。</p>
+<h2 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h2><pre><code>学个python吧，python是世界上最好的语言!
+</code></pre><p><a href="https://www.liaoxuefeng.com/wiki/1016959663602400">廖雪峰python教程</a></p>
+<h2 id="ML"><a href="#ML" class="headerlink" title="ML"></a>ML</h2><pre><code>看看吴恩达？机器学习好像很多地方都有用。
+</code></pre><p><a href="https://www.bilibili.com/video/BV164411b7dx?from=search&amp;seid=11011536408088050441">吴恩达机器学习</a></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code>LeetCode做做题吧，算法比别人差太多了orz
+</code></pre><h2 id="Mathematical-modeling"><a href="#Mathematical-modeling" class="headerlink" title="Mathematical modeling"></a>Mathematical modeling</h2><pre><code>那可能还要顺手学一下mathlab?
+才知道有美赛这个玩意儿。。。现在着手可能晚了，也组不到人也没人要我这个啥都不会的菜鸡w
+</code></pre><h2 id="Operating-System"><a href="#Operating-System" class="headerlink" title="Operating System"></a>Operating System</h2><pre><code>既然可能学不到什么新技能，不如预习预习下学期的os...这学期ics已经炸掉了，保住成绩也不错。
+</code></pre><h2 id="Teaching"><a href="#Teaching" class="headerlink" title="Teaching"></a>Teaching</h2><pre><code>估计师说那还是要找我去上课的，既然没有动力学习把时间转换成money也行。
+</code></pre><h2 id="Hobbies"><a href="#Hobbies" class="headerlink" title="Hobbies"></a>Hobbies</h2><pre><code>搞点课外兴趣，procreate画点画。可能再学点剪辑(?)
+</code></pre><h1 id="谈恋爱"><a href="#谈恋爱" class="headerlink" title="谈恋爱"></a>谈恋爱</h1><p><strong>好！</strong><br><strong>我爱npy!</strong></p>
+]]></content>
+      <tags>
+        <tag>flags</tag>
+      </tags>
   </entry>
   <entry>
     <title>Markdown test</title>
@@ -2189,6 +2189,55 @@ L_{\mathrm{o}}\left(\mathbf{p}, \omega_{\mathrm{o}}\right)=L_{\mathrm{e}}\left(\
 </ul>
 <h2 id="结合起来-1"><a href="#结合起来-1" class="headerlink" title="结合起来"></a>结合起来</h2><p><img data-src="Screenshot from 2021-08-14 01-57-13.png" alt></p>
 <p>总之这节课所讲的内容，太过于前沿，模型太过于复杂，我基本上属于听不懂的状态，很难跟上，只能放一些slides的思路图。希望以后能懂orz。</p>
+<h1 id="Lecture-6"><a href="#Lecture-6" class="headerlink" title="Lecture 6"></a>Lecture 6</h1><p>这节课主要讲神经视觉应用。</p>
+<h2 id="目标检测-Object-detection"><a href="#目标检测-Object-detection" class="headerlink" title="目标检测 Object detection"></a>目标检测 Object detection</h2><p>目标检测指的是不仅输出图片的标签，还捕捉到这个目标在图像中的区块</p>
+<h3 id="区域卷积神经网络-Regional-CNN"><a href="#区域卷积神经网络-Regional-CNN" class="headerlink" title="区域卷积神经网络 Regional CNN"></a>区域卷积神经网络 Regional CNN</h3><p>提取固定数量的区域，改变形状大小，通过 CNN 来分裂每个区域。</p>
+<p>问题：</p>
+<ul>
+<li>训练缓慢因为每个图片要训练2000个区域。</li>
+<li>不是实时的，每个测试图片有延迟。</li>
+<li>区域的选择是经验性的，可能对于不同的训练集不能选到很好的区域。</li>
+</ul>
+<p>所以有了 Faster R-CNN，通过输入卷基层，只需要训练一次，数据驱动的区域选择。</p>
+<p><img data-src="Screenshot from 2021-08-14 16-55-29.png" alt></p>
+<h3 id="区域建议网络-Region-Proposal-Network"><a href="#区域建议网络-Region-Proposal-Network" class="headerlink" title="区域建议网络 Region Proposal Network"></a>区域建议网络 Region Proposal Network</h3><p>通过卷基层我们可以提取出一个 $m\times n$ 的特征映射（feature maps），图片中的每一个区域中心都可以被特征映射中的一个像素表示。</p>
+<p>我们的 <strong>RPN</strong> 就是要找到 k 个目标块（anchor boxes）。</p>
+<ul>
+<li>辨别出块是是好的还是坏的。</li>
+<li>在块上进行回归，来修改位置，宽和高。</li>
+</ul>
+<p>然后我们可以设计出代价函数：</p>
+<script type="math/tex; mode=display">
+L(\{p_i\}, \{ t_i\}) = \dfrac{1}{N_{cls}}\sum\limits_{i} L_{cls}(p_i, p_i^{*}) + \lambda \dfrac{1}{N_{reg}} p_i^{*} L_{reg} (t_i, t_i^{*})</script><p>第一部分是我们把区块中存在目标的真实概率分布与区块中存在目标的预测分布的差距最小化，第二部分是区块的真实位置和预测位置的回归损失。</p>
+<h2 id="语义分割-Semantic-segmentation"><a href="#语义分割-Semantic-segmentation" class="headerlink" title="语义分割 Semantic segmentation"></a>语义分割 Semantic segmentation</h2><p>在高维上识别出每个像素是啥。</p>
+<h3 id="全卷积神经网络-Fully-CNNs"><a href="#全卷积神经网络-Fully-CNNs" class="headerlink" title="全卷积神经网络 Fully CNNs"></a>全卷积神经网络 Fully CNNs</h3><p>在卷基层后不再是连到 Fully connected nn，而是通过 unpolling 等来up sampling，来增加视觉维度。</p>
+<p><img data-src="Screenshot from 2021-08-14 22-45-32.png" alt></p>
+<p>Unpooling 有几种：</p>
+<ul>
+<li>Nearest Neighbor</li>
+<li>Bed of Nails</li>
+</ul>
+<p>代价函数我们用二元交叉熵：$- \sum\limits_{classes} y_{true} \log{(y_{pred})}$</p>
+<p>当我们需要对边缘进行更精确的预测时，加大边缘的权重。</p>
+<p>因为我们的编码器会把图像编码到更低维的特征空间，所以导致解码器很难捕捉到足够的特征。就有了<strong>跳跃连接（skip connect）</strong>，把编码部分的卷基层连接到解码部分对应的卷基层，避免了信息的损失。这个思想很类似残差网络。</p>
+<p><img data-src="Screenshot from 2021-08-14 22-56-52.png" alt></p>
+<h3 id="U-Net"><a href="#U-Net" class="headerlink" title="U-Net"></a>U-Net</h3><p><strong>U-net</strong> 就是一种通过大规模的跳跃连接来在学习过程中分享细节的架构。</p>
+<p><img data-src="Screenshot from 2021-08-14 22-59-50.png" alt></p>
+<h2 id="自监督学习-Self-supervised-learning"><a href="#自监督学习-Self-supervised-learning" class="headerlink" title="自监督学习 Self-supervised learning"></a>自监督学习 Self-supervised learning</h2><h3 id="深度估计-Depth-estimation"><a href="#深度估计-Depth-estimation" class="headerlink" title="深度估计 Depth estimation"></a>深度估计 Depth estimation</h3><p>在高维上识别出每个像素深度是多少。</p>
+<p>因为深度是一个实数，所以是一个回归问题，我们一般用平方代价函数：$\text{MSE} = \dfrac{1}{N} \sum\limits_{i=1}^{N} (y_i - \hat{y}_i)^2$。</p>
+<p>但是对于一个监督学习，我们需要知道真实的标签，也就是真实的深度，但这是很难办到的。我们需要一些其他的技术来得到深度。</p>
+<h3 id="先验知识"><a href="#先验知识" class="headerlink" title="先验知识"></a>先验知识</h3><p>在没有标记数据的情况下，我们可以注入一些真实世界的先验知识。</p>
+<ul>
+<li><strong>视察（disparity）</strong>和深度成反比。</li>
+<li>通过左右眼视察算出深度。</li>
+</ul>
+<p>我们就可以用这些知识来<strong>自监督</strong>。</p>
+<h3 id="自监督"><a href="#自监督" class="headerlink" title="自监督"></a>自监督</h3><p><img data-src="Screenshot from 2021-08-14 23-32-38.png" alt></p>
+<p>这是一个自监督单眼深度模型，我们用一个左眼摄像头作为输入，这很好得到。</p>
+<p>我们要训练一个模型来预测我们希望看到的视察图，但这是没有办法被优化的，单纯只由网络预测。</p>
+<p>但是模型和图的关系才是最重要的，我们通过把输入的左眼图和预测的视察图结合起来，就可以估算出右眼图。然后我们就可以用左右眼摄像机来训练这个网络，到达自我优化。</p>
+<p>在测试的时候，我们只关心视察层，也就是输出的视察图是否准确。这太 amazing 了，这意味着我们只使用一张图片且没有任何标签，就可以估算深度。它运行地也非常快，因为我们只需要运行一半的网络。</p>
+<p>没有传统的配对调整。</p>
 ]]></content>
       <categories>
         <category>ML</category>
