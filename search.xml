@@ -2238,6 +2238,72 @@ L(\{p_i\}, \{ t_i\}) = \dfrac{1}{N_{cls}}\sum\limits_{i} L_{cls}(p_i, p_i^{*}) +
 <p>但是模型和图的关系才是最重要的，我们通过把输入的左眼图和预测的视察图结合起来，就可以估算出右眼图。然后我们就可以用左右眼摄像机来训练这个网络，到达自我优化。</p>
 <p>在测试的时候，我们只关心视察层，也就是输出的视察图是否准确。这太 amazing 了，这意味着我们只使用一张图片且没有任何标签，就可以估算深度。它运行地也非常快，因为我们只需要运行一半的网络。</p>
 <p>没有传统的配对调整。</p>
+<h1 id="Lecture-7"><a href="#Lecture-7" class="headerlink" title="Lecture 7"></a>Lecture 7</h1><p>本节主要讲了计算机视觉中的可解释性和不确定性。</p>
+<h2 id="可解释性和可视化-Interpretability-and-Visualization"><a href="#可解释性和可视化-Interpretability-and-Visualization" class="headerlink" title="可解释性和可视化 Interpretability and Visualization"></a>可解释性和可视化 Interpretability and Visualization</h2><p>像素级的解释：</p>
+<ul>
+<li>哪些像素在图中是最重要的。</li>
+<li>如果移除了这些像素预测将会发生变化。</li>
+</ul>
+<p>一个神经网络有百万个参数，如何判断它们控制哪些模式？</p>
+<p>对于一个卷基层，我们可以把它可视化。我们要怎么把多个 feature maps 结合成一个可视化的特征？</p>
+<h3 id="视觉反向传播VisualBackprop"><a href="#视觉反向传播VisualBackprop" class="headerlink" title="视觉反向传播VisualBackprop"></a>视觉反向传播VisualBackprop</h3><ul>
+<li>平均（average）</li>
+<li><p>扩大（upscale）</p>
+</li>
+<li><p>相乘（multiply）</p>
+</li>
+</ul>
+<p><img data-src="Screenshot from 2021-08-15 18-45-33.png" alt></p>
+<p>我们最终会得到一个可视化掩模（mask），和我们的输入图像在相同的维度上。</p>
+<p>通过这种方式我们可以生成输入图像中不同像素特性的可视化。</p>
+<h3 id="类激活映射-Class-Activation-Maps"><a href="#类激活映射-Class-Activation-Maps" class="headerlink" title="类激活映射 Class Activation Maps"></a>类激活映射 Class Activation Maps</h3><p>思考更新参数时 $W \leftarrow W - \eta \dfrac{\partial J(W, x, y)}{\partial W}$，一个参数的改变是如何增加我们的损失。</p>
+<p><strong>CAM</strong> 的想法是让图像通过一系列的卷积层，从而产生一系列的特征向量。然后我们要做的是有一个<strong>全局平均池化操作（Global average pooling）</strong>，所有的特征映射被聚合，也就是说这个向量的每个分量就是所有特征向量的平均值。 然后我们可以考虑网络上每一个权重的聚合值，其最终输出，然后把这些权重乘以激活映射，生成最终的聚合激活映射。</p>
+<p><img data-src="Screenshot from 2021-08-15 22-06-36.png" alt></p>
+<p>它捕获了图像的各个区域，导致一系列的激活和特征映射，有助于网络的决策。</p>
+<p>这个 GAP 会完全减少空间的信息，只保留了深度维度，导致了特征映射和类别之间的对应。</p>
+<h2 id="不确定性估计-Uncertainty-estimation"><a href="#不确定性估计-Uncertainty-estimation" class="headerlink" title="不确定性估计 Uncertainty estimation"></a>不确定性估计 Uncertainty estimation</h2><p>不确定性的种类</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Known Knowns</td>
+<td style="text-align:center">Known Unknows</td>
+</tr>
+<tr>
+<td style="text-align:center">Unknown Known</td>
+<td style="text-align:center">Unknown Unknows</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>最主要两个方面的不确定性：</p>
+<ul>
+<li>任意的不确定性（aleatoric）<ul>
+<li>数据的不确定性</li>
+<li>描述了输入数据的信心</li>
+<li>输入有噪声时高</li>
+</ul>
+</li>
+<li>认知的不确定性（epistemic）<ul>
+<li>模型的不确定性</li>
+<li>描述了预测的信心（confidence）</li>
+<li>当缺少训练数据时很高</li>
+<li>通过增加数据来减少</li>
+</ul>
+</li>
+</ul>
+<p><strong>Aleatoric uncertainty</strong> 可以直接通过神经网络来学习。</p>
+<p><strong>Epistemic uncertainty</strong> 很难用神经网络学习，我们不去训练确定性网络，而训练<strong>贝叶斯神经网络（Bayesian NN）</strong>。</p>
+<h3 id="BNN"><a href="#BNN" class="headerlink" title="BNN"></a>BNN</h3><p>对网络中每一个权值建立概率分布模型，然后根据正态分布将这些权重参数化，我们要训练这个模型来预测一个平均值、一个不变值，它定义了网络上的概率分布。这意味着我们要学习网络权值的后验（posterior）概率分布，$P(W | X, Y) = \dfrac{P(Y|X,W) P(W)}{P(Y|X)}$。</p>
+<p>但是这在分析上是不可解的，所以我们试图近似。</p>
+<p><strong>dropout</strong>，每次前向传播中随机选择一些权重剔除，按照伯努利分布 $z_{w,t} \sim Bernoulli(p), \forall w  \in W$。</p>
+<p><img data-src="Screenshot from 2021-08-15 23-13-44.png" alt></p>
 ]]></content>
       <categories>
         <category>ML</category>
