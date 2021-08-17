@@ -562,3 +562,24 @@ ValueError: cannot select an axis to squeeze out which has size not equal to one
 1234
 ```
 
+
+
+# np.meshgrid()
+
+`np.meshgrid(*xi, copy=True, sparse=False, indexing='xy')`
+
+从输入的数组创建一个坐标轴/网格。
+
+``` python
+>>> nx, ny = (3, 2)
+>>> x = np.linspace(0, 1, nx)
+>>> y = np.linspace(0, 1, ny)
+>>> xv, yv = np.meshgrid(x, y)
+>>> xv
+array([[0. , 0.5, 1. ],
+       [0. , 0.5, 1. ]])
+>>> yv
+array([[0.,  0.,  0.],
+       [1.,  1.,  1.]])
+```
+

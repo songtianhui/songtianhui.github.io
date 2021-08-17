@@ -675,3 +675,13 @@ Unpooling 有几种：
 
 ![](Screenshot from 2021-08-15 23-13-44.png)
 
+
+
+# Lecture 8
+
+本章最后一节，主要讨论计算机视觉的进展，回顾一下这门课所学。
+
+主要是解决偏差的方法。
+
+- Adversarial debiasing
+- Debiasing variational autoencoder
