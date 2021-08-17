@@ -145,3 +145,163 @@ assert dy_dx.numpy() == 3.0
 assert d2y_dx2.numpy() == 6.0
 ```
 
+
+
+# tf.keras
+
+`keras` 是很经典的神经网络框架，也是很常用的，所以整理一下。
+
+首先最重要的它有两个类 `Model` 和 `Sequential`，他们之间有很多联系和区别。简单来说 `Sequential` 只能往后叠层，`model` 可以搭建更复杂的模型。
+
+[这里](https://stackoverflow.com/questions/66879748/what-is-the-difference-between-tf-keras-model-and-tf-keras-sequential)有一篇简述他们的区别的post。
+
+## Model
+
+有两种初始化一个 `Model` 的方法。
+
+一个是函数式 API：
+
+``` python
+inputs = tf.keras.Input(shape=(3,))
+x = tf.keras.layers.Dense(4, activation=tf.nn.relu)(inputs)
+outputs = tf.keras.layers.Dense(5, activation=tf.nn.softmax)(x)
+model = tf.keras.Model(inputs=inputs, outputs=outputs)
+```
+
+一个是通过子类，可以在 `__init__` 中定义层，通过 `call` 来前向传播：
+
+``` python
+class MyModel(tf.keras.Model):
+
+  def __init__(self):
+    super(MyModel, self).__init__()
+    self.dense1 = tf.keras.layers.Dense(4, activation=tf.nn.relu)
+    self.dense2 = tf.keras.layers.Dense(5, activation=tf.nn.softmax)
+    self.dropout = tf.keras.layers.Dropout(0.5)
+
+  def call(self, inputs, training=False):
+    x = self.dense1(inputs)
+    if training:
+      x = self.dropout(x, training=training)
+    return self.dense2(x)
+
+model = MyModel()
+```
+
+### call
+
+```python
+call(
+    inputs, training=None, mask=None
+)
+```
+
+进行一次前向传播。
+
+### compile
+
+```python
+compile(
+    optimizer='rmsprop', loss=None, metrics=None, loss_weights=None,
+    weighted_metrics=None, run_eagerly=None, steps_per_execution=None, **kwargs
+)
+```
+
+设置训练模型。
+
+常用参数：
+
+- `optimizer`，使用的优化器
+- `loss`，使用的损失函数
+- `metrics`，在训练和测试中需要被计算的矩阵
+
+### evaluate
+
+```python
+evaluate(
+    x=None, y=None, batch_size=None, verbose=1, sample_weight=None, steps=None,
+    callbacks=None, max_queue_size=10, workers=1, use_multiprocessing=False,
+    return_dict=False, **kwargs
+)
+```
+
+返回损失值和矩阵值，在测试模式下。计算是 in batches 的。
+
+- `x`，输入数据
+- `y`，目标数据
+- `batch_size`，每次计算中每个 `batch ` 的样本数量
+
+### fit
+
+```python
+fit(
+    x=None, y=None, batch_size=None, epochs=1, verbose='auto',
+    callbacks=None, validation_split=0.0, validation_data=None, shuffle=True,
+    class_weight=None, sample_weight=None, initial_epoch=0, steps_per_epoch=None,
+    validation_steps=None, validation_batch_size=None, validation_freq=1,
+    max_queue_size=10, workers=1, use_multiprocessing=False
+)
+```
+
+训练模型。
+
+会返回一个 `History` 对象，在每个epoch记录训练或验证损失和矩阵值的历史。
+
+- `epochs`，迭代次数。
+
+### get_layer
+
+根据名字或编号获得一个层。
+
+```python
+get_layer(
+    name=None, index=None
+)
+```
+
+### predict
+
+对于输入生成输出预测。这是对于大规模数据预测的，in batch 的，对于小规模可以用 `call`。是不计正则化的。
+
+```python
+predict(
+    x, batch_size=None, verbose=0, steps=None, callbacks=None, max_queue_size=10,
+    workers=1, use_multiprocessing=False
+)
+```
+
+### summary
+
+打印网络的框架。
+
+```python
+summary(
+    line_length=None, positions=None, print_fn=None
+)
+```
+
+
+
+## Sequential
+
+整个训练、预测方法和 `Model` 差不多，但差别就在于 `Sequential` 只能简单叠层，一般通过 `add` 或直接在初始化列表中设置。
+
+```python
+# Optionally, the first layer can receive an `input_shape` argument:
+model = tf.keras.Sequential()
+model.add(tf.keras.layers.Dense(8, input_shape=(16,)))
+# Afterwards, we do automatic shape inference:
+model.add(tf.keras.layers.Dense(4))
+```
+
+然后要注意的是不设置输入维度的话，这个模型就还没有建成（built），就不能 `summary` 等等，直到第一次训练或预测等，接收到了输入数据。或者用 `build` 进行手动延迟搭建。
+
+### add
+
+```python
+add(
+    layer
+)
+```
+
+加一层。
