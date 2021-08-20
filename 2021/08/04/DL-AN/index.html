@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://songtianhui.github.io/2021/08/04/DL-AN/L1_week3_6.png">
 <meta property="og:image" content="https://songtianhui.github.io/2021/08/04/DL-AN/network.png">
 <meta property="article:published_time" content="2021-08-04T14:51:29.000Z">
-<meta property="article:modified_time" content="2021-08-09T18:06:20.909Z">
+<meta property="article:modified_time" content="2021-08-20T15:50:09.345Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://songtianhui.github.io/2021/08/04/DL-AN/L1_week3_6.png">
@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-10 02:06:20" itemprop="dateModified" datetime="2021-08-10T02:06:20+08:00">2021-08-10</time>
+                <time title="Modified: 2021-08-20 23:50:09" itemprop="dateModified" datetime="2021-08-20T23:50:09+08:00">2021-08-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -471,6 +471,58 @@ W^{[l]} :&= W^{[l]}  - \alpha \times \left[(\text{from backpap}) + \dfrac{\lambd
 <li>在实施梯度检验时，如果使用正则化，请注意正则项。</li>
 <li>梯度检验不能与<strong>dropout</strong>同时使用，因为每次迭代过程中，<strong>dropout</strong>会随机消除隐藏层单元的不同子集，难以计算<strong>dropout</strong>在梯度下降上的代价函数$J$。</li>
 </ol>
+<h1 id="Lesson-2-2"><a href="#Lesson-2-2" class="headerlink" title="Lesson 2.2"></a>Lesson 2.2</h1><p>本节课主要讲优化算法，也就是我们如何更新参数。</p>
+<h2 id="Mini-batch-梯度下降"><a href="#Mini-batch-梯度下降" class="headerlink" title="Mini-batch 梯度下降"></a>Mini-batch 梯度下降</h2><p>你可以把训练集分割为小一点的子集训练，这些子集被取名为<strong>mini-batch</strong>，每个子集记作 $X^{\{i\}}$。就是把原来梯度下降时代入整个训练集改成代入一个mini-batch，然后多梯度下降几次。</p>
+<p>使用<strong>mini-batch</strong>梯度下降法，如果作出成本函数在整个过程中的图，则并不是每次迭代都是下降的，特别是在每次迭代中，你要处理的是$X^{\{t\}}$和$Y^{\{ t\}}$。如果要作出成本函数$J$的图，你很可能会看到这样的结果，走向朝下，但有更多的噪声。</p>
+<p>需要决定的变量之一是<strong>mini-batch</strong>的大小。首先，如果训练集较小，直接使用<strong>batch</strong>梯度下降法。样本数目较大的话，一般的<strong>mini-batch</strong>大小为64到512，考虑到电脑内存设置和使用的方式，如果<strong>mini-batch</strong>大小是2的$n$次方，代码会运行地快一些。</p>
+<h2 id="指数加权平均数-Exponentially-weighted-averages"><a href="#指数加权平均数-Exponentially-weighted-averages" class="headerlink" title="指数加权平均数 Exponentially weighted averages"></a>指数加权平均数 Exponentially weighted averages</h2><p>递推式：</p>
+<script type="math/tex; mode=display">
+v_t = \beta v_{t - 1} + (1 - \beta)\theta_t</script><p>如果我们将其展开，这就是一个加权平均，是从 $0$ 到 $t$ 每个 $\theta_i$ 的平均，越远权重越小。</p>
+<p>考虑 $\beta^{x} = \frac{1}{e}$，这个算的大约就是 $x$ 天的平均数。</p>
+<p>指数加权平均数公式的好处之一在于，它占用极少内存，电脑内存中只占用一行数字而已，然后把最新数据代入公式，不断覆盖就可以了。</p>
+<p>不过有可能会遇到 <strong>偏差修正（bias corrections）的问题</strong></p>
+<p>因为我们取 $v_0 = 0$，所以会使得 $i$ 较小时 $v_i$ 所占权重都很小，估算不准确。</p>
+<p>我们可以在估测初期，不用 $v_t$，而是 $\dfrac{v_t}{1 - \beta^t}$。</p>
+<p>不过在机器学习中，在计算指数加权平均数的大部分时候，大家不在乎执行偏差修正。</p>
+<h2 id="动量梯度下降法-Gradient-descent-with-Momentum"><a href="#动量梯度下降法-Gradient-descent-with-Momentum" class="headerlink" title="动量梯度下降法 Gradient descent with Momentum"></a>动量梯度下降法 Gradient descent with Momentum</h2><p>有一种算法叫做<strong>Momentum</strong>，或者叫做动量梯度下降法，运行速度几乎总是快于标准的梯度下降算法，基本的想法就是计算梯度的指数加权平均数，并利用该梯度更新你的权重。</p>
+<p>计算动量：</p>
+<script type="math/tex; mode=display">
+v_{dW} = \beta v_{dW} + (1 - \beta) dW</script><script type="math/tex; mode=display">
+v_{db} = \beta v_{db} + (1 - \beta) db</script><p>再更新参数：</p>
+<script type="math/tex; mode=display">
+W := W - \alpha v_{dW}</script><script type="math/tex; mode=display">
+b := b - \alpha v_{db}</script><p>这样就可以减缓梯度下降的幅度。<em>它们能够最小化碗状函数，这些微分项，想象它们为从山上往下滚的一个球，提供了加速度，<strong>Momentum</strong>项相当于速度。</em></p>
+<p>所以有两个超参数，学习率 $a$ 以及参数 $\beta$，$\beta$ 控制着指数加权平均数。$\beta$ 最常用的值是0.9，是很棒的鲁棒数。</p>
+<p>有一个版本是 $v_{dW} = \beta v_{dW} + dW$，本质上没有区别。</p>
+<h2 id="RMSprop"><a href="#RMSprop" class="headerlink" title="RMSprop"></a>RMSprop</h2><p><strong>root mean square prop</strong>算法，它也可以加速梯度下降，通过加快损失下降的方向，减缓无关方向，减少摆动。</p>
+<script type="math/tex; mode=display">
+S_{dW}= \beta S_{dW} + (1 -\beta) (dW)^{2}</script><script type="math/tex; mode=display">
+S_{db}= \beta S_{db} + (1 - \beta)(db)^{2}</script><p>再更新参数：</p>
+<script type="math/tex; mode=display">
+W:= W -\alpha \dfrac{dW}{\sqrt{S_{dW}}}</script><script type="math/tex; mode=display">
+b:=b -\alpha \dfrac{db}{\sqrt{S_{db}}}</script><p>为了确保数值稳定，在实际操练的时候，要在分母上加上一个很小很小的$\varepsilon$，$\varepsilon$是多少没关系，$10^{-8}$是个不错的选择.</p>
+<h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><p>把前面两个缝起来。</p>
+<p>首先初始化：$v_{dW} = 0$，$S_{dW} =0$，$v_{db} = 0$，$S_{db} =0$。</p>
+<script type="math/tex; mode=display">
+v_{dW}= \beta_{1}v_{dW} + ( 1 - \beta_{1})dW</script><script type="math/tex; mode=display">
+v_{db}= \beta_{1}v_{db} + ( 1 -\beta_{1} )db</script><script type="math/tex; mode=display">
+S_{dW}=\beta_{2}S_{dW} + ( 1 - \beta_{2})(dW)^{2}</script><script type="math/tex; mode=display">
+S_{db} =\beta_{2}S_{db} + ( 1 - \beta_{2} )(db)^{2}</script><p>一般使用<strong>Adam</strong>算法的时候，要计算偏差修正，$v_{dW}^{\text{corrected}}$，修正也就是在偏差修正之后：</p>
+<script type="math/tex; mode=display">
+v_{dW}^{\text{corrected}}= \dfrac{v_{dW}}{1 - \beta_{1}^{t}}</script><script type="math/tex; mode=display">
+v_{db}^{\text{corrected}} =\dfrac{v_{db}}{1 -\beta_{1}^{t}}</script><script type="math/tex; mode=display">
+S_{dW}^{\text{corrected}} =\dfrac{S_{dW}}{1 - \beta_{2}^{t}}</script><script type="math/tex; mode=display">
+S_{db}^{\text{corrected}} =\dfrac{S_{db}}{1 - \beta_{2}^{t}}</script><p>最后更新权重：</p>
+<script type="math/tex; mode=display">
+W:= W - \dfrac{\alpha v_{dW}^{\text{corrected}}}{\sqrt{S_{dW}^{\text{corrected}}} +\varepsilon}</script><script type="math/tex; mode=display">
+b:=b - \frac{\alpha v_{\text{db}}^{\text{corrected}}}{\sqrt{S_{\text{db}}^{\text{corrected}}} +\varepsilon}</script><p><strong>Adam</strong> 是一种极其常用的学习算法，被证明能有效适用于不同神经网络，适用于广泛的结构。</p>
+<p>本算法中有很多超参数，超参数学习率$a$很重要，也经常需要调试，你可以尝试一系列值，然后看哪个有效。$\beta_{1}$常用的缺省值为0.9。超参数$\beta_{2}$，<strong>Adam</strong>论文作者，也就是<strong>Adam</strong>算法的发明者，推荐使用0.999。关于$\varepsilon$的选择其实没那么重要，<strong>Adam</strong>论文的作者建议$\varepsilon$为$10^{-8}$。</p>
+<h2 id="学习率衰减-Learning-rate-decay"><a href="#学习率衰减-Learning-rate-decay" class="headerlink" title="学习率衰减 Learning rate decay"></a>学习率衰减 Learning rate decay</h2><p>慢慢减少$a$的本质在于，在学习初期，你能承受较大的步伐，但当开始收敛的时候，小一些的学习率能让你步伐小一些。</p>
+<p>$a= \dfrac{1}{1 + decayrate \times \text{epoch}\text{-num}}a_{0}$，（<strong>decay-rate</strong>称为衰减率，<strong>epoch-num</strong>为代数，$\alpha_{0}$为初始学习率），注意这个衰减率是另一个需要调整的超参数。</p>
+<p>人们用到的其它公式有$a =\dfrac{k}{\sqrt{\text{epoch-num}}}a_{0}$或者$a =\dfrac{k}{\sqrt{t}}a_{0}$（$t$为<strong>mini-batch</strong>的数字）。</p>
+<h2 id="局部最优问题-Local-optima"><a href="#局部最优问题-Local-optima" class="headerlink" title="局部最优问题 Local optima"></a>局部最优问题 Local optima</h2><p>在深度学习研究早期，人们总是担心优化算法会困在极差的局部最优，不过随着深度学习理论不断发展，我们对局部最优的理解也发生了改变。</p>
+<p>事实上，如果你要创建一个神经网络，通常梯度为零的点并不是这个图中的局部最优点，实际上成本函数的零梯度点，通常是鞍点。</p>
+<p>意思就是一个最优点需要所有维度都是极小，在现在高维特征下很难遇到，所以碰到的所谓局部最优一般都不是最优，都可以跑出来。</p>
 
     </div>
 
@@ -551,7 +603,7 @@ W^{[l]} :&= W^{[l]}  - \alpha \times \left[(\text{from backpap}) + \dfrac{\lambd
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson-1-1"><span class="nav-number">1.</span> <span class="nav-text">Lesson 1.1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson-1-2"><span class="nav-number">2.</span> <span class="nav-text">Lesson 1.2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson-1-3"><span class="nav-number">3.</span> <span class="nav-text">Lesson 1.3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD-Back-Propagation"><span class="nav-number">3.1.</span> <span class="nav-text">反向传播 Back Propagation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson-1-4"><span class="nav-number">4.</span> <span class="nav-text">Lesson 1.4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E6%B7%B1%E5%B1%82%E8%A1%A8%E7%A4%BA%EF%BC%9F"><span class="nav-number">4.1.</span> <span class="nav-text">为什么使用深层表示？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9D%97"><span class="nav-number">4.2.</span> <span class="nav-text">搭建神经网络块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E5%92%8C%E8%B6%85%E5%8F%82%E6%95%B0"><span class="nav-number">4.3.</span> <span class="nav-text">参数和超参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson-2-1"><span class="nav-number">5.</span> <span class="nav-text">Lesson 2.1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E5%B7%AE-%E5%81%8F%E5%B7%AE"><span class="nav-number">5.1.</span> <span class="nav-text">方差&#x2F;偏差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text">基本方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96%EF%BC%88Regularization%EF%BC%89"><span class="nav-number">5.3.</span> <span class="nav-text">正则化（Regularization）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropout-%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">5.4.</span> <span class="nav-text">dropout 正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E6%AD%A3%E5%88%99%E5%8C%96%E6%96%B9%E6%B3%95"><span class="nav-number">5.5.</span> <span class="nav-text">其他正则化方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%92%E4%B8%80%E5%8C%96%E8%BE%93%E5%85%A5%EF%BC%88Normalizing%EF%BC%89"><span class="nav-number">5.6.</span> <span class="nav-text">归一化输入（Normalizing）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1-%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8%EF%BC%88Vanishing-Exploding-gradients%EF%BC%89"><span class="nav-number">5.7.</span> <span class="nav-text">梯度消失&#x2F;梯度爆炸（Vanishing &#x2F; Exploding gradients）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%9D%83%E9%87%8D%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">5.8.</span> <span class="nav-text">神经网络权重的初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E7%9A%84%E6%95%B0%E5%80%BC%E9%80%BC%E8%BF%91-Numerical-approximation-of-gradients"><span class="nav-number">5.9.</span> <span class="nav-text">梯度的数值逼近 Numerical approximation of gradients</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E6%A3%80%E9%AA%8C%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">5.10.</span> <span class="nav-text">梯度检验的注意事项</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson-1-1"><span class="nav-number">1.</span> <span class="nav-text">Lesson 1.1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson-1-2"><span class="nav-number">2.</span> <span class="nav-text">Lesson 1.2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson-1-3"><span class="nav-number">3.</span> <span class="nav-text">Lesson 1.3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD-Back-Propagation"><span class="nav-number">3.1.</span> <span class="nav-text">反向传播 Back Propagation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson-1-4"><span class="nav-number">4.</span> <span class="nav-text">Lesson 1.4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E6%B7%B1%E5%B1%82%E8%A1%A8%E7%A4%BA%EF%BC%9F"><span class="nav-number">4.1.</span> <span class="nav-text">为什么使用深层表示？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9D%97"><span class="nav-number">4.2.</span> <span class="nav-text">搭建神经网络块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E5%92%8C%E8%B6%85%E5%8F%82%E6%95%B0"><span class="nav-number">4.3.</span> <span class="nav-text">参数和超参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson-2-1"><span class="nav-number">5.</span> <span class="nav-text">Lesson 2.1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E5%B7%AE-%E5%81%8F%E5%B7%AE"><span class="nav-number">5.1.</span> <span class="nav-text">方差&#x2F;偏差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text">基本方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96%EF%BC%88Regularization%EF%BC%89"><span class="nav-number">5.3.</span> <span class="nav-text">正则化（Regularization）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropout-%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">5.4.</span> <span class="nav-text">dropout 正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E6%AD%A3%E5%88%99%E5%8C%96%E6%96%B9%E6%B3%95"><span class="nav-number">5.5.</span> <span class="nav-text">其他正则化方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%92%E4%B8%80%E5%8C%96%E8%BE%93%E5%85%A5%EF%BC%88Normalizing%EF%BC%89"><span class="nav-number">5.6.</span> <span class="nav-text">归一化输入（Normalizing）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1-%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8%EF%BC%88Vanishing-Exploding-gradients%EF%BC%89"><span class="nav-number">5.7.</span> <span class="nav-text">梯度消失&#x2F;梯度爆炸（Vanishing &#x2F; Exploding gradients）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%9D%83%E9%87%8D%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">5.8.</span> <span class="nav-text">神经网络权重的初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E7%9A%84%E6%95%B0%E5%80%BC%E9%80%BC%E8%BF%91-Numerical-approximation-of-gradients"><span class="nav-number">5.9.</span> <span class="nav-text">梯度的数值逼近 Numerical approximation of gradients</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E6%A3%80%E9%AA%8C%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">5.10.</span> <span class="nav-text">梯度检验的注意事项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson-2-2"><span class="nav-number">6.</span> <span class="nav-text">Lesson 2.2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mini-batch-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="nav-number">6.1.</span> <span class="nav-text">Mini-batch 梯度下降</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E6%95%B0%E5%8A%A0%E6%9D%83%E5%B9%B3%E5%9D%87%E6%95%B0-Exponentially-weighted-averages"><span class="nav-number">6.2.</span> <span class="nav-text">指数加权平均数 Exponentially weighted averages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E9%87%8F%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95-Gradient-descent-with-Momentum"><span class="nav-number">6.3.</span> <span class="nav-text">动量梯度下降法 Gradient descent with Momentum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RMSprop"><span class="nav-number">6.4.</span> <span class="nav-text">RMSprop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adam"><span class="nav-number">6.5.</span> <span class="nav-text">Adam</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F-Learning-rate-decay"><span class="nav-number">6.6.</span> <span class="nav-text">学习率衰减 Learning rate decay</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E6%9C%80%E4%BC%98%E9%97%AE%E9%A2%98-Local-optima"><span class="nav-number">6.7.</span> <span class="nav-text">局部最优问题 Local optima</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
