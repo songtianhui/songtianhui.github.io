@@ -30,7 +30,7 @@
 <meta property="og:description" content="本篇是对python库 tensorflow 的学习笔记。 tensorflow官方网站">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-10T18:03:58.000Z">
-<meta property="article:modified_time" content="2021-08-17T18:20:44.426Z">
+<meta property="article:modified_time" content="2021-08-21T15:22:48.346Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
 
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-18 02:20:44" itemprop="dateModified" datetime="2021-08-18T02:20:44+08:00">2021-08-18</time>
+                <time title="Modified: 2021-08-21 23:22:48" itemprop="dateModified" datetime="2021-08-21T23:22:48+08:00">2021-08-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -311,6 +311,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">predict(</span><br><span class="line">    x, batch_size=<span class="literal">None</span>, verbose=<span class="number">0</span>, steps=<span class="literal">None</span>, callbacks=<span class="literal">None</span>, max_queue_size=<span class="number">10</span>,</span><br><span class="line">    workers=<span class="number">1</span>, use_multiprocessing=<span class="literal">False</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <h3 id="summary"><a href="#summary" class="headerlink" title="summary"></a>summary</h3><p>打印网络的框架。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">summary(</span><br><span class="line">    line_length=<span class="literal">None</span>, positions=<span class="literal">None</span>, print_fn=<span class="literal">None</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>然后有一个有关网络输出维数的一个理解，<code>summary()</code> 都会显示维数是 <code>(None, ...)</code>，<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/47240348/what-is-the-meaning-of-the-none-in-model-summary-of-keras">这里</a>有一个post 说的比较清楚，就是第一维其实是 batch_size。</p>
 <h2 id="Sequential"><a href="#Sequential" class="headerlink" title="Sequential"></a>Sequential</h2><p>整个训练、预测方法和 <code>Model</code> 差不多，但差别就在于 <code>Sequential</code> 只能简单叠层，一般通过 <code>add</code> 或直接在初始化列表中设置。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Optionally, the first layer can receive an `input_shape` argument:</span></span><br><span class="line">model = tf.keras.Sequential()</span><br><span class="line">model.add(tf.keras.layers.Dense(<span class="number">8</span>, input_shape=(<span class="number">16</span>,)))</span><br><span class="line"><span class="comment"># Afterwards, we do automatic shape inference:</span></span><br><span class="line">model.add(tf.keras.layers.Dense(<span class="number">4</span>))</span><br></pre></td></tr></table></figure>
 <p>然后要注意的是不设置输入维度的话，这个模型就还没有建成（built），就不能 <code>summary</code> 等等，直到第一次训练或预测等，接收到了输入数据。或者用 <code>build</code> 进行手动延迟搭建。</p>
