@@ -280,6 +280,8 @@ summary(
 )
 ```
 
+然后有一个有关网络输出维数的一个理解，`summary()` 都会显示维数是 `(None, ...)`，[这里](https://stackoverflow.com/questions/47240348/what-is-the-meaning-of-the-none-in-model-summary-of-keras)有一个post 说的比较清楚，就是第一维其实是 batch_size。
+
 
 
 ## Sequential
