@@ -307,3 +307,89 @@ add(
 ```
 
 加一层。
+
+
+
+# tf.data
+
+这个主要是用来构建数据集管道的。
+
+## Dataset
+
+一个大数据集，提供高效的输入管道。符合几个模式：
+
+1. 从输入数据创造源数据集。
+2. 应用数据集转换对数据进行预处理。
+3. 遍历数据集并处理元素。
+
+迭代的以流的方式进行，所以完整的数据集不需要载入内存。
+
+### as_numpy_iterator
+
+返回一个数据集的 numpy 的迭代器。用来监视数据中的内容。
+
+如果是查看数据集元素的形状和类型，直接打印元素就可以。
+
+
+
+### batch
+
+```python
+batch(
+    batch_size, drop_remainder=False, num_parallel_calls=None, deterministic=None
+)
+```
+
+将数据集中连续的元素打包成 batch。
+
+
+
+### list_files
+
+``` python
+@staticmethod
+list_files(
+    file_pattern, shuffle=None, seed=None
+)
+```
+
+创建一个包含匹配该模式的所有文件的数据集。
+
+
+
+### map
+
+``` python
+map(
+    map_func, num_parallel_calls=None, deterministic=None
+)
+```
+
+把 `map_func` 作用到数据集每一个元素上。
+
+
+
+### take
+
+``` python
+take(
+    count
+)
+```
+
+从数据集中取出 `count` 个组成一个数据集。
+
+
+
+## experimental
+
+### Counter
+
+``` python
+tf.data.experimental.Counter(
+    start=0, step=1, dtype=tf.dtypes.int64
+)
+```
+
+创建一个从 `start` 以步长 `step` 计数的数据集。
+
