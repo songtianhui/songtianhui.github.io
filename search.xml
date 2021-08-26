@@ -1286,6 +1286,9 @@ E[Z_{t+1}] \geq Fit\text{-}ratio(s, P_t) \cdot \dfrac{n-  length(s)}{n} \cdot (1
 <h1 id="np-meshgrid"><a href="#np-meshgrid" class="headerlink" title="np.meshgrid()"></a>np.meshgrid()</h1><p><code>np.meshgrid(*xi, copy=True, sparse=False, indexing=&#39;xy&#39;)</code></p>
 <p>从输入的数组创建一个坐标轴/网格。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>nx, ny = (<span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.linspace(<span class="number">0</span>, <span class="number">1</span>, nx)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = np.linspace(<span class="number">0</span>, <span class="number">1</span>, ny)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>xv, yv = np.meshgrid(x, y)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>xv</span><br><span class="line">array([[<span class="number">0.</span> , <span class="number">0.5</span>, <span class="number">1.</span> ],</span><br><span class="line">       [<span class="number">0.</span> , <span class="number">0.5</span>, <span class="number">1.</span> ]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>yv</span><br><span class="line">array([[<span class="number">0.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>],</span><br><span class="line">       [<span class="number">1.</span>,  <span class="number">1.</span>,  <span class="number">1.</span>]])</span><br></pre></td></tr></table></figure>
+<h1 id="np-where"><a href="#np-where" class="headerlink" title="np.where()"></a>np.where()</h1><p><code>np.where(condition, x, y)</code></p>
+<p>根据条件从 <code>x</code> 和 <code>y</code> 中选择元素。如果条件为真选 <code>x</code> 否则 <code>y</code>。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.where([[<span class="literal">True</span>, <span class="literal">False</span>], [<span class="literal">True</span>, <span class="literal">True</span>]],</span><br><span class="line"><span class="meta">... </span>         [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]],</span><br><span class="line"><span class="meta">... </span>         [[<span class="number">9</span>, <span class="number">8</span>], [<span class="number">7</span>, <span class="number">6</span>]])</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">8</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">4</span>]])</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>python</category>
@@ -1747,6 +1750,26 @@ Prob(A_k(x) \in Output_U(x)) = 1 - [Prob(A(x) \notin Output_U(x))]^k,</script><p
 <p>然后要注意的是不设置输入维度的话，这个模型就还没有建成（built），就不能 <code>summary</code> 等等，直到第一次训练或预测等，接收到了输入数据。或者用 <code>build</code> 进行手动延迟搭建。</p>
 <h3 id="add"><a href="#add" class="headerlink" title="add"></a>add</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add(</span><br><span class="line">    layer</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>加一层。</p>
+<h1 id="tf-data"><a href="#tf-data" class="headerlink" title="tf.data"></a>tf.data</h1><p>这个主要是用来构建数据集管道的。</p>
+<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><p>一个大数据集，提供高效的输入管道。符合几个模式：</p>
+<ol>
+<li>从输入数据创造源数据集。</li>
+<li>应用数据集转换对数据进行预处理。</li>
+<li>遍历数据集并处理元素。</li>
+</ol>
+<p>迭代的以流的方式进行，所以完整的数据集不需要载入内存。</p>
+<h3 id="as-numpy-iterator"><a href="#as-numpy-iterator" class="headerlink" title="as_numpy_iterator"></a>as_numpy_iterator</h3><p>返回一个数据集的 numpy 的迭代器。用来监视数据中的内容。</p>
+<p>如果是查看数据集元素的形状和类型，直接打印元素就可以。</p>
+<h3 id="batch"><a href="#batch" class="headerlink" title="batch"></a>batch</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">batch(</span><br><span class="line">    batch_size, drop_remainder=<span class="literal">False</span>, num_parallel_calls=<span class="literal">None</span>, deterministic=<span class="literal">None</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>将数据集中连续的元素打包成 batch。</p>
+<h3 id="list-files"><a href="#list-files" class="headerlink" title="list_files"></a>list_files</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line">list_files(</span><br><span class="line">    file_pattern, shuffle=<span class="literal">None</span>, seed=<span class="literal">None</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>创建一个包含匹配该模式的所有文件的数据集。</p>
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">map</span>(</span><br><span class="line">    map_func, num_parallel_calls=<span class="literal">None</span>, deterministic=<span class="literal">None</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>把 <code>map_func</code> 作用到数据集每一个元素上。</p>
+<h3 id="take"><a href="#take" class="headerlink" title="take"></a>take</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">take(</span><br><span class="line">    count</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>从数据集中取出 <code>count</code> 个组成一个数据集。</p>
+<h2 id="experimental"><a href="#experimental" class="headerlink" title="experimental"></a>experimental</h2><h3 id="Counter"><a href="#Counter" class="headerlink" title="Counter"></a>Counter</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tf.data.experimental.Counter(</span><br><span class="line">    start=<span class="number">0</span>, step=<span class="number">1</span>, dtype=tf.dtypes.int64</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>创建一个从 <code>start</code> 以步长 <code>step</code> 计数的数据集。</p>
 ]]></content>
       <categories>
         <category>python</category>
@@ -2065,6 +2088,36 @@ a_{i}^{[l]} = \dfrac{t_{i}}{\sum\limits_i t_{i}}</script><p>输出的 $a_i$ 就�
 <li>Theano</li>
 <li>Torch</li>
 </ul>
+<h1 id="Lesson-3-1"><a href="#Lesson-3-1" class="headerlink" title="Lesson 3.1"></a>Lesson 3.1</h1><p>本章主要介绍机器学习策略。很多事思想意识上的东西，可能很多照搬原话（</p>
+<h2 id="正交化-Orthogonalization"><a href="#正交化-Orthogonalization" class="headerlink" title="正交化 Orthogonalization"></a>正交化 Orthogonalization</h2><p>意思大概就是把所有特征正交到几个相互独立的特征上。</p>
+<blockquote>
+<p>在机器学习中，如果你可以观察你的系统，然后说这一部分是错的，它在训练集上做的不好、在开发集上做的不好、它在测试集上做的不好，或者它在测试集上做的不错，但在现实世界中不好，这就很好。必须弄清楚到底是什么地方出问题了，然后我们刚好有对应的旋钮，或者一组对应的旋钮，刚好可以解决那个问题，那个限制了机器学习系统性能的问题。</p>
+</blockquote>
+<h2 id="单一数字评估指标-Single-number-evaluation-metric"><a href="#单一数字评估指标-Single-number-evaluation-metric" class="headerlink" title="单一数字评估指标 Single number evaluation metric"></a>单一数字评估指标 Single number evaluation metric</h2><p>无论是调整超参数，或者是尝试不同的学习算法，或者在搭建机器学习系统时尝试不同手段，如果你有一个单实数评估指标，进展会快得多，它可以快速告诉你，新尝试的手段比之前的手段好还是差。所以当团队开始进行机器学习项目时，推荐为问题设置一个单实数评估指标（F1 分数，平均值）。</p>
+<p>有一个开发集，加上单实数评估指标，迭代速度肯定会很快，它可以加速改进机器学习算法的迭代过程。</p>
+<h2 id="满足和优化指标-Satisficing-and-optimizing-metrics"><a href="#满足和优化指标-Satisficing-and-optimizing-metrics" class="headerlink" title="满足和优化指标 Satisficing and optimizing metrics"></a>满足和优化指标 Satisficing and optimizing metrics</h2><p>要把顾及到的所有事情组合成单实数评估指标有时并不容易，在那些情况里，有时候设立满足和优化指标是很重要的。</p>
+<p>优化指标，想要准确度最大化，想做的尽可能准确。</p>
+<p>满足指标，意思是它必须足够好，达到标准之后，不那么在乎这指标有多好。</p>
+<p>通过定义优化和满足指标，就可以提供一个明确的方式，去选择“最好的”分类器。</p>
+<h2 id="训练-开发-测试集划分-train-dev-test-distributions"><a href="#训练-开发-测试集划分-train-dev-test-distributions" class="headerlink" title="训练/开发/测试集划分 train/dev/test distributions"></a>训练/开发/测试集划分 train/dev/test distributions</h2><p>开发（<strong>dev</strong>）集也叫做开发集（<strong>development set</strong>），有时称为保留交叉验证集（<strong>hold out cross validation set</strong>）。然后，机器学习中的工作流程是，尝试很多思路，用训练集训练不同的模型，然后使用开发集来评估不同的思路，然后选择一个，然后不断迭代去改善开发集的性能，直到最后可以得到一个令你满意的成本，然后你再用测试集去评估。</p>
+<p>让开发集和测试集来自同一分布，通过将所有数据随机洗牌。</p>
+<p>大小 98:1:1.</p>
+<p><em>处理机器学习问题时，应该把它切分成独立的步骤。一步是弄清楚如何定义一个指标来衡量你想做的事情的表现，然后我们可以分开考虑如何改善系统在这个指标上的表现。要把机器学习任务看成两个独立的步骤，用目标这个比喻，第一步就是设定目标。所以要定义你要瞄准的目标，这是完全独立的一步，这是你可以调节的一个旋钮。如何设立目标是一个完全独立的问题，把它看成是一个单独的旋钮，可以调试算法表现的旋钮，如何精确瞄准，如何命中目标，定义指标是第一步。</em></p>
+<p><em>然后第二步要做别的事情，在逼近目标的时候，也许学习算法针对某个成本函数优化，要最小化训练集上的损失。可以做的其中一件事是，修改这个，为了引入权重，也许最后需要修改这个归一化常数。</em></p>
+<p>如何定义$J$并不重要，关键在于正交化的思路。将定义指标看成一步，然后在定义了指标之后，你才能想如何优化系统来提高这个指标评分。比如改变你神经网络要优化的成本函数$J$。</p>
+<blockquote>
+<p>所以我的建议是，即使你无法定义出一个很完美的评估指标和开发集，你直接快速设立出来，然后使用它们来驱动你们团队的迭代速度。如果在这之后，你发现选的不好，你有更好的想法，那么完全可以马上改。对于大多数团队，我建议最好不要在没有评估指标和开发集时跑太久，因为那样可能会减慢你的团队迭代和改善算法的速度。</p>
+</blockquote>
+<h2 id="为什么是人的表现-Why-human-level-performance"><a href="#为什么是人的表现-Why-human-level-performance" class="headerlink" title="为什么是人的表现 Why human-level performance?"></a>为什么是人的表现 Why human-level performance?</h2><p>在过去的几年里，更多的机器学习团队一直在讨论如何比较机器学习系统和人类的表现。</p>
+<blockquote>
+<p>我认为有两个主要原因，首先是因为深度学习系统的进步，机器学习算法突然变得更好了。在许多机器学习的应用领域已经开始见到算法已经可以威胁到人类的表现了。其次，事实证明，当你试图让机器做人类能做的事情时，可以精心设计机器学习系统的工作流程，让工作流程效率更高，所以在这些场合，比较人类和机器是很自然的，或者你要让机器模仿人类的行为。</p>
+</blockquote>
+<p>当这个算法表现比人类更好时，进展和精确度的提升就变得更慢了。也许它还会越来越好，但是在超越人类水平之后，它还可以变得更好，但性能增速，准确度上升的速度这个斜率，会变得越来越平缓，我们都希望能达到理论最佳性能水平。随着时间的推移，当继续训练算法时，可能模型越来越大，数据越来越多，但是性能无法超过某个理论上限，这就是所谓的贝叶斯最优错误率（<strong>Bayes optimal error</strong>）。</p>
+<p>所以贝叶斯最优错误率一般认为是理论上可能达到的最优错误率，就是说没有任何办法设计出一个$x$到$y$的函数，让它能够超过一定的准确度。</p>
+<h2 id="可避免偏差-Avoidable-bias"><a href="#可避免偏差-Avoidable-bias" class="headerlink" title="可避免偏差 Avoidable bias"></a>可避免偏差 Avoidable bias</h2><p>在之前的课程关于偏差和方差的讨论中，我们主要假设有一些任务的贝叶斯错误率几乎为0。根据定义，人类水平错误率比贝叶斯错误率高一点，因为贝叶斯错误率是理论上限，但人类水平错误率离贝叶斯错误率不会太远。</p>
+<p>对贝叶斯错误率的估计和训练错误率之间的差值称为可避免偏差。这个训练错误率和开发错误率之前的差值，就大概说明你的算法在方差问题上还有多少改善空间。</p>
+<p><em>理解偏差和方差，那么在人类可以做得很好的任务中，你可以估计人类水平的错误率，你可以使用人类水平错误率来估计贝叶斯错误率。所以你到贝叶斯错误率估计值的差距，告诉你可避免偏差问题有多大，可避免偏差问题有多严重，而训练错误率和开发错误率之间的差值告诉你方差上的问题有多大，你的算法是否能够从训练集泛化推广到开发集。</em></p>
+<p>要达到超越人类的表现往往不容易，但如果有足够多的数据，已经有很多深度学习系统，在单一监督学习问题上已经超越了人类的水平，所以这对在开发的应用是有意义的。</p>
 ]]></content>
       <categories>
         <category>ML</category>
