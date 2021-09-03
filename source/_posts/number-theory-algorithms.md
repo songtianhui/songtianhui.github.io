@@ -1,7 +1,9 @@
 ---
 title: 问题求解笔记-数论算法
 date: 2021-04-08 09:52:18
-categories: problem-solving
+categories: 
+- 课程
+- problem-solving
 mathjax: true
 ---
 

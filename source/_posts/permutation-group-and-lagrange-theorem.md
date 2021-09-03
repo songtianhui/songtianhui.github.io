@@ -1,7 +1,9 @@
 ---
 title: 问题求解笔记-置换群和拉格朗日定理
 date: 2021-03-07 13:05:13
-categories: problem-solving
+categories: 
+- 课程
+- problem-solving
 mathjax: true
 ---
 

@@ -1,7 +1,9 @@
 ---
-title: 高级算法课程笔记
+title: 高级算法课程笔记-Lecture1
 tags:
-cagetories: Advanced Algorithm
+categories:
+- 课程
+- Advanced Algorithm
 mathjax: true
 ---
 
@@ -9,9 +11,7 @@ mathjax: true
 
 课程主页：[http://tcs.nju.edu.cn/wiki/](http://tcs.nju.edu.cn/wiki/)
 
-
-
-# Lecture 1
+<!--more-->
 
 本章是 etone 老师通过 min/max-cut 来引入高级算法的概念。
 
@@ -19,11 +19,11 @@ mathjax: true
 
 显然对于 $V$ 的一个二分 $\{S, T\}$，$E(S, T)=  \{ uv \in E | u \in S, v \in T\}$ 是 $G$ 的一个切。
 
-## 最小割 Min-Cut
+# 最小割 Min-Cut
 
 我们可以推广一下问题到输入可以是 **multi-graphs**，也即可以有重边，不能自环。
 
-### 最大流 Max flow
+## 最大流 Max flow
 
 一个朴素的想法，也是一个可行的确定性算法就是 **最大流最小割定理**，一个图的 s-t 最大流也就是它的最小割。
 
@@ -32,7 +32,7 @@ mathjax: true
   - $\tilde{O}$ 表示忽略多项式的对数系数。
   - 实际是 $O(mn + n^2 \log{n})$
 
-### 卡格尔算法 Karger's Contraction Algorithm
+## 卡格尔算法 Karger's Contraction Algorithm
 
 一个图的割太多了（$2^{\Omega(n)}$ 量级），但可以证明最小割最多只有 $O(n^2)$，我们希望生成随机的切集中在最小割上
 

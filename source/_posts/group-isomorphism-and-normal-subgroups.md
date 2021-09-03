@@ -1,7 +1,9 @@
 ---
 title: 问题求解笔记-群同态基本定理与正规子群
 date: 2021-03-11 01:50:32
-categories: problem-solving
+categories: 
+- 课程
+- problem-solving
 mathjax: true
 
 ---

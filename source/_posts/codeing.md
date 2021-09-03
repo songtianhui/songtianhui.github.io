@@ -1,6 +1,8 @@
 ---
 title: 问题求解笔记-代数编码
-categories: problem-solving
+categories: 
+- 课程
+- problem-solving
 date: 2021-04-25 23:10:21
 mathjax: true
 tags:

@@ -1,6 +1,8 @@
 ---
 title: 问题求解笔记-近似算法
-categories: problem-solving
+categories: 
+- 课程
+- problem-solving
 date: 2021-05-18 12:38:59
 mathjax: true
 ---

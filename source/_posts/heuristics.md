@@ -1,8 +1,9 @@
 ---
 title: 问题求解笔记-启发式算法
-categories: problem-solving
+categories: 
+- 课程
+- problem-solving
 mathjax: true
-typora-root-url: heuristics
 date: 2021-06-06 08:27:48
 tags:
 ---

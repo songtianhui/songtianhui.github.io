@@ -2,7 +2,9 @@
 title: OJ模板整理
 date: 2021-06-24 14:05:07
 tags:
-categories: problem-solving
+categories: 
+- 课程
+- problem-solving
 ---
 
 快期末oj了，也是最后一学期的oj，整理一下常用的算法模板，既是复习（考试偷看），也是保留一份以后时常用得上的自己习惯的板子。

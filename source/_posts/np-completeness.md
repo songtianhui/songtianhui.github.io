@@ -1,7 +1,9 @@
 ---
 title: 问题求解笔记-NP完全性
 date: 2021-05-10 20:21:03
-categories: problem-solving
+categories: 
+- 课程
+- problem-solving
 mathjax: true
 tags:
 typora-root-url: np-completeness

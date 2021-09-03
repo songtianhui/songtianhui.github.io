@@ -1,7 +1,9 @@
 ---
 title: 问题求解笔记-数论基础
 date: 2021-03-20 13:39:27
-categories: problem-solving
+categories: 
+- 课程
+- problem-solving
 mathjax: true
 ---
 

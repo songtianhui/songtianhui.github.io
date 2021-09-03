@@ -1,7 +1,9 @@
 ---
 title: 问题求解笔记-密码算法
 date: 2021-04-18 22:14:53
-categories: problem-solving
+categories: 
+- 课程
+- problem-solving
 mathjax: true
 tags:
 ---
