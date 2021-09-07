@@ -881,8 +881,8 @@ cursor_effect: fireworks
 # a trick on website title
 title_trick:
   enable: true
-  leave: "(つェ⊂)我藏好了哦~"
-  enter: "(*´∇｀*) 被你发现啦~"
+  leave: "(つェ⊂)"
+  enter: "(*´∇｀*)"
 
 
 #! ---------------------------------------------------------------

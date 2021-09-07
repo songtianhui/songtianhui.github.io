@@ -159,6 +159,18 @@ typora-root-url: cuda
 
 
 
+## 卸载
+
+因为上述问题要重装所以再总结一下卸载流程。
+
+cuda 有自带的卸载脚本
+
+``` shell
+$ sudo /usr/local/cuda/bin/cuda-uninstaller
+```
+
+
+
 ---
 
 # 装 cuDNN
@@ -213,4 +225,15 @@ $ sudo apt-get install libfreeimage3 libfreeimage-dev
 ```
 
 编译完之后运行一下可执行文件，出现 `Test passed!` 就说明 cuDNN 已经正确安装辣！:happy:
+
+
+
+## 卸载
+
+``` shell
+$ rm /usr/local/cuda/include/cudnn.h
+$ rm /usr/local/cuda/lib64/libcudnn*
+```
+
+然后还要把几个 `.deb` 包点开卸载，我看网上的教程都没有这一步，我觉得还是必要的因为版本不一样。
 
