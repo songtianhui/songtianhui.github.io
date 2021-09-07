@@ -247,6 +247,7 @@
 </ul>
 ]]></content>
       <categories>
+        <category>课程</category>
         <category>problem-solving</category>
       </categories>
   </entry>
@@ -367,6 +368,7 @@
 <p>按最大似然，总是取权最小的出错 $\textbf{e}$ ，叫做 <strong>coset leader</strong>。</p>
 ]]></content>
       <categories>
+        <category>课程</category>
         <category>problem-solving</category>
       </categories>
   </entry>
@@ -428,6 +430,7 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
 <script type="math/tex; mode=display">S(C) = C^d \text{  mod } n</script><p>（可证 $M^{ed} \equiv M \quad (\text{mod } n )$）</p>
 ]]></content>
       <categories>
+        <category>课程</category>
         <category>problem-solving</category>
       </categories>
   </entry>
@@ -540,6 +543,9 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
 </li>
 </ul>
 <p>总之，大 cuda （用大小来外号这两个cuda好像也是个好方法<span class="github-emoji" alias="joy" style fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8">&#x1f602;</span>）和 driver 好像就是没兼容上的，不过我们有兼容好的小 cuda，跑 <code>pytorch</code> 是基本没问题的。出了问题再说（挖坑）。</p>
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p>因为上述问题要重装所以再总结一下卸载流程。</p>
+<p>cuda 有自带的卸载脚本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo /usr/<span class="built_in">local</span>/cuda/bin/cuda-uninstaller</span></span><br></pre></td></tr></table></figure>
 <hr>
 <h1 id="装-cuDNN"><a href="#装-cuDNN" class="headerlink" title="装 cuDNN"></a>装 cuDNN</h1><p><a href="https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html">官方文档</a></p>
 <p>首先需要一个nvidia的账号，自己注册一个。</p>
@@ -563,6 +569,8 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
 <p>检查一下是一个包没有安装，装一下就行。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install libfreeimage3 libfreeimage-dev</span></span><br></pre></td></tr></table></figure>
 <p>编译完之后运行一下可执行文件，出现 <code>Test passed!</code> 就说明 cuDNN 已经正确安装辣！:happy:</p>
+<h2 id="卸载-1"><a href="#卸载-1" class="headerlink" title="卸载"></a>卸载</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> rm /usr/<span class="built_in">local</span>/cuda/include/cudnn.h</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> rm /usr/<span class="built_in">local</span>/cuda/lib64/libcudnn*</span></span><br></pre></td></tr></table></figure>
+<p>然后还要把几个 <code>.deb</code> 包点开卸载，我看网上的教程都没有这一步，我觉得还是必要的因为版本不一样。</p>
 ]]></content>
       <categories>
         <category>python</category>
@@ -637,6 +645,7 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
 <p>一个语言 $L$ 是 <strong>NP-complete</strong>，如果 $L \in NP$ 且 $L$ 是 NP-$hard$。</p>
 ]]></content>
       <categories>
+        <category>课程</category>
         <category>problem-solving</category>
       </categories>
   </entry>
@@ -706,6 +715,7 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
 <p><strong>定理 11.14. 同构第三定理</strong> $G$ 是一个群，$N$ 和 $H$ 是正规子群且有 $N \subset H$，则 $G / H \cong \dfrac{GN}{HN}$.</p>
 ]]></content>
       <categories>
+        <category>课程</category>
         <category>problem-solving</category>
       </categories>
   </entry>
@@ -780,6 +790,7 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
 <h2 id="重复平方法-The-Method-of-Repeated-Squares"><a href="#重复平方法-The-Method-of-Repeated-Squares" class="headerlink" title="重复平方法 The Method of Repeated Squares"></a>重复平方法 The Method of Repeated Squares</h2><p>快速幂。</p>
 ]]></content>
       <categories>
+        <category>课程</category>
         <category>problem-solving</category>
       </categories>
   </entry>
@@ -1034,6 +1045,7 @@ E[Z_{t+1}] \geq Fit\text{-}ratio(s, P_t) \cdot \dfrac{n-  length(s)}{n} \cdot (1
 </ul>
 ]]></content>
       <categories>
+        <category>课程</category>
         <category>problem-solving</category>
       </categories>
   </entry>
@@ -1107,6 +1119,7 @@ E[Z_{t+1}] \geq Fit\text{-}ratio(s, P_t) \cdot \dfrac{n-  length(s)}{n} \cdot (1
 <p><strong>定理 34.7 </strong> 电路可满足性问题是NP完全的。</p>
 ]]></content>
       <categories>
+        <category>课程</category>
         <category>problem-solving</category>
       </categories>
   </entry>
@@ -1159,6 +1172,7 @@ E[Z_{t+1}] \geq Fit\text{-}ratio(s, P_t) \cdot \dfrac{n-  length(s)}{n} \cdot (1
 <h2 id="反复平方法"><a href="#反复平方法" class="headerlink" title="反复平方法"></a>反复平方法</h2><p>快速幂</p>
 ]]></content>
       <categories>
+        <category>课程</category>
         <category>problem-solving</category>
       </categories>
   </entry>
@@ -1193,6 +1207,7 @@ E[Z_{t+1}] \geq Fit\text{-}ratio(s, P_t) \cdot \dfrac{n-  length(s)}{n} \cdot (1
 <p><strong>推论 2.17.</strong> 对任意质数 $p$，每个非零整数 $a \in \mathbb{Z}_p$ 都有逆元。</p>
 ]]></content>
       <categories>
+        <category>课程</category>
         <category>problem-solving</category>
       </categories>
   </entry>
@@ -1327,6 +1342,7 @@ E[Z_{t+1}] \geq Fit\text{-}ratio(s, P_t) \cdot \dfrac{n-  length(s)}{n} \cdot (1
 <p><a href="https://oj-solutions.njujb.com/">oj题解</a></p>
 ]]></content>
       <categories>
+        <category>课程</category>
         <category>problem-solving</category>
       </categories>
   </entry>
@@ -1482,6 +1498,7 @@ E[Z_{t+1}] \geq Fit\text{-}ratio(s, P_t) \cdot \dfrac{n-  length(s)}{n} \cdot (1
 <p><strong>定理6.19. Fermat’s Little Theorem</strong> $p$为质数，$p \nmid a \Rightarrow a^{p-1} \equiv 1$ (mod $p$)。<br>$\forall b \in \mathbb{Z}, b^{p} \equiv b$ (mod $p$).</p>
 ]]></content>
       <categories>
+        <category>课程</category>
         <category>problem-solving</category>
       </categories>
   </entry>
@@ -1646,6 +1663,7 @@ Prob(A_k(x) \in Output_U(x)) = 1 - [Prob(A(x) \notin Output_U(x))]^k,</script><p
 </ul>
 <h2 id="丰富的证人？（Abundance-of-Witnesses）"><a href="#丰富的证人？（Abundance-of-Witnesses）" class="headerlink" title="丰富的证人？（Abundance of Witnesses）"></a>丰富的证人？（Abundance of Witnesses）</h2><h2 id="指纹？（Fingerprinting）"><a href="#指纹？（Fingerprinting）" class="headerlink" title="指纹？（Fingerprinting）"></a>指纹？（Fingerprinting）</h2><h2 id="随机样本（Random-Sampling）"><a href="#随机样本（Random-Sampling）" class="headerlink" title="随机样本（Random Sampling）"></a>随机样本（Random Sampling）</h2><h2 id="（Relaxation-and-Random-Rounding）"><a href="#（Relaxation-and-Random-Rounding）" class="headerlink" title="（Relaxation and Random Rounding）"></a>（Relaxation and Random Rounding）</h2>]]></content>
       <categories>
+        <category>课程</category>
         <category>problem-solving</category>
       </categories>
   </entry>
@@ -3714,5 +3732,431 @@ cost\left(  \theta, \left( x^{(i)} , y^{(i)} \right)  \right) = \dfrac{1}{2}\lef
       <tags>
         <tag>ML</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>计算机网络课程笔记-第一章计算机网络与因特网</title>
+    <url>/2021/09/06/internet1/</url>
+    <content><![CDATA[<hr>
+<h1 id="什么是因特网-Internet"><a href="#什么是因特网-Internet" class="headerlink" title="什么是因特网 Internet"></a>什么是因特网 Internet</h1><a id="more"></a>
+<h2 id="具体构成"><a href="#具体构成" class="headerlink" title="具体构成"></a>具体构成</h2><ul>
+<li><p><strong>主机（host）/ 端系统（end system）</strong>：与因特网相连的设备。</p>
+</li>
+<li><p>端系统通过<strong>通信链路（communication link）</strong>和<strong>分组交换机（packet switch）</strong>连接到一起。</p>
+<ul>
+<li>通信链路由不同类型的物理媒体组成，有<strong>传输速率（transmission rate）</strong>。</li>
+<li>分组交换机包括<strong>路由器（router）</strong>和<strong>链路层交换机（link-layer switch）</strong>。</li>
+</ul>
+</li>
+<li><p>端系统通过<strong>因特网服务提供商（Internet Service Provide, ISP）</strong>接入因特网。</p>
+</li>
+<li>端系统、分组交换机和其他部件都要运行一系列<strong>协议（protocol）</strong>，协议控制因特网中信息的接收和发送。<ul>
+<li><strong>TCP（Transmission Control Protocol）</strong>：传输控制协议。</li>
+<li><strong>IP（Internet Protocol）</strong>：网络协议。定义了在路由器和端系统之间发送和接收的分组格式。</li>
+</ul>
+</li>
+<li><strong>新特网标准（Internet standard）</strong> 由 IETE 研发。</li>
+</ul>
+<h2 id="服务描述"><a href="#服务描述" class="headerlink" title="服务描述"></a>服务描述</h2><ul>
+<li>分布式应用程序。</li>
+<li>端系统提供<strong>套接字接口（socket interface）</strong>，规定了端系统上的程序, 请求因特网基础设施, 向另一个端系统上程序, 交付数据的方式。</li>
+</ul>
+<h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><p><strong>协议（protocol）</strong>定义了在两个或多个通信实体之间交换的报文的格式和顺序，以及报文发送和接收一条报文或其他事件所采取的动作。</p>
+<hr>
+<h1 id="网络边缘-Edge"><a href="#网络边缘-Edge" class="headerlink" title="网络边缘 Edge"></a>网络边缘 Edge</h1><p>端系统也被称为<strong>主机（host）</strong>，容纳运行应用程序。</p>
+<p>主机被划为<strong>客户（client）</strong>和<strong>服务器（server）</strong>。</p>
+<h2 id="接入网-Access"><a href="#接入网-Access" class="headerlink" title="接入网 Access"></a>接入网 Access</h2><p>指将端系统物理连接到其<strong>边缘路由器（edge router）</strong>。</p>
+<ul>
+<li>家庭接入<ul>
+<li>DSL</li>
+<li>电缆</li>
+<li>FTTH</li>
+<li>拨号</li>
+<li>卫星</li>
+</ul>
+</li>
+<li>企业接入<ul>
+<li>以太网（最为流行）</li>
+<li>WIFI</li>
+</ul>
+</li>
+<li>广域无线接入<ul>
+<li>3/4/5G</li>
+<li>LTE</li>
+</ul>
+</li>
+</ul>
+<h2 id="物理媒体"><a href="#物理媒体" class="headerlink" title="物理媒体"></a>物理媒体</h2><ul>
+<li>导向型<ul>
+<li>双绞铜线</li>
+<li>同轴电缆(可用作共享媒体)</li>
+<li>光纤</li>
+</ul>
+</li>
+<li>非导向型<ul>
+<li>陆地无线电</li>
+<li>卫星无线电</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="网络核心-Core"><a href="#网络核心-Core" class="headerlink" title="网络核心 Core"></a>网络核心 Core</h1><h2 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h2><ul>
+<li>端系统彼此交换<strong>报文（message）</strong>，包含控制功能或数据等。</li>
+<li>源端系统会将长报文划分为较小的数据块，叫<strong>分组（packet）</strong>。通过通信链路和分组交换机传送。</li>
+<li>存储转发传输</li>
+<li>排队实验和分组丢失</li>
+<li>转发表和选择协议</li>
+</ul>
+<h2 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h2><ul>
+<li><p>预留资源, 需要建立连接/断开连接 </p>
+</li>
+<li><p>端到端连接: 专用电路, 恒定时延/速率, 稳定的性能</p>
+</li>
+<li><p>复用（multiplexing）</p>
+<ul>
+<li>频分复用（FDM）</li>
+<li>时分复用（TDM）</li>
+</ul>
+</li>
+</ul>
+<h2 id="网络的网络"><a href="#网络的网络" class="headerlink" title="网络的网络"></a>网络的网络</h2><ul>
+<li>Tier-1/2/3</li>
+<li>IXP</li>
+</ul>
+<hr>
+<h1 id="分组交换网络中的问题"><a href="#分组交换网络中的问题" class="headerlink" title="分组交换网络中的问题"></a>分组交换网络中的问题</h1><h2 id="时延-Delay"><a href="#时延-Delay" class="headerlink" title="时延 Delay"></a>时延 Delay</h2><ul>
+<li><p>处理时延: 节点 检查首部, 决定转发, 进行校验 的时间, 微秒-。</p>
+</li>
+<li><p>排队时延: 在链路前的队列等待传输, 微秒~毫秒。</p>
+</li>
+<li><p>传输时延: L/R, 将所有比特推向链路的时间, 微秒~毫秒。</p>
+</li>
+<li><p>传播时延: d/s, 速度s略小于光速, 毫秒。</p>
+</li>
+</ul>
+<h2 id="丢包-Loss"><a href="#丢包-Loss" class="headerlink" title="丢包 Loss"></a>丢包 Loss</h2><ul>
+<li><p>队列近满, 部分设备采取按照概率丢弃分组, 队列越长概率越大。</p>
+</li>
+<li><p>队列满, 再来就丢, 用丢包率衡量。</p>
+</li>
+</ul>
+<h2 id="吞吐量-Throughput"><a href="#吞吐量-Throughput" class="headerlink" title="吞吐量 Throughput"></a>吞吐量 Throughput</h2><ul>
+<li>瞬时/平均吞吐量</li>
+<li>瓶颈链路: 吞吐量是各个子链路吞吐量的最小值。<ul>
+<li>因特网中, 吞吐量瓶颈在接入网。</li>
+</ul>
+</li>
+<li>共享链路: 多个链路共享某一段链路, 则需要共享这个链路的吞吐量。</li>
+</ul>
+<h1 id="协议层次及其服务模型"><a href="#协议层次及其服务模型" class="headerlink" title="协议层次及其服务模型"></a>协议层次及其服务模型</h1><h2 id="分层的体系结构"><a href="#分层的体系结构" class="headerlink" title="分层的体系结构"></a>分层的体系结构</h2><ul>
+<li>协议分层<ul>
+<li>以分层的方式组织协议以及实现这些协议的网络软硬件。</li>
+<li>每个协议属于层次之一，某层向上层提供服务，就是一层<strong>服务模型（service model）</strong>。</li>
+<li>各层所有协议称为协议栈。</li>
+</ul>
+</li>
+<li>（TCP/IP）协议栈<ul>
+<li>应用层<ul>
+<li>支持网络应用程序: FTP(端系统文件传输), SMTP(电子邮件报文传输), HTTP(Web文档请求和传送)。</li>
+</ul>
+</li>
+<li>运输层<ul>
+<li>进程间数据传输: TCP, UDP。</li>
+<li>信息分组: 报文段（segment）</li>
+</ul>
+</li>
+<li>网络层<ul>
+<li>信息分组: 数据报（datagram）</li>
+<li>IP：数据报中的各个字段以及端系统和路由器如何作用于这些字段。</li>
+</ul>
+</li>
+<li>链路层<ul>
+<li>信息分组：帧</li>
+</ul>
+</li>
+<li>物理层</li>
+</ul>
+</li>
+<li>OSI<ul>
+<li>应用层: 应用访问OSI模型的环境</li>
+<li>表示层, 会话层: 并入应用层</li>
+<li>运输层<ul>
+<li>端系统间通信</li>
+<li>可靠传输 或 单块传输</li>
+<li>连接建立, 维持, 释放</li>
+</ul>
+</li>
+<li>网络层<ul>
+<li>分组在多个网络或链路上传输</li>
+<li>编址, 路由, 转发, 拥塞控制</li>
+<li>连接建立, 维持, 拆除</li>
+</ul>
+</li>
+<li>数据链路层<ul>
+<li>链路层帧</li>
+<li>媒体访问控制, 差错检测和重传, 流量控制</li>
+<li>连接激活, 维持和失活</li>
+</ul>
+</li>
+<li>物理层</li>
+</ul>
+</li>
+</ul>
+<h2 id="网络攻击-Attack"><a href="#网络攻击-Attack" class="headerlink" title="网络攻击 Attack"></a>网络攻击 Attack</h2><ul>
+<li>攻击个人电脑<ul>
+<li>恶意软件<ul>
+<li>大多数都是自我复制的</li>
+<li>病毒（virus）: 需要某种形式的用户交互来感染用户设备</li>
+<li>蠕虫（worm）: 无需任何明显用户交互就能进入设备</li>
+<li>木马（horse）: 伪装成无害程序, 吸引用户点击</li>
+<li>后门（backdoor）: 绕过授权验证</li>
+<li>广告软件（adware）: 访问弹出广告</li>
+<li>间谍软件（spyware）: 收集用户的输入, 记录用户活动</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>攻击服务器和网络基础设施<ul>
+<li>拒绝服务攻击（Denial of Service, DOS）<ul>
+<li>使得服务不能由合法用户使用</li>
+<li>弱点攻击: 针对易受攻击的程序或操作系统, 引发停止运行或崩溃</li>
+<li>带宽洪泛: 大量发送分组到目标, 使链路拥塞</li>
+<li>连接洪泛: 创建大量半开或全开的TCP连接, 耗尽资源</li>
+</ul>
+</li>
+<li>分布式DoS(DDoS)<ul>
+<li>攻击者控制多个源</li>
+<li>僵尸网路: 攻击者用恶意软件控制大量计算机, 作为DDoS的源头等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>嗅探分组（IP Spoofing）<ul>
+<li>分组嗅探器: 记录每个流经的分组副本的被动接收机</li>
+<li>防范: 加密</li>
+</ul>
+</li>
+<li>伪装（Masquerade）<ul>
+<li>IP欺骗: 将具有虚假源地址的分组注入因特网</li>
+<li>重放攻击</li>
+<li>中间人攻击</li>
+<li>连接劫持</li>
+<li>解决方案: 加密, 数字签名, MAC</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>课程</category>
+        <category>Network</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>计算机网络课程笔记-第六章链路层和局域网</title>
+    <url>/2021/09/06/internet6/</url>
+    <content><![CDATA[<hr>
+<h1 id="链路层-Link"><a href="#链路层-Link" class="headerlink" title="链路层 Link"></a>链路层 Link</h1><ul>
+<li>运行链路层协议的任何设备均称为<strong>节点（node）</strong>，包括主机、路由器、交换机和 WiFi 接入点。</li>
+<li>沿着通信路径连接的相邻节点的通信信道称为<strong>链路（link）</strong>。</li>
+<li>在经过特定的链路时，传输节点将数据报封装在链路层帧中，并将该帧传输到链路中。</li>
+</ul>
+<a id="more"></a>
+<h2 id="链路层提供的服务"><a href="#链路层提供的服务" class="headerlink" title="链路层提供的服务"></a>链路层提供的服务</h2><ul>
+<li><strong>成帧（framing）</strong>。</li>
+<li><p><strong>链路接入</strong>。媒体访问控制（Medium Access Control, MAC）协议。</p>
+</li>
+<li><p><strong>可靠交付</strong>。</p>
+</li>
+<li><strong>差错检测和纠正</strong>。</li>
+</ul>
+<h2 id="链路层实现"><a href="#链路层实现" class="headerlink" title="链路层实现"></a>链路层实现</h2><p>链路层的主体部分是在<strong>网络适配器（network adapter）</strong>中实现的，也称<strong>网络接口卡（Network Interface Card, NIC）</strong>。</p>
+<hr>
+<h1 id="差错检测和纠正-Error-Dectection-and-Correction"><a href="#差错检测和纠正-Error-Dectection-and-Correction" class="headerlink" title="差错检测和纠正 Error Dectection and Correction"></a>差错检测和纠正 Error Dectection and Correction</h1><ul>
+<li><strong>差错检测和纠正比特（Error-Detection-and-Correction, EDC）</strong></li>
+<li><strong>未检出比特差错（undetected bit error）</strong></li>
+</ul>
+<p>3种技术（都是学过的）：</p>
+<ul>
+<li>奇偶校验</li>
+<li>检验和（checksum，适用于运输层）、因特网检验和</li>
+<li>循环冗余检测（CRC，适用于适配器中的链路层）：多项式编码、生成多项式</li>
+</ul>
+<hr>
+<h1 id="多路访问链路和协议"><a href="#多路访问链路和协议" class="headerlink" title="多路访问链路和协议"></a>多路访问链路和协议</h1><ul>
+<li><strong>点对点链路（point-to-point link）</strong>，由链路一段发送方和另一端单个接收方组成。<ul>
+<li>点对点协议（point-to-point protocol, PPP）</li>
+<li>高级数据链路控制（high-level data link control, HDLC）</li>
+</ul>
+</li>
+<li><strong>广播链路（broadcast link）</strong>，多点、共享信道。</li>
+</ul>
+<h2 id="信道划分协议-Channel-Partitioning-Protocol"><a href="#信道划分协议-Channel-Partitioning-Protocol" class="headerlink" title="信道划分协议 Channel Partitioning Protocol"></a>信道划分协议 Channel Partitioning Protocol</h2><h2 id="随机接入协议-Random-Access-Protocol"><a href="#随机接入协议-Random-Access-Protocol" class="headerlink" title="随机接入协议 Random Access Protocol"></a>随机接入协议 Random Access Protocol</h2><h2 id="轮流协议-Taking-turns-Protocol"><a href="#轮流协议-Taking-turns-Protocol" class="headerlink" title="轮流协议 Taking-turns Protocol"></a>轮流协议 Taking-turns Protocol</h2><hr>
+<h1 id="交换局域网"><a href="#交换局域网" class="headerlink" title="交换局域网"></a>交换局域网</h1><h2 id="链路层寻址和-ARP"><a href="#链路层寻址和-ARP" class="headerlink" title="链路层寻址和 ARP"></a>链路层寻址和 ARP</h2><ul>
+<li><p>MAC 地址</p>
+<ul>
+<li>主机和路由器不具有链路层地址</li>
+<li>它们的适配器（网络接口）具有链路层地址</li>
+<li>具有多个网络接口的主机具有与之相关联的多个链路层地址</li>
+<li>链路层交换机并不具有与接口相关联的链路层地址（交换机交换是透明的）</li>
+</ul>
+</li>
+<li><p><strong>地址解析协议（Address Resolution Protocol）</strong>，网络层地址（因特网中的IP地址）和链路层地址（MAC地址）进行转换。</p>
+<ul>
+<li>发送方构造一个称为ARP分组（ARP packet）的特殊分组，一个ARP分组有几个字段：发送、接收IP地址以及MAC地址。ARP查询分组的目的时查询子网上所有其他主机和路由器，以确定对于要解析的IP地址的MAC地址。</li>
+<li>适配器封装ARP分组，用广播地址作为帧的目的地址，将帧传输进子网中。</li>
+<li>目标主机给查询主机发送回一个带有所希望映射的响应ARP分组（使用标准帧而不是广播地址），然后查询主机更新ARP表，并发送IP数据报。</li>
+</ul>
+</li>
+<li><p>发送数据报到子网以外</p>
+<ul>
+<li>路由器每个端口均有 MAC 和 IP。</li>
+<li>路由器将相应 ARP, 主机获得的此 IP 的 MAC 地址是路由器这一端口的 MAC。</li>
+</ul>
+</li>
+</ul>
+<h2 id="以太网-Ethernet"><a href="#以太网-Ethernet" class="headerlink" title="以太网 Ethernet"></a>以太网 Ethernet</h2><ul>
+<li>帧结构<ul>
+<li>数据字段（46-1500字节）。承载了 IP 数据报。</li>
+<li>目的地址（6字节）。包含目的适配器的 MAC 地址。</li>
+<li>原地址（6字节）。包含传输该帧到局域网上的适配器的 MAC 地址。</li>
+<li>类型字段（2字节）。允许以太网复用多种网络层协议。</li>
+<li>CRC（4字节）。检错。</li>
+<li></li>
+<li>前同步码（8字节）。前7字节为<code>10101010</code>，最后字节为<code>10101011</code>，用于唤醒接受适配器并同步时钟。</li>
+</ul>
+</li>
+</ul>
+<p>以太网技术向网络层提供：</p>
+<ul>
+<li>无连接服务：发送数据报帧无需事先握手</li>
+<li>不可靠服务：接收器进行CRC校验，不管是否通过都不返回确认（ACK）/否定确认（NEG）帧</li>
+</ul>
+<h2 id="链路层交换机"><a href="#链路层交换机" class="headerlink" title="链路层交换机"></a>链路层交换机</h2>]]></content>
+      <categories>
+        <category>课程</category>
+        <category>Network</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>高级算法课程笔记-Lecture1</title>
+    <url>/2021/09/07/advanced-algorithm/</url>
+    <content><![CDATA[<p>课程主页：<a href="http://tcs.nju.edu.cn/wiki/">http://tcs.nju.edu.cn/wiki/</a></p>
+<a id="more"></a>
+<p>本章是 etone 老师通过 min/max-cut 来引入高级算法的概念。</p>
+<p><strong>图的切（Graph Cut）</strong>：有无向图 $G(V, E)$，子集 $C \subseteq E$ 是 $G$ 的一个切如果在去掉 $C$ 中所有边后 $G$ 不连通（disconnected）了。</p>
+<p>显然对于 $V$ 的一个二分 $\{S, T\}$，$E(S, T)=  \{ uv \in E | u \in S, v \in T\}$ 是 $G$ 的一个切。</p>
+<h1 id="最小割-Min-Cut"><a href="#最小割-Min-Cut" class="headerlink" title="最小割 Min-Cut"></a>最小割 Min-Cut</h1><p>我们可以推广一下问题到输入可以是 <strong>multi-graphs</strong>，也即可以有重边，不能自环。</p>
+<h2 id="最大流-Max-flow"><a href="#最大流-Max-flow" class="headerlink" title="最大流 Max flow"></a>最大流 Max flow</h2><p>一个朴素的想法，也是一个可行的确定性算法就是 <strong>最大流最小割定理</strong>，一个图的 s-t 最大流也就是它的最小割。</p>
+<ul>
+<li>注意到这个算法本质上是固定 s 和 t 的，也就是可能不是全局最优，不过我们只要遍历点跑最大流就可以了。</li>
+<li>时间复杂度：$(n-1) \times \text{max flow time} = \tilde{O}(mn)$。<ul>
+<li>$\tilde{O}$ 表示忽略多项式的对数系数。</li>
+<li>实际是 $O(mn + n^2 \log{n})$</li>
+</ul>
+</li>
+</ul>
+<h2 id="卡格尔算法-Karger’s-Contraction-Algorithm"><a href="#卡格尔算法-Karger’s-Contraction-Algorithm" class="headerlink" title="卡格尔算法 Karger’s Contraction Algorithm"></a>卡格尔算法 Karger’s Contraction Algorithm</h2><p>一个图的割太多了（$2^{\Omega(n)}$ 量级），但可以证明最小割最多只有 $O(n^2)$，我们希望生成随机的切集中在最小割上</p>
+<p><strong>收缩（contraction）</strong>：<code>contract(G, e)​</code> 将边 $e = uv$ 的两个端点合并（merge）。<em>在合适的数据结构下可以 $O(n)$ 实现。</em></p>
+<figure class="highlight plain"><figcaption><span>Karger's Algorithm</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V,E)</span><br><span class="line"></span><br><span class="line">while |V| &gt; 2 do:</span><br><span class="line">	pick random uv in E</span><br><span class="line">	G &#x3D; contract(G, uv)</span><br><span class="line">return C &#x3D; E &#x2F;&#x2F; the edges between the only two vertices</span><br></pre></td></tr></table></figure>
+<p>显然 $O(n)$ 的 <code>contract</code> 操作下该算法的复杂度是 $O(n^2)$。</p>
+<h3 id="准确性的分析"><a href="#准确性的分析" class="headerlink" title="准确性的分析"></a>准确性的分析</h3><p>因为是一个随机算法，所以输出的切是一个随机变量。</p>
+<p>可证如下定理：</p>
+<div class="note info">
+            <p>对于任意 $n$ 个顶点的 multigraph，Karger 算法的 $Pr[\text{a min-cut is returned}] \geq \dfrac{2}{n(n - 1)}$。</p>
+          </div>
+<p><del>第一次发现 note 的用法，感觉好好看</del></p>
+<p>下面来证：</p>
+<ul>
+<li>记 $e_1, e_2, …, e_{n-2}$ 为随机选择的收缩的边的序列。</li>
+<li>记 $G_1 = G$ 为初始图，$G_{i + 1} = contract(G_i, e_i), i = 1, 2,…, n-2$。</li>
+</ul>
+<p>显然可知：如果 $C$ 是 $G$ 的一个最小切且 $e \notin C$，则 $C$ 也是 <code>G&#39; = contract(G, e)​</code> 的一个最小割。所以有：</p>
+<p>$\begin{aligned} p_C &amp;= Pr[C \text{ is returned}] \\ &amp;= Pr[e_i \notin C \text{ for all } i = 1, 2, …,n-2] \\ &amp;= \prod\limits_{i = 1}^{n-2} Pr[e_i \notin C | \forall j &lt; i, e_i \notin C] \end{aligned}$</p>
+<p>$\forall j &lt; i, e_i \notin C$ 意味着 $C$ 也是 $G_i$ 的一个最小切。</p>
+<p>观察到一个最小切的边数 $|C|$ 一定是小于等于任意点的度数（degree），否则可以直接把这个点切开。</p>
+<p>所以更加小于等于度数的平均数，即 $|C| \leq \dfrac{2 |E|}{|V|}$。（所有点的度数和为 $2|E|$）</p>
+<p>所以我们可以计算</p>
+<p>$\begin{aligned} Pr[e_i \notin C | \forall j &lt; i, e_i \notin C]  &amp;= 1 - \dfrac{|C|}{|E_i|} \text{（从剩下的点中均匀随机选取）} \\ &amp; \geq 1 - \dfrac{2}{|V_i|} \\ &amp;= 1 - \dfrac{2}{n - i + 1} \end{aligned}$</p>
+<p>$\begin{aligned} p_C &amp; \geq \prod\limits_{i = 1}^{n-2} (1 - \dfrac{2}{n - i + 1}) \\ &amp;= \prod\limits_{k = 3}^{n} \dfrac{k - 2}{k} \\ &amp;= \dfrac{2}{n(n-1)} \end{aligned}$</p>
+<span class="label success">得证。</span>
+<p>乍一看这个算法有啥吊用，准确率也太低了。</p>
+<p>不过随机算法的精髓就在于有了准确性的下界，就可以通过 repeat 来提升准确性（好像是蒙特卡罗还是拉斯维加斯来着）。</p>
+<p>Karger 算法主要就是将解空间的大小由指数级降低到了平方级。</p>
+<p>我们可以运行算法 $t = \dfrac{n(n-1)\ln{n}}{2}$ 次并返回最小的解，该解是最小切的概率为：</p>
+<p>$\begin{aligned} \ &amp;1 - Pr[\text{所有 } t \text{ 次都失败}] \\ = &amp;1 - (Pr[\text{一次失败}])^t \\ \geq &amp; 1 - \left( 1 - \dfrac{2}{n(n-1)} \right)^{\frac{n(n-1)\ln{n}}{2}} \\ \geq &amp; 1 - \dfrac{1}{n}  \end{aligned}$</p>
+<p>运行一次算法的时间是 $O(n^2)$，也就是说我们可以在 $O(n^4\log{n})$ 的时间复杂度下高概率地（w.h.p）找到最小切。</p>
+<h3 id="一个推论"><a href="#一个推论" class="headerlink" title="一个推论"></a>一个推论</h3><div class="note info">
+            <p>对任意的 $n$ 阶图 $G(V, E)$，最小割的个数不会超过 $\dfrac{n(n-1)}{2}$。</p>
+          </div>
+<p>这是从概率方法上推到的：</p>
+<p>设有 $M$ 个不同的最小切，显然它们是独立的。</p>
+<p>$\because 1 \geq Pr[\text{a min-cut is returned}] \geq M \times \dfrac{2}{n(n-1)}$</p>
+<p>$\therefore M \leq \dfrac{n(n-1)}{2}$</p>
+<span class="label success">得证。</span>
+<h2 id="快速最小切-Fast-Min-Cut"><a href="#快速最小切-Fast-Min-Cut" class="headerlink" title="快速最小切 Fast Min-Cut"></a>快速最小切 Fast Min-Cut</h2><p>我们知道 $p_C \geq \prod\limits_{i = 1}^{n-2} (1 - \dfrac{2}{n - i + 1})$，也就是这个概率是随 $i$ 增大递减的，也就是说当图越来越小也就越来越难成功。</p>
+<p>我们就可以思考一个新的方法，先把图收缩的一个较小的程度，然后再递归地找这个更小的图上的最小切。</p>
+<p>先定义一个随机收缩的函数，把图收缩到只剩 $t$ 个点：</p>
+<figure class="highlight plain"><figcaption><span>random_contract(G, t)</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V, E), integer t &gt;&#x3D; 2</span><br><span class="line"></span><br><span class="line">while |V| &gt; t:</span><br><span class="line">	choose an edge uv in E uniformly at random</span><br><span class="line">	G &#x3D; contract(G, uv)</span><br><span class="line">return G</span><br></pre></td></tr></table></figure>
+<p>然后定义我们的快速最小切：</p>
+<figure class="highlight plain"><figcaption><span>fast_cut(G)</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V, E)</span><br><span class="line"></span><br><span class="line">if |V| &lt;&#x3D; 6:</span><br><span class="line">	return a mincut by brute force</span><br><span class="line">else:</span><br><span class="line">	t &#x3D; [1 + |V| &#x2F; sqrt(2)]</span><br><span class="line">	G1 &#x3D; random_contract(G, t)</span><br><span class="line">	G2 &#x3D; random_contract(G, t)</span><br><span class="line">	return min&#123;fast_cut(G1), fast_cut(G2)&#125;</span><br></pre></td></tr></table></figure>
+<p>一样的我们可以算出 <code>random_contract</code> 成功的概率：</p>
+<p>$\begin{aligned} &amp; Pr[C \text{ survives all contractions in random_contract}] \\ = &amp; \prod\limits_{i=1}^{n - t} Pr[C \text{ survives the i-th contraction } | C \text{ survives the first (i−1)-th contractions}] \\ \geq &amp; \prod\limits_{i=1}^{n - t} \left( 1 - \dfrac{2}{n - i +1} \right) \\  = &amp; \dfrac{t(t - 1)}{n(n - 1)}  \end{aligned}$</p>
+<p>当 $t = \lceil 1 + n / \sqrt{2} \rceil $ 时，这个概率至少是 $1/2$。</p>
+<p>定义两个事件：</p>
+<ul>
+<li>A：$C$ survives <code>random_contract</code> 中所有的 contractions。</li>
+<li>B：<code>random_contract</code> 后最小切的大小保持不变。</li>
+</ul>
+<p>显然 $A \to B$，所以 $Pr[B] \geq Pr[A] \geq \frac{1}{2}$。</p>
+<p>我们用 $p(n) $ 来表示一个 $n$ 阶图的 <code>fast_cut</code> 的下界：</p>
+<p>$\begin{aligned} p(n) &amp; = Pr[\text{fast_cut returns a min-cut}] \\ &amp;= Pr[\text{a min-cut is returned by fast_cut(G1) and fast_cut(G2)}] \\ &amp; \geq 1 - (1 - Pr[B \wedge \text{ fast_cut(G1) return a min-cut in G1}])^2 \\ &amp; \geq 1 - (1 - Pr[A \wedge \text{ fast_cut(G1) return a min-cut in G1}])^2 \\ &amp; = 1 - (1 - Pr[A] Pr[\text{fast_cut(G1) return a min-cut in G1 | A}])^2 \\ &amp; \geq 1 - \left( 1 - \dfrac{1}{2} p(\lceil 1 + n / \sqrt{2} \rceil) \right)^2  \end{aligned}$</p>
+<p>base case 是 $p(n) = 1$ 当 $n \leq 6$。</p>
+<p>归纳易证 $p(n) = \Omega(\frac{1}{\log{n}})$。</p>
+<p>时间复杂度上由那个算法我们有 $T(n) = 2T(\lceil 1 + n / \sqrt{2} \rceil) + O(n^2)$，易证 $T(n) = O(n^2 \log{n})$。</p>
+<p>最终我们能总结如下定理：</p>
+<div class="note info">
+            <p>对任意的 $n$ 阶图，<code>fast_cut</code> 算法可以在 $O(n^2 \log{n})$ 的时间复杂度下以 $\Omega(\frac{1}{\log{n}})$ 的概率返回一个最小切。</p>
+          </div>
+<p><code>fast_cut</code> 比原始的 <code>random_contract</code> 时间长，概率高。</p>
+<p>我们可以运行它 $(\log{n})^2$ 次，在 $O(n^2 \log^3{n})$ 的时间复杂度下以 $1 - O(1/n)$ 的概率返回最小切。</p>
+<p>回忆前面的确定算法的时间复杂度是 $O(mn + n^2 \log{n})$，也就是说在稠密图上这个随机算法会表现地更好一些。</p>
+<p><em>最终 Karger 继续改进了这个算法并获得了一个关于边数的接近线性时间的随机算法不过超出了本课程的讨论范围。</em></p>
+<h1 id="最大割-Max-cut"><a href="#最大割-Max-cut" class="headerlink" title="最大割 Max-cut"></a>最大割 Max-cut</h1><p>问题就转变成了一个 <strong>NP-hard</strong> 的问题，如果我们相信 $P \neq NP$，就无法在多项式时间用确定性算法解决这个问题。</p>
+<h2 id="贪心-Greedy"><a href="#贪心-Greedy" class="headerlink" title="贪心 Greedy"></a>贪心 Greedy</h2><figure class="highlight plain"><figcaption><span>greedy_cut</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V, E)</span><br><span class="line"></span><br><span class="line">S &#x3D; T &#x3D; emptyset</span><br><span class="line">for i &#x3D; 1, 2, ..., n:</span><br><span class="line">	v_i joins one of S,T to maximize the current |E(S,T)|</span><br></pre></td></tr></table></figure>
+<p>然后讲了到<strong>近似比（approximation ratio）</strong>的概念，<del>复习问求。</del></p>
+<p>暂时先不假证明（懒）地给出定理：</p>
+<div class="note info">
+            <p><code>greedy_cut</code> 是一个 0.5-近似的最大切算法。</p>
+          </div>
+<p>这并不是多项式时间最好的最大切算法，最好的算法 <a href="http://www-math.mit.edu/~goemans/PAPERS/maxcut-jacm.pdf">Goemans-Williamson Algorithm</a> 可以达到近似比 $\alpha^{\star} = \frac{2}{\pi}\inf_{x\in [-1,1]}{\frac{\arccos{(x)}}{1-x}}$，并被证明不存在近似比更好的多项式时间近似算法。</p>
+<h2 id="通过条件期望去随机化-Derandomization"><a href="#通过条件期望去随机化-Derandomization" class="headerlink" title="通过条件期望去随机化 Derandomization"></a>通过条件期望去随机化 Derandomization</h2><p>对于任意顶点 $v \in V$，$X_{v} \in \{0, 1\}$ 是一个均匀随机 bit 来表示该点加入 $S$ 或 $T$。</p>
+<p>这个随机的 cut 的大小可以被表示为：</p>
+<script type="math/tex; mode=display">
+|E(S, T)| = \sum\limits_{uv\in E} I[X_u \neq X_v]。</script><p>由于期望的线性（linearity），</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[|E(S, T)|]=\sum\limits_{u v \in E} \mathbb{E}\left[I\left[X_{u} \neq X_{v}\right]\right]=\sum\limits_{u v \in E} \operatorname{Pr}\left[X_{u} \neq X_{v}\right]=\dfrac{|E|}{2}。</script><p>$|E|$ 就是最大切的 $OPT_G$ 的一个上界，所以我们有：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[|E(S,T)|] \geq \dfrac{OPT_G}{2}。</script><p>所以我们生成的随机的切的平均值大于等于 $\frac{OPT_G}{2}$，由于<strong>平均原理（averaging principle）</strong>，至少有一个二分生成的切是大于等于 $\frac{OPT_G}{2}$ 的。然后我们希望有算法来找到这个解。</p>
+<p>我们想一个个地固定 $X_{v_{i}}$ 的值来构造一个二分 $\{\hat{S}, \hat{T}\}$ 使得：</p>
+<script type="math/tex; mode=display">
+|E(\hat{S}, \hat{T})| \geq \mathbb{E}[|E(S, T)|] \geq \dfrac{O P T_{G}}{2}。</script><p>我们从第一个点 $v_1$ 开始，通过全期望公式：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[E(S, T)]=\dfrac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=0\right]+\dfrac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=1\right]。</script><p>至少存在一个赋值 $x_1 \in \{0, 1\}$ 使得：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}\right] \geq \mathbb{E}[E(S, T)]。</script><p>我们可以继续运用这个方法：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}\right]= \frac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}, X_{v_{i}}=0\right]
++\frac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}, X_{v_{i}}=1\right]</script><p>至少存在一个赋值 $x_i \in \{0, 1\}$ 使得：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i}}=x_{i}\right] \geq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}\right]</script><p>所以我么就可以这要找到一个序列 $x_1, x_2, …, x_n \in \{0, 1\}$ 来形成一个单调的路径：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[E(S, T)] \leq \cdots \leq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}\right] \leq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i}}=x_{i}\right] \leq \cdots \leq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{n}}=x_{n}\right]</script><p>最终一个二分 $(\hat{S}, \hat{T})$ 被这个序列确定下来，并且 $E(\hat{S}, \hat{T}) \geq \frac{OPT_G}{2}$。</p>
+<p>我们可以有如下算法：</p>
+<figure class="highlight plain"><figcaption><span>monotone_path</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V,E)</span><br><span class="line"></span><br><span class="line">S &#x3D; T &#x3D; emptyset</span><br><span class="line">for i &#x3D; 1, 2, ..., n:</span><br><span class="line">	v_i joins one of S,T to maximize the average size of cut conditioning on the choices made so far by the vertices (v_1, v_2, ..., v_i)</span><br></pre></td></tr></table></figure>
+<p>所以，上面的贪心算法实际上是通过平均情况的去随机化得来的。</p>
+<h2 id="通过-pairwise-独立的去随机化"><a href="#通过-pairwise-独立的去随机化" class="headerlink" title="通过 pairwise 独立的去随机化"></a>通过 pairwise 独立的去随机化</h2>]]></content>
+      <categories>
+        <category>课程</category>
+        <category>Advanced Algorithm</category>
+      </categories>
   </entry>
 </search>

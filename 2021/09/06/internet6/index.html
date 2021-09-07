@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"songtianhui.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="链路层 Link 运行链路层协议的任何设备均称为节点（node），包括主机、路由器、交换机和 WiFi 接入点。 沿着通信路径连接的相邻节点的通信信道称为链路（link）。 在经过特定的链路时，传输节点将数据报封装在链路层帧中，并将该帧传输到链路中。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络课程笔记-第六章链路层和局域网">
+<meta property="og:url" content="https://songtianhui.github.io/2021/09/06/internet6/index.html">
+<meta property="og:site_name" content="Songtianhui&#39;s Blog">
+<meta property="og:description" content="链路层 Link 运行链路层协议的任何设备均称为节点（node），包括主机、路由器、交换机和 WiFi 接入点。 沿着通信路径连接的相邻节点的通信信道称为链路（link）。 在经过特定的链路时，传输节点将数据报封装在链路层帧中，并将该帧传输到链路中。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-09-06T06:26:30.000Z">
+<meta property="article:modified_time" content="2021-09-07T14:49:42.734Z">
+<meta property="article:author" content="Hui hui">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://songtianhui.github.io/2021/09/06/internet6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>计算机网络课程笔记-第六章链路层和局域网 | Songtianhui's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/custom_css_source.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Songtianhui's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/09/06/internet6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hui hui">
+      <meta itemprop="description" content="Be happy forever!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Songtianhui's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机网络课程笔记-第六章链路层和局域网
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-06 14:26:30" itemprop="dateCreated datePublished" datetime="2021-09-06T14:26:30+08:00">2021-09-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-07 22:49:42" itemprop="dateModified" datetime="2021-09-07T22:49:42+08:00">2021-09-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">课程</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <hr>
+<h1 id="链路层-Link"><a href="#链路层-Link" class="headerlink" title="链路层 Link"></a>链路层 Link</h1><ul>
+<li>运行链路层协议的任何设备均称为<strong>节点（node）</strong>，包括主机、路由器、交换机和 WiFi 接入点。</li>
+<li>沿着通信路径连接的相邻节点的通信信道称为<strong>链路（link）</strong>。</li>
+<li>在经过特定的链路时，传输节点将数据报封装在链路层帧中，并将该帧传输到链路中。</li>
+</ul>
+<a id="more"></a>
+<h2 id="链路层提供的服务"><a href="#链路层提供的服务" class="headerlink" title="链路层提供的服务"></a>链路层提供的服务</h2><ul>
+<li><strong>成帧（framing）</strong>。</li>
+<li><p><strong>链路接入</strong>。媒体访问控制（Medium Access Control, MAC）协议。</p>
+</li>
+<li><p><strong>可靠交付</strong>。</p>
+</li>
+<li><strong>差错检测和纠正</strong>。</li>
+</ul>
+<h2 id="链路层实现"><a href="#链路层实现" class="headerlink" title="链路层实现"></a>链路层实现</h2><p>链路层的主体部分是在<strong>网络适配器（network adapter）</strong>中实现的，也称<strong>网络接口卡（Network Interface Card, NIC）</strong>。</p>
+<hr>
+<h1 id="差错检测和纠正-Error-Dectection-and-Correction"><a href="#差错检测和纠正-Error-Dectection-and-Correction" class="headerlink" title="差错检测和纠正 Error Dectection and Correction"></a>差错检测和纠正 Error Dectection and Correction</h1><ul>
+<li><strong>差错检测和纠正比特（Error-Detection-and-Correction, EDC）</strong></li>
+<li><strong>未检出比特差错（undetected bit error）</strong></li>
+</ul>
+<p>3种技术（都是学过的）：</p>
+<ul>
+<li>奇偶校验</li>
+<li>检验和（checksum，适用于运输层）、因特网检验和</li>
+<li>循环冗余检测（CRC，适用于适配器中的链路层）：多项式编码、生成多项式</li>
+</ul>
+<hr>
+<h1 id="多路访问链路和协议"><a href="#多路访问链路和协议" class="headerlink" title="多路访问链路和协议"></a>多路访问链路和协议</h1><ul>
+<li><strong>点对点链路（point-to-point link）</strong>，由链路一段发送方和另一端单个接收方组成。<ul>
+<li>点对点协议（point-to-point protocol, PPP）</li>
+<li>高级数据链路控制（high-level data link control, HDLC）</li>
+</ul>
+</li>
+<li><strong>广播链路（broadcast link）</strong>，多点、共享信道。</li>
+</ul>
+<h2 id="信道划分协议-Channel-Partitioning-Protocol"><a href="#信道划分协议-Channel-Partitioning-Protocol" class="headerlink" title="信道划分协议 Channel Partitioning Protocol"></a>信道划分协议 Channel Partitioning Protocol</h2><h2 id="随机接入协议-Random-Access-Protocol"><a href="#随机接入协议-Random-Access-Protocol" class="headerlink" title="随机接入协议 Random Access Protocol"></a>随机接入协议 Random Access Protocol</h2><h2 id="轮流协议-Taking-turns-Protocol"><a href="#轮流协议-Taking-turns-Protocol" class="headerlink" title="轮流协议 Taking-turns Protocol"></a>轮流协议 Taking-turns Protocol</h2><hr>
+<h1 id="交换局域网"><a href="#交换局域网" class="headerlink" title="交换局域网"></a>交换局域网</h1><h2 id="链路层寻址和-ARP"><a href="#链路层寻址和-ARP" class="headerlink" title="链路层寻址和 ARP"></a>链路层寻址和 ARP</h2><ul>
+<li><p>MAC 地址</p>
+<ul>
+<li>主机和路由器不具有链路层地址</li>
+<li>它们的适配器（网络接口）具有链路层地址</li>
+<li>具有多个网络接口的主机具有与之相关联的多个链路层地址</li>
+<li>链路层交换机并不具有与接口相关联的链路层地址（交换机交换是透明的）</li>
+</ul>
+</li>
+<li><p><strong>地址解析协议（Address Resolution Protocol）</strong>，网络层地址（因特网中的IP地址）和链路层地址（MAC地址）进行转换。</p>
+<ul>
+<li>发送方构造一个称为ARP分组（ARP packet）的特殊分组，一个ARP分组有几个字段：发送、接收IP地址以及MAC地址。ARP查询分组的目的时查询子网上所有其他主机和路由器，以确定对于要解析的IP地址的MAC地址。</li>
+<li>适配器封装ARP分组，用广播地址作为帧的目的地址，将帧传输进子网中。</li>
+<li>目标主机给查询主机发送回一个带有所希望映射的响应ARP分组（使用标准帧而不是广播地址），然后查询主机更新ARP表，并发送IP数据报。</li>
+</ul>
+</li>
+<li><p>发送数据报到子网以外</p>
+<ul>
+<li>路由器每个端口均有 MAC 和 IP。</li>
+<li>路由器将相应 ARP, 主机获得的此 IP 的 MAC 地址是路由器这一端口的 MAC。</li>
+</ul>
+</li>
+</ul>
+<h2 id="以太网-Ethernet"><a href="#以太网-Ethernet" class="headerlink" title="以太网 Ethernet"></a>以太网 Ethernet</h2><ul>
+<li>帧结构<ul>
+<li>数据字段（46-1500字节）。承载了 IP 数据报。</li>
+<li>目的地址（6字节）。包含目的适配器的 MAC 地址。</li>
+<li>原地址（6字节）。包含传输该帧到局域网上的适配器的 MAC 地址。</li>
+<li>类型字段（2字节）。允许以太网复用多种网络层协议。</li>
+<li>CRC（4字节）。检错。</li>
+<li></li>
+<li>前同步码（8字节）。前7字节为<code>10101010</code>，最后字节为<code>10101011</code>，用于唤醒接受适配器并同步时钟。</li>
+</ul>
+</li>
+</ul>
+<p>以太网技术向网络层提供：</p>
+<ul>
+<li>无连接服务：发送数据报帧无需事先握手</li>
+<li>不可靠服务：接收器进行CRC校验，不管是否通过都不返回确认（ACK）/否定确认（NEG）帧</li>
+</ul>
+<h2 id="链路层交换机"><a href="#链路层交换机" class="headerlink" title="链路层交换机"></a>链路层交换机</h2>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/06/internet1/" rel="prev" title="计算机网络课程笔记-第一章计算机网络与因特网">
+      <i class="fa fa-chevron-left"></i> 计算机网络课程笔记-第一章计算机网络与因特网
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/07/advanced-algorithm/" rel="next" title="高级算法课程笔记-Lecture1">
+      高级算法课程笔记-Lecture1 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82-Link"><span class="nav-number">1.</span> <span class="nav-text">链路层 Link</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E6%8F%90%E4%BE%9B%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.1.</span> <span class="nav-text">链路层提供的服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.2.</span> <span class="nav-text">链路层实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B%E5%92%8C%E7%BA%A0%E6%AD%A3-Error-Dectection-and-Correction"><span class="nav-number">2.</span> <span class="nav-text">差错检测和纠正 Error Dectection and Correction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E8%B7%AF%E8%AE%BF%E9%97%AE%E9%93%BE%E8%B7%AF%E5%92%8C%E5%8D%8F%E8%AE%AE"><span class="nav-number">3.</span> <span class="nav-text">多路访问链路和协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E9%81%93%E5%88%92%E5%88%86%E5%8D%8F%E8%AE%AE-Channel-Partitioning-Protocol"><span class="nav-number">3.1.</span> <span class="nav-text">信道划分协议 Channel Partitioning Protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%8E%A5%E5%85%A5%E5%8D%8F%E8%AE%AE-Random-Access-Protocol"><span class="nav-number">3.2.</span> <span class="nav-text">随机接入协议 Random Access Protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AE%E6%B5%81%E5%8D%8F%E8%AE%AE-Taking-turns-Protocol"><span class="nav-number">3.3.</span> <span class="nav-text">轮流协议 Taking-turns Protocol</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="nav-number">4.</span> <span class="nav-text">交换局域网</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AF%BB%E5%9D%80%E5%92%8C-ARP"><span class="nav-number">4.1.</span> <span class="nav-text">链路层寻址和 ARP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91-Ethernet"><span class="nav-number">4.2.</span> <span class="nav-text">以太网 Ethernet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="nav-number">4.3.</span> <span class="nav-text">链路层交换机</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hui hui"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Hui hui</p>
+  <div class="site-description" itemprop="description">Be happy forever!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/songtianhui" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;songtianhui" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:191098194@smail.nju.edu.cn" title="E-Mail → mailto:191098194@smail.nju.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hui hui</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+ 
+<script>
+  var OriginTitile = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "(つェ⊂)" + OriginTitile;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "(*´∇｀*)" + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+  });
+</script>
+
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20210126,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "years");
+    ages = ages.replace(/months?/, "moths");
+    ages = ages.replace(/days?/, "days");
+    ages = ages.replace(/hours?/, "hours");
+    ages = ages.replace(/minutes?/, "minutes");
+    ages = ages.replace(/seconds?/, "seconds");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `I have been here waiting for you for ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+
+
+ 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginrootpath":"live2dw/","pluginjspath":"lib/","pluginmodelpath":"assets/ relative)","scriptfrom":"local","tagmode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":180,"height":300},"mobile":{"show":true},"react":{"opacitydefault":0.7},"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

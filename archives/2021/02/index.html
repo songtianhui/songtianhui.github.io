@@ -192,7 +192,8 @@
   <div class="post-block">
     <div class="posts-collapse">
       <div class="collection-title">
-        <span class="collection-header">Um..! 30 posts in total. Keep on posting.</span>
+        
+        <span class="collection-header">OK! 33 posts in total. Keep on posting.</span>
       </div>
 
       
@@ -374,14 +375,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -502,10 +503,10 @@
   var titleTime;
   document.addEventListener("visibilitychange", function() {
     if (document.hidden) {
-      document.title = "(つェ⊂)我藏好了哦~" + OriginTitile;
+      document.title = "(つェ⊂)" + OriginTitile;
       clearTimeout(titleTime);
     } else {
-      document.title = "(*´∇｀*) 被你发现啦~" + OriginTitile;
+      document.title = "(*´∇｀*)" + OriginTitile;
       titleTime = setTimeout(function() {
         document.title = OriginTitile;
       }, 2000);

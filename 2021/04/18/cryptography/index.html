@@ -30,7 +30,7 @@
 <meta property="og:description" content="公钥加密系统一个公钥加密系统中，每个参与者都拥有一把公钥$P$和私钥$S$，密钥需要保密，公钥可以公之于众。 $\mathcal{D}$表示允许信息的集合，要求公钥与密钥指定一种从$\mathcal{D}$到自身的一一对应的函数。公钥函数$P()$和密钥函数$S()$都是$\mathcal{D}$的排列，互为反函数，即对任意的 $M \in \mathcal{D}$，有 M &#x3D; S(P(M)) \">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-18T14:14:53.000Z">
-<meta property="article:modified_time" content="2021-06-17T11:33:48.750Z">
+<meta property="article:modified_time" content="2021-09-03T15:24:24.045Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
 
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-17 19:33:48" itemprop="dateModified" datetime="2021-06-17T19:33:48+08:00">2021-06-17</time>
+                <time title="Modified: 2021-09-03 23:24:24" itemprop="dateModified" datetime="2021-09-03T23:24:24+08:00">2021-09-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -230,7 +230,11 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/problem-solving/" itemprop="url" rel="index"><span itemprop="name">problem-solving</span></a>
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">课程</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/problem-solving/" itemprop="url" rel="index"><span itemprop="name">problem-solving</span></a>
                 </span>
             </span>
 
@@ -394,14 +398,14 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -575,10 +579,10 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
   var titleTime;
   document.addEventListener("visibilitychange", function() {
     if (document.hidden) {
-      document.title = "(つェ⊂)我藏好了哦~" + OriginTitile;
+      document.title = "(つェ⊂)" + OriginTitile;
       clearTimeout(titleTime);
     } else {
-      document.title = "(*´∇｀*) 被你发现啦~" + OriginTitile;
+      document.title = "(*´∇｀*)" + OriginTitile;
       titleTime = setTimeout(function() {
         document.title = OriginTitile;
       }, 2000);

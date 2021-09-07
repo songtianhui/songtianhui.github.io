@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"songtianhui.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="什么是因特网 Internet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络课程笔记-第一章计算机网络与因特网">
+<meta property="og:url" content="https://songtianhui.github.io/2021/09/06/internet1/index.html">
+<meta property="og:site_name" content="Songtianhui&#39;s Blog">
+<meta property="og:description" content="什么是因特网 Internet">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-09-06T06:24:09.000Z">
+<meta property="article:modified_time" content="2021-09-06T06:25:11.789Z">
+<meta property="article:author" content="Hui hui">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://songtianhui.github.io/2021/09/06/internet1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>计算机网络课程笔记-第一章计算机网络与因特网 | Songtianhui's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/custom_css_source.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Songtianhui's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/09/06/internet1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hui hui">
+      <meta itemprop="description" content="Be happy forever!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Songtianhui's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机网络课程笔记-第一章计算机网络与因特网
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-09-06 14:24:09 / Modified: 14:25:11" itemprop="dateCreated datePublished" datetime="2021-09-06T14:24:09+08:00">2021-09-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">课程</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <hr>
+<h1 id="什么是因特网-Internet"><a href="#什么是因特网-Internet" class="headerlink" title="什么是因特网 Internet"></a>什么是因特网 Internet</h1><a id="more"></a>
+<h2 id="具体构成"><a href="#具体构成" class="headerlink" title="具体构成"></a>具体构成</h2><ul>
+<li><p><strong>主机（host）/ 端系统（end system）</strong>：与因特网相连的设备。</p>
+</li>
+<li><p>端系统通过<strong>通信链路（communication link）</strong>和<strong>分组交换机（packet switch）</strong>连接到一起。</p>
+<ul>
+<li>通信链路由不同类型的物理媒体组成，有<strong>传输速率（transmission rate）</strong>。</li>
+<li>分组交换机包括<strong>路由器（router）</strong>和<strong>链路层交换机（link-layer switch）</strong>。</li>
+</ul>
+</li>
+<li><p>端系统通过<strong>因特网服务提供商（Internet Service Provide, ISP）</strong>接入因特网。</p>
+</li>
+<li>端系统、分组交换机和其他部件都要运行一系列<strong>协议（protocol）</strong>，协议控制因特网中信息的接收和发送。<ul>
+<li><strong>TCP（Transmission Control Protocol）</strong>：传输控制协议。</li>
+<li><strong>IP（Internet Protocol）</strong>：网络协议。定义了在路由器和端系统之间发送和接收的分组格式。</li>
+</ul>
+</li>
+<li><strong>新特网标准（Internet standard）</strong> 由 IETE 研发。</li>
+</ul>
+<h2 id="服务描述"><a href="#服务描述" class="headerlink" title="服务描述"></a>服务描述</h2><ul>
+<li>分布式应用程序。</li>
+<li>端系统提供<strong>套接字接口（socket interface）</strong>，规定了端系统上的程序, 请求因特网基础设施, 向另一个端系统上程序, 交付数据的方式。</li>
+</ul>
+<h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><p><strong>协议（protocol）</strong>定义了在两个或多个通信实体之间交换的报文的格式和顺序，以及报文发送和接收一条报文或其他事件所采取的动作。</p>
+<hr>
+<h1 id="网络边缘-Edge"><a href="#网络边缘-Edge" class="headerlink" title="网络边缘 Edge"></a>网络边缘 Edge</h1><p>端系统也被称为<strong>主机（host）</strong>，容纳运行应用程序。</p>
+<p>主机被划为<strong>客户（client）</strong>和<strong>服务器（server）</strong>。</p>
+<h2 id="接入网-Access"><a href="#接入网-Access" class="headerlink" title="接入网 Access"></a>接入网 Access</h2><p>指将端系统物理连接到其<strong>边缘路由器（edge router）</strong>。</p>
+<ul>
+<li>家庭接入<ul>
+<li>DSL</li>
+<li>电缆</li>
+<li>FTTH</li>
+<li>拨号</li>
+<li>卫星</li>
+</ul>
+</li>
+<li>企业接入<ul>
+<li>以太网（最为流行）</li>
+<li>WIFI</li>
+</ul>
+</li>
+<li>广域无线接入<ul>
+<li>3/4/5G</li>
+<li>LTE</li>
+</ul>
+</li>
+</ul>
+<h2 id="物理媒体"><a href="#物理媒体" class="headerlink" title="物理媒体"></a>物理媒体</h2><ul>
+<li>导向型<ul>
+<li>双绞铜线</li>
+<li>同轴电缆(可用作共享媒体)</li>
+<li>光纤</li>
+</ul>
+</li>
+<li>非导向型<ul>
+<li>陆地无线电</li>
+<li>卫星无线电</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="网络核心-Core"><a href="#网络核心-Core" class="headerlink" title="网络核心 Core"></a>网络核心 Core</h1><h2 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h2><ul>
+<li>端系统彼此交换<strong>报文（message）</strong>，包含控制功能或数据等。</li>
+<li>源端系统会将长报文划分为较小的数据块，叫<strong>分组（packet）</strong>。通过通信链路和分组交换机传送。</li>
+<li>存储转发传输</li>
+<li>排队实验和分组丢失</li>
+<li>转发表和选择协议</li>
+</ul>
+<h2 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h2><ul>
+<li><p>预留资源, 需要建立连接/断开连接 </p>
+</li>
+<li><p>端到端连接: 专用电路, 恒定时延/速率, 稳定的性能</p>
+</li>
+<li><p>复用（multiplexing）</p>
+<ul>
+<li>频分复用（FDM）</li>
+<li>时分复用（TDM）</li>
+</ul>
+</li>
+</ul>
+<h2 id="网络的网络"><a href="#网络的网络" class="headerlink" title="网络的网络"></a>网络的网络</h2><ul>
+<li>Tier-1/2/3</li>
+<li>IXP</li>
+</ul>
+<hr>
+<h1 id="分组交换网络中的问题"><a href="#分组交换网络中的问题" class="headerlink" title="分组交换网络中的问题"></a>分组交换网络中的问题</h1><h2 id="时延-Delay"><a href="#时延-Delay" class="headerlink" title="时延 Delay"></a>时延 Delay</h2><ul>
+<li><p>处理时延: 节点 检查首部, 决定转发, 进行校验 的时间, 微秒-。</p>
+</li>
+<li><p>排队时延: 在链路前的队列等待传输, 微秒~毫秒。</p>
+</li>
+<li><p>传输时延: L/R, 将所有比特推向链路的时间, 微秒~毫秒。</p>
+</li>
+<li><p>传播时延: d/s, 速度s略小于光速, 毫秒。</p>
+</li>
+</ul>
+<h2 id="丢包-Loss"><a href="#丢包-Loss" class="headerlink" title="丢包 Loss"></a>丢包 Loss</h2><ul>
+<li><p>队列近满, 部分设备采取按照概率丢弃分组, 队列越长概率越大。</p>
+</li>
+<li><p>队列满, 再来就丢, 用丢包率衡量。</p>
+</li>
+</ul>
+<h2 id="吞吐量-Throughput"><a href="#吞吐量-Throughput" class="headerlink" title="吞吐量 Throughput"></a>吞吐量 Throughput</h2><ul>
+<li>瞬时/平均吞吐量</li>
+<li>瓶颈链路: 吞吐量是各个子链路吞吐量的最小值。<ul>
+<li>因特网中, 吞吐量瓶颈在接入网。</li>
+</ul>
+</li>
+<li>共享链路: 多个链路共享某一段链路, 则需要共享这个链路的吞吐量。</li>
+</ul>
+<h1 id="协议层次及其服务模型"><a href="#协议层次及其服务模型" class="headerlink" title="协议层次及其服务模型"></a>协议层次及其服务模型</h1><h2 id="分层的体系结构"><a href="#分层的体系结构" class="headerlink" title="分层的体系结构"></a>分层的体系结构</h2><ul>
+<li>协议分层<ul>
+<li>以分层的方式组织协议以及实现这些协议的网络软硬件。</li>
+<li>每个协议属于层次之一，某层向上层提供服务，就是一层<strong>服务模型（service model）</strong>。</li>
+<li>各层所有协议称为协议栈。</li>
+</ul>
+</li>
+<li>（TCP/IP）协议栈<ul>
+<li>应用层<ul>
+<li>支持网络应用程序: FTP(端系统文件传输), SMTP(电子邮件报文传输), HTTP(Web文档请求和传送)。</li>
+</ul>
+</li>
+<li>运输层<ul>
+<li>进程间数据传输: TCP, UDP。</li>
+<li>信息分组: 报文段（segment）</li>
+</ul>
+</li>
+<li>网络层<ul>
+<li>信息分组: 数据报（datagram）</li>
+<li>IP：数据报中的各个字段以及端系统和路由器如何作用于这些字段。</li>
+</ul>
+</li>
+<li>链路层<ul>
+<li>信息分组：帧</li>
+</ul>
+</li>
+<li>物理层</li>
+</ul>
+</li>
+<li>OSI<ul>
+<li>应用层: 应用访问OSI模型的环境</li>
+<li>表示层, 会话层: 并入应用层</li>
+<li>运输层<ul>
+<li>端系统间通信</li>
+<li>可靠传输 或 单块传输</li>
+<li>连接建立, 维持, 释放</li>
+</ul>
+</li>
+<li>网络层<ul>
+<li>分组在多个网络或链路上传输</li>
+<li>编址, 路由, 转发, 拥塞控制</li>
+<li>连接建立, 维持, 拆除</li>
+</ul>
+</li>
+<li>数据链路层<ul>
+<li>链路层帧</li>
+<li>媒体访问控制, 差错检测和重传, 流量控制</li>
+<li>连接激活, 维持和失活</li>
+</ul>
+</li>
+<li>物理层</li>
+</ul>
+</li>
+</ul>
+<h2 id="网络攻击-Attack"><a href="#网络攻击-Attack" class="headerlink" title="网络攻击 Attack"></a>网络攻击 Attack</h2><ul>
+<li>攻击个人电脑<ul>
+<li>恶意软件<ul>
+<li>大多数都是自我复制的</li>
+<li>病毒（virus）: 需要某种形式的用户交互来感染用户设备</li>
+<li>蠕虫（worm）: 无需任何明显用户交互就能进入设备</li>
+<li>木马（horse）: 伪装成无害程序, 吸引用户点击</li>
+<li>后门（backdoor）: 绕过授权验证</li>
+<li>广告软件（adware）: 访问弹出广告</li>
+<li>间谍软件（spyware）: 收集用户的输入, 记录用户活动</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>攻击服务器和网络基础设施<ul>
+<li>拒绝服务攻击（Denial of Service, DOS）<ul>
+<li>使得服务不能由合法用户使用</li>
+<li>弱点攻击: 针对易受攻击的程序或操作系统, 引发停止运行或崩溃</li>
+<li>带宽洪泛: 大量发送分组到目标, 使链路拥塞</li>
+<li>连接洪泛: 创建大量半开或全开的TCP连接, 耗尽资源</li>
+</ul>
+</li>
+<li>分布式DoS(DDoS)<ul>
+<li>攻击者控制多个源</li>
+<li>僵尸网路: 攻击者用恶意软件控制大量计算机, 作为DDoS的源头等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>嗅探分组（IP Spoofing）<ul>
+<li>分组嗅探器: 记录每个流经的分组副本的被动接收机</li>
+<li>防范: 加密</li>
+</ul>
+</li>
+<li>伪装（Masquerade）<ul>
+<li>IP欺骗: 将具有虚假源地址的分组注入因特网</li>
+<li>重放攻击</li>
+<li>中间人攻击</li>
+<li>连接劫持</li>
+<li>解决方案: 加密, 数字签名, MAC</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/08/11/tensorflow/" rel="prev" title="tensorflow">
+      <i class="fa fa-chevron-left"></i> tensorflow
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/06/internet6/" rel="next" title="计算机网络课程笔记-第六章链路层和局域网">
+      计算机网络课程笔记-第六章链路层和局域网 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%A0%E7%89%B9%E7%BD%91-Internet"><span class="nav-number">1.</span> <span class="nav-text">什么是因特网 Internet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%9E%84%E6%88%90"><span class="nav-number">1.1.</span> <span class="nav-text">具体构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.2.</span> <span class="nav-text">服务描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E8%AE%AE"><span class="nav-number">1.3.</span> <span class="nav-text">协议</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%BE%B9%E7%BC%98-Edge"><span class="nav-number">2.</span> <span class="nav-text">网络边缘 Edge</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%85%A5%E7%BD%91-Access"><span class="nav-number">2.1.</span> <span class="nav-text">接入网 Access</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%AA%92%E4%BD%93"><span class="nav-number">2.2.</span> <span class="nav-text">物理媒体</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83-Core"><span class="nav-number">3.</span> <span class="nav-text">网络核心 Core</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2"><span class="nav-number">3.1.</span> <span class="nav-text">分组交换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="nav-number">3.2.</span> <span class="nav-text">电路交换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%9A%84%E7%BD%91%E7%BB%9C"><span class="nav-number">3.3.</span> <span class="nav-text">网络的网络</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">分组交换网络中的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E5%BB%B6-Delay"><span class="nav-number">4.1.</span> <span class="nav-text">时延 Delay</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A2%E5%8C%85-Loss"><span class="nav-number">4.2.</span> <span class="nav-text">丢包 Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%9E%E5%90%90%E9%87%8F-Throughput"><span class="nav-number">4.3.</span> <span class="nav-text">吞吐量 Throughput</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%8F%E8%AE%AE%E5%B1%82%E6%AC%A1%E5%8F%8A%E5%85%B6%E6%9C%8D%E5%8A%A1%E6%A8%A1%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">协议层次及其服务模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%B1%82%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">5.1.</span> <span class="nav-text">分层的体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB-Attack"><span class="nav-number">5.2.</span> <span class="nav-text">网络攻击 Attack</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hui hui"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Hui hui</p>
+  <div class="site-description" itemprop="description">Be happy forever!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/songtianhui" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;songtianhui" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:191098194@smail.nju.edu.cn" title="E-Mail → mailto:191098194@smail.nju.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hui hui</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+ 
+<script>
+  var OriginTitile = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "(つェ⊂)" + OriginTitile;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "(*´∇｀*)" + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+  });
+</script>
+
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20210126,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "years");
+    ages = ages.replace(/months?/, "moths");
+    ages = ages.replace(/days?/, "days");
+    ages = ages.replace(/hours?/, "hours");
+    ages = ages.replace(/minutes?/, "minutes");
+    ages = ages.replace(/seconds?/, "seconds");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `I have been here waiting for you for ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+
+
+ 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginrootpath":"live2dw/","pluginjspath":"lib/","pluginmodelpath":"assets/ relative)","scriptfrom":"local","tagmode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":180,"height":300},"mobile":{"show":true},"react":{"opacitydefault":0.7},"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

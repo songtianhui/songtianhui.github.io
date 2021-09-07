@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"songtianhui.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="课程主页：http:&#x2F;&#x2F;tcs.nju.edu.cn&#x2F;wiki&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高级算法课程笔记-Lecture1">
+<meta property="og:url" content="https://songtianhui.github.io/2021/09/07/advanced-algorithm/index.html">
+<meta property="og:site_name" content="Songtianhui&#39;s Blog">
+<meta property="og:description" content="课程主页：http:&#x2F;&#x2F;tcs.nju.edu.cn&#x2F;wiki&#x2F;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-09-07T14:49:56.000Z">
+<meta property="article:modified_time" content="2021-09-07T14:49:56.858Z">
+<meta property="article:author" content="Hui hui">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://songtianhui.github.io/2021/09/07/advanced-algorithm/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>高级算法课程笔记-Lecture1 | Songtianhui's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/custom_css_source.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Songtianhui's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/09/07/advanced-algorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hui hui">
+      <meta itemprop="description" content="Be happy forever!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Songtianhui's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          高级算法课程笔记-Lecture1
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-07 22:49:56" itemprop="dateCreated datePublished" datetime="2021-09-07T22:49:56+08:00">2021-09-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">课程</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/Advanced-Algorithm/" itemprop="url" rel="index"><span itemprop="name">Advanced Algorithm</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>课程主页：<a target="_blank" rel="noopener" href="http://tcs.nju.edu.cn/wiki/">http://tcs.nju.edu.cn/wiki/</a></p>
+<a id="more"></a>
+<p>本章是 etone 老师通过 min/max-cut 来引入高级算法的概念。</p>
+<p><strong>图的切（Graph Cut）</strong>：有无向图 $G(V, E)$，子集 $C \subseteq E$ 是 $G$ 的一个切如果在去掉 $C$ 中所有边后 $G$ 不连通（disconnected）了。</p>
+<p>显然对于 $V$ 的一个二分 $\{S, T\}$，$E(S, T)=  \{ uv \in E | u \in S, v \in T\}$ 是 $G$ 的一个切。</p>
+<h1 id="最小割-Min-Cut"><a href="#最小割-Min-Cut" class="headerlink" title="最小割 Min-Cut"></a>最小割 Min-Cut</h1><p>我们可以推广一下问题到输入可以是 <strong>multi-graphs</strong>，也即可以有重边，不能自环。</p>
+<h2 id="最大流-Max-flow"><a href="#最大流-Max-flow" class="headerlink" title="最大流 Max flow"></a>最大流 Max flow</h2><p>一个朴素的想法，也是一个可行的确定性算法就是 <strong>最大流最小割定理</strong>，一个图的 s-t 最大流也就是它的最小割。</p>
+<ul>
+<li>注意到这个算法本质上是固定 s 和 t 的，也就是可能不是全局最优，不过我们只要遍历点跑最大流就可以了。</li>
+<li>时间复杂度：$(n-1) \times \text{max flow time} = \tilde{O}(mn)$。<ul>
+<li>$\tilde{O}$ 表示忽略多项式的对数系数。</li>
+<li>实际是 $O(mn + n^2 \log{n})$</li>
+</ul>
+</li>
+</ul>
+<h2 id="卡格尔算法-Karger’s-Contraction-Algorithm"><a href="#卡格尔算法-Karger’s-Contraction-Algorithm" class="headerlink" title="卡格尔算法 Karger’s Contraction Algorithm"></a>卡格尔算法 Karger’s Contraction Algorithm</h2><p>一个图的割太多了（$2^{\Omega(n)}$ 量级），但可以证明最小割最多只有 $O(n^2)$，我们希望生成随机的切集中在最小割上</p>
+<p><strong>收缩（contraction）</strong>：<code>contract(G, e)​</code> 将边 $e = uv$ 的两个端点合并（merge）。<em>在合适的数据结构下可以 $O(n)$ 实现。</em></p>
+<figure class="highlight plain"><figcaption><span>Karger's Algorithm</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: G(V,E)</span><br><span class="line"></span><br><span class="line">while |V| &gt; 2 do:</span><br><span class="line">	pick random uv in E</span><br><span class="line">	G &#x3D; contract(G, uv)</span><br><span class="line">return C &#x3D; E &#x2F;&#x2F; the edges between the only two vertices</span><br></pre></td></tr></table></figure>
+<p>显然 $O(n)$ 的 <code>contract</code> 操作下该算法的复杂度是 $O(n^2)$。</p>
+<h3 id="准确性的分析"><a href="#准确性的分析" class="headerlink" title="准确性的分析"></a>准确性的分析</h3><p>因为是一个随机算法，所以输出的切是一个随机变量。</p>
+<p>可证如下定理：</p>
+<div class="note info">
+            <p>对于任意 $n$ 个顶点的 multigraph，Karger 算法的 $Pr[\text{a min-cut is returned}] \geq \dfrac{2}{n(n - 1)}$。</p>
+          </div>
+<p><del>第一次发现 note 的用法，感觉好好看</del></p>
+<p>下面来证：</p>
+<ul>
+<li>记 $e_1, e_2, …, e_{n-2}$ 为随机选择的收缩的边的序列。</li>
+<li>记 $G_1 = G$ 为初始图，$G_{i + 1} = contract(G_i, e_i), i = 1, 2,…, n-2$。</li>
+</ul>
+<p>显然可知：如果 $C$ 是 $G$ 的一个最小切且 $e \notin C$，则 $C$ 也是 <code>G&#39; = contract(G, e)​</code> 的一个最小割。所以有：</p>
+<p>$\begin{aligned} p_C &amp;= Pr[C \text{ is returned}] \\ &amp;= Pr[e_i \notin C \text{ for all } i = 1, 2, …,n-2] \\ &amp;= \prod\limits_{i = 1}^{n-2} Pr[e_i \notin C | \forall j &lt; i, e_i \notin C] \end{aligned}$</p>
+<p>$\forall j &lt; i, e_i \notin C$ 意味着 $C$ 也是 $G_i$ 的一个最小切。</p>
+<p>观察到一个最小切的边数 $|C|$ 一定是小于等于任意点的度数（degree），否则可以直接把这个点切开。</p>
+<p>所以更加小于等于度数的平均数，即 $|C| \leq \dfrac{2 |E|}{|V|}$。（所有点的度数和为 $2|E|$）</p>
+<p>所以我们可以计算</p>
+<p>$\begin{aligned} Pr[e_i \notin C | \forall j &lt; i, e_i \notin C]  &amp;= 1 - \dfrac{|C|}{|E_i|} \text{（从剩下的点中均匀随机选取）} \\ &amp; \geq 1 - \dfrac{2}{|V_i|} \\ &amp;= 1 - \dfrac{2}{n - i + 1} \end{aligned}$</p>
+<p>$\begin{aligned} p_C &amp; \geq \prod\limits_{i = 1}^{n-2} (1 - \dfrac{2}{n - i + 1}) \\ &amp;= \prod\limits_{k = 3}^{n} \dfrac{k - 2}{k} \\ &amp;= \dfrac{2}{n(n-1)} \end{aligned}$</p>
+<span class="label success">得证。</span>
+<p>乍一看这个算法有啥吊用，准确率也太低了。</p>
+<p>不过随机算法的精髓就在于有了准确性的下界，就可以通过 repeat 来提升准确性（好像是蒙特卡罗还是拉斯维加斯来着）。</p>
+<p>Karger 算法主要就是将解空间的大小由指数级降低到了平方级。</p>
+<p>我们可以运行算法 $t = \dfrac{n(n-1)\ln{n}}{2}$ 次并返回最小的解，该解是最小切的概率为：</p>
+<p>$\begin{aligned} \ &amp;1 - Pr[\text{所有 } t \text{ 次都失败}] \\ = &amp;1 - (Pr[\text{一次失败}])^t \\ \geq &amp; 1 - \left( 1 - \dfrac{2}{n(n-1)} \right)^{\frac{n(n-1)\ln{n}}{2}} \\ \geq &amp; 1 - \dfrac{1}{n}  \end{aligned}$</p>
+<p>运行一次算法的时间是 $O(n^2)$，也就是说我们可以在 $O(n^4\log{n})$ 的时间复杂度下高概率地（w.h.p）找到最小切。</p>
+<h3 id="一个推论"><a href="#一个推论" class="headerlink" title="一个推论"></a>一个推论</h3><div class="note info">
+            <p>对任意的 $n$ 阶图 $G(V, E)$，最小割的个数不会超过 $\dfrac{n(n-1)}{2}$。</p>
+          </div>
+<p>这是从概率方法上推到的：</p>
+<p>设有 $M$ 个不同的最小切，显然它们是独立的。</p>
+<p>$\because 1 \geq Pr[\text{a min-cut is returned}] \geq M \times \dfrac{2}{n(n-1)}$</p>
+<p>$\therefore M \leq \dfrac{n(n-1)}{2}$</p>
+<span class="label success">得证。</span>
+<h2 id="快速最小切-Fast-Min-Cut"><a href="#快速最小切-Fast-Min-Cut" class="headerlink" title="快速最小切 Fast Min-Cut"></a>快速最小切 Fast Min-Cut</h2><p>我们知道 $p_C \geq \prod\limits_{i = 1}^{n-2} (1 - \dfrac{2}{n - i + 1})$，也就是这个概率是随 $i$ 增大递减的，也就是说当图越来越小也就越来越难成功。</p>
+<p>我们就可以思考一个新的方法，先把图收缩的一个较小的程度，然后再递归地找这个更小的图上的最小切。</p>
+<p>先定义一个随机收缩的函数，把图收缩到只剩 $t$ 个点：</p>
+<figure class="highlight plain"><figcaption><span>random_contract(G, t)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: G(V, E), integer t &gt;&#x3D; 2</span><br><span class="line"></span><br><span class="line">while |V| &gt; t:</span><br><span class="line">	choose an edge uv in E uniformly at random</span><br><span class="line">	G &#x3D; contract(G, uv)</span><br><span class="line">return G</span><br></pre></td></tr></table></figure>
+<p>然后定义我们的快速最小切：</p>
+<figure class="highlight plain"><figcaption><span>fast_cut(G)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Input: G(V, E)</span><br><span class="line"></span><br><span class="line">if |V| &lt;&#x3D; 6:</span><br><span class="line">	return a mincut by brute force</span><br><span class="line">else:</span><br><span class="line">	t &#x3D; [1 + |V| &#x2F; sqrt(2)]</span><br><span class="line">	G1 &#x3D; random_contract(G, t)</span><br><span class="line">	G2 &#x3D; random_contract(G, t)</span><br><span class="line">	return min&#123;fast_cut(G1), fast_cut(G2)&#125;</span><br></pre></td></tr></table></figure>
+<p>一样的我们可以算出 <code>random_contract</code> 成功的概率：</p>
+<p>$\begin{aligned} &amp; Pr[C \text{ survives all contractions in random_contract}] \\ = &amp; \prod\limits_{i=1}^{n - t} Pr[C \text{ survives the i-th contraction } | C \text{ survives the first (i−1)-th contractions}] \\ \geq &amp; \prod\limits_{i=1}^{n - t} \left( 1 - \dfrac{2}{n - i +1} \right) \\  = &amp; \dfrac{t(t - 1)}{n(n - 1)}  \end{aligned}$</p>
+<p>当 $t = \lceil 1 + n / \sqrt{2} \rceil $ 时，这个概率至少是 $1/2$。</p>
+<p>定义两个事件：</p>
+<ul>
+<li>A：$C$ survives <code>random_contract</code> 中所有的 contractions。</li>
+<li>B：<code>random_contract</code> 后最小切的大小保持不变。</li>
+</ul>
+<p>显然 $A \to B$，所以 $Pr[B] \geq Pr[A] \geq \frac{1}{2}$。</p>
+<p>我们用 $p(n) $ 来表示一个 $n$ 阶图的 <code>fast_cut</code> 的下界：</p>
+<p>$\begin{aligned} p(n) &amp; = Pr[\text{fast_cut returns a min-cut}] \\ &amp;= Pr[\text{a min-cut is returned by fast_cut(G1) and fast_cut(G2)}] \\ &amp; \geq 1 - (1 - Pr[B \wedge \text{ fast_cut(G1) return a min-cut in G1}])^2 \\ &amp; \geq 1 - (1 - Pr[A \wedge \text{ fast_cut(G1) return a min-cut in G1}])^2 \\ &amp; = 1 - (1 - Pr[A] Pr[\text{fast_cut(G1) return a min-cut in G1 | A}])^2 \\ &amp; \geq 1 - \left( 1 - \dfrac{1}{2} p(\lceil 1 + n / \sqrt{2} \rceil) \right)^2  \end{aligned}$</p>
+<p>base case 是 $p(n) = 1$ 当 $n \leq 6$。</p>
+<p>归纳易证 $p(n) = \Omega(\frac{1}{\log{n}})$。</p>
+<p>时间复杂度上由那个算法我们有 $T(n) = 2T(\lceil 1 + n / \sqrt{2} \rceil) + O(n^2)$，易证 $T(n) = O(n^2 \log{n})$。</p>
+<p>最终我们能总结如下定理：</p>
+<div class="note info">
+            <p>对任意的 $n$ 阶图，<code>fast_cut</code> 算法可以在 $O(n^2 \log{n})$ 的时间复杂度下以 $\Omega(\frac{1}{\log{n}})$ 的概率返回一个最小切。</p>
+          </div>
+<p><code>fast_cut</code> 比原始的 <code>random_contract</code> 时间长，概率高。</p>
+<p>我们可以运行它 $(\log{n})^2$ 次，在 $O(n^2 \log^3{n})$ 的时间复杂度下以 $1 - O(1/n)$ 的概率返回最小切。</p>
+<p>回忆前面的确定算法的时间复杂度是 $O(mn + n^2 \log{n})$，也就是说在稠密图上这个随机算法会表现地更好一些。</p>
+<p><em>最终 Karger 继续改进了这个算法并获得了一个关于边数的接近线性时间的随机算法不过超出了本课程的讨论范围。</em></p>
+<h1 id="最大割-Max-cut"><a href="#最大割-Max-cut" class="headerlink" title="最大割 Max-cut"></a>最大割 Max-cut</h1><p>问题就转变成了一个 <strong>NP-hard</strong> 的问题，如果我们相信 $P \neq NP$，就无法在多项式时间用确定性算法解决这个问题。</p>
+<h2 id="贪心-Greedy"><a href="#贪心-Greedy" class="headerlink" title="贪心 Greedy"></a>贪心 Greedy</h2><figure class="highlight plain"><figcaption><span>greedy_cut</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: G(V, E)</span><br><span class="line"></span><br><span class="line">S &#x3D; T &#x3D; emptyset</span><br><span class="line">for i &#x3D; 1, 2, ..., n:</span><br><span class="line">	v_i joins one of S,T to maximize the current |E(S,T)|</span><br></pre></td></tr></table></figure>
+<p>然后讲了到<strong>近似比（approximation ratio）</strong>的概念，<del>复习问求。</del></p>
+<p>暂时先不假证明（懒）地给出定理：</p>
+<div class="note info">
+            <p><code>greedy_cut</code> 是一个 0.5-近似的最大切算法。</p>
+          </div>
+<p>这并不是多项式时间最好的最大切算法，最好的算法 <a target="_blank" rel="noopener" href="http://www-math.mit.edu/~goemans/PAPERS/maxcut-jacm.pdf">Goemans-Williamson Algorithm</a> 可以达到近似比 $\alpha^{\star} = \frac{2}{\pi}\inf_{x\in [-1,1]}{\frac{\arccos{(x)}}{1-x}}$，并被证明不存在近似比更好的多项式时间近似算法。</p>
+<h2 id="通过条件期望去随机化-Derandomization"><a href="#通过条件期望去随机化-Derandomization" class="headerlink" title="通过条件期望去随机化 Derandomization"></a>通过条件期望去随机化 Derandomization</h2><p>对于任意顶点 $v \in V$，$X_{v} \in \{0, 1\}$ 是一个均匀随机 bit 来表示该点加入 $S$ 或 $T$。</p>
+<p>这个随机的 cut 的大小可以被表示为：</p>
+<script type="math/tex; mode=display">
+|E(S, T)| = \sum\limits_{uv\in E} I[X_u \neq X_v]。</script><p>由于期望的线性（linearity），</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[|E(S, T)|]=\sum\limits_{u v \in E} \mathbb{E}\left[I\left[X_{u} \neq X_{v}\right]\right]=\sum\limits_{u v \in E} \operatorname{Pr}\left[X_{u} \neq X_{v}\right]=\dfrac{|E|}{2}。</script><p>$|E|$ 就是最大切的 $OPT_G$ 的一个上界，所以我们有：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[|E(S,T)|] \geq \dfrac{OPT_G}{2}。</script><p>所以我们生成的随机的切的平均值大于等于 $\frac{OPT_G}{2}$，由于<strong>平均原理（averaging principle）</strong>，至少有一个二分生成的切是大于等于 $\frac{OPT_G}{2}$ 的。然后我们希望有算法来找到这个解。</p>
+<p>我们想一个个地固定 $X_{v_{i}}$ 的值来构造一个二分 $\{\hat{S}, \hat{T}\}$ 使得：</p>
+<script type="math/tex; mode=display">
+|E(\hat{S}, \hat{T})| \geq \mathbb{E}[|E(S, T)|] \geq \dfrac{O P T_{G}}{2}。</script><p>我们从第一个点 $v_1$ 开始，通过全期望公式：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[E(S, T)]=\dfrac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=0\right]+\dfrac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=1\right]。</script><p>至少存在一个赋值 $x_1 \in \{0, 1\}$ 使得：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}\right] \geq \mathbb{E}[E(S, T)]。</script><p>我们可以继续运用这个方法：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}\right]= \frac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}, X_{v_{i}}=0\right]
++\frac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}, X_{v_{i}}=1\right]</script><p>至少存在一个赋值 $x_i \in \{0, 1\}$ 使得：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i}}=x_{i}\right] \geq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}\right]</script><p>所以我么就可以这要找到一个序列 $x_1, x_2, …, x_n \in \{0, 1\}$ 来形成一个单调的路径：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[E(S, T)] \leq \cdots \leq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}\right] \leq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i}}=x_{i}\right] \leq \cdots \leq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{n}}=x_{n}\right]</script><p>最终一个二分 $(\hat{S}, \hat{T})$ 被这个序列确定下来，并且 $E(\hat{S}, \hat{T}) \geq \frac{OPT_G}{2}$。</p>
+<p>我们可以有如下算法：</p>
+<figure class="highlight plain"><figcaption><span>monotone_path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: G(V,E)</span><br><span class="line"></span><br><span class="line">S &#x3D; T &#x3D; emptyset</span><br><span class="line">for i &#x3D; 1, 2, ..., n:</span><br><span class="line">	v_i joins one of S,T to maximize the average size of cut conditioning on the choices made so far by the vertices (v_1, v_2, ..., v_i)</span><br></pre></td></tr></table></figure>
+<p>所以，上面的贪心算法实际上是通过平均情况的去随机化得来的。</p>
+<h2 id="通过-pairwise-独立的去随机化"><a href="#通过-pairwise-独立的去随机化" class="headerlink" title="通过 pairwise 独立的去随机化"></a>通过 pairwise 独立的去随机化</h2>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/06/internet6/" rel="prev" title="计算机网络课程笔记-第六章链路层和局域网">
+      <i class="fa fa-chevron-left"></i> 计算机网络课程笔记-第六章链路层和局域网
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E5%89%B2-Min-Cut"><span class="nav-number">1.</span> <span class="nav-text">最小割 Min-Cut</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E6%B5%81-Max-flow"><span class="nav-number">1.1.</span> <span class="nav-text">最大流 Max flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%A1%E6%A0%BC%E5%B0%94%E7%AE%97%E6%B3%95-Karger%E2%80%99s-Contraction-Algorithm"><span class="nav-number">1.2.</span> <span class="nav-text">卡格尔算法 Karger’s Contraction Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E7%A1%AE%E6%80%A7%E7%9A%84%E5%88%86%E6%9E%90"><span class="nav-number">1.2.1.</span> <span class="nav-text">准确性的分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%8E%A8%E8%AE%BA"><span class="nav-number">1.2.2.</span> <span class="nav-text">一个推论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E6%9C%80%E5%B0%8F%E5%88%87-Fast-Min-Cut"><span class="nav-number">1.3.</span> <span class="nav-text">快速最小切 Fast Min-Cut</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E5%89%B2-Max-cut"><span class="nav-number">2.</span> <span class="nav-text">最大割 Max-cut</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83-Greedy"><span class="nav-number">2.1.</span> <span class="nav-text">贪心 Greedy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B%E5%8E%BB%E9%9A%8F%E6%9C%BA%E5%8C%96-Derandomization"><span class="nav-number">2.2.</span> <span class="nav-text">通过条件期望去随机化 Derandomization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-pairwise-%E7%8B%AC%E7%AB%8B%E7%9A%84%E5%8E%BB%E9%9A%8F%E6%9C%BA%E5%8C%96"><span class="nav-number">2.3.</span> <span class="nav-text">通过 pairwise 独立的去随机化</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hui hui"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Hui hui</p>
+  <div class="site-description" itemprop="description">Be happy forever!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/songtianhui" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;songtianhui" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:191098194@smail.nju.edu.cn" title="E-Mail → mailto:191098194@smail.nju.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hui hui</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+ 
+<script>
+  var OriginTitile = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "(つェ⊂)" + OriginTitile;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "(*´∇｀*)" + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+  });
+</script>
+
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20210126,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "years");
+    ages = ages.replace(/months?/, "moths");
+    ages = ages.replace(/days?/, "days");
+    ages = ages.replace(/hours?/, "hours");
+    ages = ages.replace(/minutes?/, "minutes");
+    ages = ages.replace(/seconds?/, "seconds");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `I have been here waiting for you for ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+
+
+ 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginrootpath":"live2dw/","pluginjspath":"lib/","pluginmodelpath":"assets/ relative)","scriptfrom":"local","tagmode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":180,"height":300},"mobile":{"show":true},"react":{"opacitydefault":0.7},"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

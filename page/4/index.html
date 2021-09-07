@@ -189,6 +189,272 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/05/10/np-completeness/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hui hui">
+      <meta itemprop="description" content="Be happy forever!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Songtianhui's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/10/np-completeness/" class="post-title-link" itemprop="url">问题求解笔记-NP完全性</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-05-10 20:21:03" itemprop="dateCreated datePublished" datetime="2021-05-10T20:21:03+08:00">2021-05-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-03 23:25:21" itemprop="dateModified" datetime="2021-09-03T23:25:21+08:00">2021-09-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">课程</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/problem-solving/" itemprop="url" rel="index"><span itemprop="name">problem-solving</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
+<li><p>P类问题就是在多项式时间内可以被解决的（solvable）问题。</p>
+</li>
+<li><p>NP类问题就是可以在多项式时间内可以被证明的（verifiable）问题。</p>
+<ul>
+<li>verifiable：给定问题解的<strong>证书（certificate）</strong>，然后我们可以在多项式时间验证这个 certificate 是对的。</li>
+</ul>
+</li>
+<li><p>如果一个NP问题和其他任何NP问题一样“不易解决”，则是NPC问题。</p></li></ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/10/np-completeness/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/04/28/formalization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hui hui">
+      <meta itemprop="description" content="Be happy forever!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Songtianhui's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/28/formalization/" class="post-title-link" itemprop="url">问题求解笔记-问题的形式化描述</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-04-28 07:34:56" itemprop="dateCreated datePublished" datetime="2021-04-28T07:34:56+08:00">2021-04-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-03 23:24:35" itemprop="dateModified" datetime="2021-09-03T23:24:35+08:00">2021-09-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">课程</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/problem-solving/" itemprop="url" rel="index"><span itemprop="name">problem-solving</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>庆祝终于脱离了常规算法的学习，进入了NP问题的坑。（</p>
+<p>然后庆祝我们终于遇到了JH这本超级无敌晦涩难懂的教科书，真的是 <strong>太tmd难读了</strong>！！</p>
+<p>在此附上助教对于该书的评价：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/28/formalization/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/04/25/codeing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hui hui">
+      <meta itemprop="description" content="Be happy forever!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Songtianhui's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/25/codeing/" class="post-title-link" itemprop="url">问题求解笔记-代数编码</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-04-25 23:10:21" itemprop="dateCreated datePublished" datetime="2021-04-25T23:10:21+08:00">2021-04-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-03 23:24:17" itemprop="dateModified" datetime="2021-09-03T23:24:17+08:00">2021-09-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">课程</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/problem-solving/" itemprop="url" rel="index"><span itemprop="name">problem-solving</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="检错和纠错码"><a href="#检错和纠错码" class="headerlink" title="检错和纠错码"></a>检错和纠错码</h1><h2 id="最大似然编码（maximum-likelihood-decoding​）"><a href="#最大似然编码（maximum-likelihood-decoding​）" class="headerlink" title="最大似然编码（maximum-likelihood decoding​）"></a>最大似然编码（maximum-likelihood decoding​）</h2><p>所有的纠错建立在这个基础上，按最大概率出错位纠错。</p>
+<p><strong>二进制对称信道</strong>（binary symmetric channel）</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/25/codeing/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/04/18/cryptography/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -220,7 +486,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-17 19:33:48" itemprop="dateModified" datetime="2021-06-17T19:33:48+08:00">2021-06-17</time>
+                <time title="Modified: 2021-09-03 23:24:24" itemprop="dateModified" datetime="2021-09-03T23:24:24+08:00">2021-09-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -228,7 +494,11 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/problem-solving/" itemprop="url" rel="index"><span itemprop="name">problem-solving</span></a>
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">课程</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/problem-solving/" itemprop="url" rel="index"><span itemprop="name">problem-solving</span></a>
                 </span>
             </span>
 
@@ -392,262 +662,10 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/04/08/number-theory-algorithms/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Hui hui">
-      <meta itemprop="description" content="Be happy forever!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Songtianhui's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/08/number-theory-algorithms/" class="post-title-link" itemprop="url">问题求解笔记-数论算法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-04-08 09:52:18" itemprop="dateCreated datePublished" datetime="2021-04-08T09:52:18+08:00">2021-04-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-16 15:38:11" itemprop="dateModified" datetime="2021-06-16T15:38:11+08:00">2021-06-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/problem-solving/" itemprop="url" rel="index"><span itemprop="name">problem-solving</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="数论算法"><a href="#数论算法" class="headerlink" title="数论算法"></a>数论算法</h1><p><strong>定理 31.2.</strong> 如果任意整数 $a$ 和 $b$ 都不为 $0$，则 $gcd(a, b)$ 是 $a$ 与 $b$ 的线性组合集 $\{ ax + by : x, y \in \mathbb{Z} \}$ 中的最小正元素。</p>
-<p><strong>推论 31.3.</strong> 任意整数 $a$ 和 $b$，$d | a \wedge d|b \Rightarrow d | gcd(a,b)$。</p>
-<p><strong>推论 31.4</strong> 对所有整数 $a,b$ 及任意非负整数 $n$，有 <script type="math/tex">gcd(an,bn) = n~gcd(a,b)</script>。</p>
-<p><strong>推论 31.5.</strong> 对所有正整数 $a,b,n$，$n | ab \wedge gcd(a, n) = 1 \Rightarrow n | b$。</p>
-<p><strong>定理 31.6.</strong> 对所有正整数 $a,b,p$，$gcd(a, p ) = 1 \wedge gcd(b, p) = 1 \Rightarrow gcd(ab, p) = 1$。</p>
-<p><strong>定理 31.7.</strong> 对所有的素数 $p$ 和所有整数 $a,b$， $p | ab \Rightarrow p |a \vee p | b$。</p>
-<p><strong>定理 31.8.</strong>（唯一因子分解定理）合数 $a$ 的素因子分解是唯一的。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/08/number-theory-algorithms/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/03/20/number-theory/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Hui hui">
-      <meta itemprop="description" content="Be happy forever!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Songtianhui's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/20/number-theory/" class="post-title-link" itemprop="url">问题求解笔记-数论基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-03-20 13:39:27" itemprop="dateCreated datePublished" datetime="2021-03-20T13:39:27+08:00">2021-03-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-21 02:22:19" itemprop="dateModified" datetime="2021-03-21T02:22:19+08:00">2021-03-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/problem-solving/" itemprop="url" rel="index"><span itemprop="name">problem-solving</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="数学归纳法-Mathematical-Induction"><a href="#数学归纳法-Mathematical-Induction" class="headerlink" title="数学归纳法 Mathematical Induction"></a>数学归纳法 Mathematical Induction</h1><p>没啥好讲的。<br><strong>第一第二数学归纳法</strong><br><strong>良序公理</strong><br></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/20/number-theory/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/03/11/group-isomorphism-and-normal-subgroups/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Hui hui">
-      <meta itemprop="description" content="Be happy forever!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Songtianhui's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/11/group-isomorphism-and-normal-subgroups/" class="post-title-link" itemprop="url">问题求解笔记-群同态基本定理与正规子群</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-03-11 01:50:32" itemprop="dateCreated datePublished" datetime="2021-03-11T01:50:32+08:00">2021-03-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-16 01:22:08" itemprop="dateModified" datetime="2021-06-16T01:22:08+08:00">2021-06-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/problem-solving/" itemprop="url" rel="index"><span itemprop="name">problem-solving</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="同构-Isomorphisms"><a href="#同构-Isomorphisms" class="headerlink" title="同构 Isomorphisms"></a>同构 Isomorphisms</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>群$(G, \cdot )$ 和 $(H, \circ)$ <strong>同构（isomorphic）</strong>，如果存在一个双射 $\phi: G \rightarrow H$ 且满足</p>
-<script type="math/tex; mode=display">\forall a, b \in G, \phi(a \cdot b) = \phi(a) \circ \phi(b)</script><p>记作 $G \cong H$。映射 $\phi$ 称为<strong>同构（isomorphism）</strong>。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/11/group-isomorphism-and-normal-subgroups/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -715,14 +733,14 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -906,10 +924,10 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
   var titleTime;
   document.addEventListener("visibilitychange", function() {
     if (document.hidden) {
-      document.title = "(つェ⊂)我藏好了哦~" + OriginTitile;
+      document.title = "(つェ⊂)" + OriginTitile;
       clearTimeout(titleTime);
     } else {
-      document.title = "(*´∇｀*) 被你发现啦~" + OriginTitile;
+      document.title = "(*´∇｀*)" + OriginTitile;
       titleTime = setTimeout(function() {
         document.title = OriginTitile;
       }, 2000);
