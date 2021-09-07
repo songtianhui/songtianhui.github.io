@@ -22,21 +22,19 @@
     var CONFIG = {"hostname":"songtianhui.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="概述 P类问题就是在多项式时间内可以被解决的（solvable）问题。  NP类问题就是可以在多项式时间内可以被证明的（verifiable）问题。  verifiable：给定问题解的证书（certificate），然后我们可以在多项式时间验证这个 certificate 是对的。   如果一个NP问题和其他任何NP问题一样“不易解决”，则是NPC问题。">
+  <meta name="description" content="Ch1 概述 数字图像是指由被称作像素的小块区域组成的二维矩阵。  将物理图像行列划分后，每个小块区域称为像素（pixel）。 每个像素包括两个属性：位置和亮度 （或色彩）。   数字图像的两个基本问题  像素数目 灰度值的度量 本质问题就是物理信号离散化，数字化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="问题求解笔记-NP完全性">
-<meta property="og:url" content="https://songtianhui.github.io/2021/05/10/np-completeness/index.html">
+<meta property="og:title" content="数字图像处理课程笔记">
+<meta property="og:url" content="https://songtianhui.github.io/2021/09/08/digital-image-processing/index.html">
 <meta property="og:site_name" content="Songtianhui&#39;s Blog">
-<meta property="og:description" content="概述 P类问题就是在多项式时间内可以被解决的（solvable）问题。  NP类问题就是可以在多项式时间内可以被证明的（verifiable）问题。  verifiable：给定问题解的证书（certificate），然后我们可以在多项式时间验证这个 certificate 是对的。   如果一个NP问题和其他任何NP问题一样“不易解决”，则是NPC问题。">
+<meta property="og:description" content="Ch1 概述 数字图像是指由被称作像素的小块区域组成的二维矩阵。  将物理图像行列划分后，每个小块区域称为像素（pixel）。 每个像素包括两个属性：位置和亮度 （或色彩）。   数字图像的两个基本问题  像素数目 灰度值的度量 本质问题就是物理信号离散化，数字化">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://songtianhui.github.io/2021/05/10/np-completeness/Screenshot%20from%202021-06-17%2020-36-37.png">
-<meta property="article:published_time" content="2021-05-10T12:21:03.000Z">
-<meta property="article:modified_time" content="2021-09-03T15:25:21.614Z">
+<meta property="article:published_time" content="2021-09-07T17:33:49.000Z">
+<meta property="article:modified_time" content="2021-09-07T17:35:44.559Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://songtianhui.github.io/2021/05/10/np-completeness/Screenshot%20from%202021-06-17%2020-36-37.png">
 
-<link rel="canonical" href="https://songtianhui.github.io/2021/05/10/np-completeness/">
+<link rel="canonical" href="https://songtianhui.github.io/2021/09/08/digital-image-processing/">
 
 
 <script id="page-configurations">
@@ -49,7 +47,7 @@
   };
 </script>
 
-  <title>问题求解笔记-NP完全性 | Songtianhui's Blog</title>
+  <title>数字图像处理课程笔记 | Songtianhui's Blog</title>
   
 
 
@@ -194,7 +192,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/05/10/np-completeness/">
+    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/09/08/digital-image-processing/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -207,7 +205,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          问题求解笔记-NP完全性
+          数字图像处理课程笔记
         </h1>
 
         <div class="post-meta">
@@ -216,16 +214,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2021-05-10 20:21:03" itemprop="dateCreated datePublished" datetime="2021-05-10T20:21:03+08:00">2021-05-10</time>
+              <time title="Created: 2021-09-08 01:33:49 / Modified: 01:35:44" itemprop="dateCreated datePublished" datetime="2021-09-08T01:33:49+08:00">2021-09-08</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-03 23:25:21" itemprop="dateModified" datetime="2021-09-03T23:25:21+08:00">2021-09-03</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -236,7 +228,7 @@
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BE%E7%A8%8B/problem-solving/" itemprop="url" rel="index"><span itemprop="name">problem-solving</span></a>
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/Digital-Image-Processing/" itemprop="url" rel="index"><span itemprop="name">Digital Image Processing</span></a>
                 </span>
             </span>
 
@@ -251,71 +243,123 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
-<li><p>P类问题就是在多项式时间内可以被解决的（solvable）问题。</p>
-</li>
-<li><p>NP类问题就是可以在多项式时间内可以被证明的（verifiable）问题。</p>
+        <h1 id="Ch1-概述"><a href="#Ch1-概述" class="headerlink" title="Ch1 概述"></a>Ch1 概述</h1><ul>
+<li><p>数字图像是指由被称作像素的小块区域组成的二维矩阵。</p>
 <ul>
-<li>verifiable：给定问题解的<strong>证书（certificate）</strong>，然后我们可以在多项式时间验证这个 certificate 是对的。</li>
+<li>将物理图像行列划分后，每个小块区域称为像素（pixel）。</li>
+<li>每个像素包括两个属性：位置和亮度 （或色彩）。</li>
 </ul>
 </li>
-<li><p>如果一个NP问题和其他任何NP问题一样“不易解决”，则是NPC问题。</p>
+<li><p>数字图像的两个基本问题</p>
+<ul>
+<li>像素数目</li>
+<li>灰度值的度量</li>
+<li>本质问题就是物理信号离散化，数字化</li>
+</ul>
+</li>
+</ul>
 <a id="more"></a>
-</li>
-</ul>
-<h2 id="规约-Reduction"><a href="#规约-Reduction" class="headerlink" title="规约 Reduction"></a>规约 Reduction</h2><p>有一个判定问题 A，一个判定问题 B，我们知道 $B$ 可以在多项式时间下解决，一个多项式时间规约算法（reduction algorithm）是将 A 的输入实例 $\alpha$ 转化成 B 的输入实例 $\beta$ 的过程，且：</p>
+<h2 id="图像获取"><a href="#图像获取" class="headerlink" title="图像获取"></a>图像获取</h2><p>图像获取就是图像数字化的过程，包括扫描、<strong>采样（成像技术）</strong>和<strong>量化（模数转化技术）</strong>。</p>
 <ul>
-<li>转换操作需要多项式时间。</li>
-<li>两个实例的解是相同的。</li>
+<li><p>图像采样：用有限的样本数目去近似无限的现实物理信号（有限近似无限）。</p>
+</li>
+<li><p>图像量化，用离散计算机表示去近似连续的现实物理信号（离散近似连续）。</p>
+<ul>
+<li>取样点数和量化级数的选取<ul>
+<li>条件：图像有 $M\times N$个像素，每个像素有 $Q$ 个灰度级别。</li>
+<li>取值规则：$M, N, Q$ 通常取 2 的整数次幂。若 $Q = 2^8 = 256$，称为 8bit 量化，或称256灰度级。</li>
+<li>取值范围：由于存在量化误差，原则上 b 越大重建图像失真越小。对于人眼应用 b 取 5-8；而对于卫星图片等图像分析应用b取8-12。</li>
 </ul>
-<p><img data-src="Screenshot from 2021-06-17 20-36-37.png" alt></p>
-<p><em>reduce方法的更深用意在于证明某个问题有多难。</em></p>
-<p>证明B有多难：假设A不是P问题，B不可能是P问题；反证法：如果B是P问题，那么A是P问题</p>
-<hr>
-<h1 id="多项式时间"><a href="#多项式时间" class="headerlink" title="多项式时间"></a>多项式时间</h1><p><strong>引理 34.1 </strong> 设 $Q$ 是定义在一个实例集 $I$ 上的抽象判定问题，$e_1$ 和 $e_2$ 是 $I$ 上多项式相关的编码，则 $e_1(Q) \in P \Leftrightarrow e_2(Q) \in P$。 </p>
-<p><em>今后不再讨论代价极高的编码，统一以二进制编码为基准。理论上，问题的难度是固有的。但是算法的复杂度，有时候却依赖于问题的编码。</em></p>
-<h2 id="接受-判定"><a href="#接受-判定" class="headerlink" title="接受/判定"></a>接受/判定</h2><ul>
-<li>对任意输入 $x$，算法输出 $A(x) = 1$，就叫算法 $A$ <strong>接受（accept）</strong>$x \in \{0,1\}^{\star}$。被算法 $A$ 接受的语言就是集合 $L = \{x\in \{0,1\}^{\star} : A(x) = 1\}$。</li>
-<li>对任意的输入 $x$，算法输出 $A(x) = 0$，就叫算法 $A$ <strong>拒绝（reject）</strong>$x \in \{0, 1\}^{\star}$。</li>
-<li>算法 $A$ <strong>判定（decide）</strong>一个语言 $L$ 指对任意输入 $x$，在 $L$ 中的接受，不在 $L$ 中的拒绝。</li>
-<li>区别在于 $A$ 接受 $L$ 只能确保在 $L$ 中的 $x$ 接受，不在 $L$ 中的也有可能接受，或没有结果（不终止）。</li>
-</ul>
-<p>复杂类 $P$ 的定义：</p>
-<script type="math/tex; mode=display">P = \{L \subseteq \{0,1\}^{\star} : \text{存在一个算法 A，可以在多项式时间判定 }L\}</script><p><strong>定理 34.2 </strong> <script type="math/tex">P = \{L \subseteq \{0,1\}^{\star} : \text{存在一个算法 A，可以在多项式时间接受 }L\}</script></p>
-<p><em>这个定理说明接受一个语言的多项式算法，一定可以被改造成判定一个语言的多项式算法。</em></p>
-<p>（A 最多 $cn^k$ 步接受输入，构造 A’ 跑 $cn^k$ 步，接受返回 1，否则返回 0，判定了 $L$。）</p>
-<h1 id="多项式时间的验证-Verification"><a href="#多项式时间的验证-Verification" class="headerlink" title="多项式时间的验证 Verification"></a>多项式时间的验证 Verification</h1><p>一份<strong>验证算法（verifier）</strong> 是一个两个变量的算法 A，一个输入为串 $x$，另一个是叫<strong>证书（certificate）</strong>的二进制串 $y$。如果存在一个证书 $y$ 使得 $A(x, y) = 1$，则称 $A$ <strong>验证（verify）</strong>了输入 $x$。</p>
-<p>一个由算法 A 验证的语言是 <script type="math/tex">L = \{x \in \{0, 1\}^{\star} : \exists y \in \{0,1\}^{\star} , A(x, y) = 1\}</script>。</p>
-<p>复杂类 NP 定义：一个语言 $L$ 属于 NP 当且仅当存在一个两输入多项式时间算法 $A$ 和常数 $c$，使得</p>
-<p><script type="math/tex">L = \{x \in \{0, 1\}^{\star} : \text{存在一个证书 }y, |y| = O(|x|^c), A(x,y) = 1 \}</script>。</p>
-<p><em>当证书是超多项式的时候，验算证书的代价不再是保证为多项式了。</em></p>
-<p>P问题是可以在多项式时间内被判定的问题。</p>
-<p>NP问题是所有可以在多项式时间内被验证的问题。</p>
-<p>co-NP是所有它的补是NP问题的问题。</p>
-<p><strong>大多数人相信 $P \neq NP$。</strong></p>
-<hr>
-<h1 id="NP完全性与可规约性"><a href="#NP完全性与可规约性" class="headerlink" title="NP完全性与可规约性"></a>NP完全性与可规约性</h1><p>引入NPC：只要有一个NPC可以多项式求解，那么所有的NP问题都可多项式求解。</p>
-<h2 id="可规约性-Reducibility"><a href="#可规约性-Reducibility" class="headerlink" title="可规约性 Reducibility"></a>可规约性 Reducibility</h2><ul>
-<li>如果存在一个多项式时间可计算函数 $f : \{0, 1\}^{\star} \to \{0, 1\}^{\star}$，满足 $\forall x \in \{0 , 1\}^{\star}, x \in L_1 \leftrightarrow f(x) \in L_2$，则称语言 $L_1$ 可以在多项式时间内规约到语言 $L_2$，记作 $L_1 \leq_p L_2$。<ul>
-<li>$f$ 叫规约函数</li>
-<li>算 $f$ 的算法叫规约算法</li>
+</li>
+<li>$M\times N$ 必须满足奈奎斯特取样定理，否则会因取样点数不够产生混淆失真。</li>
 </ul>
 </li>
 </ul>
-<p><strong>引理 34.3 </strong> 如果 $L_1, L_2 \subseteq \{0 ,1\}^{\star}$ 是满足 $L_1 \leq_p L_2$ 的语言，则 $L_2 \in P \Rightarrow L_1 \in P$。</p>
-<p><em>隐藏着：L1的复杂度不会“f多项式以上”超过L2的复杂度。</em></p>
-<p><em>更深层次的隐藏着：如果L1很难，L2不能很简单：最多相差多项式因子。</em></p>
-<p><em>揭示了认知一个问题的难度的方法学：如果一个老问题能够归约到待认知的新问题，这个新问题的难度最多简单到多项式因子</em></p>
-<h2 id="NP完全性"><a href="#NP完全性" class="headerlink" title="NP完全性"></a>NP完全性</h2><p>语言 $L$ 是 NP完全的，如果：</p>
-<ol>
-<li>$L \in NP$</li>
-<li>$\forall L’ \in NP, L’ \leq_p L$</li>
-</ol>
 <ul>
-<li>如果 $L$ 只满足性质2，但不一定满足性质1，叫 <strong>NP难（NP-hard）</strong>的。</li>
+<li>最佳量化<ul>
+<li>使量化误差最小的量化方法为最佳量化。</li>
+<li>使用均方误差测度讨论最佳量化。</li>
 </ul>
-<p><strong>定理 34.4 </strong> 如果任何 NP完全问题是多项式时间可解的，则 $P = NP$。等价的，如果存在某一个NP问题不是多项式可解的，则所有NP完全问题都不是多项式时间可解的。</p>
-<p><strong>定理 34.7 </strong> 电路可满足性问题是NP完全的。</p>
+</li>
+</ul>
+<p>设 $Z$ 和 $q$ 分别代表像素幅度和其量化值，$p(Z)$ 为像素幅度概率密度函数；$Z$ 的取值范围在 $H_1$ 和 $H_2$ 之间，量化总层数为 $K$，$\delta^2$ 表示量化器量化的均方误差，则</p>
+<script type="math/tex; mode=display">
+\delta^2 = \sum\limits_{k=1}^{K} \int_{Z_k}^{Z_{k+1}} (Z - q_k)^2p(Z) dZ。</script><p>当量化层数足够大，每个判决层的 $p(Z)$ 可以近似为均匀分布，则</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta^{2} &=\sum_{k=1}^{K} \int_{Z_{k}}^{Z_{k+1}}\left(Z-q_{k}\right)^{2} p(Z) d Z \\
+&=\sum_{k=1}^{K} p(Z) \int_{Z_{k}}^{Z_{k+1}}\left(Z-q_{k}\right)^{2} d Z \\
+&=\frac{1}{3} \sum_{k=1}^{K} p(Z)\left[\left(Z_{k+1}-q_{k}\right)^{3}-\left(Z_{k}-q_{k}\right)^{3}\right]
+\end{aligned}</script><p>对 $q_k$ 求导并令等于 $0$：</p>
+<script type="math/tex; mode=display">
+0=\int_{Z_{k}}^{Z_{k+1}} p(Z)\left(-2 Z+2 q_{k}\right) d Z</script><p>于是</p>
+<script type="math/tex; mode=display">
+q_{k}=\dfrac{\int_{Z_{k}}^{Z_{k+1}} Z p(Z) d Z}{\int_{Z_{k}}^{Z_{k+1}} p(Z) d Z}</script><p>若 $p(Z)$ 为常数，则 $q_k = \frac{1}{2}(Z_k + Z_{k+1})$，此时量化误差为 $\dfrac{(H_2 - H_1)^2}{12K^2}$。</p>
+<ul>
+<li>图像获取设备的主要应用<ul>
+<li>基于图像采集卡或图像卡将模拟制式的视频信号采集到计算机。</li>
+<li>摄象机本身带有数字化部件可以直接将数字图像通过计算机端口（如并口、USB接口）或标准设备（如磁盘驱动器）传送进计算机。</li>
+</ul>
+</li>
+</ul>
+<h2 id="图像显示"><a href="#图像显示" class="headerlink" title="图像显示"></a>图像显示</h2><ul>
+<li>图像显示和打印的基本原理<ul>
+<li>显示分辨率：每英寸荧光点或打印墨点的数目，单位是dpi。</li>
+<li>电视机平均分辨率0.76mm。SVGA显示器平均分辨率0.28mm。</li>
+<li>打印分辨率需要在300dpi—600dpi之上。</li>
+</ul>
+</li>
+<li>点阵位图格式<ul>
+<li>用文件中的几个字节表示表示像素点的位置和颜色。</li>
+<li>图像分辨率：每英寸像素点的数目，单位ppi。</li>
+</ul>
+</li>
+<li>显示与文件的关系<ul>
+<li>若图像分辨率比显示分辨率高，则显示出的图像比实际图像大。</li>
+<li>若图像分辨率比显示分辨率低，则显示出的图像比实际图像小。</li>
+</ul>
+</li>
+</ul>
+<h2 id="图像表示"><a href="#图像表示" class="headerlink" title="图像表示"></a>图像表示</h2><ul>
+<li>1位二值图像</li>
+<li><p>8位灰度图像</p>
+<ul>
+<li>位平面。<ul>
+<li>数字图像每一个像素点的灰度值均可以表示成二进制数，这样从二进制每一位的微观角度出发，能够将图片分解为若干个位平面。</li>
+<li>图像的重要信息主要包含在高位位平面中，从低位位平面的显示效果中不可识别原始图像信息。</li>
+</ul>
+</li>
+<li>抖动技术（dithering）<ul>
+<li>基本策略是平衡灰度分辨率到空间分辨率。基本原理是当人眼从较远距离观察图像时，将会平均局部小区域像素的灰度值，并记录之。</li>
+<li>很明显采用抖动矩阵无法完整的表达图像信息，甚至造成打印的图像失真。<em>解决方案：Floyd-Steinberg算法</em>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>24位彩色图像</p>
+<ul>
+<li><p>RGB模式。(相加混色模型，用于发光物体)</p>
+</li>
+<li><p>CMYK模式。（相减混色模型，用于不发光物体）</p>
+<ul>
+<li>三次色（青色Cyan，洋红Magenta和黄色Yellow）K为真正黑色。</li>
+</ul>
+</li>
+<li><p>HSB模型。</p>
+<ul>
+<li>色相（Hue），饱和度（Saturation），亮度（Brightness）。</li>
+<li><em>在绘画艺术上，饱和度的概念可描述如下：是一种纯色加上白色染料后的结果，此时色彩的饱和度发生变化而色彩的亮度不发生变化。</em></li>
+<li><em>同样在绘画艺术上，亮度的概念可描述如下：是一种纯色加上黑色染料后的结果，此时色彩的亮度发生变化而色彩的饱和度不发生变化。</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>8位索引图像<ul>
+<li>调色板（palette）：图像的色彩索引表。</li>
+<li>若图像的色彩数远小于全色彩数时，当每个像素的值用色彩索引表的位置表示就可以大大节约存储空间。</li>
+</ul>
+</li>
+</ul>
 
     </div>
 
@@ -331,13 +375,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/04/28/formalization/" rel="prev" title="问题求解笔记-问题的形式化描述">
-      <i class="fa fa-chevron-left"></i> 问题求解笔记-问题的形式化描述
+    <a href="/2021/09/07/advanced-algorithm/" rel="prev" title="高级算法课程笔记-Lecture1">
+      <i class="fa fa-chevron-left"></i> 高级算法课程笔记-Lecture1
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/05/18/approximation-algorithm/" rel="next" title="问题求解笔记-近似算法">
-      问题求解笔记-近似算法 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -396,7 +437,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%84%E7%BA%A6-Reduction"><span class="nav-number">1.1.</span> <span class="nav-text">规约 Reduction</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%97%B6%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">多项式时间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%8F%97-%E5%88%A4%E5%AE%9A"><span class="nav-number">2.1.</span> <span class="nav-text">接受&#x2F;判定</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%97%B6%E9%97%B4%E7%9A%84%E9%AA%8C%E8%AF%81-Verification"><span class="nav-number">3.</span> <span class="nav-text">多项式时间的验证 Verification</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NP%E5%AE%8C%E5%85%A8%E6%80%A7%E4%B8%8E%E5%8F%AF%E8%A7%84%E7%BA%A6%E6%80%A7"><span class="nav-number">4.</span> <span class="nav-text">NP完全性与可规约性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A7%84%E7%BA%A6%E6%80%A7-Reducibility"><span class="nav-number">4.1.</span> <span class="nav-text">可规约性 Reducibility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NP%E5%AE%8C%E5%85%A8%E6%80%A7"><span class="nav-number">4.2.</span> <span class="nav-text">NP完全性</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch1-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">Ch1 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%8E%B7%E5%8F%96"><span class="nav-number">1.1.</span> <span class="nav-text">图像获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA"><span class="nav-number">1.2.</span> <span class="nav-text">图像显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.3.</span> <span class="nav-text">图像表示</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

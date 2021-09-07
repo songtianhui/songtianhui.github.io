@@ -4159,4 +4159,130 @@ cost\left(  \theta, \left( x^{(i)} , y^{(i)} \right)  \right) = \dfrac{1}{2}\lef
         <category>Advanced Algorithm</category>
       </categories>
   </entry>
+  <entry>
+    <title>数字图像处理课程笔记</title>
+    <url>/2021/09/08/digital-image-processing/</url>
+    <content><![CDATA[<h1 id="Ch1-概述"><a href="#Ch1-概述" class="headerlink" title="Ch1 概述"></a>Ch1 概述</h1><ul>
+<li><p>数字图像是指由被称作像素的小块区域组成的二维矩阵。</p>
+<ul>
+<li>将物理图像行列划分后，每个小块区域称为像素（pixel）。</li>
+<li>每个像素包括两个属性：位置和亮度 （或色彩）。</li>
+</ul>
+</li>
+<li><p>数字图像的两个基本问题</p>
+<ul>
+<li>像素数目</li>
+<li>灰度值的度量</li>
+<li>本质问题就是物理信号离散化，数字化</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="图像获取"><a href="#图像获取" class="headerlink" title="图像获取"></a>图像获取</h2><p>图像获取就是图像数字化的过程，包括扫描、<strong>采样（成像技术）</strong>和<strong>量化（模数转化技术）</strong>。</p>
+<ul>
+<li><p>图像采样：用有限的样本数目去近似无限的现实物理信号（有限近似无限）。</p>
+</li>
+<li><p>图像量化，用离散计算机表示去近似连续的现实物理信号（离散近似连续）。</p>
+<ul>
+<li>取样点数和量化级数的选取<ul>
+<li>条件：图像有 $M\times N$个像素，每个像素有 $Q$ 个灰度级别。</li>
+<li>取值规则：$M, N, Q$ 通常取 2 的整数次幂。若 $Q = 2^8 = 256$，称为 8bit 量化，或称256灰度级。</li>
+<li>取值范围：由于存在量化误差，原则上 b 越大重建图像失真越小。对于人眼应用 b 取 5-8；而对于卫星图片等图像分析应用b取8-12。</li>
+</ul>
+</li>
+<li>$M\times N$ 必须满足奈奎斯特取样定理，否则会因取样点数不够产生混淆失真。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>最佳量化<ul>
+<li>使量化误差最小的量化方法为最佳量化。</li>
+<li>使用均方误差测度讨论最佳量化。</li>
+</ul>
+</li>
+</ul>
+<p>设 $Z$ 和 $q$ 分别代表像素幅度和其量化值，$p(Z)$ 为像素幅度概率密度函数；$Z$ 的取值范围在 $H_1$ 和 $H_2$ 之间，量化总层数为 $K$，$\delta^2$ 表示量化器量化的均方误差，则</p>
+<script type="math/tex; mode=display">
+\delta^2 = \sum\limits_{k=1}^{K} \int_{Z_k}^{Z_{k+1}} (Z - q_k)^2p(Z) dZ。</script><p>当量化层数足够大，每个判决层的 $p(Z)$ 可以近似为均匀分布，则</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta^{2} &=\sum_{k=1}^{K} \int_{Z_{k}}^{Z_{k+1}}\left(Z-q_{k}\right)^{2} p(Z) d Z \\
+&=\sum_{k=1}^{K} p(Z) \int_{Z_{k}}^{Z_{k+1}}\left(Z-q_{k}\right)^{2} d Z \\
+&=\frac{1}{3} \sum_{k=1}^{K} p(Z)\left[\left(Z_{k+1}-q_{k}\right)^{3}-\left(Z_{k}-q_{k}\right)^{3}\right]
+\end{aligned}</script><p>对 $q_k$ 求导并令等于 $0$：</p>
+<script type="math/tex; mode=display">
+0=\int_{Z_{k}}^{Z_{k+1}} p(Z)\left(-2 Z+2 q_{k}\right) d Z</script><p>于是</p>
+<script type="math/tex; mode=display">
+q_{k}=\dfrac{\int_{Z_{k}}^{Z_{k+1}} Z p(Z) d Z}{\int_{Z_{k}}^{Z_{k+1}} p(Z) d Z}</script><p>若 $p(Z)$ 为常数，则 $q_k = \frac{1}{2}(Z_k + Z_{k+1})$，此时量化误差为 $\dfrac{(H_2 - H_1)^2}{12K^2}$。</p>
+<ul>
+<li>图像获取设备的主要应用<ul>
+<li>基于图像采集卡或图像卡将模拟制式的视频信号采集到计算机。</li>
+<li>摄象机本身带有数字化部件可以直接将数字图像通过计算机端口（如并口、USB接口）或标准设备（如磁盘驱动器）传送进计算机。</li>
+</ul>
+</li>
+</ul>
+<h2 id="图像显示"><a href="#图像显示" class="headerlink" title="图像显示"></a>图像显示</h2><ul>
+<li>图像显示和打印的基本原理<ul>
+<li>显示分辨率：每英寸荧光点或打印墨点的数目，单位是dpi。</li>
+<li>电视机平均分辨率0.76mm。SVGA显示器平均分辨率0.28mm。</li>
+<li>打印分辨率需要在300dpi—600dpi之上。</li>
+</ul>
+</li>
+<li>点阵位图格式<ul>
+<li>用文件中的几个字节表示表示像素点的位置和颜色。</li>
+<li>图像分辨率：每英寸像素点的数目，单位ppi。</li>
+</ul>
+</li>
+<li>显示与文件的关系<ul>
+<li>若图像分辨率比显示分辨率高，则显示出的图像比实际图像大。</li>
+<li>若图像分辨率比显示分辨率低，则显示出的图像比实际图像小。</li>
+</ul>
+</li>
+</ul>
+<h2 id="图像表示"><a href="#图像表示" class="headerlink" title="图像表示"></a>图像表示</h2><ul>
+<li>1位二值图像</li>
+<li><p>8位灰度图像</p>
+<ul>
+<li>位平面。<ul>
+<li>数字图像每一个像素点的灰度值均可以表示成二进制数，这样从二进制每一位的微观角度出发，能够将图片分解为若干个位平面。</li>
+<li>图像的重要信息主要包含在高位位平面中，从低位位平面的显示效果中不可识别原始图像信息。</li>
+</ul>
+</li>
+<li>抖动技术（dithering）<ul>
+<li>基本策略是平衡灰度分辨率到空间分辨率。基本原理是当人眼从较远距离观察图像时，将会平均局部小区域像素的灰度值，并记录之。</li>
+<li>很明显采用抖动矩阵无法完整的表达图像信息，甚至造成打印的图像失真。<em>解决方案：Floyd-Steinberg算法</em>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>24位彩色图像</p>
+<ul>
+<li><p>RGB模式。(相加混色模型，用于发光物体)</p>
+</li>
+<li><p>CMYK模式。（相减混色模型，用于不发光物体）</p>
+<ul>
+<li>三次色（青色Cyan，洋红Magenta和黄色Yellow）K为真正黑色。</li>
+</ul>
+</li>
+<li><p>HSB模型。</p>
+<ul>
+<li>色相（Hue），饱和度（Saturation），亮度（Brightness）。</li>
+<li><em>在绘画艺术上，饱和度的概念可描述如下：是一种纯色加上白色染料后的结果，此时色彩的饱和度发生变化而色彩的亮度不发生变化。</em></li>
+<li><em>同样在绘画艺术上，亮度的概念可描述如下：是一种纯色加上黑色染料后的结果，此时色彩的亮度发生变化而色彩的饱和度不发生变化。</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>8位索引图像<ul>
+<li>调色板（palette）：图像的色彩索引表。</li>
+<li>若图像的色彩数远小于全色彩数时，当每个像素的值用色彩索引表的位置表示就可以大大节约存储空间。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>课程</category>
+        <category>Digital Image Processing</category>
+      </categories>
+  </entry>
 </search>
