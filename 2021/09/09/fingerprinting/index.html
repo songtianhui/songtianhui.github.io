@@ -22,20 +22,19 @@
     var CONFIG = {"hostname":"songtianhui.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="博客先把这个blog基础设施搭建好，配置到一个最顺手好看的亚子。 装系统用了一个学期虚拟机真的太累了，真是又慢又卡orz 准备装一个Ununtu比Debian用起来优雅多了，不过电脑磁盘不够了得买个移动硬盘。。。">
+  <meta name="description" content="多项式判等 Polynomial Identity TestingPIT问题： 输入两个 $d$ 阶多项式 $f, g \in \mathbb{F}[x]$，输出他们是否相等 $f \equiv g$。 这里 $\mathbb{F}[x]$ 指 $x$ 在域（field）$\mathbb{F}$ 上的多项式环（ring）。 我们可以很自然地将这个问题转化为判断一个 $d$ 阶多项式（$f - g$">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2021寒假计划">
-<meta property="og:url" content="https://songtianhui.github.io/2021/01/28/Flags-for-winter-holiday/index.html">
+<meta property="og:title" content="高级算法课程笔记-指纹">
+<meta property="og:url" content="https://songtianhui.github.io/2021/09/09/fingerprinting/index.html">
 <meta property="og:site_name" content="Songtianhui&#39;s Blog">
-<meta property="og:description" content="博客先把这个blog基础设施搭建好，配置到一个最顺手好看的亚子。 装系统用了一个学期虚拟机真的太累了，真是又慢又卡orz 准备装一个Ununtu比Debian用起来优雅多了，不过电脑磁盘不够了得买个移动硬盘。。。">
+<meta property="og:description" content="多项式判等 Polynomial Identity TestingPIT问题： 输入两个 $d$ 阶多项式 $f, g \in \mathbb{F}[x]$，输出他们是否相等 $f \equiv g$。 这里 $\mathbb{F}[x]$ 指 $x$ 在域（field）$\mathbb{F}$ 上的多项式环（ring）。 我们可以很自然地将这个问题转化为判断一个 $d$ 阶多项式（$f - g$">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-27T17:19:51.000Z">
-<meta property="article:modified_time" content="2021-02-15T09:39:12.405Z">
+<meta property="article:published_time" content="2021-09-09T14:46:09.000Z">
+<meta property="article:modified_time" content="2021-09-09T16:34:31.771Z">
 <meta property="article:author" content="Hui hui">
-<meta property="article:tag" content="flags">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://songtianhui.github.io/2021/01/28/Flags-for-winter-holiday/">
+<link rel="canonical" href="https://songtianhui.github.io/2021/09/09/fingerprinting/">
 
 
 <script id="page-configurations">
@@ -48,7 +47,7 @@
   };
 </script>
 
-  <title>2021寒假计划 | Songtianhui's Blog</title>
+  <title>高级算法课程笔记-指纹 | Songtianhui's Blog</title>
   
 
 
@@ -193,7 +192,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/01/28/Flags-for-winter-holiday/">
+    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/09/09/fingerprinting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -206,7 +205,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          2021寒假计划
+          高级算法课程笔记-指纹
         </h1>
 
         <div class="post-meta">
@@ -216,15 +215,28 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-01-28 01:19:51" itemprop="dateCreated datePublished" datetime="2021-01-28T01:19:51+08:00">2021-01-28</time>
+              <time title="Created: 2021-09-09 22:46:09" itemprop="dateCreated datePublished" datetime="2021-09-09T22:46:09+08:00">2021-09-09</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-02-15 17:39:12" itemprop="dateModified" datetime="2021-02-15T17:39:12+08:00">2021-02-15</time>
+                <time title="Modified: 2021-09-10 00:34:31" itemprop="dateModified" datetime="2021-09-10T00:34:31+08:00">2021-09-10</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">课程</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B/Advanced-Algorithm/" itemprop="url" rel="index"><span itemprop="name">Advanced Algorithm</span></a>
+                </span>
+            </span>
 
           
 
@@ -237,22 +249,58 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><pre><code>先把这个blog基础设施搭建好，配置到一个最顺手好看的亚子。
-</code></pre><h1 id="装系统"><a href="#装系统" class="headerlink" title="装系统"></a>装系统</h1><pre><code>用了一个学期虚拟机真的太累了，真是又慢又卡orz
-准备装一个Ununtu比Debian用起来优雅多了，不过电脑磁盘不够了得买个移动硬盘。。。
-</code></pre><a id="more"></a>
-<h1 id="学习篇"><a href="#学习篇" class="headerlink" title="学习篇"></a>学习篇</h1><p>有想学很多东西但可能只能停留在想的阶段。。。</p>
-<h2 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h2><pre><code>学个python吧，python是世界上最好的语言!
-</code></pre><p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1016959663602400">廖雪峰python教程</a></p>
-<h2 id="ML"><a href="#ML" class="headerlink" title="ML"></a>ML</h2><pre><code>看看吴恩达？机器学习好像很多地方都有用。
-</code></pre><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV164411b7dx?from=search&amp;seid=11011536408088050441">吴恩达机器学习</a></p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code>LeetCode做做题吧，算法比别人差太多了orz
-</code></pre><h2 id="Mathematical-modeling"><a href="#Mathematical-modeling" class="headerlink" title="Mathematical modeling"></a>Mathematical modeling</h2><pre><code>那可能还要顺手学一下mathlab?
-才知道有美赛这个玩意儿。。。现在着手可能晚了，也组不到人也没人要我这个啥都不会的菜鸡w
-</code></pre><h2 id="Operating-System"><a href="#Operating-System" class="headerlink" title="Operating System"></a>Operating System</h2><pre><code>既然可能学不到什么新技能，不如预习预习下学期的os...这学期ics已经炸掉了，保住成绩也不错。
-</code></pre><h2 id="Teaching"><a href="#Teaching" class="headerlink" title="Teaching"></a>Teaching</h2><pre><code>估计师说那还是要找我去上课的，既然没有动力学习把时间转换成money也行。
-</code></pre><h2 id="Hobbies"><a href="#Hobbies" class="headerlink" title="Hobbies"></a>Hobbies</h2><pre><code>搞点课外兴趣，procreate画点画。可能再学点剪辑(?)
-</code></pre><h1 id="谈恋爱"><a href="#谈恋爱" class="headerlink" title="谈恋爱"></a>谈恋爱</h1><p><strong>好！</strong><br><strong>我爱npy!</strong></p>
+        <h1 id="多项式判等-Polynomial-Identity-Testing"><a href="#多项式判等-Polynomial-Identity-Testing" class="headerlink" title="多项式判等 Polynomial Identity Testing"></a>多项式判等 Polynomial Identity Testing</h1><p><strong>PIT问题</strong>：</p>
+<p>输入两个 $d$ 阶多项式 $f, g \in \mathbb{F}[x]$，输出他们是否相等 $f \equiv g$。</p>
+<p>这里 $\mathbb{F}[x]$ 指 $x$ 在域（field）$\mathbb{F}$ 上的多项式环（ring）。</p>
+<p>我们可以很自然地将这个问题转化为判断一个 $d$ 阶多项式（$f - g$）是否恒为 0。</p>
+<p>如果 $f$ 被显式地给出了，我们很容易地可以通过遍历它的系数来判断。为了使问题更加 nontrivial，假设 $f$ 是一个黑盒（black box/ oracle），看不到系数，只能通过输入 $x$ 得到 $f(x)$。</p>
+<ul>
+<li>一个直接的确定性方法就是带入 $d+1$ 个不同的数计算 $f(x_1), f(x_2), …,f(x_{d+1})$ 来计算是否全为零，若全为零则根据<strong>代数基本定理</strong>，能保证 $d$ 阶多项式 $f$ 一定恒为零。</li>
+</ul>
+<div class="note info">
+            <p>一个非零 $d$ 阶单变量多项式一定至多有 $d$ 个根。</p>
+          </div>
+<p>然后自然地我们有如下算法：</p>
+<ol>
+<li>suppose we have a finite subset $S \subseteq \mathbb{F}$</li>
+<li>pick $r \in S$ uniformly at random</li>
+<li>if $f(r) = 0$ return ‘yes’ else ‘no’</li>
+</ol>
+<p>我们很容易可以得出：</p>
+<ul>
+<li>如果 $f \equiv 0$，算法永远返回 ‘yes’。</li>
+<li>如果 $f \not \equiv 0$，算法可能错误地返回 ‘yes’（假阳性），但这只当 $r$ 是 $f$ 的根时发生。根据代数基本定理，$f$ 最多 $d$ 个根，所以算法出错的可能性有界：<ul>
+<li>$Pr[f(r) = 0] \leq \dfrac{d}{|S|}$。</li>
+<li>我们可以固定 $|S| = 2d$，这样出错的概率最多就是 $1/2$。然后通过独立重复 $\log_{2}{\frac{1}{\delta}}$ 次来将这个概率减小到 $\delta$。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Equality-的通信复杂性"><a href="#Equality-的通信复杂性" class="headerlink" title="Equality 的通信复杂性"></a>Equality 的通信复杂性</h2><p> <strong>通信复杂性</strong>（<a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Communication_complexity">communication complexity</a>）是姚期智先生（对就是那个图灵奖）提出来的多个实体的计算模型。简单来说就是有两个端，分别有两个输入 $a$ 和 $b$，我们要计算一个函数 $f(a,b)$，不考虑计算的复杂性，我们只关心<strong>通信协议（communication protocol）</strong>，也就是两个端传输的信息的比特。</p>
+<p><del>这个其实在问求4讲过不过我一直没搞明白。</del></p>
+<p>在这里我们讨论的函数是 $\mathrm{EQ}: \{0, 1\}^n \times \{0, 1\}^n \to \{0, 1\}$，对任意 $a, b \in \{0, 1\}^n$ 有：</p>
+<p>$\mathrm{EQ}(a, b)= \begin{cases}1 &amp; \text { if } a=b \\ 0 &amp; \text { otherwise }\end{cases}$</p>
+<ul>
+<li>最简单的想法就是把整个 $a$ 或 $b$ 传过去，通信复杂度是 $n$ 个 bit。<ul>
+<li>可证（yao 证出来的）这是最好的确定性通信协议，也就是要确定地保证完全相等，至少需要 n bit的传输。</li>
+<li>这个证明其实远比它看起来要 nontrivial。</li>
+</ul>
+</li>
+</ul>
+<p>我们可以考虑将 $a,b$ 看成 $n$ 阶多项式 $f,g$，然后运用我们刚才的 <strong>PIT</strong> 来解决。</p>
+<p>需要传输 $r, f(r)$，$r \in [2n]$ 所以需要 $O(\log{n})$ 个bit，而 $f(r)$ 实际上是 $f(r) = \sum\limits_{i = 0}^{n-1} a_i r^i = O(r^n) = O(n^n)$ 是一个指数量级，需要 $O(n\log{n})$ 个bit。这比直接传整个数据库过去还多，<del>屁用没有</del>。</p>
+<ul>
+<li><p>所以根本原因在于我们选的<strong>域</strong>太大了，是和 $n$ 正比的，能不能找到小一点的，最好是一个常数大小的域。</p>
+<ul>
+<li>很快地我们就能够想到在模意义下取数，也就是 $\mathbb{Z}_p = \{0, 1, …, p-1\}$。</li>
+</ul>
+</li>
+<li><p>我们只需要随机取一个质数 $p \in [n^2, 2n^2]$（可证一定能找到），$f,g \in \mathbb{Z}_p[x]$，然后随机取 $r \in [p]$。</p>
+<ul>
+<li>这样所需要传输的数据 $r, f(r) &lt; p$，只需要 $O(\log{p}) = O(\log{n})$ 的通信复杂度。</li>
+<li>单边错概率是 $\dfrac{n}{p} = O(\dfrac{1}{n})$，w.h.p。</li>
+</ul>
+</li>
+</ul>
 
     </div>
 
@@ -261,9 +309,6 @@
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/flags/" rel="tag"># flags</a>
-          </div>
 
         
 
@@ -271,13 +316,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/01/26/Markdown-test/" rel="prev" title="Markdown test">
-      <i class="fa fa-chevron-left"></i> Markdown test
+    <a href="/2021/09/08/digital-image-processing/" rel="prev" title="数字图像处理课程笔记">
+      <i class="fa fa-chevron-left"></i> 数字图像处理课程笔记
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/01/28/python-learning/" rel="next" title="python学习笔记">
-      python学习笔记 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -336,7 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.</span> <span class="nav-text">博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A3%85%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.</span> <span class="nav-text">装系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E7%AF%87"><span class="nav-number">3.</span> <span class="nav-text">学习篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Language"><span class="nav-number">3.1.</span> <span class="nav-text">Language</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ML"><span class="nav-number">3.2.</span> <span class="nav-text">ML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.3.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mathematical-modeling"><span class="nav-number">3.4.</span> <span class="nav-text">Mathematical modeling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operating-System"><span class="nav-number">3.5.</span> <span class="nav-text">Operating System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Teaching"><span class="nav-number">3.6.</span> <span class="nav-text">Teaching</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hobbies"><span class="nav-number">3.7.</span> <span class="nav-text">Hobbies</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%88%E6%81%8B%E7%88%B1"><span class="nav-number">4.</span> <span class="nav-text">谈恋爱</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%88%A4%E7%AD%89-Polynomial-Identity-Testing"><span class="nav-number">1.</span> <span class="nav-text">多项式判等 Polynomial Identity Testing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Equality-%E7%9A%84%E9%80%9A%E4%BF%A1%E5%A4%8D%E6%9D%82%E6%80%A7"><span class="nav-number">1.1.</span> <span class="nav-text">Equality 的通信复杂性</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -465,6 +507,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
