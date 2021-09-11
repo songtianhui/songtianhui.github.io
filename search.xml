@@ -23,30 +23,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2021寒假计划</title>
-    <url>/2021/01/28/Flags-for-winter-holiday/</url>
-    <content><![CDATA[<h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><pre><code>先把这个blog基础设施搭建好，配置到一个最顺手好看的亚子。
-</code></pre><h1 id="装系统"><a href="#装系统" class="headerlink" title="装系统"></a>装系统</h1><pre><code>用了一个学期虚拟机真的太累了，真是又慢又卡orz
-准备装一个Ununtu比Debian用起来优雅多了，不过电脑磁盘不够了得买个移动硬盘。。。
-</code></pre><a id="more"></a>
-<h1 id="学习篇"><a href="#学习篇" class="headerlink" title="学习篇"></a>学习篇</h1><p>有想学很多东西但可能只能停留在想的阶段。。。</p>
-<h2 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h2><pre><code>学个python吧，python是世界上最好的语言!
-</code></pre><p><a href="https://www.liaoxuefeng.com/wiki/1016959663602400">廖雪峰python教程</a></p>
-<h2 id="ML"><a href="#ML" class="headerlink" title="ML"></a>ML</h2><pre><code>看看吴恩达？机器学习好像很多地方都有用。
-</code></pre><p><a href="https://www.bilibili.com/video/BV164411b7dx?from=search&amp;seid=11011536408088050441">吴恩达机器学习</a></p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code>LeetCode做做题吧，算法比别人差太多了orz
-</code></pre><h2 id="Mathematical-modeling"><a href="#Mathematical-modeling" class="headerlink" title="Mathematical modeling"></a>Mathematical modeling</h2><pre><code>那可能还要顺手学一下mathlab?
-才知道有美赛这个玩意儿。。。现在着手可能晚了，也组不到人也没人要我这个啥都不会的菜鸡w
-</code></pre><h2 id="Operating-System"><a href="#Operating-System" class="headerlink" title="Operating System"></a>Operating System</h2><pre><code>既然可能学不到什么新技能，不如预习预习下学期的os...这学期ics已经炸掉了，保住成绩也不错。
-</code></pre><h2 id="Teaching"><a href="#Teaching" class="headerlink" title="Teaching"></a>Teaching</h2><pre><code>估计师说那还是要找我去上课的，既然没有动力学习把时间转换成money也行。
-</code></pre><h2 id="Hobbies"><a href="#Hobbies" class="headerlink" title="Hobbies"></a>Hobbies</h2><pre><code>搞点课外兴趣，procreate画点画。可能再学点剪辑(?)
-</code></pre><h1 id="谈恋爱"><a href="#谈恋爱" class="headerlink" title="谈恋爱"></a>谈恋爱</h1><p><strong>好！</strong><br><strong>我爱npy!</strong></p>
-]]></content>
-      <tags>
-        <tag>flags</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Markdown test</title>
     <url>/2021/01/26/Markdown-test/</url>
     <content><![CDATA[<h1 id="这是一级标题"><a href="#这是一级标题" class="headerlink" title="这是一级标题"></a>这是一级标题</h1><h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h3 id="这是三级标题"><a href="#这是三级标题" class="headerlink" title="这是三级标题"></a>这是三级标题</h3><a id="more"></a>
@@ -118,6 +94,30 @@
       </tags>
   </entry>
   <entry>
+    <title>2021寒假计划</title>
+    <url>/2021/01/28/Flags-for-winter-holiday/</url>
+    <content><![CDATA[<h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><pre><code>先把这个blog基础设施搭建好，配置到一个最顺手好看的亚子。
+</code></pre><h1 id="装系统"><a href="#装系统" class="headerlink" title="装系统"></a>装系统</h1><pre><code>用了一个学期虚拟机真的太累了，真是又慢又卡orz
+准备装一个Ununtu比Debian用起来优雅多了，不过电脑磁盘不够了得买个移动硬盘。。。
+</code></pre><a id="more"></a>
+<h1 id="学习篇"><a href="#学习篇" class="headerlink" title="学习篇"></a>学习篇</h1><p>有想学很多东西但可能只能停留在想的阶段。。。</p>
+<h2 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h2><pre><code>学个python吧，python是世界上最好的语言!
+</code></pre><p><a href="https://www.liaoxuefeng.com/wiki/1016959663602400">廖雪峰python教程</a></p>
+<h2 id="ML"><a href="#ML" class="headerlink" title="ML"></a>ML</h2><pre><code>看看吴恩达？机器学习好像很多地方都有用。
+</code></pre><p><a href="https://www.bilibili.com/video/BV164411b7dx?from=search&amp;seid=11011536408088050441">吴恩达机器学习</a></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code>LeetCode做做题吧，算法比别人差太多了orz
+</code></pre><h2 id="Mathematical-modeling"><a href="#Mathematical-modeling" class="headerlink" title="Mathematical modeling"></a>Mathematical modeling</h2><pre><code>那可能还要顺手学一下mathlab?
+才知道有美赛这个玩意儿。。。现在着手可能晚了，也组不到人也没人要我这个啥都不会的菜鸡w
+</code></pre><h2 id="Operating-System"><a href="#Operating-System" class="headerlink" title="Operating System"></a>Operating System</h2><pre><code>既然可能学不到什么新技能，不如预习预习下学期的os...这学期ics已经炸掉了，保住成绩也不错。
+</code></pre><h2 id="Teaching"><a href="#Teaching" class="headerlink" title="Teaching"></a>Teaching</h2><pre><code>估计师说那还是要找我去上课的，既然没有动力学习把时间转换成money也行。
+</code></pre><h2 id="Hobbies"><a href="#Hobbies" class="headerlink" title="Hobbies"></a>Hobbies</h2><pre><code>搞点课外兴趣，procreate画点画。可能再学点剪辑(?)
+</code></pre><h1 id="谈恋爱"><a href="#谈恋爱" class="headerlink" title="谈恋爱"></a>谈恋爱</h1><p><strong>好！</strong><br><strong>我爱npy!</strong></p>
+]]></content>
+      <tags>
+        <tag>flags</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>和芝麻的旅行日记——武汉篇</title>
     <url>/2021/04/11/Wuhan/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -134,6 +134,129 @@
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       <categories>
         <category>traveling</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>高级算法课程笔记-Lecture1</title>
+    <url>/2021/09/07/advanced-algorithm/</url>
+    <content><![CDATA[<p>课程主页：<a href="http://tcs.nju.edu.cn/wiki/">http://tcs.nju.edu.cn/wiki/</a></p>
+<a id="more"></a>
+<p>本章是 etone 老师通过 min/max-cut 来引入高级算法的概念。</p>
+<p><strong>图的切（Graph Cut）</strong>：有无向图 $G(V, E)$，子集 $C \subseteq E$ 是 $G$ 的一个切如果在去掉 $C$ 中所有边后 $G$ 不连通（disconnected）了。</p>
+<p>显然对于 $V$ 的一个二分 $\{S, T\}$，$E(S, T)=  \{ uv \in E | u \in S, v \in T\}$ 是 $G$ 的一个切。</p>
+<h1 id="最小割-Min-Cut"><a href="#最小割-Min-Cut" class="headerlink" title="最小割 Min-Cut"></a>最小割 Min-Cut</h1><p>我们可以推广一下问题到输入可以是 <strong>multi-graphs</strong>，也即可以有重边，不能自环。</p>
+<h2 id="最大流-Max-flow"><a href="#最大流-Max-flow" class="headerlink" title="最大流 Max flow"></a>最大流 Max flow</h2><p>一个朴素的想法，也是一个可行的确定性算法就是 <strong>最大流最小割定理</strong>，一个图的 s-t 最大流也就是它的最小割。</p>
+<ul>
+<li>注意到这个算法本质上是固定 s 和 t 的，也就是可能不是全局最优，不过我们只要遍历点跑最大流就可以了。</li>
+<li>时间复杂度：$(n-1) \times \text{max flow time} = \tilde{O}(mn)$。<ul>
+<li>$\tilde{O}$ 表示忽略多项式的对数系数。</li>
+<li>实际是 $O(mn + n^2 \log{n})$</li>
+</ul>
+</li>
+</ul>
+<h2 id="卡格尔算法-Karger’s-Contraction-Algorithm"><a href="#卡格尔算法-Karger’s-Contraction-Algorithm" class="headerlink" title="卡格尔算法 Karger’s Contraction Algorithm"></a>卡格尔算法 Karger’s Contraction Algorithm</h2><p>一个图的割太多了（$2^{\Omega(n)}$ 量级），但可以证明最小割最多只有 $O(n^2)$，我们希望生成随机的切集中在最小割上</p>
+<p><strong>收缩（contraction）</strong>：<code>contract(G, e)​</code> 将边 $e = uv$ 的两个端点合并（merge）。<em>在合适的数据结构下可以 $O(n)$ 实现。</em></p>
+<figure class="highlight plain"><figcaption><span>Karger's Algorithm</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V,E)</span><br><span class="line"></span><br><span class="line">while |V| &gt; 2 do:</span><br><span class="line">	pick random uv in E</span><br><span class="line">	G &#x3D; contract(G, uv)</span><br><span class="line">return C &#x3D; E &#x2F;&#x2F; the edges between the only two vertices</span><br></pre></td></tr></table></figure>
+<p>显然 $O(n)$ 的 <code>contract</code> 操作下该算法的复杂度是 $O(n^2)$。</p>
+<h3 id="准确性的分析"><a href="#准确性的分析" class="headerlink" title="准确性的分析"></a>准确性的分析</h3><p>因为是一个随机算法，所以输出的切是一个随机变量。</p>
+<p>可证如下定理：</p>
+<div class="note info">
+            <p>对于任意 $n$ 个顶点的 multigraph，Karger 算法的 $Pr[\text{a min-cut is returned}] \geq \dfrac{2}{n(n - 1)}$。</p>
+          </div>
+<p><del>第一次发现 note 的用法，感觉好好看</del></p>
+<p>下面来证：</p>
+<ul>
+<li>记 $e_1, e_2, …, e_{n-2}$ 为随机选择的收缩的边的序列。</li>
+<li>记 $G_1 = G$ 为初始图，$G_{i + 1} = contract(G_i, e_i), i = 1, 2,…, n-2$。</li>
+</ul>
+<p>显然可知：如果 $C$ 是 $G$ 的一个最小切且 $e \notin C$，则 $C$ 也是 <code>G&#39; = contract(G, e)​</code> 的一个最小割。所以有：</p>
+<p>$\begin{aligned} p_C &amp;= Pr[C \text{ is returned}] \\ &amp;= Pr[e_i \notin C \text{ for all } i = 1, 2, …,n-2] \\ &amp;= \prod\limits_{i = 1}^{n-2} Pr[e_i \notin C | \forall j &lt; i, e_i \notin C] \end{aligned}$</p>
+<p>$\forall j &lt; i, e_i \notin C$ 意味着 $C$ 也是 $G_i$ 的一个最小切。</p>
+<p>观察到一个最小切的边数 $|C|$ 一定是小于等于任意点的度数（degree），否则可以直接把这个点切开。</p>
+<p>所以更加小于等于度数的平均数，即 $|C| \leq \dfrac{2 |E|}{|V|}$。（所有点的度数和为 $2|E|$）</p>
+<p>所以我们可以计算</p>
+<p>$\begin{aligned} Pr[e_i \notin C | \forall j &lt; i, e_i \notin C]  &amp;= 1 - \dfrac{|C|}{|E_i|} \text{（从剩下的点中均匀随机选取）} \\ &amp; \geq 1 - \dfrac{2}{|V_i|} \\ &amp;= 1 - \dfrac{2}{n - i + 1} \end{aligned}$</p>
+<p>$\begin{aligned} p_C &amp; \geq \prod\limits_{i = 1}^{n-2} (1 - \dfrac{2}{n - i + 1}) \\ &amp;= \prod\limits_{k = 3}^{n} \dfrac{k - 2}{k} \\ &amp;= \dfrac{2}{n(n-1)} \end{aligned}$</p>
+<span class="label success">得证。</span>
+<p>乍一看这个算法有啥吊用，准确率也太低了。</p>
+<p>不过随机算法的精髓就在于有了准确性的下界，就可以通过 repeat 来提升准确性（好像是蒙特卡罗还是拉斯维加斯来着）。</p>
+<p>Karger 算法主要就是将解空间的大小由指数级降低到了平方级。</p>
+<p>我们可以运行算法 $t = \dfrac{n(n-1)\ln{n}}{2}$ 次并返回最小的解，该解是最小切的概率为：</p>
+<p>$\begin{aligned} \ &amp;1 - Pr[\text{所有 } t \text{ 次都失败}] \\ = &amp;1 - (Pr[\text{一次失败}])^t \\ \geq &amp; 1 - \left( 1 - \dfrac{2}{n(n-1)} \right)^{\frac{n(n-1)\ln{n}}{2}} \\ \geq &amp; 1 - \dfrac{1}{n}  \end{aligned}$</p>
+<p>运行一次算法的时间是 $O(n^2)$，也就是说我们可以在 $O(n^4\log{n})$ 的时间复杂度下高概率地（w.h.p）找到最小切。</p>
+<h3 id="一个推论"><a href="#一个推论" class="headerlink" title="一个推论"></a>一个推论</h3><div class="note info">
+            <p>对任意的 $n$ 阶图 $G(V, E)$，最小割的个数不会超过 $\dfrac{n(n-1)}{2}$。</p>
+          </div>
+<p>这是从概率方法上推到的：</p>
+<p>设有 $M$ 个不同的最小切，显然它们是独立的。</p>
+<p>$\because 1 \geq Pr[\text{a min-cut is returned}] \geq M \times \dfrac{2}{n(n-1)}$</p>
+<p>$\therefore M \leq \dfrac{n(n-1)}{2}$</p>
+<span class="label success">得证。</span>
+<h2 id="快速最小切-Fast-Min-Cut"><a href="#快速最小切-Fast-Min-Cut" class="headerlink" title="快速最小切 Fast Min-Cut"></a>快速最小切 Fast Min-Cut</h2><p>我们知道 $p_C \geq \prod\limits_{i = 1}^{n-2} (1 - \dfrac{2}{n - i + 1})$，也就是这个概率是随 $i$ 增大递减的，也就是说当图越来越小也就越来越难成功。</p>
+<p>我们就可以思考一个新的方法，先把图收缩的一个较小的程度，然后再递归地找这个更小的图上的最小切。</p>
+<p>先定义一个随机收缩的函数，把图收缩到只剩 $t$ 个点：</p>
+<figure class="highlight plain"><figcaption><span>random_contract(G, t)</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V, E), integer t &gt;&#x3D; 2</span><br><span class="line"></span><br><span class="line">while |V| &gt; t:</span><br><span class="line">	choose an edge uv in E uniformly at random</span><br><span class="line">	G &#x3D; contract(G, uv)</span><br><span class="line">return G</span><br></pre></td></tr></table></figure>
+<p>然后定义我们的快速最小切：</p>
+<figure class="highlight plain"><figcaption><span>fast_cut(G)</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V, E)</span><br><span class="line"></span><br><span class="line">if |V| &lt;&#x3D; 6:</span><br><span class="line">	return a mincut by brute force</span><br><span class="line">else:</span><br><span class="line">	t &#x3D; [1 + |V| &#x2F; sqrt(2)]</span><br><span class="line">	G1 &#x3D; random_contract(G, t)</span><br><span class="line">	G2 &#x3D; random_contract(G, t)</span><br><span class="line">	return min&#123;fast_cut(G1), fast_cut(G2)&#125;</span><br></pre></td></tr></table></figure>
+<p>一样的我们可以算出 <code>random_contract</code> 成功的概率：</p>
+<p>$\begin{aligned} &amp; Pr[C \text{ survives all contractions in random_contract}] \\ = &amp; \prod\limits_{i=1}^{n - t} Pr[C \text{ survives the i-th contraction } | C \text{ survives the first (i−1)-th contractions}] \\ \geq &amp; \prod\limits_{i=1}^{n - t} \left( 1 - \dfrac{2}{n - i +1} \right) \\  = &amp; \dfrac{t(t - 1)}{n(n - 1)}  \end{aligned}$</p>
+<p>当 $t = \lceil 1 + n / \sqrt{2} \rceil $ 时，这个概率至少是 $1/2$。</p>
+<p>定义两个事件：</p>
+<ul>
+<li>A：$C$ survives <code>random_contract</code> 中所有的 contractions。</li>
+<li>B：<code>random_contract</code> 后最小切的大小保持不变。</li>
+</ul>
+<p>显然 $A \to B$，所以 $Pr[B] \geq Pr[A] \geq \frac{1}{2}$。</p>
+<p>我们用 $p(n) $ 来表示一个 $n$ 阶图的 <code>fast_cut</code> 的下界：</p>
+<p>$\begin{aligned} p(n) &amp; = Pr[\text{fast_cut returns a min-cut}] \\ &amp;= Pr[\text{a min-cut is returned by fast_cut(G1) and fast_cut(G2)}] \\ &amp; \geq 1 - (1 - Pr[B \wedge \text{ fast_cut(G1) return a min-cut in G1}])^2 \\ &amp; \geq 1 - (1 - Pr[A \wedge \text{ fast_cut(G1) return a min-cut in G1}])^2 \\ &amp; = 1 - (1 - Pr[A] Pr[\text{fast_cut(G1) return a min-cut in G1 | A}])^2 \\ &amp; \geq 1 - \left( 1 - \dfrac{1}{2} p(\lceil 1 + n / \sqrt{2} \rceil) \right)^2  \end{aligned}$</p>
+<p>base case 是 $p(n) = 1$ 当 $n \leq 6$。</p>
+<p>归纳易证 $p(n) = \Omega(\frac{1}{\log{n}})$。</p>
+<p>时间复杂度上由那个算法我们有 $T(n) = 2T(\lceil 1 + n / \sqrt{2} \rceil) + O(n^2)$，易证 $T(n) = O(n^2 \log{n})$。</p>
+<p>最终我们能总结如下定理：</p>
+<div class="note info">
+            <p>对任意的 $n$ 阶图，<code>fast_cut</code> 算法可以在 $O(n^2 \log{n})$ 的时间复杂度下以 $\Omega(\frac{1}{\log{n}})$ 的概率返回一个最小切。</p>
+          </div>
+<p><code>fast_cut</code> 比原始的 <code>random_contract</code> 时间长，概率高。</p>
+<p>我们可以运行它 $(\log{n})^2$ 次，在 $O(n^2 \log^3{n})$ 的时间复杂度下以 $1 - O(1/n)$ 的概率返回最小切。</p>
+<p>回忆前面的确定算法的时间复杂度是 $O(mn + n^2 \log{n})$，也就是说在稠密图上这个随机算法会表现地更好一些。</p>
+<p><em>最终 Karger 继续改进了这个算法并获得了一个关于边数的接近线性时间的随机算法不过超出了本课程的讨论范围。</em></p>
+<h1 id="最大割-Max-cut"><a href="#最大割-Max-cut" class="headerlink" title="最大割 Max-cut"></a>最大割 Max-cut</h1><p>问题就转变成了一个 <strong>NP-hard</strong> 的问题，如果我们相信 $P \neq NP$，就无法在多项式时间用确定性算法解决这个问题。</p>
+<h2 id="贪心-Greedy"><a href="#贪心-Greedy" class="headerlink" title="贪心 Greedy"></a>贪心 Greedy</h2><figure class="highlight plain"><figcaption><span>greedy_cut</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V, E)</span><br><span class="line"></span><br><span class="line">S &#x3D; T &#x3D; emptyset</span><br><span class="line">for i &#x3D; 1, 2, ..., n:</span><br><span class="line">	v_i joins one of S,T to maximize the current |E(S,T)|</span><br></pre></td></tr></table></figure>
+<p>然后讲了到<strong>近似比（approximation ratio）</strong>的概念，<del>复习问求。</del></p>
+<p>暂时先不假证明（懒）地给出定理：</p>
+<div class="note info">
+            <p><code>greedy_cut</code> 是一个 0.5-近似的最大切算法。</p>
+          </div>
+<p>这并不是多项式时间最好的最大切算法，最好的算法 <a href="http://www-math.mit.edu/~goemans/PAPERS/maxcut-jacm.pdf">Goemans-Williamson Algorithm</a> 可以达到近似比 $\alpha^{\star} = \frac{2}{\pi}\inf_{x\in [-1,1]}{\frac{\arccos{(x)}}{1-x}}$，并被证明不存在近似比更好的多项式时间近似算法。</p>
+<h2 id="通过条件期望去随机化-Derandomization"><a href="#通过条件期望去随机化-Derandomization" class="headerlink" title="通过条件期望去随机化 Derandomization"></a>通过条件期望去随机化 Derandomization</h2><p>对于任意顶点 $v \in V$，$X_{v} \in \{0, 1\}$ 是一个均匀随机 bit 来表示该点加入 $S$ 或 $T$。</p>
+<p>这个随机的 cut 的大小可以被表示为：</p>
+<script type="math/tex; mode=display">
+|E(S, T)| = \sum\limits_{uv\in E} I[X_u \neq X_v]。</script><p>由于期望的线性（linearity），</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[|E(S, T)|]=\sum\limits_{u v \in E} \mathbb{E}\left[I\left[X_{u} \neq X_{v}\right]\right]=\sum\limits_{u v \in E} \operatorname{Pr}\left[X_{u} \neq X_{v}\right]=\dfrac{|E|}{2}。</script><p>$|E|$ 就是最大切的 $OPT_G$ 的一个上界，所以我们有：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[|E(S,T)|] \geq \dfrac{OPT_G}{2}。</script><p>所以我们生成的随机的切的平均值大于等于 $\frac{OPT_G}{2}$，由于<strong>平均原理（averaging principle）</strong>，至少有一个二分生成的切是大于等于 $\frac{OPT_G}{2}$ 的。然后我们希望有算法来找到这个解。</p>
+<p>我们想一个个地固定 $X_{v_{i}}$ 的值来构造一个二分 $\{\hat{S}, \hat{T}\}$ 使得：</p>
+<script type="math/tex; mode=display">
+|E(\hat{S}, \hat{T})| \geq \mathbb{E}[|E(S, T)|] \geq \dfrac{O P T_{G}}{2}。</script><p>我们从第一个点 $v_1$ 开始，通过全期望公式：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[E(S, T)]=\dfrac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=0\right]+\dfrac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=1\right]。</script><p>至少存在一个赋值 $x_1 \in \{0, 1\}$ 使得：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}\right] \geq \mathbb{E}[E(S, T)]。</script><p>我们可以继续运用这个方法：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}\right]= \frac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}, X_{v_{i}}=0\right]
++\frac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}, X_{v_{i}}=1\right]</script><p>至少存在一个赋值 $x_i \in \{0, 1\}$ 使得：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i}}=x_{i}\right] \geq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}\right]</script><p>所以我么就可以这要找到一个序列 $x_1, x_2, …, x_n \in \{0, 1\}$ 来形成一个单调的路径：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[E(S, T)] \leq \cdots \leq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}\right] \leq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i}}=x_{i}\right] \leq \cdots \leq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{n}}=x_{n}\right]</script><p>最终一个二分 $(\hat{S}, \hat{T})$ 被这个序列确定下来，并且 $E(\hat{S}, \hat{T}) \geq \frac{OPT_G}{2}$。</p>
+<p>我们可以有如下算法：</p>
+<figure class="highlight plain"><figcaption><span>monotone_path</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V,E)</span><br><span class="line"></span><br><span class="line">S &#x3D; T &#x3D; emptyset</span><br><span class="line">for i &#x3D; 1, 2, ..., n:</span><br><span class="line">	v_i joins one of S,T to maximize the average size of cut conditioning on the choices made so far by the vertices (v_1, v_2, ..., v_i)</span><br></pre></td></tr></table></figure>
+<p>所以，上面的贪心算法实际上是通过平均情况的去随机化得来的。</p>
+<h2 id="通过-pairwise-独立的去随机化"><a href="#通过-pairwise-独立的去随机化" class="headerlink" title="通过 pairwise 独立的去随机化"></a>通过 pairwise 独立的去随机化</h2>]]></content>
+      <categories>
+        <category>课程</category>
+        <category>Advanced Algorithm</category>
       </categories>
   </entry>
   <entry>
@@ -577,6 +700,381 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
       </categories>
   </entry>
   <entry>
+    <title>数字图像处理课程笔记</title>
+    <url>/2021/09/08/digital-image-processing/</url>
+    <content><![CDATA[<h1 id="Ch1-概述"><a href="#Ch1-概述" class="headerlink" title="Ch1 概述"></a>Ch1 概述</h1><ul>
+<li><p>数字图像是指由被称作像素的小块区域组成的二维矩阵。</p>
+<ul>
+<li>将物理图像行列划分后，每个小块区域称为像素（pixel）。</li>
+<li>每个像素包括两个属性：位置和亮度 （或色彩）。</li>
+</ul>
+</li>
+<li><p>数字图像的两个基本问题</p>
+<ul>
+<li>像素数目</li>
+<li>灰度值的度量</li>
+<li>本质问题就是物理信号离散化，数字化</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="图像获取"><a href="#图像获取" class="headerlink" title="图像获取"></a>图像获取</h2><p>图像获取就是图像数字化的过程，包括扫描、<strong>采样（成像技术）</strong>和<strong>量化（模数转化技术）</strong>。</p>
+<ul>
+<li><p>图像采样：用有限的样本数目去近似无限的现实物理信号（有限近似无限）。</p>
+</li>
+<li><p>图像量化，用离散计算机表示去近似连续的现实物理信号（离散近似连续）。</p>
+<ul>
+<li>取样点数和量化级数的选取<ul>
+<li>条件：图像有 $M\times N$个像素，每个像素有 $Q$ 个灰度级别。</li>
+<li>取值规则：$M, N, Q$ 通常取 2 的整数次幂。若 $Q = 2^8 = 256$，称为 8bit 量化，或称256灰度级。</li>
+<li>取值范围：由于存在量化误差，原则上 b 越大重建图像失真越小。对于人眼应用 b 取 5-8；而对于卫星图片等图像分析应用b取8-12。</li>
+</ul>
+</li>
+<li>$M\times N$ 必须满足奈奎斯特取样定理，否则会因取样点数不够产生混淆失真。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>最佳量化<ul>
+<li>使量化误差最小的量化方法为最佳量化。</li>
+<li>使用均方误差测度讨论最佳量化。</li>
+</ul>
+</li>
+</ul>
+<p>设 $Z$ 和 $q$ 分别代表像素幅度和其量化值，$p(Z)$ 为像素幅度概率密度函数；$Z$ 的取值范围在 $H_1$ 和 $H_2$ 之间，量化总层数为 $K$，$\delta^2$ 表示量化器量化的均方误差，则</p>
+<script type="math/tex; mode=display">
+\delta^2 = \sum\limits_{k=1}^{K} \int_{Z_k}^{Z_{k+1}} (Z - q_k)^2p(Z) dZ。</script><p>当量化层数足够大，每个判决层的 $p(Z)$ 可以近似为均匀分布，则</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta^{2} &=\sum_{k=1}^{K} \int_{Z_{k}}^{Z_{k+1}}\left(Z-q_{k}\right)^{2} p(Z) d Z \\
+&=\sum_{k=1}^{K} p(Z) \int_{Z_{k}}^{Z_{k+1}}\left(Z-q_{k}\right)^{2} d Z \\
+&=\frac{1}{3} \sum_{k=1}^{K} p(Z)\left[\left(Z_{k+1}-q_{k}\right)^{3}-\left(Z_{k}-q_{k}\right)^{3}\right]
+\end{aligned}</script><p>对 $q_k$ 求导并令等于 $0$：</p>
+<script type="math/tex; mode=display">
+0=\int_{Z_{k}}^{Z_{k+1}} p(Z)\left(-2 Z+2 q_{k}\right) d Z</script><p>于是</p>
+<script type="math/tex; mode=display">
+q_{k}=\dfrac{\int_{Z_{k}}^{Z_{k+1}} Z p(Z) d Z}{\int_{Z_{k}}^{Z_{k+1}} p(Z) d Z}</script><p>若 $p(Z)$ 为常数，则 $q_k = \frac{1}{2}(Z_k + Z_{k+1})$，此时量化误差为 $\dfrac{(H_2 - H_1)^2}{12K^2}$。</p>
+<ul>
+<li>图像获取设备的主要应用<ul>
+<li>基于图像采集卡或图像卡将模拟制式的视频信号采集到计算机。</li>
+<li>摄象机本身带有数字化部件可以直接将数字图像通过计算机端口（如并口、USB接口）或标准设备（如磁盘驱动器）传送进计算机。</li>
+</ul>
+</li>
+</ul>
+<h2 id="图像显示"><a href="#图像显示" class="headerlink" title="图像显示"></a>图像显示</h2><ul>
+<li>图像显示和打印的基本原理<ul>
+<li>显示分辨率：每英寸荧光点或打印墨点的数目，单位是dpi。</li>
+<li>电视机平均分辨率0.76mm。SVGA显示器平均分辨率0.28mm。</li>
+<li>打印分辨率需要在300dpi—600dpi之上。</li>
+</ul>
+</li>
+<li>点阵位图格式<ul>
+<li>用文件中的几个字节表示表示像素点的位置和颜色。</li>
+<li>图像分辨率：每英寸像素点的数目，单位ppi。</li>
+</ul>
+</li>
+<li>显示与文件的关系<ul>
+<li>若图像分辨率比显示分辨率高，则显示出的图像比实际图像大。</li>
+<li>若图像分辨率比显示分辨率低，则显示出的图像比实际图像小。</li>
+</ul>
+</li>
+</ul>
+<h2 id="图像表示"><a href="#图像表示" class="headerlink" title="图像表示"></a>图像表示</h2><ul>
+<li>1位二值图像</li>
+<li><p>8位灰度图像</p>
+<ul>
+<li>位平面。<ul>
+<li>数字图像每一个像素点的灰度值均可以表示成二进制数，这样从二进制每一位的微观角度出发，能够将图片分解为若干个位平面。</li>
+<li>图像的重要信息主要包含在高位位平面中，从低位位平面的显示效果中不可识别原始图像信息。</li>
+</ul>
+</li>
+<li>抖动技术（dithering）<ul>
+<li>基本策略是平衡灰度分辨率到空间分辨率。基本原理是当人眼从较远距离观察图像时，将会平均局部小区域像素的灰度值，并记录之。</li>
+<li>很明显采用抖动矩阵无法完整的表达图像信息，甚至造成打印的图像失真。<em>解决方案：Floyd-Steinberg算法</em>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>24位彩色图像</p>
+<ul>
+<li><p>RGB模式。(相加混色模型，用于发光物体)</p>
+</li>
+<li><p>CMYK模式。（相减混色模型，用于不发光物体）</p>
+<ul>
+<li>三次色（青色Cyan，洋红Magenta和黄色Yellow）K为真正黑色。</li>
+</ul>
+</li>
+<li><p>HSB模型。</p>
+<ul>
+<li>色相（Hue），饱和度（Saturation），亮度（Brightness）。</li>
+<li><em>在绘画艺术上，饱和度的概念可描述如下：是一种纯色加上白色染料后的结果，此时色彩的饱和度发生变化而色彩的亮度不发生变化。</em></li>
+<li><em>同样在绘画艺术上，亮度的概念可描述如下：是一种纯色加上黑色染料后的结果，此时色彩的亮度发生变化而色彩的饱和度不发生变化。</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>8位索引图像<ul>
+<li>调色板（palette）：图像的色彩索引表。</li>
+<li>若图像的色彩数远小于全色彩数时，当每个像素的值用色彩索引表的位置表示就可以大大节约存储空间。</li>
+</ul>
+</li>
+</ul>
+<h1 id="Ch2-二值图像与像素关系"><a href="#Ch2-二值图像与像素关系" class="headerlink" title="Ch2 二值图像与像素关系"></a>Ch2 二值图像与像素关系</h1><h2 id="邻域关系"><a href="#邻域关系" class="headerlink" title="邻域关系"></a>邻域关系</h2><ul>
+<li>4邻域 $N_4(p)$<ul>
+<li>邻域距离：$&lt;=1$。就是上下左右4个点。</li>
+</ul>
+</li>
+<li>对角线邻域 $N_D(p)$<ul>
+<li>四个对角。</li>
+</ul>
+</li>
+<li>8邻域 $N_8(4) = N_4(p) + N_D(p)$<ul>
+<li>邻域距离：$&lt;2$。就是周围一圈8个点。</li>
+</ul>
+</li>
+</ul>
+<h2 id="连接关系"><a href="#连接关系" class="headerlink" title="连接关系"></a>连接关系</h2><p>可以用来分离物体，鉴定边界。</p>
+<p>在二值图上通过邻域进行定义：</p>
+<ul>
+<li>4连接<ul>
+<li>$p \in N_4(q)$</li>
+</ul>
+</li>
+<li>8连接<ul>
+<li>$p \in N_8(q)$</li>
+</ul>
+</li>
+<li>m连接<ul>
+<li>$p \in N_D(q) \wedge (N_4(P) \cap N_4(q) = \emptyset)$</li>
+</ul>
+</li>
+</ul>
+<h2 id="邻接关系"><a href="#邻接关系" class="headerlink" title="邻接关系"></a>邻接关系</h2><ul>
+<li><p>有连接关系 $(4,8,m)$ 的像素 $p,q$ 是邻接关系。</p>
+</li>
+<li><p>两个子图像 $S_1, S_2$，如果存在 $S_1$ 中的某像素和 $S_2$ 中的某像素是邻接关系，则两子图是邻接关系。</p>
+</li>
+<li><p>从 $p $ 到 $q$ 的一条<strong>路径</strong>是值一个像素序列 $p_1, .., p_n$，$p_i$ 与 $p_{i+1}$ 邻接。</p>
+<ul>
+<li>像素 $p,q$ 之间存在一条路径，则称 $p,q$ <strong>联通</strong>。</li>
+</ul>
+</li>
+<li><p>图像 $S$ 中的任何一个像素 $p$，与 $p$ 联通的所有像素的集合构成一个<strong>联通分量</strong>，联通分量中所有像素两两联通。</p>
+<ul>
+<li>4连接：4联通分量</li>
+<li>8/m连接：2联通分量</li>
+</ul>
+</li>
+<li><p><strong>对象分割</strong>：标记联通分量。</p>
+<ul>
+<li>算法就是遍历扫描，没有邻接标记，有邻接标记为邻接标记并记录等价类。</li>
+</ul>
+</li>
+</ul>
+<h2 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h2><ul>
+<li>正定性：$D(p,q) \geq 0$，等号当且仅当 $p = q$。</li>
+<li>对称性：$D(p,q) = D(q,p)$。</li>
+<li>三角不等式：$D(p,q) \geq D(p,z) + D(q,z)$。</li>
+</ul>
+<p>常见距离：</p>
+<ul>
+<li>Minkowski 距离<ul>
+<li>$D(\boldsymbol{p}, \boldsymbol{q})=\left(\sum_{i=1}^{n}\left|p_{i}-q_{i}\right|^{k}\right)^{\frac{1}{k}}$</li>
+</ul>
+</li>
+</ul>
+<h2 id="骨架抽取"><a href="#骨架抽取" class="headerlink" title="骨架抽取"></a>骨架抽取</h2><ul>
+<li><p>计算距离图像：</p>
+<ul>
+<li>初始化距离为无穷大。</li>
+<li>边缘点：8邻域有背景点，距离为0。</li>
+<li>非边缘点，距离为8邻域中最小距离+1。</li>
+<li>反复扫描图像，重复上述步骤。</li>
+</ul>
+</li>
+<li><p>计算骨架图像：</p>
+<ul>
+<li>最大值在骨架上。</li>
+<li>以最小梯度扩展。</li>
+</ul>
+</li>
+</ul>
+<h1 id="Ch3-灰度直方图与点运算"><a href="#Ch3-灰度直方图与点运算" class="headerlink" title="Ch3 灰度直方图与点运算"></a>Ch3 灰度直方图与点运算</h1><h2 id="灰度直方图-Histogram"><a href="#灰度直方图-Histogram" class="headerlink" title="灰度直方图 Histogram"></a>灰度直方图 Histogram</h2><p>定义：灰度级的函数，描述的是图像中每种灰度级像素的个数，反映图像中每种灰度出现的频率。横坐标是灰度级，纵坐标是灰度级出现的频率。</p>
+<p>$\mathrm{H}(\mathrm{D})=\lim\limits_{\Delta \mathrm{D} \rightarrow 0} \dfrac{\mathrm{A}(\mathrm{D})-\mathrm{A}(\mathrm{D}+\Delta \mathrm{D})}{\mathrm{D}-(\mathrm{D}+\Delta \mathrm{D})}=\lim\limits_{\Delta \mathrm{D} \rightarrow 0} \dfrac{\mathrm{A}(\mathrm{D})-\mathrm{A}(\mathrm{D}+\Delta \mathrm{D})}{-\Delta \mathrm{D}}=-\dfrac{\mathrm{d}}{\mathrm{dD}} \mathrm{A}(\mathrm{D})$</p>
+<p>其中 $A(D)$ 为阈值面积函数：为一幅连续图像中被具有灰度级 $D$ 的所有轮廓线所包围的面积。</p>
+<p>对于离散函数，固定 $\Delta D$ 为 $1$，则 $H(D) = A(D+1) - A(D)$。</p>
+<p><em>高维色彩直方图</em>。</p>
+<h2 id="性质与计算"><a href="#性质与计算" class="headerlink" title="性质与计算"></a>性质与计算</h2><ul>
+<li>不表示图像的空间信息。</li>
+<li><p>任一特定图像都有唯一直方图，但反之并不成立。</p>
+</li>
+<li><p>若一幅图像包含一个灰度均匀一致，且背景与物体对比度很强，假设物体的边界由灰度级 $D_1$ 定义的轮廓线，则</p>
+<ul>
+<li>$\int_{D_{1}}^{\infty} H(D) d D = \text{物体的面积}$</li>
+</ul>
+</li>
+<li><p>直方图的可加性：一副图像由若干个不相交的区域构成，则整幅图像的直方图是这若干个区域直方图之和。</p>
+</li>
+</ul>
+<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><ul>
+<li>数字化参数<ul>
+<li>一般一幅数字图像应该利用全部或几乎全部可能的灰度级。</li>
+<li>对直方图做快速检查。</li>
+</ul>
+</li>
+<li>边界阈值选择<ul>
+<li>使用轮廓线确定简单物体边界的方法，称为<strong>阈值化</strong>。</li>
+<li>对物体与背景有较强对比的景物的分割特别有用。</li>
+<li>双峰直方图。</li>
+</ul>
+</li>
+<li>摄影中的常见名词<ul>
+<li>过曝（Overexposed）</li>
+<li>正常曝光（Average）</li>
+<li>曝光不足（Underexposed）</li>
+</ul>
+</li>
+<li>图像增强<ul>
+<li>图像增强技术不需要考虑图像降质的原因，只将图像中感兴趣的特征有选择地突出，将不需要的特征进行衰减。</li>
+<li>图像增强没有一个的统一理论，如何评价图像增强的结果好坏也没有统一的标准。</li>
+<li>目的是改善图像视觉效果，便于观察和分析；便于人工或机器对图像的进一步处理。</li>
+<li>有空间域法：点处理（图象灰度变换、直方图均衡、伪彩色处理等）；<em>频率域法：高、低通滤波、同态滤波等。</em><ul>
+<li><strong>空间域</strong>图像增强技术指在空间域中，通过线性或非线性变换来增强构成图像的像素。</li>
+<li>点处理：作用于单个像素的空间域处理方法，包括图像灰度变换、直方图处理、伪彩色处理等技术。</li>
+<li>模板 处理：作用于像素邻域的处理方法，包括空域平滑、空域锐化等技术。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="点运算-Point-Operation"><a href="#点运算-Point-Operation" class="headerlink" title="点运算 Point Operation"></a>点运算 Point Operation</h2><p>定义：对于一幅输入图像，将产生一幅输出图像，输出图像的每个像素点的灰度值由输入像素点决定。</p>
+<ul>
+<li><p>点运算由灰度变换函数（gray-scale transformation, GST）确定。</p>
+</li>
+<li><p>令 $r$ 和 $s$ 所定义的变量分别是 $f(x, y)$ 和 $g(x,y)$ 在任意点 $(x,y)$ 的灰度级，则 $T$ 为灰度变换函数</p>
+<ul>
+<li>$s = T(r)$</li>
+<li>与局部（邻域）运算的区别：输入像素-输出像素一一对应。</li>
+<li>与几何运算的差别，不改变图像的空间关系。</li>
+</ul>
+</li>
+<li>运用<ul>
+<li>光度学标定（photometric calibration），希望数字图像的灰度能够真实反映图像的物理特性。</li>
+<li>对比度增强（contrast enhancement）或对比度扩展（contrast stretching）。</li>
+<li>显示标定（display calibration）<ul>
+<li>显示设备不能线性地将灰度值转换为光强度，因此点运算和显示非线性组合可以保持显示图像时的线性关系。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>点运算种类 $0 \leq r \leq 1$，$0$ 黑 $1$ 白<ul>
+<li>线性点运算 $s = a \times r + b$。</li>
+<li>非线性点运算。</li>
+<li>图像反转 $s = L - r - 1$。<ul>
+<li>反转变换适用于增强嵌入于图像暗色区域的白色或灰色细节, 特别是当黑色面积占主导地位时。</li>
+</ul>
+</li>
+<li>对数变换 $s = c \log{(1 + r)}$<ul>
+<li>对数变换使一窄带低灰度输入图像值映射为一宽带输出值，这种变换可以用来扩展被压缩的高值图像中的暗像素。</li>
+</ul>
+</li>
+<li>幂次变换 $s = c r^{\gamma}$</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>课程</category>
+        <category>Digital Image Processing</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>高级算法课程笔记-指纹</title>
+    <url>/2021/09/09/fingerprinting/</url>
+    <content><![CDATA[<h1 id="多项式判等-Polynomial-Identity-Testing"><a href="#多项式判等-Polynomial-Identity-Testing" class="headerlink" title="多项式判等 Polynomial Identity Testing"></a>多项式判等 Polynomial Identity Testing</h1><p><strong>PIT问题</strong>：</p>
+<p>输入两个 $d$ 阶多项式 $f, g \in \mathbb{F}[x]$，输出他们是否相等 $f \equiv g$。</p>
+<p>这里 $\mathbb{F}[x]$ 指 $x$ 在域（field）$\mathbb{F}$ 上的多项式环（ring）。</p>
+<p>我们可以很自然地将这个问题转化为判断一个 $d$ 阶多项式（$f - g$）是否恒为 0。</p>
+<p>如果 $f$ 被显式地给出了，我们很容易地可以通过遍历它的系数来判断。为了使问题更加 nontrivial，假设 $f$ 是一个黑盒（black box/ oracle），看不到系数，只能通过输入 $x$ 得到 $f(x)$。</p>
+<a id="more"></a>
+<ul>
+<li>一个直接的确定性方法就是带入 $d+1$ 个不同的数计算 $f(x_1), f(x_2), …,f(x_{d+1})$ 来计算是否全为零，若全为零则根据<strong>代数基本定理</strong>，能保证 $d$ 阶多项式 $f$ 一定恒为零。</li>
+</ul>
+<div class="note info">
+            <p>一个非零 $d$ 阶单变量多项式一定至多有 $d$ 个根。</p>
+          </div>
+<p>然后自然地我们有如下算法：</p>
+<ol>
+<li>suppose we have a finite subset $S \subseteq \mathbb{F}$</li>
+<li>pick $r \in S$ uniformly at random</li>
+<li>if $f(r) = 0$ return ‘yes’ else ‘no’</li>
+</ol>
+<p>我们很容易可以得出：</p>
+<ul>
+<li>如果 $f \equiv 0$，算法永远返回 ‘yes’。</li>
+<li>如果 $f \not \equiv 0$，算法可能错误地返回 ‘yes’（假阳性），但这只当 $r$ 是 $f$ 的根时发生。根据代数基本定理，$f$ 最多 $d$ 个根，所以算法出错的可能性有界：<ul>
+<li>$Pr[f(r) = 0] \leq \dfrac{d}{|S|}$。</li>
+<li>我们可以固定 $|S| = 2d$，这样出错的概率最多就是 $1/2$。然后通过独立重复 $\log_{2}{\frac{1}{\delta}}$ 次来将这个概率减小到 $\delta$。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Equality-的通信复杂性"><a href="#Equality-的通信复杂性" class="headerlink" title="Equality 的通信复杂性"></a>Equality 的通信复杂性</h2><p> <strong>通信复杂性</strong>（<a href="http://en.wikipedia.org/wiki/Communication_complexity">communication complexity</a>）是姚期智先生（对就是那个图灵奖）提出来的多个实体的计算模型。简单来说就是有两个端，分别有两个输入 $a$ 和 $b$，我们要计算一个函数 $f(a,b)$，不考虑计算的复杂性，我们只关心<strong>通信协议（communication protocol）</strong>，也就是两个端传输的信息的比特。</p>
+<p><del>这个其实在问求4讲过不过我一直没搞明白。</del></p>
+<p>在这里我们讨论的函数是 $\mathrm{EQ}: \{0, 1\}^n \times \{0, 1\}^n \to \{0, 1\}$，对任意 $a, b \in \{0, 1\}^n$ 有：</p>
+<p>$\mathrm{EQ}(a, b)= \begin{cases}1 &amp; \text { if } a=b \\ 0 &amp; \text { otherwise }\end{cases}$</p>
+<ul>
+<li>最简单的想法就是把整个 $a$ 或 $b$ 传过去，通信复杂度是 $n$ 个 bit。<ul>
+<li>可证（yao 证出来的）这是最好的确定性通信协议，也就是要确定地保证完全相等，至少需要 n bit的传输。</li>
+<li>这个证明其实远比它看起来要 nontrivial。</li>
+</ul>
+</li>
+</ul>
+<p>我们可以考虑将 $a,b$ 看成 $n$ 阶多项式 $f,g$，然后运用我们刚才的 <strong>PIT</strong> 来解决。</p>
+<p>需要传输 $r, f(r)$，$r \in [2n]$ 所以需要 $O(\log{n})$ 个bit，而 $f(r)$ 实际上是 $f(r) = \sum\limits_{i = 0}^{n-1} a_i r^i = O(r^n) = O(n^n)$ 是一个指数量级，需要 $O(n\log{n})$ 个bit。这比直接传整个数据库过去还多，<del>屁用没有</del>。</p>
+<ul>
+<li>所以根本原因在于我们选的<strong>域</strong>太大了，是和 $n$ 正比的，能不能找到小一点的，最好是一个常数大小的域。<ul>
+<li>很快地我们就能够想到在模意义下取数，也就是 $\mathbb{Z}_p = \{0, 1, …, p-1\}$。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>我们只需要随机取一个质数 $p \in [n^2, 2n^2]$（可证一定能找到），$f,g \in \mathbb{Z}_p[x]$，然后随机取 $r \in [p]$。<ul>
+<li>这样所需要传输的数据 $r, f(r) &lt; p$，只需要 $O(\log{p}) = O(\log{n})$ 的通信复杂度。</li>
+<li>单边错概率是 $\dfrac{n}{p} = O(\dfrac{1}{n})$，w.h.p。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Schwartz-Zippel-定理"><a href="#Schwartz-Zippel-定理" class="headerlink" title="Schwartz-Zippel 定理"></a>Schwartz-Zippel 定理</h2><p>接下来我们再来看<strong>PIT问题</strong>的更一般的形式，也就是推广到多元：</p>
+<p>对于两个 $n$ 元 $d$ 阶多项式 $f, g \in \mathbb{F}[x_1, …, x_n]$，判断它们是否相等 $f \equiv g$。</p>
+<p>仍然我们可以将问题转化成多项式判零：</p>
+<p>$f\left(x_{1}, \ldots, x_{n}\right)=\sum\limits_{i_{1}, \ldots, i_{n} \geq 0} a_{i_{1}, i_{2}, \ldots, i_{n}} x_{1}^{i_{1}} x_{2}^{i_{2} \ldots} x_{n}^{i_{n}} \equiv 0?$</p>
+<p>这里注意一个多元多项式的阶（degree）是指一项中所有变量的幂次的和的最大值，所以进一步的：</p>
+<p>$f\left(x_{1}, \ldots, x_{n}\right)=\sum\limits_{i_{1}, \ldots i_{n} \geq 0 \atop i_{1}+\cdots+i_{n} \leq d} a_{i_{1}, i_{2}, \ldots, i_{n}} x_{1}^{i_{1}} x_{2}^{i_{2} \ldots} x_{n}^{i_{n}}$</p>
+<p>如果 $f$ 是显式地给出的，我们可以遍历所有系数，共最多 $\left(\begin{array}{c} n+d \\ d \end{array}\right) \leq(n+d)^{d}$ 个来检查是否为零（这里其实用到了一点组合知识）。</p>
+<p>一样的 $f$ 会作为一个黑盒，给定 $\vec{x} \in \mathbb{F}^{n}$，返回 $f(\vec{x})$。</p>
+<p>或者作为乘积形式（product form）。比如范德蒙行列式（Vandermonde determinant）：</p>
+<script type="math/tex; mode=display">
+M=\left[\begin{array}{ccccc}
+1 & x_{1} & x_{1}^{2} & \ldots & x_{1}^{n-1} \\
+1 & x_{2} & x_{2}^{2} & \ldots & x_{2}^{n-1} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & x_{n} & x_{n}^{2} & \ldots & x_{n}^{n-1}
+\end{array}\right] \quad f(\vec{x})=\operatorname{det}(M)=\prod\limits_{j<i}\left(x_{i}-x_{j}\right)</script><p>乘积形式的特点就在计算一个点处的函数值非常方便，而展开算系数就会极其复杂。</p>
+<p>如果能存在一个多项式时间的确定性算法解 PIT，那意味着两个本质性问题：$\mathbf{NEXP} \neq \mathbf{P/poly}$ 或者 $\mathbf{\sharp P} \neq \mathbf{FP}$，当然我已经不懂了。</p>
+<p>所以依然和上面类似的我们可以有一个随机算法，在 $S \subseteq \mathbb{F}$ 中随机取点，0返回 yes 否则 no。</p>
+<p>而它的正确性，也就是假阳性，也就是取到它的根的概率由如下 <strong>Schwartz-Zippel 定理</strong> 给出：</p>
+<div class="note info">
+            <p>对于 $d$ 阶多项式 $f \in \mathbb{F}[x_1, x_2, …, x_n]$，如果 $f \not \equiv 0$，那么对于任何有限集 $S \in \mathbb{F}$ 和随机均匀独立选取的 $r_1, r_2, …, r_n \in S$，有</p><p>$Pr[f(r_1, r_2, …, r_n) = 0] \leq \dfrac{d}{|S|}$。</p>
+          </div>
+<p>这个定理也说明了 $d$ 阶 $n$ 元多项式在任意 $S^n$ 中的根的个数至多 $d \times |S|^{n-1}$ 个。</p>
+<p>原证明较复杂，Dana Moshkovitz 在之后给出了一个很简洁优雅的证明，<del>我有空来写一遍</del>。</p>
+]]></content>
+      <categories>
+        <category>课程</category>
+        <category>Advanced Algorithm</category>
+      </categories>
+  </entry>
+  <entry>
     <title>问题求解笔记-问题的形式化描述</title>
     <url>/2021/04/28/formalization/</url>
     <content><![CDATA[<p>庆祝终于脱离了常规算法的学习，进入了NP问题的坑。（</p>
@@ -809,24 +1307,6 @@ $$P(M) = M^{e} \text{  mod } n</script><p>解密 $C \in \mathbb{Z}_n$：</p>
 ]]></content>
   </entry>
   <entry>
-    <title>leetcode 刷题笔记</title>
-    <url>/2021/07/05/leetcode/</url>
-    <content><![CDATA[<p>问求上完了，依然不能放松对数据结构和算法的训练，要坚持不懈的刷题。着重对一些经典题型和方法进行总结。</p>
-<a id="more"></a>
-<h1 id="基本常见算法"><a href="#基本常见算法" class="headerlink" title="基本常见算法"></a>基本常见算法</h1><h2 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h2><blockquote>
-<p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> <code>target</code> 的那 <strong>两个</strong> 整数，并返回它们的数组下标。</p>
-</blockquote>
-<p>首先肯定有一个 $O(n^2)$ 的朴素解法，然后我想到先排序然后用首尾指针向中间移动，$O(n\log{n})$。但是需要一个哈希来存排序前的下标，既然这样其实就可以直接用哈希 $O(n)$ 解了。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[i] + nums[j] == target) &#123;</span><br><span class="line">                    <span class="keyword">return</span> &#123;i, j&#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指offer系列"><a href="#剑指offer系列" class="headerlink" title="剑指offer系列"></a>剑指offer系列</h1><h2 id="04-二维数组中查找"><a href="#04-二维数组中查找" class="headerlink" title="04. 二维数组中查找"></a>04. 二维数组中查找</h2><blockquote>
-<p>在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
-</blockquote>
-<p>原来是想的二分查找但是思路很明显是错的。只要从一个角落开始，每个元素比较，如果不一样就超朝另外两个方向移动。</p>
-<p>其实也是一个压缩解空间的思想，比如我从右上角开始，当前元素比target大，说明在该元素下面所有的元素都不符合，只能向左移动一位。</p>
-<p>注意边界条件<code>matrix = []</code>。复杂度 $O(m + n)$。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">findNumberIn2DArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len1 = matrix.size();</span><br><span class="line">        <span class="keyword">if</span> (len1 == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> len2 = matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">int</span> h = <span class="number">0</span>, v = len2 - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (h &lt; len1 &amp;&amp; v &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> p = matrix[h][v];</span><br><span class="line">            <span class="keyword">if</span> (p == target) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span> (p &gt; target) &#123;</span><br><span class="line">                v--;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (p &lt; target) &#123;</span><br><span class="line">                h++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
     <title>问题求解笔记-启发式算法</title>
     <url>/2021/06/06/heuristics/</url>
     <content><![CDATA[<hr>
@@ -1048,6 +1528,327 @@ E[Z_{t+1}] \geq Fit\text{-}ratio(s, P_t) \cdot \dfrac{n-  length(s)}{n} \cdot (1
         <category>课程</category>
         <category>problem-solving</category>
       </categories>
+  </entry>
+  <entry>
+    <title>计算机网络课程笔记-第一章计算机网络与因特网</title>
+    <url>/2021/09/06/internet1/</url>
+    <content><![CDATA[<hr>
+<h1 id="什么是因特网-Internet"><a href="#什么是因特网-Internet" class="headerlink" title="什么是因特网 Internet"></a>什么是因特网 Internet</h1><a id="more"></a>
+<h2 id="具体构成"><a href="#具体构成" class="headerlink" title="具体构成"></a>具体构成</h2><ul>
+<li><p><strong>主机（host）/ 端系统（end system）</strong>：与因特网相连的设备。</p>
+</li>
+<li><p>端系统通过<strong>通信链路（communication link）</strong>和<strong>分组交换机（packet switch）</strong>连接到一起。</p>
+<ul>
+<li>通信链路由不同类型的物理媒体组成，有<strong>传输速率（transmission rate）</strong>。</li>
+<li>分组交换机包括<strong>路由器（router）</strong>和<strong>链路层交换机（link-layer switch）</strong>。</li>
+</ul>
+</li>
+<li><p>端系统通过<strong>因特网服务提供商（Internet Service Provide, ISP）</strong>接入因特网。</p>
+</li>
+<li>端系统、分组交换机和其他部件都要运行一系列<strong>协议（protocol）</strong>，协议控制因特网中信息的接收和发送。<ul>
+<li><strong>TCP（Transmission Control Protocol）</strong>：传输控制协议。</li>
+<li><strong>IP（Internet Protocol）</strong>：网络协议。定义了在路由器和端系统之间发送和接收的分组格式。</li>
+</ul>
+</li>
+<li><strong>新特网标准（Internet standard）</strong> 由 IETE 研发。</li>
+</ul>
+<h2 id="服务描述"><a href="#服务描述" class="headerlink" title="服务描述"></a>服务描述</h2><ul>
+<li>分布式应用程序。</li>
+<li>端系统提供<strong>套接字接口（socket interface）</strong>，规定了端系统上的程序, 请求因特网基础设施, 向另一个端系统上程序, 交付数据的方式。</li>
+</ul>
+<h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><p><strong>协议（protocol）</strong>定义了在两个或多个通信实体之间交换的报文的格式和顺序，以及报文发送和接收一条报文或其他事件所采取的动作。</p>
+<hr>
+<h1 id="网络边缘-Edge"><a href="#网络边缘-Edge" class="headerlink" title="网络边缘 Edge"></a>网络边缘 Edge</h1><p>端系统也被称为<strong>主机（host）</strong>，容纳运行应用程序。</p>
+<p>主机被划为<strong>客户（client）</strong>和<strong>服务器（server）</strong>。</p>
+<h2 id="接入网-Access"><a href="#接入网-Access" class="headerlink" title="接入网 Access"></a>接入网 Access</h2><p>指将端系统物理连接到其<strong>边缘路由器（edge router）</strong>。</p>
+<ul>
+<li>家庭接入<ul>
+<li>DSL</li>
+<li>电缆</li>
+<li>FTTH</li>
+<li>拨号</li>
+<li>卫星</li>
+</ul>
+</li>
+<li>企业接入<ul>
+<li>以太网（最为流行）</li>
+<li>WIFI</li>
+</ul>
+</li>
+<li>广域无线接入<ul>
+<li>3/4/5G</li>
+<li>LTE</li>
+</ul>
+</li>
+</ul>
+<h2 id="物理媒体"><a href="#物理媒体" class="headerlink" title="物理媒体"></a>物理媒体</h2><ul>
+<li>导向型<ul>
+<li>双绞铜线</li>
+<li>同轴电缆(可用作共享媒体)</li>
+<li>光纤</li>
+</ul>
+</li>
+<li>非导向型<ul>
+<li>陆地无线电</li>
+<li>卫星无线电</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="网络核心-Core"><a href="#网络核心-Core" class="headerlink" title="网络核心 Core"></a>网络核心 Core</h1><h2 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h2><ul>
+<li>端系统彼此交换<strong>报文（message）</strong>，包含控制功能或数据等。</li>
+<li>源端系统会将长报文划分为较小的数据块，叫<strong>分组（packet）</strong>。通过通信链路和分组交换机传送。</li>
+<li>存储转发传输</li>
+<li>排队实验和分组丢失</li>
+<li>转发表和选择协议</li>
+</ul>
+<h2 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h2><ul>
+<li><p>预留资源, 需要建立连接/断开连接 </p>
+</li>
+<li><p>端到端连接: 专用电路, 恒定时延/速率, 稳定的性能</p>
+</li>
+<li><p>复用（multiplexing）</p>
+<ul>
+<li>频分复用（FDM）</li>
+<li>时分复用（TDM）</li>
+</ul>
+</li>
+</ul>
+<h2 id="网络的网络"><a href="#网络的网络" class="headerlink" title="网络的网络"></a>网络的网络</h2><ul>
+<li>Tier-1/2/3</li>
+<li>IXP</li>
+</ul>
+<hr>
+<h1 id="分组交换网络中的问题"><a href="#分组交换网络中的问题" class="headerlink" title="分组交换网络中的问题"></a>分组交换网络中的问题</h1><h2 id="时延-Delay"><a href="#时延-Delay" class="headerlink" title="时延 Delay"></a>时延 Delay</h2><ul>
+<li><p>处理时延: 节点 检查首部, 决定转发, 进行校验 的时间, 微秒-。</p>
+</li>
+<li><p>排队时延: 在链路前的队列等待传输, 微秒~毫秒。</p>
+</li>
+<li><p>传输时延: L/R, 将所有比特推向链路的时间, 微秒~毫秒。</p>
+</li>
+<li><p>传播时延: d/s, 速度s略小于光速, 毫秒。</p>
+</li>
+</ul>
+<h2 id="丢包-Loss"><a href="#丢包-Loss" class="headerlink" title="丢包 Loss"></a>丢包 Loss</h2><ul>
+<li><p>队列近满, 部分设备采取按照概率丢弃分组, 队列越长概率越大。</p>
+</li>
+<li><p>队列满, 再来就丢, 用丢包率衡量。</p>
+</li>
+</ul>
+<h2 id="吞吐量-Throughput"><a href="#吞吐量-Throughput" class="headerlink" title="吞吐量 Throughput"></a>吞吐量 Throughput</h2><ul>
+<li>瞬时/平均吞吐量</li>
+<li>瓶颈链路: 吞吐量是各个子链路吞吐量的最小值。<ul>
+<li>因特网中, 吞吐量瓶颈在接入网。</li>
+</ul>
+</li>
+<li>共享链路: 多个链路共享某一段链路, 则需要共享这个链路的吞吐量。</li>
+</ul>
+<h1 id="协议层次及其服务模型"><a href="#协议层次及其服务模型" class="headerlink" title="协议层次及其服务模型"></a>协议层次及其服务模型</h1><h2 id="分层的体系结构"><a href="#分层的体系结构" class="headerlink" title="分层的体系结构"></a>分层的体系结构</h2><ul>
+<li>协议分层<ul>
+<li>以分层的方式组织协议以及实现这些协议的网络软硬件。</li>
+<li>每个协议属于层次之一，某层向上层提供服务，就是一层<strong>服务模型（service model）</strong>。</li>
+<li>各层所有协议称为协议栈。</li>
+</ul>
+</li>
+<li>（TCP/IP）协议栈<ul>
+<li>应用层<ul>
+<li>支持网络应用程序: FTP(端系统文件传输), SMTP(电子邮件报文传输), HTTP(Web文档请求和传送)。</li>
+</ul>
+</li>
+<li>运输层<ul>
+<li>进程间数据传输: TCP, UDP。</li>
+<li>信息分组: 报文段（segment）</li>
+</ul>
+</li>
+<li>网络层<ul>
+<li>信息分组: 数据报（datagram）</li>
+<li>IP：数据报中的各个字段以及端系统和路由器如何作用于这些字段。</li>
+</ul>
+</li>
+<li>链路层<ul>
+<li>信息分组：帧</li>
+</ul>
+</li>
+<li>物理层</li>
+</ul>
+</li>
+<li>OSI<ul>
+<li>应用层: 应用访问OSI模型的环境</li>
+<li>表示层, 会话层: 并入应用层</li>
+<li>运输层<ul>
+<li>端系统间通信</li>
+<li>可靠传输 或 单块传输</li>
+<li>连接建立, 维持, 释放</li>
+</ul>
+</li>
+<li>网络层<ul>
+<li>分组在多个网络或链路上传输</li>
+<li>编址, 路由, 转发, 拥塞控制</li>
+<li>连接建立, 维持, 拆除</li>
+</ul>
+</li>
+<li>数据链路层<ul>
+<li>链路层帧</li>
+<li>媒体访问控制, 差错检测和重传, 流量控制</li>
+<li>连接激活, 维持和失活</li>
+</ul>
+</li>
+<li>物理层</li>
+</ul>
+</li>
+</ul>
+<h2 id="网络攻击-Attack"><a href="#网络攻击-Attack" class="headerlink" title="网络攻击 Attack"></a>网络攻击 Attack</h2><ul>
+<li>攻击个人电脑<ul>
+<li>恶意软件<ul>
+<li>大多数都是自我复制的</li>
+<li>病毒（virus）: 需要某种形式的用户交互来感染用户设备</li>
+<li>蠕虫（worm）: 无需任何明显用户交互就能进入设备</li>
+<li>木马（horse）: 伪装成无害程序, 吸引用户点击</li>
+<li>后门（backdoor）: 绕过授权验证</li>
+<li>广告软件（adware）: 访问弹出广告</li>
+<li>间谍软件（spyware）: 收集用户的输入, 记录用户活动</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>攻击服务器和网络基础设施<ul>
+<li>拒绝服务攻击（Denial of Service, DOS）<ul>
+<li>使得服务不能由合法用户使用</li>
+<li>弱点攻击: 针对易受攻击的程序或操作系统, 引发停止运行或崩溃</li>
+<li>带宽洪泛: 大量发送分组到目标, 使链路拥塞</li>
+<li>连接洪泛: 创建大量半开或全开的TCP连接, 耗尽资源</li>
+</ul>
+</li>
+<li>分布式DoS(DDoS)<ul>
+<li>攻击者控制多个源</li>
+<li>僵尸网路: 攻击者用恶意软件控制大量计算机, 作为DDoS的源头等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>嗅探分组（IP Spoofing）<ul>
+<li>分组嗅探器: 记录每个流经的分组副本的被动接收机</li>
+<li>防范: 加密</li>
+</ul>
+</li>
+<li>伪装（Masquerade）<ul>
+<li>IP欺骗: 将具有虚假源地址的分组注入因特网</li>
+<li>重放攻击</li>
+<li>中间人攻击</li>
+<li>连接劫持</li>
+<li>解决方案: 加密, 数字签名, MAC</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>课程</category>
+        <category>Network</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>计算机网络课程笔记-第六章链路层和局域网</title>
+    <url>/2021/09/06/internet6/</url>
+    <content><![CDATA[<hr>
+<h1 id="链路层-Link"><a href="#链路层-Link" class="headerlink" title="链路层 Link"></a>链路层 Link</h1><ul>
+<li>运行链路层协议的任何设备均称为<strong>节点（node）</strong>，包括主机、路由器、交换机和 WiFi 接入点。</li>
+<li>沿着通信路径连接的相邻节点的通信信道称为<strong>链路（link）</strong>。</li>
+<li>在经过特定的链路时，传输节点将数据报封装在链路层帧中，并将该帧传输到链路中。</li>
+</ul>
+<a id="more"></a>
+<h2 id="链路层提供的服务"><a href="#链路层提供的服务" class="headerlink" title="链路层提供的服务"></a>链路层提供的服务</h2><ul>
+<li><strong>成帧（framing）</strong>。</li>
+<li><p><strong>链路接入</strong>。媒体访问控制（Medium Access Control, MAC）协议。</p>
+</li>
+<li><p><strong>可靠交付</strong>。</p>
+</li>
+<li><strong>差错检测和纠正</strong>。</li>
+</ul>
+<h2 id="链路层实现"><a href="#链路层实现" class="headerlink" title="链路层实现"></a>链路层实现</h2><p>链路层的主体部分是在<strong>网络适配器（network adapter）</strong>中实现的，也称<strong>网络接口卡（Network Interface Card, NIC）</strong>。</p>
+<hr>
+<h1 id="差错检测和纠正-Error-Dectection-and-Correction"><a href="#差错检测和纠正-Error-Dectection-and-Correction" class="headerlink" title="差错检测和纠正 Error Dectection and Correction"></a>差错检测和纠正 Error Dectection and Correction</h1><ul>
+<li><strong>差错检测和纠正比特（Error-Detection-and-Correction, EDC）</strong></li>
+<li><strong>未检出比特差错（undetected bit error）</strong></li>
+</ul>
+<p>3种技术（都是学过的）：</p>
+<ul>
+<li>奇偶校验</li>
+<li>检验和（checksum，适用于运输层）、因特网检验和</li>
+<li>循环冗余检测（CRC，适用于适配器中的链路层）：多项式编码、生成多项式</li>
+</ul>
+<hr>
+<h1 id="多路访问链路和协议"><a href="#多路访问链路和协议" class="headerlink" title="多路访问链路和协议"></a>多路访问链路和协议</h1><ul>
+<li><strong>点对点链路（point-to-point link）</strong>，由链路一段发送方和另一端单个接收方组成。<ul>
+<li>点对点协议（point-to-point protocol, PPP）</li>
+<li>高级数据链路控制（high-level data link control, HDLC）</li>
+</ul>
+</li>
+<li><strong>广播链路（broadcast link）</strong>，多点、共享信道。</li>
+</ul>
+<h2 id="信道划分协议-Channel-Partitioning-Protocol"><a href="#信道划分协议-Channel-Partitioning-Protocol" class="headerlink" title="信道划分协议 Channel Partitioning Protocol"></a>信道划分协议 Channel Partitioning Protocol</h2><h2 id="随机接入协议-Random-Access-Protocol"><a href="#随机接入协议-Random-Access-Protocol" class="headerlink" title="随机接入协议 Random Access Protocol"></a>随机接入协议 Random Access Protocol</h2><h2 id="轮流协议-Taking-turns-Protocol"><a href="#轮流协议-Taking-turns-Protocol" class="headerlink" title="轮流协议 Taking-turns Protocol"></a>轮流协议 Taking-turns Protocol</h2><hr>
+<h1 id="交换局域网"><a href="#交换局域网" class="headerlink" title="交换局域网"></a>交换局域网</h1><h2 id="链路层寻址和-ARP"><a href="#链路层寻址和-ARP" class="headerlink" title="链路层寻址和 ARP"></a>链路层寻址和 ARP</h2><ul>
+<li><p>MAC 地址</p>
+<ul>
+<li>主机和路由器不具有链路层地址</li>
+<li>它们的适配器（网络接口）具有链路层地址</li>
+<li>具有多个网络接口的主机具有与之相关联的多个链路层地址</li>
+<li>链路层交换机并不具有与接口相关联的链路层地址（交换机交换是透明的）</li>
+</ul>
+</li>
+<li><p><strong>地址解析协议（Address Resolution Protocol）</strong>，网络层地址（因特网中的IP地址）和链路层地址（MAC地址）进行转换。</p>
+<ul>
+<li>发送方构造一个称为ARP分组（ARP packet）的特殊分组，一个ARP分组有几个字段：发送、接收IP地址以及MAC地址。ARP查询分组的目的时查询子网上所有其他主机和路由器，以确定对于要解析的IP地址的MAC地址。</li>
+<li>适配器封装ARP分组，用广播地址作为帧的目的地址，将帧传输进子网中。</li>
+<li>目标主机给查询主机发送回一个带有所希望映射的响应ARP分组（使用标准帧而不是广播地址），然后查询主机更新ARP表，并发送IP数据报。</li>
+</ul>
+</li>
+<li><p>发送数据报到子网以外</p>
+<ul>
+<li>路由器每个端口均有 MAC 和 IP。</li>
+<li>路由器将相应 ARP, 主机获得的此 IP 的 MAC 地址是路由器这一端口的 MAC。</li>
+</ul>
+</li>
+</ul>
+<h2 id="以太网-Ethernet"><a href="#以太网-Ethernet" class="headerlink" title="以太网 Ethernet"></a>以太网 Ethernet</h2><ul>
+<li>帧结构<ul>
+<li>数据字段（46-1500字节）。承载了 IP 数据报。</li>
+<li>目的地址（6字节）。包含目的适配器的 MAC 地址。</li>
+<li>原地址（6字节）。包含传输该帧到局域网上的适配器的 MAC 地址。</li>
+<li>类型字段（2字节）。允许以太网复用多种网络层协议。</li>
+<li>CRC（4字节）。检错。</li>
+<li></li>
+<li>前同步码（8字节）。前7字节为<code>10101010</code>，最后字节为<code>10101011</code>，用于唤醒接受适配器并同步时钟。</li>
+</ul>
+</li>
+</ul>
+<p>以太网技术向网络层提供：</p>
+<ul>
+<li>无连接服务：发送数据报帧无需事先握手</li>
+<li>不可靠服务：接收器进行CRC校验，不管是否通过都不返回确认（ACK）/否定确认（NEG）帧</li>
+</ul>
+<h2 id="链路层交换机"><a href="#链路层交换机" class="headerlink" title="链路层交换机"></a>链路层交换机</h2>]]></content>
+      <categories>
+        <category>课程</category>
+        <category>Network</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>leetcode 刷题笔记</title>
+    <url>/2021/07/05/leetcode/</url>
+    <content><![CDATA[<p>问求上完了，依然不能放松对数据结构和算法的训练，要坚持不懈的刷题。着重对一些经典题型和方法进行总结。</p>
+<a id="more"></a>
+<h1 id="基本常见算法"><a href="#基本常见算法" class="headerlink" title="基本常见算法"></a>基本常见算法</h1><h2 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h2><blockquote>
+<p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> <code>target</code> 的那 <strong>两个</strong> 整数，并返回它们的数组下标。</p>
+</blockquote>
+<p>首先肯定有一个 $O(n^2)$ 的朴素解法，然后我想到先排序然后用首尾指针向中间移动，$O(n\log{n})$。但是需要一个哈希来存排序前的下标，既然这样其实就可以直接用哈希 $O(n)$ 解了。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[i] + nums[j] == target) &#123;</span><br><span class="line">                    <span class="keyword">return</span> &#123;i, j&#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指offer系列"><a href="#剑指offer系列" class="headerlink" title="剑指offer系列"></a>剑指offer系列</h1><h2 id="04-二维数组中查找"><a href="#04-二维数组中查找" class="headerlink" title="04. 二维数组中查找"></a>04. 二维数组中查找</h2><blockquote>
+<p>在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+</blockquote>
+<p>原来是想的二分查找但是思路很明显是错的。只要从一个角落开始，每个元素比较，如果不一样就超朝另外两个方向移动。</p>
+<p>其实也是一个压缩解空间的思想，比如我从右上角开始，当前元素比target大，说明在该元素下面所有的元素都不符合，只能向左移动一位。</p>
+<p>注意边界条件<code>matrix = []</code>。复杂度 $O(m + n)$。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">findNumberIn2DArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len1 = matrix.size();</span><br><span class="line">        <span class="keyword">if</span> (len1 == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> len2 = matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">int</span> h = <span class="number">0</span>, v = len2 - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (h &lt; len1 &amp;&amp; v &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> p = matrix[h][v];</span><br><span class="line">            <span class="keyword">if</span> (p == target) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span> (p &gt; target) &#123;</span><br><span class="line">                v--;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (p &lt; target) &#123;</span><br><span class="line">                h++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>问题求解笔记-NP完全性</title>
@@ -3732,806 +4533,5 @@ cost\left(  \theta, \left( x^{(i)} , y^{(i)} \right)  \right) = \dfrac{1}{2}\lef
       <tags>
         <tag>ML</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>计算机网络课程笔记-第一章计算机网络与因特网</title>
-    <url>/2021/09/06/internet1/</url>
-    <content><![CDATA[<hr>
-<h1 id="什么是因特网-Internet"><a href="#什么是因特网-Internet" class="headerlink" title="什么是因特网 Internet"></a>什么是因特网 Internet</h1><a id="more"></a>
-<h2 id="具体构成"><a href="#具体构成" class="headerlink" title="具体构成"></a>具体构成</h2><ul>
-<li><p><strong>主机（host）/ 端系统（end system）</strong>：与因特网相连的设备。</p>
-</li>
-<li><p>端系统通过<strong>通信链路（communication link）</strong>和<strong>分组交换机（packet switch）</strong>连接到一起。</p>
-<ul>
-<li>通信链路由不同类型的物理媒体组成，有<strong>传输速率（transmission rate）</strong>。</li>
-<li>分组交换机包括<strong>路由器（router）</strong>和<strong>链路层交换机（link-layer switch）</strong>。</li>
-</ul>
-</li>
-<li><p>端系统通过<strong>因特网服务提供商（Internet Service Provide, ISP）</strong>接入因特网。</p>
-</li>
-<li>端系统、分组交换机和其他部件都要运行一系列<strong>协议（protocol）</strong>，协议控制因特网中信息的接收和发送。<ul>
-<li><strong>TCP（Transmission Control Protocol）</strong>：传输控制协议。</li>
-<li><strong>IP（Internet Protocol）</strong>：网络协议。定义了在路由器和端系统之间发送和接收的分组格式。</li>
-</ul>
-</li>
-<li><strong>新特网标准（Internet standard）</strong> 由 IETE 研发。</li>
-</ul>
-<h2 id="服务描述"><a href="#服务描述" class="headerlink" title="服务描述"></a>服务描述</h2><ul>
-<li>分布式应用程序。</li>
-<li>端系统提供<strong>套接字接口（socket interface）</strong>，规定了端系统上的程序, 请求因特网基础设施, 向另一个端系统上程序, 交付数据的方式。</li>
-</ul>
-<h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><p><strong>协议（protocol）</strong>定义了在两个或多个通信实体之间交换的报文的格式和顺序，以及报文发送和接收一条报文或其他事件所采取的动作。</p>
-<hr>
-<h1 id="网络边缘-Edge"><a href="#网络边缘-Edge" class="headerlink" title="网络边缘 Edge"></a>网络边缘 Edge</h1><p>端系统也被称为<strong>主机（host）</strong>，容纳运行应用程序。</p>
-<p>主机被划为<strong>客户（client）</strong>和<strong>服务器（server）</strong>。</p>
-<h2 id="接入网-Access"><a href="#接入网-Access" class="headerlink" title="接入网 Access"></a>接入网 Access</h2><p>指将端系统物理连接到其<strong>边缘路由器（edge router）</strong>。</p>
-<ul>
-<li>家庭接入<ul>
-<li>DSL</li>
-<li>电缆</li>
-<li>FTTH</li>
-<li>拨号</li>
-<li>卫星</li>
-</ul>
-</li>
-<li>企业接入<ul>
-<li>以太网（最为流行）</li>
-<li>WIFI</li>
-</ul>
-</li>
-<li>广域无线接入<ul>
-<li>3/4/5G</li>
-<li>LTE</li>
-</ul>
-</li>
-</ul>
-<h2 id="物理媒体"><a href="#物理媒体" class="headerlink" title="物理媒体"></a>物理媒体</h2><ul>
-<li>导向型<ul>
-<li>双绞铜线</li>
-<li>同轴电缆(可用作共享媒体)</li>
-<li>光纤</li>
-</ul>
-</li>
-<li>非导向型<ul>
-<li>陆地无线电</li>
-<li>卫星无线电</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="网络核心-Core"><a href="#网络核心-Core" class="headerlink" title="网络核心 Core"></a>网络核心 Core</h1><h2 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h2><ul>
-<li>端系统彼此交换<strong>报文（message）</strong>，包含控制功能或数据等。</li>
-<li>源端系统会将长报文划分为较小的数据块，叫<strong>分组（packet）</strong>。通过通信链路和分组交换机传送。</li>
-<li>存储转发传输</li>
-<li>排队实验和分组丢失</li>
-<li>转发表和选择协议</li>
-</ul>
-<h2 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h2><ul>
-<li><p>预留资源, 需要建立连接/断开连接 </p>
-</li>
-<li><p>端到端连接: 专用电路, 恒定时延/速率, 稳定的性能</p>
-</li>
-<li><p>复用（multiplexing）</p>
-<ul>
-<li>频分复用（FDM）</li>
-<li>时分复用（TDM）</li>
-</ul>
-</li>
-</ul>
-<h2 id="网络的网络"><a href="#网络的网络" class="headerlink" title="网络的网络"></a>网络的网络</h2><ul>
-<li>Tier-1/2/3</li>
-<li>IXP</li>
-</ul>
-<hr>
-<h1 id="分组交换网络中的问题"><a href="#分组交换网络中的问题" class="headerlink" title="分组交换网络中的问题"></a>分组交换网络中的问题</h1><h2 id="时延-Delay"><a href="#时延-Delay" class="headerlink" title="时延 Delay"></a>时延 Delay</h2><ul>
-<li><p>处理时延: 节点 检查首部, 决定转发, 进行校验 的时间, 微秒-。</p>
-</li>
-<li><p>排队时延: 在链路前的队列等待传输, 微秒~毫秒。</p>
-</li>
-<li><p>传输时延: L/R, 将所有比特推向链路的时间, 微秒~毫秒。</p>
-</li>
-<li><p>传播时延: d/s, 速度s略小于光速, 毫秒。</p>
-</li>
-</ul>
-<h2 id="丢包-Loss"><a href="#丢包-Loss" class="headerlink" title="丢包 Loss"></a>丢包 Loss</h2><ul>
-<li><p>队列近满, 部分设备采取按照概率丢弃分组, 队列越长概率越大。</p>
-</li>
-<li><p>队列满, 再来就丢, 用丢包率衡量。</p>
-</li>
-</ul>
-<h2 id="吞吐量-Throughput"><a href="#吞吐量-Throughput" class="headerlink" title="吞吐量 Throughput"></a>吞吐量 Throughput</h2><ul>
-<li>瞬时/平均吞吐量</li>
-<li>瓶颈链路: 吞吐量是各个子链路吞吐量的最小值。<ul>
-<li>因特网中, 吞吐量瓶颈在接入网。</li>
-</ul>
-</li>
-<li>共享链路: 多个链路共享某一段链路, 则需要共享这个链路的吞吐量。</li>
-</ul>
-<h1 id="协议层次及其服务模型"><a href="#协议层次及其服务模型" class="headerlink" title="协议层次及其服务模型"></a>协议层次及其服务模型</h1><h2 id="分层的体系结构"><a href="#分层的体系结构" class="headerlink" title="分层的体系结构"></a>分层的体系结构</h2><ul>
-<li>协议分层<ul>
-<li>以分层的方式组织协议以及实现这些协议的网络软硬件。</li>
-<li>每个协议属于层次之一，某层向上层提供服务，就是一层<strong>服务模型（service model）</strong>。</li>
-<li>各层所有协议称为协议栈。</li>
-</ul>
-</li>
-<li>（TCP/IP）协议栈<ul>
-<li>应用层<ul>
-<li>支持网络应用程序: FTP(端系统文件传输), SMTP(电子邮件报文传输), HTTP(Web文档请求和传送)。</li>
-</ul>
-</li>
-<li>运输层<ul>
-<li>进程间数据传输: TCP, UDP。</li>
-<li>信息分组: 报文段（segment）</li>
-</ul>
-</li>
-<li>网络层<ul>
-<li>信息分组: 数据报（datagram）</li>
-<li>IP：数据报中的各个字段以及端系统和路由器如何作用于这些字段。</li>
-</ul>
-</li>
-<li>链路层<ul>
-<li>信息分组：帧</li>
-</ul>
-</li>
-<li>物理层</li>
-</ul>
-</li>
-<li>OSI<ul>
-<li>应用层: 应用访问OSI模型的环境</li>
-<li>表示层, 会话层: 并入应用层</li>
-<li>运输层<ul>
-<li>端系统间通信</li>
-<li>可靠传输 或 单块传输</li>
-<li>连接建立, 维持, 释放</li>
-</ul>
-</li>
-<li>网络层<ul>
-<li>分组在多个网络或链路上传输</li>
-<li>编址, 路由, 转发, 拥塞控制</li>
-<li>连接建立, 维持, 拆除</li>
-</ul>
-</li>
-<li>数据链路层<ul>
-<li>链路层帧</li>
-<li>媒体访问控制, 差错检测和重传, 流量控制</li>
-<li>连接激活, 维持和失活</li>
-</ul>
-</li>
-<li>物理层</li>
-</ul>
-</li>
-</ul>
-<h2 id="网络攻击-Attack"><a href="#网络攻击-Attack" class="headerlink" title="网络攻击 Attack"></a>网络攻击 Attack</h2><ul>
-<li>攻击个人电脑<ul>
-<li>恶意软件<ul>
-<li>大多数都是自我复制的</li>
-<li>病毒（virus）: 需要某种形式的用户交互来感染用户设备</li>
-<li>蠕虫（worm）: 无需任何明显用户交互就能进入设备</li>
-<li>木马（horse）: 伪装成无害程序, 吸引用户点击</li>
-<li>后门（backdoor）: 绕过授权验证</li>
-<li>广告软件（adware）: 访问弹出广告</li>
-<li>间谍软件（spyware）: 收集用户的输入, 记录用户活动</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>攻击服务器和网络基础设施<ul>
-<li>拒绝服务攻击（Denial of Service, DOS）<ul>
-<li>使得服务不能由合法用户使用</li>
-<li>弱点攻击: 针对易受攻击的程序或操作系统, 引发停止运行或崩溃</li>
-<li>带宽洪泛: 大量发送分组到目标, 使链路拥塞</li>
-<li>连接洪泛: 创建大量半开或全开的TCP连接, 耗尽资源</li>
-</ul>
-</li>
-<li>分布式DoS(DDoS)<ul>
-<li>攻击者控制多个源</li>
-<li>僵尸网路: 攻击者用恶意软件控制大量计算机, 作为DDoS的源头等</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>嗅探分组（IP Spoofing）<ul>
-<li>分组嗅探器: 记录每个流经的分组副本的被动接收机</li>
-<li>防范: 加密</li>
-</ul>
-</li>
-<li>伪装（Masquerade）<ul>
-<li>IP欺骗: 将具有虚假源地址的分组注入因特网</li>
-<li>重放攻击</li>
-<li>中间人攻击</li>
-<li>连接劫持</li>
-<li>解决方案: 加密, 数字签名, MAC</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>课程</category>
-        <category>Network</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>计算机网络课程笔记-第六章链路层和局域网</title>
-    <url>/2021/09/06/internet6/</url>
-    <content><![CDATA[<hr>
-<h1 id="链路层-Link"><a href="#链路层-Link" class="headerlink" title="链路层 Link"></a>链路层 Link</h1><ul>
-<li>运行链路层协议的任何设备均称为<strong>节点（node）</strong>，包括主机、路由器、交换机和 WiFi 接入点。</li>
-<li>沿着通信路径连接的相邻节点的通信信道称为<strong>链路（link）</strong>。</li>
-<li>在经过特定的链路时，传输节点将数据报封装在链路层帧中，并将该帧传输到链路中。</li>
-</ul>
-<a id="more"></a>
-<h2 id="链路层提供的服务"><a href="#链路层提供的服务" class="headerlink" title="链路层提供的服务"></a>链路层提供的服务</h2><ul>
-<li><strong>成帧（framing）</strong>。</li>
-<li><p><strong>链路接入</strong>。媒体访问控制（Medium Access Control, MAC）协议。</p>
-</li>
-<li><p><strong>可靠交付</strong>。</p>
-</li>
-<li><strong>差错检测和纠正</strong>。</li>
-</ul>
-<h2 id="链路层实现"><a href="#链路层实现" class="headerlink" title="链路层实现"></a>链路层实现</h2><p>链路层的主体部分是在<strong>网络适配器（network adapter）</strong>中实现的，也称<strong>网络接口卡（Network Interface Card, NIC）</strong>。</p>
-<hr>
-<h1 id="差错检测和纠正-Error-Dectection-and-Correction"><a href="#差错检测和纠正-Error-Dectection-and-Correction" class="headerlink" title="差错检测和纠正 Error Dectection and Correction"></a>差错检测和纠正 Error Dectection and Correction</h1><ul>
-<li><strong>差错检测和纠正比特（Error-Detection-and-Correction, EDC）</strong></li>
-<li><strong>未检出比特差错（undetected bit error）</strong></li>
-</ul>
-<p>3种技术（都是学过的）：</p>
-<ul>
-<li>奇偶校验</li>
-<li>检验和（checksum，适用于运输层）、因特网检验和</li>
-<li>循环冗余检测（CRC，适用于适配器中的链路层）：多项式编码、生成多项式</li>
-</ul>
-<hr>
-<h1 id="多路访问链路和协议"><a href="#多路访问链路和协议" class="headerlink" title="多路访问链路和协议"></a>多路访问链路和协议</h1><ul>
-<li><strong>点对点链路（point-to-point link）</strong>，由链路一段发送方和另一端单个接收方组成。<ul>
-<li>点对点协议（point-to-point protocol, PPP）</li>
-<li>高级数据链路控制（high-level data link control, HDLC）</li>
-</ul>
-</li>
-<li><strong>广播链路（broadcast link）</strong>，多点、共享信道。</li>
-</ul>
-<h2 id="信道划分协议-Channel-Partitioning-Protocol"><a href="#信道划分协议-Channel-Partitioning-Protocol" class="headerlink" title="信道划分协议 Channel Partitioning Protocol"></a>信道划分协议 Channel Partitioning Protocol</h2><h2 id="随机接入协议-Random-Access-Protocol"><a href="#随机接入协议-Random-Access-Protocol" class="headerlink" title="随机接入协议 Random Access Protocol"></a>随机接入协议 Random Access Protocol</h2><h2 id="轮流协议-Taking-turns-Protocol"><a href="#轮流协议-Taking-turns-Protocol" class="headerlink" title="轮流协议 Taking-turns Protocol"></a>轮流协议 Taking-turns Protocol</h2><hr>
-<h1 id="交换局域网"><a href="#交换局域网" class="headerlink" title="交换局域网"></a>交换局域网</h1><h2 id="链路层寻址和-ARP"><a href="#链路层寻址和-ARP" class="headerlink" title="链路层寻址和 ARP"></a>链路层寻址和 ARP</h2><ul>
-<li><p>MAC 地址</p>
-<ul>
-<li>主机和路由器不具有链路层地址</li>
-<li>它们的适配器（网络接口）具有链路层地址</li>
-<li>具有多个网络接口的主机具有与之相关联的多个链路层地址</li>
-<li>链路层交换机并不具有与接口相关联的链路层地址（交换机交换是透明的）</li>
-</ul>
-</li>
-<li><p><strong>地址解析协议（Address Resolution Protocol）</strong>，网络层地址（因特网中的IP地址）和链路层地址（MAC地址）进行转换。</p>
-<ul>
-<li>发送方构造一个称为ARP分组（ARP packet）的特殊分组，一个ARP分组有几个字段：发送、接收IP地址以及MAC地址。ARP查询分组的目的时查询子网上所有其他主机和路由器，以确定对于要解析的IP地址的MAC地址。</li>
-<li>适配器封装ARP分组，用广播地址作为帧的目的地址，将帧传输进子网中。</li>
-<li>目标主机给查询主机发送回一个带有所希望映射的响应ARP分组（使用标准帧而不是广播地址），然后查询主机更新ARP表，并发送IP数据报。</li>
-</ul>
-</li>
-<li><p>发送数据报到子网以外</p>
-<ul>
-<li>路由器每个端口均有 MAC 和 IP。</li>
-<li>路由器将相应 ARP, 主机获得的此 IP 的 MAC 地址是路由器这一端口的 MAC。</li>
-</ul>
-</li>
-</ul>
-<h2 id="以太网-Ethernet"><a href="#以太网-Ethernet" class="headerlink" title="以太网 Ethernet"></a>以太网 Ethernet</h2><ul>
-<li>帧结构<ul>
-<li>数据字段（46-1500字节）。承载了 IP 数据报。</li>
-<li>目的地址（6字节）。包含目的适配器的 MAC 地址。</li>
-<li>原地址（6字节）。包含传输该帧到局域网上的适配器的 MAC 地址。</li>
-<li>类型字段（2字节）。允许以太网复用多种网络层协议。</li>
-<li>CRC（4字节）。检错。</li>
-<li></li>
-<li>前同步码（8字节）。前7字节为<code>10101010</code>，最后字节为<code>10101011</code>，用于唤醒接受适配器并同步时钟。</li>
-</ul>
-</li>
-</ul>
-<p>以太网技术向网络层提供：</p>
-<ul>
-<li>无连接服务：发送数据报帧无需事先握手</li>
-<li>不可靠服务：接收器进行CRC校验，不管是否通过都不返回确认（ACK）/否定确认（NEG）帧</li>
-</ul>
-<h2 id="链路层交换机"><a href="#链路层交换机" class="headerlink" title="链路层交换机"></a>链路层交换机</h2>]]></content>
-      <categories>
-        <category>课程</category>
-        <category>Network</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>高级算法课程笔记-Lecture1</title>
-    <url>/2021/09/07/advanced-algorithm/</url>
-    <content><![CDATA[<p>课程主页：<a href="http://tcs.nju.edu.cn/wiki/">http://tcs.nju.edu.cn/wiki/</a></p>
-<a id="more"></a>
-<p>本章是 etone 老师通过 min/max-cut 来引入高级算法的概念。</p>
-<p><strong>图的切（Graph Cut）</strong>：有无向图 $G(V, E)$，子集 $C \subseteq E$ 是 $G$ 的一个切如果在去掉 $C$ 中所有边后 $G$ 不连通（disconnected）了。</p>
-<p>显然对于 $V$ 的一个二分 $\{S, T\}$，$E(S, T)=  \{ uv \in E | u \in S, v \in T\}$ 是 $G$ 的一个切。</p>
-<h1 id="最小割-Min-Cut"><a href="#最小割-Min-Cut" class="headerlink" title="最小割 Min-Cut"></a>最小割 Min-Cut</h1><p>我们可以推广一下问题到输入可以是 <strong>multi-graphs</strong>，也即可以有重边，不能自环。</p>
-<h2 id="最大流-Max-flow"><a href="#最大流-Max-flow" class="headerlink" title="最大流 Max flow"></a>最大流 Max flow</h2><p>一个朴素的想法，也是一个可行的确定性算法就是 <strong>最大流最小割定理</strong>，一个图的 s-t 最大流也就是它的最小割。</p>
-<ul>
-<li>注意到这个算法本质上是固定 s 和 t 的，也就是可能不是全局最优，不过我们只要遍历点跑最大流就可以了。</li>
-<li>时间复杂度：$(n-1) \times \text{max flow time} = \tilde{O}(mn)$。<ul>
-<li>$\tilde{O}$ 表示忽略多项式的对数系数。</li>
-<li>实际是 $O(mn + n^2 \log{n})$</li>
-</ul>
-</li>
-</ul>
-<h2 id="卡格尔算法-Karger’s-Contraction-Algorithm"><a href="#卡格尔算法-Karger’s-Contraction-Algorithm" class="headerlink" title="卡格尔算法 Karger’s Contraction Algorithm"></a>卡格尔算法 Karger’s Contraction Algorithm</h2><p>一个图的割太多了（$2^{\Omega(n)}$ 量级），但可以证明最小割最多只有 $O(n^2)$，我们希望生成随机的切集中在最小割上</p>
-<p><strong>收缩（contraction）</strong>：<code>contract(G, e)​</code> 将边 $e = uv$ 的两个端点合并（merge）。<em>在合适的数据结构下可以 $O(n)$ 实现。</em></p>
-<figure class="highlight plain"><figcaption><span>Karger's Algorithm</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V,E)</span><br><span class="line"></span><br><span class="line">while |V| &gt; 2 do:</span><br><span class="line">	pick random uv in E</span><br><span class="line">	G &#x3D; contract(G, uv)</span><br><span class="line">return C &#x3D; E &#x2F;&#x2F; the edges between the only two vertices</span><br></pre></td></tr></table></figure>
-<p>显然 $O(n)$ 的 <code>contract</code> 操作下该算法的复杂度是 $O(n^2)$。</p>
-<h3 id="准确性的分析"><a href="#准确性的分析" class="headerlink" title="准确性的分析"></a>准确性的分析</h3><p>因为是一个随机算法，所以输出的切是一个随机变量。</p>
-<p>可证如下定理：</p>
-<div class="note info">
-            <p>对于任意 $n$ 个顶点的 multigraph，Karger 算法的 $Pr[\text{a min-cut is returned}] \geq \dfrac{2}{n(n - 1)}$。</p>
-          </div>
-<p><del>第一次发现 note 的用法，感觉好好看</del></p>
-<p>下面来证：</p>
-<ul>
-<li>记 $e_1, e_2, …, e_{n-2}$ 为随机选择的收缩的边的序列。</li>
-<li>记 $G_1 = G$ 为初始图，$G_{i + 1} = contract(G_i, e_i), i = 1, 2,…, n-2$。</li>
-</ul>
-<p>显然可知：如果 $C$ 是 $G$ 的一个最小切且 $e \notin C$，则 $C$ 也是 <code>G&#39; = contract(G, e)​</code> 的一个最小割。所以有：</p>
-<p>$\begin{aligned} p_C &amp;= Pr[C \text{ is returned}] \\ &amp;= Pr[e_i \notin C \text{ for all } i = 1, 2, …,n-2] \\ &amp;= \prod\limits_{i = 1}^{n-2} Pr[e_i \notin C | \forall j &lt; i, e_i \notin C] \end{aligned}$</p>
-<p>$\forall j &lt; i, e_i \notin C$ 意味着 $C$ 也是 $G_i$ 的一个最小切。</p>
-<p>观察到一个最小切的边数 $|C|$ 一定是小于等于任意点的度数（degree），否则可以直接把这个点切开。</p>
-<p>所以更加小于等于度数的平均数，即 $|C| \leq \dfrac{2 |E|}{|V|}$。（所有点的度数和为 $2|E|$）</p>
-<p>所以我们可以计算</p>
-<p>$\begin{aligned} Pr[e_i \notin C | \forall j &lt; i, e_i \notin C]  &amp;= 1 - \dfrac{|C|}{|E_i|} \text{（从剩下的点中均匀随机选取）} \\ &amp; \geq 1 - \dfrac{2}{|V_i|} \\ &amp;= 1 - \dfrac{2}{n - i + 1} \end{aligned}$</p>
-<p>$\begin{aligned} p_C &amp; \geq \prod\limits_{i = 1}^{n-2} (1 - \dfrac{2}{n - i + 1}) \\ &amp;= \prod\limits_{k = 3}^{n} \dfrac{k - 2}{k} \\ &amp;= \dfrac{2}{n(n-1)} \end{aligned}$</p>
-<span class="label success">得证。</span>
-<p>乍一看这个算法有啥吊用，准确率也太低了。</p>
-<p>不过随机算法的精髓就在于有了准确性的下界，就可以通过 repeat 来提升准确性（好像是蒙特卡罗还是拉斯维加斯来着）。</p>
-<p>Karger 算法主要就是将解空间的大小由指数级降低到了平方级。</p>
-<p>我们可以运行算法 $t = \dfrac{n(n-1)\ln{n}}{2}$ 次并返回最小的解，该解是最小切的概率为：</p>
-<p>$\begin{aligned} \ &amp;1 - Pr[\text{所有 } t \text{ 次都失败}] \\ = &amp;1 - (Pr[\text{一次失败}])^t \\ \geq &amp; 1 - \left( 1 - \dfrac{2}{n(n-1)} \right)^{\frac{n(n-1)\ln{n}}{2}} \\ \geq &amp; 1 - \dfrac{1}{n}  \end{aligned}$</p>
-<p>运行一次算法的时间是 $O(n^2)$，也就是说我们可以在 $O(n^4\log{n})$ 的时间复杂度下高概率地（w.h.p）找到最小切。</p>
-<h3 id="一个推论"><a href="#一个推论" class="headerlink" title="一个推论"></a>一个推论</h3><div class="note info">
-            <p>对任意的 $n$ 阶图 $G(V, E)$，最小割的个数不会超过 $\dfrac{n(n-1)}{2}$。</p>
-          </div>
-<p>这是从概率方法上推到的：</p>
-<p>设有 $M$ 个不同的最小切，显然它们是独立的。</p>
-<p>$\because 1 \geq Pr[\text{a min-cut is returned}] \geq M \times \dfrac{2}{n(n-1)}$</p>
-<p>$\therefore M \leq \dfrac{n(n-1)}{2}$</p>
-<span class="label success">得证。</span>
-<h2 id="快速最小切-Fast-Min-Cut"><a href="#快速最小切-Fast-Min-Cut" class="headerlink" title="快速最小切 Fast Min-Cut"></a>快速最小切 Fast Min-Cut</h2><p>我们知道 $p_C \geq \prod\limits_{i = 1}^{n-2} (1 - \dfrac{2}{n - i + 1})$，也就是这个概率是随 $i$ 增大递减的，也就是说当图越来越小也就越来越难成功。</p>
-<p>我们就可以思考一个新的方法，先把图收缩的一个较小的程度，然后再递归地找这个更小的图上的最小切。</p>
-<p>先定义一个随机收缩的函数，把图收缩到只剩 $t$ 个点：</p>
-<figure class="highlight plain"><figcaption><span>random_contract(G, t)</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V, E), integer t &gt;&#x3D; 2</span><br><span class="line"></span><br><span class="line">while |V| &gt; t:</span><br><span class="line">	choose an edge uv in E uniformly at random</span><br><span class="line">	G &#x3D; contract(G, uv)</span><br><span class="line">return G</span><br></pre></td></tr></table></figure>
-<p>然后定义我们的快速最小切：</p>
-<figure class="highlight plain"><figcaption><span>fast_cut(G)</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V, E)</span><br><span class="line"></span><br><span class="line">if |V| &lt;&#x3D; 6:</span><br><span class="line">	return a mincut by brute force</span><br><span class="line">else:</span><br><span class="line">	t &#x3D; [1 + |V| &#x2F; sqrt(2)]</span><br><span class="line">	G1 &#x3D; random_contract(G, t)</span><br><span class="line">	G2 &#x3D; random_contract(G, t)</span><br><span class="line">	return min&#123;fast_cut(G1), fast_cut(G2)&#125;</span><br></pre></td></tr></table></figure>
-<p>一样的我们可以算出 <code>random_contract</code> 成功的概率：</p>
-<p>$\begin{aligned} &amp; Pr[C \text{ survives all contractions in random_contract}] \\ = &amp; \prod\limits_{i=1}^{n - t} Pr[C \text{ survives the i-th contraction } | C \text{ survives the first (i−1)-th contractions}] \\ \geq &amp; \prod\limits_{i=1}^{n - t} \left( 1 - \dfrac{2}{n - i +1} \right) \\  = &amp; \dfrac{t(t - 1)}{n(n - 1)}  \end{aligned}$</p>
-<p>当 $t = \lceil 1 + n / \sqrt{2} \rceil $ 时，这个概率至少是 $1/2$。</p>
-<p>定义两个事件：</p>
-<ul>
-<li>A：$C$ survives <code>random_contract</code> 中所有的 contractions。</li>
-<li>B：<code>random_contract</code> 后最小切的大小保持不变。</li>
-</ul>
-<p>显然 $A \to B$，所以 $Pr[B] \geq Pr[A] \geq \frac{1}{2}$。</p>
-<p>我们用 $p(n) $ 来表示一个 $n$ 阶图的 <code>fast_cut</code> 的下界：</p>
-<p>$\begin{aligned} p(n) &amp; = Pr[\text{fast_cut returns a min-cut}] \\ &amp;= Pr[\text{a min-cut is returned by fast_cut(G1) and fast_cut(G2)}] \\ &amp; \geq 1 - (1 - Pr[B \wedge \text{ fast_cut(G1) return a min-cut in G1}])^2 \\ &amp; \geq 1 - (1 - Pr[A \wedge \text{ fast_cut(G1) return a min-cut in G1}])^2 \\ &amp; = 1 - (1 - Pr[A] Pr[\text{fast_cut(G1) return a min-cut in G1 | A}])^2 \\ &amp; \geq 1 - \left( 1 - \dfrac{1}{2} p(\lceil 1 + n / \sqrt{2} \rceil) \right)^2  \end{aligned}$</p>
-<p>base case 是 $p(n) = 1$ 当 $n \leq 6$。</p>
-<p>归纳易证 $p(n) = \Omega(\frac{1}{\log{n}})$。</p>
-<p>时间复杂度上由那个算法我们有 $T(n) = 2T(\lceil 1 + n / \sqrt{2} \rceil) + O(n^2)$，易证 $T(n) = O(n^2 \log{n})$。</p>
-<p>最终我们能总结如下定理：</p>
-<div class="note info">
-            <p>对任意的 $n$ 阶图，<code>fast_cut</code> 算法可以在 $O(n^2 \log{n})$ 的时间复杂度下以 $\Omega(\frac{1}{\log{n}})$ 的概率返回一个最小切。</p>
-          </div>
-<p><code>fast_cut</code> 比原始的 <code>random_contract</code> 时间长，概率高。</p>
-<p>我们可以运行它 $(\log{n})^2$ 次，在 $O(n^2 \log^3{n})$ 的时间复杂度下以 $1 - O(1/n)$ 的概率返回最小切。</p>
-<p>回忆前面的确定算法的时间复杂度是 $O(mn + n^2 \log{n})$，也就是说在稠密图上这个随机算法会表现地更好一些。</p>
-<p><em>最终 Karger 继续改进了这个算法并获得了一个关于边数的接近线性时间的随机算法不过超出了本课程的讨论范围。</em></p>
-<h1 id="最大割-Max-cut"><a href="#最大割-Max-cut" class="headerlink" title="最大割 Max-cut"></a>最大割 Max-cut</h1><p>问题就转变成了一个 <strong>NP-hard</strong> 的问题，如果我们相信 $P \neq NP$，就无法在多项式时间用确定性算法解决这个问题。</p>
-<h2 id="贪心-Greedy"><a href="#贪心-Greedy" class="headerlink" title="贪心 Greedy"></a>贪心 Greedy</h2><figure class="highlight plain"><figcaption><span>greedy_cut</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V, E)</span><br><span class="line"></span><br><span class="line">S &#x3D; T &#x3D; emptyset</span><br><span class="line">for i &#x3D; 1, 2, ..., n:</span><br><span class="line">	v_i joins one of S,T to maximize the current |E(S,T)|</span><br></pre></td></tr></table></figure>
-<p>然后讲了到<strong>近似比（approximation ratio）</strong>的概念，<del>复习问求。</del></p>
-<p>暂时先不假证明（懒）地给出定理：</p>
-<div class="note info">
-            <p><code>greedy_cut</code> 是一个 0.5-近似的最大切算法。</p>
-          </div>
-<p>这并不是多项式时间最好的最大切算法，最好的算法 <a href="http://www-math.mit.edu/~goemans/PAPERS/maxcut-jacm.pdf">Goemans-Williamson Algorithm</a> 可以达到近似比 $\alpha^{\star} = \frac{2}{\pi}\inf_{x\in [-1,1]}{\frac{\arccos{(x)}}{1-x}}$，并被证明不存在近似比更好的多项式时间近似算法。</p>
-<h2 id="通过条件期望去随机化-Derandomization"><a href="#通过条件期望去随机化-Derandomization" class="headerlink" title="通过条件期望去随机化 Derandomization"></a>通过条件期望去随机化 Derandomization</h2><p>对于任意顶点 $v \in V$，$X_{v} \in \{0, 1\}$ 是一个均匀随机 bit 来表示该点加入 $S$ 或 $T$。</p>
-<p>这个随机的 cut 的大小可以被表示为：</p>
-<script type="math/tex; mode=display">
-|E(S, T)| = \sum\limits_{uv\in E} I[X_u \neq X_v]。</script><p>由于期望的线性（linearity），</p>
-<script type="math/tex; mode=display">
-\mathbb{E}[|E(S, T)|]=\sum\limits_{u v \in E} \mathbb{E}\left[I\left[X_{u} \neq X_{v}\right]\right]=\sum\limits_{u v \in E} \operatorname{Pr}\left[X_{u} \neq X_{v}\right]=\dfrac{|E|}{2}。</script><p>$|E|$ 就是最大切的 $OPT_G$ 的一个上界，所以我们有：</p>
-<script type="math/tex; mode=display">
-\mathbb{E}[|E(S,T)|] \geq \dfrac{OPT_G}{2}。</script><p>所以我们生成的随机的切的平均值大于等于 $\frac{OPT_G}{2}$，由于<strong>平均原理（averaging principle）</strong>，至少有一个二分生成的切是大于等于 $\frac{OPT_G}{2}$ 的。然后我们希望有算法来找到这个解。</p>
-<p>我们想一个个地固定 $X_{v_{i}}$ 的值来构造一个二分 $\{\hat{S}, \hat{T}\}$ 使得：</p>
-<script type="math/tex; mode=display">
-|E(\hat{S}, \hat{T})| \geq \mathbb{E}[|E(S, T)|] \geq \dfrac{O P T_{G}}{2}。</script><p>我们从第一个点 $v_1$ 开始，通过全期望公式：</p>
-<script type="math/tex; mode=display">
-\mathbb{E}[E(S, T)]=\dfrac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=0\right]+\dfrac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=1\right]。</script><p>至少存在一个赋值 $x_1 \in \{0, 1\}$ 使得：</p>
-<script type="math/tex; mode=display">
-\mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}\right] \geq \mathbb{E}[E(S, T)]。</script><p>我们可以继续运用这个方法：</p>
-<script type="math/tex; mode=display">
-\mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}\right]= \frac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}, X_{v_{i}}=0\right]
-+\frac{1}{2} \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}, X_{v_{i}}=1\right]</script><p>至少存在一个赋值 $x_i \in \{0, 1\}$ 使得：</p>
-<script type="math/tex; mode=display">
-\mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i}}=x_{i}\right] \geq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}\right]</script><p>所以我么就可以这要找到一个序列 $x_1, x_2, …, x_n \in \{0, 1\}$ 来形成一个单调的路径：</p>
-<script type="math/tex; mode=display">
-\mathbb{E}[E(S, T)] \leq \cdots \leq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i-1}}=x_{i-1}\right] \leq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{i}}=x_{i}\right] \leq \cdots \leq \mathbb{E}\left[E(S, T) \mid X_{v_{1}}=x_{1}, \ldots, X_{v_{n}}=x_{n}\right]</script><p>最终一个二分 $(\hat{S}, \hat{T})$ 被这个序列确定下来，并且 $E(\hat{S}, \hat{T}) \geq \frac{OPT_G}{2}$。</p>
-<p>我们可以有如下算法：</p>
-<figure class="highlight plain"><figcaption><span>monotone_path</span></figcaption><table><tr><td class="code"><pre><span class="line">Input: G(V,E)</span><br><span class="line"></span><br><span class="line">S &#x3D; T &#x3D; emptyset</span><br><span class="line">for i &#x3D; 1, 2, ..., n:</span><br><span class="line">	v_i joins one of S,T to maximize the average size of cut conditioning on the choices made so far by the vertices (v_1, v_2, ..., v_i)</span><br></pre></td></tr></table></figure>
-<p>所以，上面的贪心算法实际上是通过平均情况的去随机化得来的。</p>
-<h2 id="通过-pairwise-独立的去随机化"><a href="#通过-pairwise-独立的去随机化" class="headerlink" title="通过 pairwise 独立的去随机化"></a>通过 pairwise 独立的去随机化</h2>]]></content>
-      <categories>
-        <category>课程</category>
-        <category>Advanced Algorithm</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>数字图像处理课程笔记</title>
-    <url>/2021/09/08/digital-image-processing/</url>
-    <content><![CDATA[<h1 id="Ch1-概述"><a href="#Ch1-概述" class="headerlink" title="Ch1 概述"></a>Ch1 概述</h1><ul>
-<li><p>数字图像是指由被称作像素的小块区域组成的二维矩阵。</p>
-<ul>
-<li>将物理图像行列划分后，每个小块区域称为像素（pixel）。</li>
-<li>每个像素包括两个属性：位置和亮度 （或色彩）。</li>
-</ul>
-</li>
-<li><p>数字图像的两个基本问题</p>
-<ul>
-<li>像素数目</li>
-<li>灰度值的度量</li>
-<li>本质问题就是物理信号离散化，数字化</li>
-</ul>
-</li>
-</ul>
-<a id="more"></a>
-<h2 id="图像获取"><a href="#图像获取" class="headerlink" title="图像获取"></a>图像获取</h2><p>图像获取就是图像数字化的过程，包括扫描、<strong>采样（成像技术）</strong>和<strong>量化（模数转化技术）</strong>。</p>
-<ul>
-<li><p>图像采样：用有限的样本数目去近似无限的现实物理信号（有限近似无限）。</p>
-</li>
-<li><p>图像量化，用离散计算机表示去近似连续的现实物理信号（离散近似连续）。</p>
-<ul>
-<li>取样点数和量化级数的选取<ul>
-<li>条件：图像有 $M\times N$个像素，每个像素有 $Q$ 个灰度级别。</li>
-<li>取值规则：$M, N, Q$ 通常取 2 的整数次幂。若 $Q = 2^8 = 256$，称为 8bit 量化，或称256灰度级。</li>
-<li>取值范围：由于存在量化误差，原则上 b 越大重建图像失真越小。对于人眼应用 b 取 5-8；而对于卫星图片等图像分析应用b取8-12。</li>
-</ul>
-</li>
-<li>$M\times N$ 必须满足奈奎斯特取样定理，否则会因取样点数不够产生混淆失真。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>最佳量化<ul>
-<li>使量化误差最小的量化方法为最佳量化。</li>
-<li>使用均方误差测度讨论最佳量化。</li>
-</ul>
-</li>
-</ul>
-<p>设 $Z$ 和 $q$ 分别代表像素幅度和其量化值，$p(Z)$ 为像素幅度概率密度函数；$Z$ 的取值范围在 $H_1$ 和 $H_2$ 之间，量化总层数为 $K$，$\delta^2$ 表示量化器量化的均方误差，则</p>
-<script type="math/tex; mode=display">
-\delta^2 = \sum\limits_{k=1}^{K} \int_{Z_k}^{Z_{k+1}} (Z - q_k)^2p(Z) dZ。</script><p>当量化层数足够大，每个判决层的 $p(Z)$ 可以近似为均匀分布，则</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-\delta^{2} &=\sum_{k=1}^{K} \int_{Z_{k}}^{Z_{k+1}}\left(Z-q_{k}\right)^{2} p(Z) d Z \\
-&=\sum_{k=1}^{K} p(Z) \int_{Z_{k}}^{Z_{k+1}}\left(Z-q_{k}\right)^{2} d Z \\
-&=\frac{1}{3} \sum_{k=1}^{K} p(Z)\left[\left(Z_{k+1}-q_{k}\right)^{3}-\left(Z_{k}-q_{k}\right)^{3}\right]
-\end{aligned}</script><p>对 $q_k$ 求导并令等于 $0$：</p>
-<script type="math/tex; mode=display">
-0=\int_{Z_{k}}^{Z_{k+1}} p(Z)\left(-2 Z+2 q_{k}\right) d Z</script><p>于是</p>
-<script type="math/tex; mode=display">
-q_{k}=\dfrac{\int_{Z_{k}}^{Z_{k+1}} Z p(Z) d Z}{\int_{Z_{k}}^{Z_{k+1}} p(Z) d Z}</script><p>若 $p(Z)$ 为常数，则 $q_k = \frac{1}{2}(Z_k + Z_{k+1})$，此时量化误差为 $\dfrac{(H_2 - H_1)^2}{12K^2}$。</p>
-<ul>
-<li>图像获取设备的主要应用<ul>
-<li>基于图像采集卡或图像卡将模拟制式的视频信号采集到计算机。</li>
-<li>摄象机本身带有数字化部件可以直接将数字图像通过计算机端口（如并口、USB接口）或标准设备（如磁盘驱动器）传送进计算机。</li>
-</ul>
-</li>
-</ul>
-<h2 id="图像显示"><a href="#图像显示" class="headerlink" title="图像显示"></a>图像显示</h2><ul>
-<li>图像显示和打印的基本原理<ul>
-<li>显示分辨率：每英寸荧光点或打印墨点的数目，单位是dpi。</li>
-<li>电视机平均分辨率0.76mm。SVGA显示器平均分辨率0.28mm。</li>
-<li>打印分辨率需要在300dpi—600dpi之上。</li>
-</ul>
-</li>
-<li>点阵位图格式<ul>
-<li>用文件中的几个字节表示表示像素点的位置和颜色。</li>
-<li>图像分辨率：每英寸像素点的数目，单位ppi。</li>
-</ul>
-</li>
-<li>显示与文件的关系<ul>
-<li>若图像分辨率比显示分辨率高，则显示出的图像比实际图像大。</li>
-<li>若图像分辨率比显示分辨率低，则显示出的图像比实际图像小。</li>
-</ul>
-</li>
-</ul>
-<h2 id="图像表示"><a href="#图像表示" class="headerlink" title="图像表示"></a>图像表示</h2><ul>
-<li>1位二值图像</li>
-<li><p>8位灰度图像</p>
-<ul>
-<li>位平面。<ul>
-<li>数字图像每一个像素点的灰度值均可以表示成二进制数，这样从二进制每一位的微观角度出发，能够将图片分解为若干个位平面。</li>
-<li>图像的重要信息主要包含在高位位平面中，从低位位平面的显示效果中不可识别原始图像信息。</li>
-</ul>
-</li>
-<li>抖动技术（dithering）<ul>
-<li>基本策略是平衡灰度分辨率到空间分辨率。基本原理是当人眼从较远距离观察图像时，将会平均局部小区域像素的灰度值，并记录之。</li>
-<li>很明显采用抖动矩阵无法完整的表达图像信息，甚至造成打印的图像失真。<em>解决方案：Floyd-Steinberg算法</em>。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>24位彩色图像</p>
-<ul>
-<li><p>RGB模式。(相加混色模型，用于发光物体)</p>
-</li>
-<li><p>CMYK模式。（相减混色模型，用于不发光物体）</p>
-<ul>
-<li>三次色（青色Cyan，洋红Magenta和黄色Yellow）K为真正黑色。</li>
-</ul>
-</li>
-<li><p>HSB模型。</p>
-<ul>
-<li>色相（Hue），饱和度（Saturation），亮度（Brightness）。</li>
-<li><em>在绘画艺术上，饱和度的概念可描述如下：是一种纯色加上白色染料后的结果，此时色彩的饱和度发生变化而色彩的亮度不发生变化。</em></li>
-<li><em>同样在绘画艺术上，亮度的概念可描述如下：是一种纯色加上黑色染料后的结果，此时色彩的亮度发生变化而色彩的饱和度不发生变化。</em></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>8位索引图像<ul>
-<li>调色板（palette）：图像的色彩索引表。</li>
-<li>若图像的色彩数远小于全色彩数时，当每个像素的值用色彩索引表的位置表示就可以大大节约存储空间。</li>
-</ul>
-</li>
-</ul>
-<h1 id="Ch2-二值图像与像素关系"><a href="#Ch2-二值图像与像素关系" class="headerlink" title="Ch2 二值图像与像素关系"></a>Ch2 二值图像与像素关系</h1><h2 id="邻域关系"><a href="#邻域关系" class="headerlink" title="邻域关系"></a>邻域关系</h2><ul>
-<li>4邻域 $N_4(p)$<ul>
-<li>邻域距离：$&lt;=1$。就是上下左右4个点。</li>
-</ul>
-</li>
-<li>对角线邻域 $N_D(p)$<ul>
-<li>四个对角。</li>
-</ul>
-</li>
-<li>8邻域 $N_8(4) = N_4(p) + N_D(p)$<ul>
-<li>邻域距离：$&lt;2$。就是周围一圈8个点。</li>
-</ul>
-</li>
-</ul>
-<h2 id="连接关系"><a href="#连接关系" class="headerlink" title="连接关系"></a>连接关系</h2><p>可以用来分离物体，鉴定边界。</p>
-<p>在二值图上通过邻域进行定义：</p>
-<ul>
-<li>4连接<ul>
-<li>$p \in N_4(q)$</li>
-</ul>
-</li>
-<li>8连接<ul>
-<li>$p \in N_8(q)$</li>
-</ul>
-</li>
-<li>m连接<ul>
-<li>$p \in N_D(q) \wedge (N_4(P) \cap N_4(q) = \emptyset)$</li>
-</ul>
-</li>
-</ul>
-<h2 id="邻接关系"><a href="#邻接关系" class="headerlink" title="邻接关系"></a>邻接关系</h2><ul>
-<li><p>有连接关系 $(4,8,m)$ 的像素 $p,q$ 是邻接关系。</p>
-</li>
-<li><p>两个子图像 $S_1, S_2$，如果存在 $S_1$ 中的某像素和 $S_2$ 中的某像素是邻接关系，则两子图是邻接关系。</p>
-</li>
-<li><p>从 $p $ 到 $q$ 的一条<strong>路径</strong>是值一个像素序列 $p_1, .., p_n$，$p_i$ 与 $p_{i+1}$ 邻接。</p>
-<ul>
-<li>像素 $p,q$ 之间存在一条路径，则称 $p,q$ <strong>联通</strong>。</li>
-</ul>
-</li>
-<li><p>图像 $S$ 中的任何一个像素 $p$，与 $p$ 联通的所有像素的集合构成一个<strong>联通分量</strong>，联通分量中所有像素两两联通。</p>
-<ul>
-<li>4连接：4联通分量</li>
-<li>8/m连接：2联通分量</li>
-</ul>
-</li>
-<li><p><strong>对象分割</strong>：标记联通分量。</p>
-<ul>
-<li>算法就是遍历扫描，没有邻接标记，有邻接标记为邻接标记并记录等价类。</li>
-</ul>
-</li>
-</ul>
-<h2 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h2><ul>
-<li>正定性：$D(p,q) \geq 0$，等号当且仅当 $p = q$。</li>
-<li>对称性：$D(p,q) = D(q,p)$。</li>
-<li>三角不等式：$D(p,q) \geq D(p,z) + D(q,z)$。</li>
-</ul>
-<p>常见距离：</p>
-<ul>
-<li>Minkowski 距离<ul>
-<li>$D(\boldsymbol{p}, \boldsymbol{q})=\left(\sum_{i=1}^{n}\left|p_{i}-q_{i}\right|^{k}\right)^{\frac{1}{k}}$</li>
-</ul>
-</li>
-</ul>
-<h2 id="骨架抽取"><a href="#骨架抽取" class="headerlink" title="骨架抽取"></a>骨架抽取</h2><ul>
-<li><p>计算距离图像：</p>
-<ul>
-<li>初始化距离为无穷大。</li>
-<li>边缘点：8邻域有背景点，距离为0。</li>
-<li>非边缘点，距离为8邻域中最小距离+1。</li>
-<li>反复扫描图像，重复上述步骤。</li>
-</ul>
-</li>
-<li><p>计算骨架图像：</p>
-<ul>
-<li>最大值在骨架上。</li>
-<li>以最小梯度扩展。</li>
-</ul>
-</li>
-</ul>
-<h1 id="Ch3-灰度直方图与点运算"><a href="#Ch3-灰度直方图与点运算" class="headerlink" title="Ch3 灰度直方图与点运算"></a>Ch3 灰度直方图与点运算</h1><h2 id="灰度直方图-Histogram"><a href="#灰度直方图-Histogram" class="headerlink" title="灰度直方图 Histogram"></a>灰度直方图 Histogram</h2><p>定义：灰度级的函数，描述的是图像中每种灰度级像素的个数，反映图像中每种灰度出现的频率。横坐标是灰度级，纵坐标是灰度级出现的频率。</p>
-<p>$\mathrm{H}(\mathrm{D})=\lim\limits_{\Delta \mathrm{D} \rightarrow 0} \dfrac{\mathrm{A}(\mathrm{D})-\mathrm{A}(\mathrm{D}+\Delta \mathrm{D})}{\mathrm{D}-(\mathrm{D}+\Delta \mathrm{D})}=\lim\limits_{\Delta \mathrm{D} \rightarrow 0} \dfrac{\mathrm{A}(\mathrm{D})-\mathrm{A}(\mathrm{D}+\Delta \mathrm{D})}{-\Delta \mathrm{D}}=-\dfrac{\mathrm{d}}{\mathrm{dD}} \mathrm{A}(\mathrm{D})$</p>
-<p>其中 $A(D)$ 为阈值面积函数：为一幅连续图像中被具有灰度级 $D$ 的所有轮廓线所包围的面积。</p>
-<p>对于离散函数，固定 $\Delta D$ 为 $1$，则 $H(D) = A(D+1) - A(D)$。</p>
-<p><em>高维色彩直方图</em>。</p>
-<h2 id="性质与计算"><a href="#性质与计算" class="headerlink" title="性质与计算"></a>性质与计算</h2><ul>
-<li>不表示图像的空间信息。</li>
-<li><p>任一特定图像都有唯一直方图，但反之并不成立。</p>
-</li>
-<li><p>若一幅图像包含一个灰度均匀一致，且背景与物体对比度很强，假设物体的边界由灰度级 $D_1$ 定义的轮廓线，则</p>
-<ul>
-<li>$\int_{D_{1}}^{\infty} H(D) d D = \text{物体的面积}$</li>
-</ul>
-</li>
-<li><p>直方图的可加性：一副图像由若干个不相交的区域构成，则整幅图像的直方图是这若干个区域直方图之和。</p>
-</li>
-</ul>
-<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><ul>
-<li>数字化参数<ul>
-<li>一般一幅数字图像应该利用全部或几乎全部可能的灰度级。</li>
-<li>对直方图做快速检查。</li>
-</ul>
-</li>
-<li>边界阈值选择<ul>
-<li>使用轮廓线确定简单物体边界的方法，称为<strong>阈值化</strong>。</li>
-<li>对物体与背景有较强对比的景物的分割特别有用。</li>
-<li>双峰直方图。</li>
-</ul>
-</li>
-<li>摄影中的常见名词<ul>
-<li>过曝（Overexposed）</li>
-<li>正常曝光（Average）</li>
-<li>曝光不足（Underexposed）</li>
-</ul>
-</li>
-<li>图像增强<ul>
-<li>图像增强技术不需要考虑图像降质的原因，只将图像中感兴趣的特征有选择地突出，将不需要的特征进行衰减。</li>
-<li>图像增强没有一个的统一理论，如何评价图像增强的结果好坏也没有统一的标准。</li>
-<li>目的是改善图像视觉效果，便于观察和分析；便于人工或机器对图像的进一步处理。</li>
-<li>有空间域法：点处理（图象灰度变换、直方图均衡、伪彩色处理等）；<em>频率域法：高、低通滤波、同态滤波等。</em><ul>
-<li><strong>空间域</strong>图像增强技术指在空间域中，通过线性或非线性变换来增强构成图像的像素。</li>
-<li>点处理：作用于单个像素的空间域处理方法，包括图像灰度变换、直方图处理、伪彩色处理等技术。</li>
-<li>模板 处理：作用于像素邻域的处理方法，包括空域平滑、空域锐化等技术。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="点运算-Point-Operation"><a href="#点运算-Point-Operation" class="headerlink" title="点运算 Point Operation"></a>点运算 Point Operation</h2><p>定义：对于一幅输入图像，将产生一幅输出图像，输出图像的每个像素点的灰度值由输入像素点决定。</p>
-<ul>
-<li><p>点运算由灰度变换函数（gray-scale transformation, GST）确定。</p>
-</li>
-<li><p>令 $r$ 和 $s$ 所定义的变量分别是 $f(x, y)$ 和 $g(x,y)$ 在任意点 $(x,y)$ 的灰度级，则 $T$ 为灰度变换函数</p>
-<ul>
-<li>$s = T(r)$</li>
-<li>与局部（邻域）运算的区别：输入像素-输出像素一一对应。</li>
-<li>与几何运算的差别，不改变图像的空间关系。</li>
-</ul>
-</li>
-<li>运用<ul>
-<li>光度学标定（photometric calibration），希望数字图像的灰度能够真实反映图像的物理特性。</li>
-<li>对比度增强（contrast enhancement）或对比度扩展（contrast stretching）。</li>
-<li>显示标定（display calibration）<ul>
-<li>显示设备不能线性地将灰度值转换为光强度，因此点运算和显示非线性组合可以保持显示图像时的线性关系。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>点运算种类 $0 \leq r \leq 1$，$0$ 黑 $1$ 白<ul>
-<li>线性点运算 $s = a \times r + b$。</li>
-<li>非线性点运算。</li>
-<li>图像反转 $s = L - r - 1$。<ul>
-<li>反转变换适用于增强嵌入于图像暗色区域的白色或灰色细节, 特别是当黑色面积占主导地位时。</li>
-</ul>
-</li>
-<li>对数变换 $s = c \log{(1 + r)}$<ul>
-<li>对数变换使一窄带低灰度输入图像值映射为一宽带输出值，这种变换可以用来扩展被压缩的高值图像中的暗像素。</li>
-</ul>
-</li>
-<li>幂次变换 $s = c r^{\gamma}$</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>课程</category>
-        <category>Digital Image Processing</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>高级算法课程笔记-指纹</title>
-    <url>/2021/09/09/fingerprinting/</url>
-    <content><![CDATA[<h1 id="多项式判等-Polynomial-Identity-Testing"><a href="#多项式判等-Polynomial-Identity-Testing" class="headerlink" title="多项式判等 Polynomial Identity Testing"></a>多项式判等 Polynomial Identity Testing</h1><p><strong>PIT问题</strong>：</p>
-<p>输入两个 $d$ 阶多项式 $f, g \in \mathbb{F}[x]$，输出他们是否相等 $f \equiv g$。</p>
-<p>这里 $\mathbb{F}[x]$ 指 $x$ 在域（field）$\mathbb{F}$ 上的多项式环（ring）。</p>
-<p>我们可以很自然地将这个问题转化为判断一个 $d$ 阶多项式（$f - g$）是否恒为 0。</p>
-<p>如果 $f$ 被显式地给出了，我们很容易地可以通过遍历它的系数来判断。为了使问题更加 nontrivial，假设 $f$ 是一个黑盒（black box/ oracle），看不到系数，只能通过输入 $x$ 得到 $f(x)$。</p>
-<a id="more"></a>
-<ul>
-<li>一个直接的确定性方法就是带入 $d+1$ 个不同的数计算 $f(x_1), f(x_2), …,f(x_{d+1})$ 来计算是否全为零，若全为零则根据<strong>代数基本定理</strong>，能保证 $d$ 阶多项式 $f$ 一定恒为零。</li>
-</ul>
-<div class="note info">
-            <p>一个非零 $d$ 阶单变量多项式一定至多有 $d$ 个根。</p>
-          </div>
-<p>然后自然地我们有如下算法：</p>
-<ol>
-<li>suppose we have a finite subset $S \subseteq \mathbb{F}$</li>
-<li>pick $r \in S$ uniformly at random</li>
-<li>if $f(r) = 0$ return ‘yes’ else ‘no’</li>
-</ol>
-<p>我们很容易可以得出：</p>
-<ul>
-<li>如果 $f \equiv 0$，算法永远返回 ‘yes’。</li>
-<li>如果 $f \not \equiv 0$，算法可能错误地返回 ‘yes’（假阳性），但这只当 $r$ 是 $f$ 的根时发生。根据代数基本定理，$f$ 最多 $d$ 个根，所以算法出错的可能性有界：<ul>
-<li>$Pr[f(r) = 0] \leq \dfrac{d}{|S|}$。</li>
-<li>我们可以固定 $|S| = 2d$，这样出错的概率最多就是 $1/2$。然后通过独立重复 $\log_{2}{\frac{1}{\delta}}$ 次来将这个概率减小到 $\delta$。</li>
-</ul>
-</li>
-</ul>
-<h2 id="Equality-的通信复杂性"><a href="#Equality-的通信复杂性" class="headerlink" title="Equality 的通信复杂性"></a>Equality 的通信复杂性</h2><p> <strong>通信复杂性</strong>（<a href="http://en.wikipedia.org/wiki/Communication_complexity">communication complexity</a>）是姚期智先生（对就是那个图灵奖）提出来的多个实体的计算模型。简单来说就是有两个端，分别有两个输入 $a$ 和 $b$，我们要计算一个函数 $f(a,b)$，不考虑计算的复杂性，我们只关心<strong>通信协议（communication protocol）</strong>，也就是两个端传输的信息的比特。</p>
-<p><del>这个其实在问求4讲过不过我一直没搞明白。</del></p>
-<p>在这里我们讨论的函数是 $\mathrm{EQ}: \{0, 1\}^n \times \{0, 1\}^n \to \{0, 1\}$，对任意 $a, b \in \{0, 1\}^n$ 有：</p>
-<p>$\mathrm{EQ}(a, b)= \begin{cases}1 &amp; \text { if } a=b \\ 0 &amp; \text { otherwise }\end{cases}$</p>
-<ul>
-<li>最简单的想法就是把整个 $a$ 或 $b$ 传过去，通信复杂度是 $n$ 个 bit。<ul>
-<li>可证（yao 证出来的）这是最好的确定性通信协议，也就是要确定地保证完全相等，至少需要 n bit的传输。</li>
-<li>这个证明其实远比它看起来要 nontrivial。</li>
-</ul>
-</li>
-</ul>
-<p>我们可以考虑将 $a,b$ 看成 $n$ 阶多项式 $f,g$，然后运用我们刚才的 <strong>PIT</strong> 来解决。</p>
-<p>需要传输 $r, f(r)$，$r \in [2n]$ 所以需要 $O(\log{n})$ 个bit，而 $f(r)$ 实际上是 $f(r) = \sum\limits_{i = 0}^{n-1} a_i r^i = O(r^n) = O(n^n)$ 是一个指数量级，需要 $O(n\log{n})$ 个bit。这比直接传整个数据库过去还多，<del>屁用没有</del>。</p>
-<ul>
-<li>所以根本原因在于我们选的<strong>域</strong>太大了，是和 $n$ 正比的，能不能找到小一点的，最好是一个常数大小的域。<ul>
-<li>很快地我们就能够想到在模意义下取数，也就是 $\mathbb{Z}_p = \{0, 1, …, p-1\}$。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>我们只需要随机取一个质数 $p \in [n^2, 2n^2]$（可证一定能找到），$f,g \in \mathbb{Z}_p[x]$，然后随机取 $r \in [p]$。<ul>
-<li>这样所需要传输的数据 $r, f(r) &lt; p$，只需要 $O(\log{p}) = O(\log{n})$ 的通信复杂度。</li>
-<li>单边错概率是 $\dfrac{n}{p} = O(\dfrac{1}{n})$，w.h.p。</li>
-</ul>
-</li>
-</ul>
-<h2 id="Schwartz-Zippel-定理"><a href="#Schwartz-Zippel-定理" class="headerlink" title="Schwartz-Zippel 定理"></a>Schwartz-Zippel 定理</h2><p>接下来我们再来看<strong>PIT问题</strong>的更一般的形式，也就是推广到多元：</p>
-<p>对于两个 $n$ 元 $d$ 阶多项式 $f, g \in \mathbb{F}[x_1, …, x_n]$，判断它们是否相等 $f \equiv g$。</p>
-<p>仍然我们可以将问题转化成多项式判零：</p>
-<p>$f\left(x_{1}, \ldots, x_{n}\right)=\sum\limits_{i_{1}, \ldots, i_{n} \geq 0} a_{i_{1}, i_{2}, \ldots, i_{n}} x_{1}^{i_{1}} x_{2}^{i_{2} \ldots} x_{n}^{i_{n}} \equiv 0?$</p>
-<p>这里注意一个多元多项式的阶（degree）是指一项中所有变量的幂次的和的最大值，所以进一步的：</p>
-<p>$f\left(x_{1}, \ldots, x_{n}\right)=\sum\limits_{i_{1}, \ldots i_{n} \geq 0 \atop i_{1}+\cdots+i_{n} \leq d} a_{i_{1}, i_{2}, \ldots, i_{n}} x_{1}^{i_{1}} x_{2}^{i_{2} \ldots} x_{n}^{i_{n}}$</p>
-<p>如果 $f$ 是显式地给出的，我们可以遍历所有系数，共最多 $\left(\begin{array}{c} n+d \\ d \end{array}\right) \leq(n+d)^{d}$ 个来检查是否为零（这里其实用到了一点组合知识）。</p>
-<p>一样的 $f$ 会作为一个黑盒，给定 $\vec{x} \in \mathbb{F}^{n}$，返回 $f(\vec{x})$。</p>
-<p>或者作为乘积形式（product form）。比如范德蒙行列式（Vandermonde determinant）：</p>
-<script type="math/tex; mode=display">
-M=\left[\begin{array}{ccccc}
-1 & x_{1} & x_{1}^{2} & \ldots & x_{1}^{n-1} \\
-1 & x_{2} & x_{2}^{2} & \ldots & x_{2}^{n-1} \\
-\vdots & \vdots & \vdots & \ddots & \vdots \\
-1 & x_{n} & x_{n}^{2} & \ldots & x_{n}^{n-1}
-\end{array}\right] \quad f(\vec{x})=\operatorname{det}(M)=\prod\limits_{j<i}\left(x_{i}-x_{j}\right)</script><p>乘积形式的特点就在计算一个点处的函数值非常方便，而展开算系数就会极其复杂。</p>
-<p>如果能存在一个多项式时间的确定性算法解 PIT，那意味着两个本质性问题：$\mathbf{NEXP} \neq \mathbf{P/poly}$ 或者 $\mathbf{\sharp P} \neq \mathbf{FP}$，当然我已经不懂了。</p>
-<p>所以依然和上面类似的我们可以有一个随机算法，在 $S \subseteq \mathbb{F}$ 中随机取点，0返回 yes 否则 no。</p>
-<p>而它的正确性，也就是假阳性，也就是取到它的根的概率由如下 <strong>Schwartz-Zippel 定理</strong> 给出：</p>
-<div class="note info">
-            <p>对于 $d$ 阶多项式 $f \in \mathbb{F}[x_1, x_2, …, x_n]$，如果 $f \not \equiv 0$，那么对于任何有限集 $S \in \mathbb{F}$ 和随机均匀独立选取的 $r_1, r_2, …, r_n \in S$，有</p><p>$Pr[f(r_1, r_2, …, r_n) = 0] \leq \dfrac{d}{|S|}$。</p>
-          </div>
-<p>这个定理也说明了 $d$ 阶 $n$ 元多项式在任意 $S^n$ 中的根的个数至多 $d \times |S|^{n-1}$ 个。</p>
-<p>原证明较复杂，Dana Moshkovitz 在之后给出了一个很简洁优雅的证明，<del>我有空来写一遍</del>。</p>
-]]></content>
-      <categories>
-        <category>课程</category>
-        <category>Advanced Algorithm</category>
-      </categories>
   </entry>
 </search>
