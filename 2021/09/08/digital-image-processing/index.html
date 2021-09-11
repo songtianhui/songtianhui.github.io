@@ -30,7 +30,7 @@
 <meta property="og:description" content="Ch1 概述 数字图像是指由被称作像素的小块区域组成的二维矩阵。  将物理图像行列划分后，每个小块区域称为像素（pixel）。 每个像素包括两个属性：位置和亮度 （或色彩）。   数字图像的两个基本问题  像素数目 灰度值的度量 本质问题就是物理信号离散化，数字化">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-09-07T17:33:49.000Z">
-<meta property="article:modified_time" content="2021-09-07T17:35:44.559Z">
+<meta property="article:modified_time" content="2021-09-10T06:22:16.829Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
 
@@ -214,10 +214,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-09-08 01:33:49 / Modified: 01:35:44" itemprop="dateCreated datePublished" datetime="2021-09-08T01:33:49+08:00">2021-09-08</time>
+              <time title="Created: 2021-09-08 01:33:49" itemprop="dateCreated datePublished" datetime="2021-09-08T01:33:49+08:00">2021-09-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-10 14:22:16" itemprop="dateModified" datetime="2021-09-10T14:22:16+08:00">2021-09-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -360,6 +366,86 @@ q_{k}=\dfrac{\int_{Z_{k}}^{Z_{k+1}} Z p(Z) d Z}{\int_{Z_{k}}^{Z_{k+1}} p(Z) d Z}
 </ul>
 </li>
 </ul>
+<h1 id="Ch2-二值图像与像素关系"><a href="#Ch2-二值图像与像素关系" class="headerlink" title="Ch2 二值图像与像素关系"></a>Ch2 二值图像与像素关系</h1><h2 id="邻域关系"><a href="#邻域关系" class="headerlink" title="邻域关系"></a>邻域关系</h2><ul>
+<li>4邻域 $N_4(p)$<ul>
+<li>邻域距离：$&lt;=1$。就是上下左右4个点。</li>
+</ul>
+</li>
+<li>对角线邻域 $N_D(p)$<ul>
+<li>四个对角。</li>
+</ul>
+</li>
+<li>8邻域 $N_8(4) = N_4(p) + N_D(p)$<ul>
+<li>邻域距离：$&lt;2$。就是周围一圈8个点。</li>
+</ul>
+</li>
+</ul>
+<h2 id="连接关系"><a href="#连接关系" class="headerlink" title="连接关系"></a>连接关系</h2><p>可以用来分离物体，鉴定边界。</p>
+<p>在二值图上通过邻域进行定义：</p>
+<ul>
+<li>4连接<ul>
+<li>$p \in N_4(q)$</li>
+</ul>
+</li>
+<li>8连接<ul>
+<li>$p \in N_8(q)$</li>
+</ul>
+</li>
+<li>m连接<ul>
+<li>$p \in N_D(q) \wedge (N_4(P) \cap N_4(q) = \emptyset)$</li>
+</ul>
+</li>
+</ul>
+<h2 id="邻接关系"><a href="#邻接关系" class="headerlink" title="邻接关系"></a>邻接关系</h2><ul>
+<li><p>有连接关系 $(4,8,m)$ 的像素 $p,q$ 是邻接关系。</p>
+</li>
+<li><p>两个子图像 $S_1, S_2$，如果存在 $S_1$ 中的某像素和 $S_2$ 中的某像素是邻接关系，则两子图是邻接关系。</p>
+</li>
+<li><p>从 $p $ 到 $q$ 的一条<strong>路径</strong>是值一个像素序列 $p_1, .., p_n$，$p_i$ 与 $p_{i+1}$ 邻接。</p>
+<ul>
+<li>像素 $p,q$ 之间存在一条路径，则称 $p,q$ <strong>联通</strong>。</li>
+</ul>
+</li>
+<li><p>图像 $S$ 中的任何一个像素 $p$，与 $p$ 联通的所有像素的集合构成一个<strong>联通分量</strong>，联通分量中所有像素两两联通。</p>
+<ul>
+<li>4连接：4联通分量</li>
+<li>8/m连接：2联通分量</li>
+</ul>
+</li>
+<li><p><strong>对象分割</strong>：标记联通分量。</p>
+<ul>
+<li>算法就是遍历扫描，没有邻接标记，有邻接标记为邻接标记并记录等价类。</li>
+</ul>
+</li>
+</ul>
+<h2 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h2><ul>
+<li>正定性：$D(p,q) \geq 0$，等号当且仅当 $p = q$。</li>
+<li>对称性：$D(p,q) = D(q,p)$。</li>
+<li>三角不等式：$D(p,q) \geq D(p,z) + D(q,z)$。</li>
+</ul>
+<p>常见距离：</p>
+<ul>
+<li>Minkowski 距离<ul>
+<li>$D(\boldsymbol{p}, \boldsymbol{q})=\left(\sum_{i=1}^{n}\left|p_{i}-q_{i}\right|^{k}\right)^{\frac{1}{k}}$</li>
+</ul>
+</li>
+</ul>
+<h2 id="骨架抽取"><a href="#骨架抽取" class="headerlink" title="骨架抽取"></a>骨架抽取</h2><ul>
+<li><p>计算距离图像：</p>
+<ul>
+<li>初始化距离为无穷大。</li>
+<li>边缘点：8邻域有背景点，距离为0。</li>
+<li>非边缘点，距离为8邻域中最小距离+1。</li>
+<li>反复扫描图像，重复上述步骤。</li>
+</ul>
+</li>
+<li><p>计算骨架图像：</p>
+<ul>
+<li>最大值在骨架上。</li>
+<li>以最小梯度扩展。</li>
+</ul>
+</li>
+</ul>
 
     </div>
 
@@ -440,7 +526,7 @@ q_{k}=\dfrac{\int_{Z_{k}}^{Z_{k+1}} Z p(Z) d Z}{\int_{Z_{k}}^{Z_{k+1}} p(Z) d Z}
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch1-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">Ch1 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%8E%B7%E5%8F%96"><span class="nav-number">1.1.</span> <span class="nav-text">图像获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA"><span class="nav-number">1.2.</span> <span class="nav-text">图像显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.3.</span> <span class="nav-text">图像表示</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch1-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">Ch1 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%8E%B7%E5%8F%96"><span class="nav-number">1.1.</span> <span class="nav-text">图像获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA"><span class="nav-number">1.2.</span> <span class="nav-text">图像显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.3.</span> <span class="nav-text">图像表示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch2-%E4%BA%8C%E5%80%BC%E5%9B%BE%E5%83%8F%E4%B8%8E%E5%83%8F%E7%B4%A0%E5%85%B3%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text">Ch2 二值图像与像素关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%BB%E5%9F%9F%E5%85%B3%E7%B3%BB"><span class="nav-number">2.1.</span> <span class="nav-text">邻域关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%85%B3%E7%B3%BB"><span class="nav-number">2.2.</span> <span class="nav-text">连接关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%BB%E6%8E%A5%E5%85%B3%E7%B3%BB"><span class="nav-number">2.3.</span> <span class="nav-text">邻接关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%9D%E7%A6%BB"><span class="nav-number">2.4.</span> <span class="nav-text">距离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%A8%E6%9E%B6%E6%8A%BD%E5%8F%96"><span class="nav-number">2.5.</span> <span class="nav-text">骨架抽取</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

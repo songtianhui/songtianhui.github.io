@@ -4279,6 +4279,86 @@ q_{k}=\dfrac{\int_{Z_{k}}^{Z_{k+1}} Z p(Z) d Z}{\int_{Z_{k}}^{Z_{k+1}} p(Z) d Z}
 </ul>
 </li>
 </ul>
+<h1 id="Ch2-二值图像与像素关系"><a href="#Ch2-二值图像与像素关系" class="headerlink" title="Ch2 二值图像与像素关系"></a>Ch2 二值图像与像素关系</h1><h2 id="邻域关系"><a href="#邻域关系" class="headerlink" title="邻域关系"></a>邻域关系</h2><ul>
+<li>4邻域 $N_4(p)$<ul>
+<li>邻域距离：$&lt;=1$。就是上下左右4个点。</li>
+</ul>
+</li>
+<li>对角线邻域 $N_D(p)$<ul>
+<li>四个对角。</li>
+</ul>
+</li>
+<li>8邻域 $N_8(4) = N_4(p) + N_D(p)$<ul>
+<li>邻域距离：$&lt;2$。就是周围一圈8个点。</li>
+</ul>
+</li>
+</ul>
+<h2 id="连接关系"><a href="#连接关系" class="headerlink" title="连接关系"></a>连接关系</h2><p>可以用来分离物体，鉴定边界。</p>
+<p>在二值图上通过邻域进行定义：</p>
+<ul>
+<li>4连接<ul>
+<li>$p \in N_4(q)$</li>
+</ul>
+</li>
+<li>8连接<ul>
+<li>$p \in N_8(q)$</li>
+</ul>
+</li>
+<li>m连接<ul>
+<li>$p \in N_D(q) \wedge (N_4(P) \cap N_4(q) = \emptyset)$</li>
+</ul>
+</li>
+</ul>
+<h2 id="邻接关系"><a href="#邻接关系" class="headerlink" title="邻接关系"></a>邻接关系</h2><ul>
+<li><p>有连接关系 $(4,8,m)$ 的像素 $p,q$ 是邻接关系。</p>
+</li>
+<li><p>两个子图像 $S_1, S_2$，如果存在 $S_1$ 中的某像素和 $S_2$ 中的某像素是邻接关系，则两子图是邻接关系。</p>
+</li>
+<li><p>从 $p $ 到 $q$ 的一条<strong>路径</strong>是值一个像素序列 $p_1, .., p_n$，$p_i$ 与 $p_{i+1}$ 邻接。</p>
+<ul>
+<li>像素 $p,q$ 之间存在一条路径，则称 $p,q$ <strong>联通</strong>。</li>
+</ul>
+</li>
+<li><p>图像 $S$ 中的任何一个像素 $p$，与 $p$ 联通的所有像素的集合构成一个<strong>联通分量</strong>，联通分量中所有像素两两联通。</p>
+<ul>
+<li>4连接：4联通分量</li>
+<li>8/m连接：2联通分量</li>
+</ul>
+</li>
+<li><p><strong>对象分割</strong>：标记联通分量。</p>
+<ul>
+<li>算法就是遍历扫描，没有邻接标记，有邻接标记为邻接标记并记录等价类。</li>
+</ul>
+</li>
+</ul>
+<h2 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h2><ul>
+<li>正定性：$D(p,q) \geq 0$，等号当且仅当 $p = q$。</li>
+<li>对称性：$D(p,q) = D(q,p)$。</li>
+<li>三角不等式：$D(p,q) \geq D(p,z) + D(q,z)$。</li>
+</ul>
+<p>常见距离：</p>
+<ul>
+<li>Minkowski 距离<ul>
+<li>$D(\boldsymbol{p}, \boldsymbol{q})=\left(\sum_{i=1}^{n}\left|p_{i}-q_{i}\right|^{k}\right)^{\frac{1}{k}}$</li>
+</ul>
+</li>
+</ul>
+<h2 id="骨架抽取"><a href="#骨架抽取" class="headerlink" title="骨架抽取"></a>骨架抽取</h2><ul>
+<li><p>计算距离图像：</p>
+<ul>
+<li>初始化距离为无穷大。</li>
+<li>边缘点：8邻域有背景点，距离为0。</li>
+<li>非边缘点，距离为8邻域中最小距离+1。</li>
+<li>反复扫描图像，重复上述步骤。</li>
+</ul>
+</li>
+<li><p>计算骨架图像：</p>
+<ul>
+<li>最大值在骨架上。</li>
+<li>以最小梯度扩展。</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>课程</category>
@@ -4341,6 +4421,30 @@ q_{k}=\dfrac{\int_{Z_{k}}^{Z_{k+1}} Z p(Z) d Z}{\int_{Z_{k}}^{Z_{k+1}} p(Z) d Z}
 </ul>
 </li>
 </ul>
+<h2 id="Schwartz-Zippel-定理"><a href="#Schwartz-Zippel-定理" class="headerlink" title="Schwartz-Zippel 定理"></a>Schwartz-Zippel 定理</h2><p>接下来我们再来看<strong>PIT问题</strong>的更一般的形式，也就是推广到多元：</p>
+<p>对于两个 $n$ 元 $d$ 阶多项式 $f, g \in \mathbb{F}[x_1, …, x_n]$，判断它们是否相等 $f \equiv g$。</p>
+<p>仍然我们可以将问题转化成多项式判零：</p>
+<p>$f\left(x_{1}, \ldots, x_{n}\right)=\sum\limits_{i_{1}, \ldots, i_{n} \geq 0} a_{i_{1}, i_{2}, \ldots, i_{n}} x_{1}^{i_{1}} x_{2}^{i_{2} \ldots} x_{n}^{i_{n}} \equiv 0?$</p>
+<p>这里注意一个多元多项式的阶（degree）是指一项中所有变量的幂次的和的最大值，所以进一步的：</p>
+<p>$f\left(x_{1}, \ldots, x_{n}\right)=\sum\limits_{i_{1}, \ldots i_{n} \geq 0 \atop i_{1}+\cdots+i_{n} \leq d} a_{i_{1}, i_{2}, \ldots, i_{n}} x_{1}^{i_{1}} x_{2}^{i_{2} \ldots} x_{n}^{i_{n}}$</p>
+<p>如果 $f$ 是显式地给出的，我们可以遍历所有系数，共最多 $\left(\begin{array}{c} n+d \\ d \end{array}\right) \leq(n+d)^{d}$ 个来检查是否为零（这里其实用到了一点组合知识）。</p>
+<p>一样的 $f$ 会作为一个黑盒，给定 $\vec{x} \in \mathbb{F}^{n}$，返回 $f(\vec{x})$。</p>
+<p>或者作为乘积形式（product form）。比如范德蒙行列式（Vandermonde determinant）：</p>
+<script type="math/tex; mode=display">
+M=\left[\begin{array}{ccccc}
+1 & x_{1} & x_{1}^{2} & \ldots & x_{1}^{n-1} \\
+1 & x_{2} & x_{2}^{2} & \ldots & x_{2}^{n-1} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & x_{n} & x_{n}^{2} & \ldots & x_{n}^{n-1}
+\end{array}\right] \quad f(\vec{x})=\operatorname{det}(M)=\prod\limits_{j<i}\left(x_{i}-x_{j}\right)</script><p>乘积形式的特点就在计算一个点处的函数值非常方便，而展开算系数就会极其复杂。</p>
+<p>如果能存在一个多项式时间的确定性算法解 PIT，那意味着两个本质性问题：$\mathbf{NEXP} \neq \mathbf{P/poly}$ 或者 $\mathbf{\sharp P} \neq \mathbf{FP}$，当然我已经不懂了。</p>
+<p>所以依然和上面类似的我们可以有一个随机算法，在 $S \subseteq \mathbb{F}$ 中随机取点，0返回 yes 否则 no。</p>
+<p>而它的正确性，也就是假阳性，也就是取到它的根的概率由如下 <strong>Schwartz-Zippel 定理</strong> 给出：</p>
+<div class="note info">
+            <p>对于 $d$ 阶多项式 $f \in \mathbb{F}[x_1, x_2, …, x_n]$，如果 $f \not \equiv 0$，那么对于任何有限集 $S \in \mathbb{F}$ 和随机均匀独立选取的 $r_1, r_2, …, r_n \in S$，有</p><p>$Pr[f(r_1, r_2, …, r_n) = 0] \leq \dfrac{d}{|S|}$。</p>
+          </div>
+<p>这个定理也说明了 $d$ 阶 $n$ 元多项式在任意 $S^n$ 中的根的个数至多 $d \times |S|^{n-1}$ 个。</p>
+<p>原证明较复杂，Dana Moshkovitz 在之后给出了一个很简洁优雅的证明，<del>我有空来写一遍</del>。</p>
 ]]></content>
       <categories>
         <category>课程</category>
