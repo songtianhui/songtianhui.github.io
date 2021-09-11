@@ -30,7 +30,7 @@
 <meta property="og:description" content="Ch1 概述 数字图像是指由被称作像素的小块区域组成的二维矩阵。  将物理图像行列划分后，每个小块区域称为像素（pixel）。 每个像素包括两个属性：位置和亮度 （或色彩）。   数字图像的两个基本问题  像素数目 灰度值的度量 本质问题就是物理信号离散化，数字化">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-09-07T17:33:49.000Z">
-<meta property="article:modified_time" content="2021-09-10T06:22:16.829Z">
+<meta property="article:modified_time" content="2021-09-11T15:25:58.869Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
 
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-10 14:22:16" itemprop="dateModified" datetime="2021-09-10T14:22:16+08:00">2021-09-10</time>
+                <time title="Modified: 2021-09-11 23:25:58" itemprop="dateModified" datetime="2021-09-11T23:25:58+08:00">2021-09-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -446,6 +446,89 @@ q_{k}=\dfrac{\int_{Z_{k}}^{Z_{k+1}} Z p(Z) d Z}{\int_{Z_{k}}^{Z_{k+1}} p(Z) d Z}
 </ul>
 </li>
 </ul>
+<h1 id="Ch3-灰度直方图与点运算"><a href="#Ch3-灰度直方图与点运算" class="headerlink" title="Ch3 灰度直方图与点运算"></a>Ch3 灰度直方图与点运算</h1><h2 id="灰度直方图-Histogram"><a href="#灰度直方图-Histogram" class="headerlink" title="灰度直方图 Histogram"></a>灰度直方图 Histogram</h2><p>定义：灰度级的函数，描述的是图像中每种灰度级像素的个数，反映图像中每种灰度出现的频率。横坐标是灰度级，纵坐标是灰度级出现的频率。</p>
+<p>$\mathrm{H}(\mathrm{D})=\lim\limits_{\Delta \mathrm{D} \rightarrow 0} \dfrac{\mathrm{A}(\mathrm{D})-\mathrm{A}(\mathrm{D}+\Delta \mathrm{D})}{\mathrm{D}-(\mathrm{D}+\Delta \mathrm{D})}=\lim\limits_{\Delta \mathrm{D} \rightarrow 0} \dfrac{\mathrm{A}(\mathrm{D})-\mathrm{A}(\mathrm{D}+\Delta \mathrm{D})}{-\Delta \mathrm{D}}=-\dfrac{\mathrm{d}}{\mathrm{dD}} \mathrm{A}(\mathrm{D})$</p>
+<p>其中 $A(D)$ 为阈值面积函数：为一幅连续图像中被具有灰度级 $D$ 的所有轮廓线所包围的面积。</p>
+<p>对于离散函数，固定 $\Delta D$ 为 $1$，则 $H(D) = A(D+1) - A(D)$。</p>
+<p><em>高维色彩直方图</em>。</p>
+<h2 id="性质与计算"><a href="#性质与计算" class="headerlink" title="性质与计算"></a>性质与计算</h2><ul>
+<li>不表示图像的空间信息。</li>
+<li><p>任一特定图像都有唯一直方图，但反之并不成立。</p>
+</li>
+<li><p>若一幅图像包含一个灰度均匀一致，且背景与物体对比度很强，假设物体的边界由灰度级 $D_1$ 定义的轮廓线，则</p>
+<ul>
+<li>$\int_{D_{1}}^{\infty} H(D) d D = \text{物体的面积}$</li>
+</ul>
+</li>
+<li><p>直方图的可加性：一副图像由若干个不相交的区域构成，则整幅图像的直方图是这若干个区域直方图之和。</p>
+</li>
+</ul>
+<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><ul>
+<li>数字化参数<ul>
+<li>一般一幅数字图像应该利用全部或几乎全部可能的灰度级。</li>
+<li>对直方图做快速检查。</li>
+</ul>
+</li>
+<li>边界阈值选择<ul>
+<li>使用轮廓线确定简单物体边界的方法，称为<strong>阈值化</strong>。</li>
+<li>对物体与背景有较强对比的景物的分割特别有用。</li>
+<li>双峰直方图。</li>
+</ul>
+</li>
+<li>摄影中的常见名词<ul>
+<li>过曝（Overexposed）</li>
+<li>正常曝光（Average）</li>
+<li>曝光不足（Underexposed）</li>
+</ul>
+</li>
+<li>图像增强<ul>
+<li>图像增强技术不需要考虑图像降质的原因，只将图像中感兴趣的特征有选择地突出，将不需要的特征进行衰减。</li>
+<li>图像增强没有一个的统一理论，如何评价图像增强的结果好坏也没有统一的标准。</li>
+<li>目的是改善图像视觉效果，便于观察和分析；便于人工或机器对图像的进一步处理。</li>
+<li>有空间域法：点处理（图象灰度变换、直方图均衡、伪彩色处理等）；<em>频率域法：高、低通滤波、同态滤波等。</em><ul>
+<li><strong>空间域</strong>图像增强技术指在空间域中，通过线性或非线性变换来增强构成图像的像素。</li>
+<li>点处理：作用于单个像素的空间域处理方法，包括图像灰度变换、直方图处理、伪彩色处理等技术。</li>
+<li>模板 处理：作用于像素邻域的处理方法，包括空域平滑、空域锐化等技术。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="点运算-Point-Operation"><a href="#点运算-Point-Operation" class="headerlink" title="点运算 Point Operation"></a>点运算 Point Operation</h2><p>定义：对于一幅输入图像，将产生一幅输出图像，输出图像的每个像素点的灰度值由输入像素点决定。</p>
+<ul>
+<li><p>点运算由灰度变换函数（gray-scale transformation, GST）确定。</p>
+</li>
+<li><p>令 $r$ 和 $s$ 所定义的变量分别是 $f(x, y)$ 和 $g(x,y)$ 在任意点 $(x,y)$ 的灰度级，则 $T$ 为灰度变换函数</p>
+<ul>
+<li>$s = T(r)$</li>
+<li>与局部（邻域）运算的区别：输入像素-输出像素一一对应。</li>
+<li>与几何运算的差别，不改变图像的空间关系。</li>
+</ul>
+</li>
+<li>运用<ul>
+<li>光度学标定（photometric calibration），希望数字图像的灰度能够真实反映图像的物理特性。</li>
+<li>对比度增强（contrast enhancement）或对比度扩展（contrast stretching）。</li>
+<li>显示标定（display calibration）<ul>
+<li>显示设备不能线性地将灰度值转换为光强度，因此点运算和显示非线性组合可以保持显示图像时的线性关系。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>点运算种类 $0 \leq r \leq 1$，$0$ 黑 $1$ 白<ul>
+<li>线性点运算 $s = a \times r + b$。</li>
+<li>非线性点运算。</li>
+<li>图像反转 $s = L - r - 1$。<ul>
+<li>反转变换适用于增强嵌入于图像暗色区域的白色或灰色细节, 特别是当黑色面积占主导地位时。</li>
+</ul>
+</li>
+<li>对数变换 $s = c \log{(1 + r)}$<ul>
+<li>对数变换使一窄带低灰度输入图像值映射为一宽带输出值，这种变换可以用来扩展被压缩的高值图像中的暗像素。</li>
+</ul>
+</li>
+<li>幂次变换 $s = c r^{\gamma}$</li>
+</ul>
+</li>
+</ul>
 
     </div>
 
@@ -526,7 +609,7 @@ q_{k}=\dfrac{\int_{Z_{k}}^{Z_{k+1}} Z p(Z) d Z}{\int_{Z_{k}}^{Z_{k+1}} p(Z) d Z}
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch1-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">Ch1 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%8E%B7%E5%8F%96"><span class="nav-number">1.1.</span> <span class="nav-text">图像获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA"><span class="nav-number">1.2.</span> <span class="nav-text">图像显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.3.</span> <span class="nav-text">图像表示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch2-%E4%BA%8C%E5%80%BC%E5%9B%BE%E5%83%8F%E4%B8%8E%E5%83%8F%E7%B4%A0%E5%85%B3%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text">Ch2 二值图像与像素关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%BB%E5%9F%9F%E5%85%B3%E7%B3%BB"><span class="nav-number">2.1.</span> <span class="nav-text">邻域关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%85%B3%E7%B3%BB"><span class="nav-number">2.2.</span> <span class="nav-text">连接关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%BB%E6%8E%A5%E5%85%B3%E7%B3%BB"><span class="nav-number">2.3.</span> <span class="nav-text">邻接关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%9D%E7%A6%BB"><span class="nav-number">2.4.</span> <span class="nav-text">距离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%A8%E6%9E%B6%E6%8A%BD%E5%8F%96"><span class="nav-number">2.5.</span> <span class="nav-text">骨架抽取</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch1-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">Ch1 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%8E%B7%E5%8F%96"><span class="nav-number">1.1.</span> <span class="nav-text">图像获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA"><span class="nav-number">1.2.</span> <span class="nav-text">图像显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.3.</span> <span class="nav-text">图像表示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch2-%E4%BA%8C%E5%80%BC%E5%9B%BE%E5%83%8F%E4%B8%8E%E5%83%8F%E7%B4%A0%E5%85%B3%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text">Ch2 二值图像与像素关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%BB%E5%9F%9F%E5%85%B3%E7%B3%BB"><span class="nav-number">2.1.</span> <span class="nav-text">邻域关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%85%B3%E7%B3%BB"><span class="nav-number">2.2.</span> <span class="nav-text">连接关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%BB%E6%8E%A5%E5%85%B3%E7%B3%BB"><span class="nav-number">2.3.</span> <span class="nav-text">邻接关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%9D%E7%A6%BB"><span class="nav-number">2.4.</span> <span class="nav-text">距离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%A8%E6%9E%B6%E6%8A%BD%E5%8F%96"><span class="nav-number">2.5.</span> <span class="nav-text">骨架抽取</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch3-%E7%81%B0%E5%BA%A6%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%B8%8E%E7%82%B9%E8%BF%90%E7%AE%97"><span class="nav-number">3.</span> <span class="nav-text">Ch3 灰度直方图与点运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%81%B0%E5%BA%A6%E7%9B%B4%E6%96%B9%E5%9B%BE-Histogram"><span class="nav-number">3.1.</span> <span class="nav-text">灰度直方图 Histogram</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8%E4%B8%8E%E8%AE%A1%E7%AE%97"><span class="nav-number">3.2.</span> <span class="nav-text">性质与计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E9%80%94"><span class="nav-number">3.3.</span> <span class="nav-text">用途</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E8%BF%90%E7%AE%97-Point-Operation"><span class="nav-number">3.4.</span> <span class="nav-text">点运算 Point Operation</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
