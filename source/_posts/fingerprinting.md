@@ -127,3 +127,46 @@ $Pr[f(r_1, r_2, ..., r_n) = 0] \leq \dfrac{d}{|S|}$。
 这个定理也说明了 $d$ 阶 $n$ 元多项式在任意 $S^n$ 中的根的个数至多 $d \times |S|^{n-1}$ 个。
 
 原证明较复杂，Dana Moshkovitz 在之后给出了一个很简洁优雅的证明，~~我有空来写一遍~~。
+
+
+
+# 指纹技术 Fingerprinting
+
+有了上面的 PIT 算法和 Schwartz-Zippel 定理，当我们想要比较两个对象 $X$ 和 $Y$ 时，可以不是直接比较，而是计算出他们的随机 **指纹（fingerprint）** $\mathrm{FING}(X), \mathrm{FING}(Y)$，然后再来比较指纹。
+
+这个指纹需要满足：
+
+- $\mathrm{FING}()$ 是一个函数，$X = Y \Rightarrow \mathrm{FING}(X) = \mathrm{FING}(Y)$。
+- 很容易计算和比较。
+- 理论上，指纹的值域要比原来对象的值域小很多，所以储存和比较指纹会变得容易。也
+  - 就是说 $\mathrm{FING}()$ 必然不是一个单射（injection），不同的 $X,Y$ 可能映射到同一个指纹。为了解决这个，我们采用随机化，希望 $Pr[\mathrm{FING}(X) = \mathrm{FING}(Y) | X \neq Y]$ 非常小。
+
+比如前面的比较多项式，我们就可以定义指纹为 $\mathrm{FING}(f) = f(r_1, ..., r_n)$，$r_1, ..., r_n$ 从 $S \subseteq \mathbb{F}$ 随机选取。
+
+
+
+# 检查相同性
+
+它描述的是这样一个问题：$x_1, ..., x_n \in \{1,2,...,n\}$，检查 $1,2,...,n$ 是否都只出现一次。
+
+我们完全可以通过遍历一遍来解决这个问题，线性时间空间复杂度。
+
+
+
+## 指纹 multisets
+
+考虑一个更一般的问题 **checking identity of multisets**：两个 multisets $A,B$，$a_i , b_i \in \{1,2,...,n\}$，判断它们是否相等。
+
+上述问题就可以直接转化成 $A $ 和 $\{1,2,...,n\}$ 是否相等。
+
+我们可以构造出 multiset 的指纹：
+
+从区间 $[(n\log{n})^2, 2(n \log{n})^2]$ 随机选择一个质数 $p$，考虑有限域 $\mathbb{Z}_p = [p]$。
+
+给定一个 multiset $A = [a_1, ..., a_n]$，我们定义一个单元多项式 $f_A \in \mathbb{Z}_p[x]$：$f_A(x) = \prod\limits_{i=1}^n (x - a_i)$、
+
+所有的算术运算都是定义在 $\mathbb{Z}_p$ 上的。
+
+然后定义一个随机指纹函数：$\mathrm{FING}(A) = f_A(r) = \prod\limits_{i=1}^{n}(r - a_i)$，其中 $r$ 是从 $\mathbb{Z}_p$ 中随机选取的。
+
+计算指纹的空间复杂度是 $O(\log{p}) = O(\log{n})$。可证假阳性的概率是 $O(\frac{1}{n})$。
