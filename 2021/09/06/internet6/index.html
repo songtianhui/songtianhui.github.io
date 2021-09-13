@@ -30,7 +30,7 @@
 <meta property="og:description" content="链路层 Link 运行链路层协议的任何设备均称为节点（node），包括主机、路由器、交换机和 WiFi 接入点。 沿着通信路径连接的相邻节点的通信信道称为链路（link）。 在经过特定的链路时，传输节点将数据报封装在链路层帧中，并将该帧传输到链路中。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-09-06T06:26:30.000Z">
-<meta property="article:modified_time" content="2021-09-07T14:49:42.734Z">
+<meta property="article:modified_time" content="2021-09-13T09:18:56.400Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
 
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-07 22:49:42" itemprop="dateModified" datetime="2021-09-07T22:49:42+08:00">2021-09-07</time>
+                <time title="Modified: 2021-09-13 17:18:56" itemprop="dateModified" datetime="2021-09-13T17:18:56+08:00">2021-09-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,7 +285,34 @@
 </li>
 <li><strong>广播链路（broadcast link）</strong>，多点、共享信道。</li>
 </ul>
-<h2 id="信道划分协议-Channel-Partitioning-Protocol"><a href="#信道划分协议-Channel-Partitioning-Protocol" class="headerlink" title="信道划分协议 Channel Partitioning Protocol"></a>信道划分协议 Channel Partitioning Protocol</h2><h2 id="随机接入协议-Random-Access-Protocol"><a href="#随机接入协议-Random-Access-Protocol" class="headerlink" title="随机接入协议 Random Access Protocol"></a>随机接入协议 Random Access Protocol</h2><h2 id="轮流协议-Taking-turns-Protocol"><a href="#轮流协议-Taking-turns-Protocol" class="headerlink" title="轮流协议 Taking-turns Protocol"></a>轮流协议 Taking-turns Protocol</h2><hr>
+<h2 id="信道划分协议-Channel-Partitioning-Protocol"><a href="#信道划分协议-Channel-Partitioning-Protocol" class="headerlink" title="信道划分协议 Channel Partitioning Protocol"></a>信道划分协议 Channel Partitioning Protocol</h2><ul>
+<li>时分多路复用 TDM<ul>
+<li>消除碰撞且非常公平。</li>
+<li>节点被限制于平均速率。</li>
+<li>节点必须总是等待它在传输序列中的轮次</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>频分多路复用 FDM</li>
+<li><strong>码分多址（Code Division Multiple Access, CDMA）</strong><ul>
+<li>对每个节点分配一种不同的编码，然后每个节点用它的编码来对它的数据进行编码。</li>
+</ul>
+</li>
+</ul>
+<h2 id="随机接入协议-Random-Access-Protocol"><a href="#随机接入协议-Random-Access-Protocol" class="headerlink" title="随机接入协议 Random Access Protocol"></a>随机接入协议 Random Access Protocol</h2><p>一个传输节点总是以信道的全部速率进行发送，当有碰撞使，设计碰撞的每个节点反复地重发它的帧（也就是分组），到该帧无碰撞地通过为止。</p>
+<p>它在重发该帧时等待一个随机时延。所以有可能这些节点之一所选择的时延充分小于其他碰撞节点的时延，并因此能够无碰撞地将它的帧在信道中发出。</p>
+<h3 id="时隙-ALOHA"><a href="#时隙-ALOHA" class="headerlink" title="时隙 ALOHA"></a>时隙 ALOHA</h3><ul>
+<li>当节点有一个新帧要发送的时候，它等到下一个时隙开始并在该时隙传输整个帧。</li>
+<li>如果没有碰撞，该节点成功地传输它的帧，从而不需要考虑重传该帧。</li>
+<li>如果有碰撞，该节点在时隙结束之间检测到这次碰撞。该节点以概率 $p$ 在后续的每个时隙中重传它的帧，直到该帧被无碰撞地传输出去。</li>
+</ul>
+<h3 id="ALOHO"><a href="#ALOHO" class="headerlink" title="ALOHO"></a>ALOHO</h3><h3 id="载波侦听多路访问-CSMA"><a href="#载波侦听多路访问-CSMA" class="headerlink" title="载波侦听多路访问 CSMA"></a>载波侦听多路访问 CSMA</h3><ul>
+<li><strong>载波侦听（carrier sensing）</strong>，一个节点在传输前先听信道。如果来自另一个节点的帧正在向信道上发送，节点则等待直到检测到一小段时间没有传输。</li>
+<li><strong>碰撞检测（collision detection）</strong>，当一个传输节点在传输时一直在侦听次信道。如果它检测到另一个节点正在传输干扰帧，它就停止传输，在重复“侦听-空闲时传输”循环之前等待一段随机时间。</li>
+</ul>
+<p>这两个规则包含在<strong>载波侦听多路访问（Carrier Sense Multiple Access, CSMA）</strong> 和<strong>具有碰撞检测的CSMA（CSMA with Collision Detection, CSMA/CD）</strong>协议族中。</p>
+<h2 id="轮流协议-Taking-turns-Protocol"><a href="#轮流协议-Taking-turns-Protocol" class="headerlink" title="轮流协议 Taking-turns Protocol"></a>轮流协议 Taking-turns Protocol</h2><hr>
 <h1 id="交换局域网"><a href="#交换局域网" class="headerlink" title="交换局域网"></a>交换局域网</h1><h2 id="链路层寻址和-ARP"><a href="#链路层寻址和-ARP" class="headerlink" title="链路层寻址和 ARP"></a>链路层寻址和 ARP</h2><ul>
 <li><p>MAC 地址</p>
 <ul>
@@ -316,7 +343,6 @@
 <li>原地址（6字节）。包含传输该帧到局域网上的适配器的 MAC 地址。</li>
 <li>类型字段（2字节）。允许以太网复用多种网络层协议。</li>
 <li>CRC（4字节）。检错。</li>
-<li></li>
 <li>前同步码（8字节）。前7字节为<code>10101010</code>，最后字节为<code>10101011</code>，用于唤醒接受适配器并同步时钟。</li>
 </ul>
 </li>
@@ -326,7 +352,30 @@
 <li>无连接服务：发送数据报帧无需事先握手</li>
 <li>不可靠服务：接收器进行CRC校验，不管是否通过都不返回确认（ACK）/否定确认（NEG）帧</li>
 </ul>
-<h2 id="链路层交换机"><a href="#链路层交换机" class="headerlink" title="链路层交换机"></a>链路层交换机</h2>
+<h2 id="链路层交换机"><a href="#链路层交换机" class="headerlink" title="链路层交换机"></a>链路层交换机</h2><p>交换机自身对子网中的主机和路由器是透明的。</p>
+<ul>
+<li><strong>过滤（filtering）</strong>是决定一个帧应该转发到某个接口还是应当将其丢弃的交换机功能。</li>
+<li><strong>转发（forwarding）</strong>是决定一个帧应该被导向哪个接口，并把该帧移动到那些接口的交换机功能。</li>
+<li><p>过滤和转发是借助<strong>交换机表（switch table）</strong>完成。</p>
+<ul>
+<li>包含地址、通向该地址的交换机接口、时间。</li>
+<li>这个表是<strong>自学习（self-learning）</strong>建立的。<em>大概意思就是传一个帧存一个地址和接口。</em></li>
+</ul>
+</li>
+<li><p>交换机的性质有</p>
+<ul>
+<li>消除碰撞</li>
+<li>异质的链路</li>
+<li>管理</li>
+</ul>
+</li>
+<li><p>交换机是第二层的分组交换机，而路由器是第三层的分组交换机。</p>
+<ul>
+<li>交换机用 MAC 地址转发分组。</li>
+</ul>
+</li>
+</ul>
+
     </div>
 
     
@@ -406,7 +455,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82-Link"><span class="nav-number">1.</span> <span class="nav-text">链路层 Link</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E6%8F%90%E4%BE%9B%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.1.</span> <span class="nav-text">链路层提供的服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.2.</span> <span class="nav-text">链路层实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B%E5%92%8C%E7%BA%A0%E6%AD%A3-Error-Dectection-and-Correction"><span class="nav-number">2.</span> <span class="nav-text">差错检测和纠正 Error Dectection and Correction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E8%B7%AF%E8%AE%BF%E9%97%AE%E9%93%BE%E8%B7%AF%E5%92%8C%E5%8D%8F%E8%AE%AE"><span class="nav-number">3.</span> <span class="nav-text">多路访问链路和协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E9%81%93%E5%88%92%E5%88%86%E5%8D%8F%E8%AE%AE-Channel-Partitioning-Protocol"><span class="nav-number">3.1.</span> <span class="nav-text">信道划分协议 Channel Partitioning Protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%8E%A5%E5%85%A5%E5%8D%8F%E8%AE%AE-Random-Access-Protocol"><span class="nav-number">3.2.</span> <span class="nav-text">随机接入协议 Random Access Protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AE%E6%B5%81%E5%8D%8F%E8%AE%AE-Taking-turns-Protocol"><span class="nav-number">3.3.</span> <span class="nav-text">轮流协议 Taking-turns Protocol</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="nav-number">4.</span> <span class="nav-text">交换局域网</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AF%BB%E5%9D%80%E5%92%8C-ARP"><span class="nav-number">4.1.</span> <span class="nav-text">链路层寻址和 ARP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91-Ethernet"><span class="nav-number">4.2.</span> <span class="nav-text">以太网 Ethernet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="nav-number">4.3.</span> <span class="nav-text">链路层交换机</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82-Link"><span class="nav-number">1.</span> <span class="nav-text">链路层 Link</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E6%8F%90%E4%BE%9B%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.1.</span> <span class="nav-text">链路层提供的服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.2.</span> <span class="nav-text">链路层实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B%E5%92%8C%E7%BA%A0%E6%AD%A3-Error-Dectection-and-Correction"><span class="nav-number">2.</span> <span class="nav-text">差错检测和纠正 Error Dectection and Correction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E8%B7%AF%E8%AE%BF%E9%97%AE%E9%93%BE%E8%B7%AF%E5%92%8C%E5%8D%8F%E8%AE%AE"><span class="nav-number">3.</span> <span class="nav-text">多路访问链路和协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E9%81%93%E5%88%92%E5%88%86%E5%8D%8F%E8%AE%AE-Channel-Partitioning-Protocol"><span class="nav-number">3.1.</span> <span class="nav-text">信道划分协议 Channel Partitioning Protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%8E%A5%E5%85%A5%E5%8D%8F%E8%AE%AE-Random-Access-Protocol"><span class="nav-number">3.2.</span> <span class="nav-text">随机接入协议 Random Access Protocol</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%9A%99-ALOHA"><span class="nav-number">3.2.1.</span> <span class="nav-text">时隙 ALOHA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ALOHO"><span class="nav-number">3.2.2.</span> <span class="nav-text">ALOHO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%BD%E6%B3%A2%E4%BE%A6%E5%90%AC%E5%A4%9A%E8%B7%AF%E8%AE%BF%E9%97%AE-CSMA"><span class="nav-number">3.2.3.</span> <span class="nav-text">载波侦听多路访问 CSMA</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AE%E6%B5%81%E5%8D%8F%E8%AE%AE-Taking-turns-Protocol"><span class="nav-number">3.3.</span> <span class="nav-text">轮流协议 Taking-turns Protocol</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="nav-number">4.</span> <span class="nav-text">交换局域网</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AF%BB%E5%9D%80%E5%92%8C-ARP"><span class="nav-number">4.1.</span> <span class="nav-text">链路层寻址和 ARP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91-Ethernet"><span class="nav-number">4.2.</span> <span class="nav-text">以太网 Ethernet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="nav-number">4.3.</span> <span class="nav-text">链路层交换机</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
