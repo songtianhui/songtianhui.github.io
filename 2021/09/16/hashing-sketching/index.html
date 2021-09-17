@@ -22,19 +22,19 @@
     var CONFIG = {"hostname":"songtianhui.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="多项式判等 Polynomial Identity TestingPIT问题： 输入两个 $d$ 阶多项式 $f, g \in \mathbb{F}[x]$，输出他们是否相等 $f \equiv g$。 这里 $\mathbb{F}[x]$ 指 $x$ 在域（field）$\mathbb{F}$ 上的多项式环（ring）。 我们可以很自然地将这个问题转化为判断一个 $d$ 阶多项式（$f - g$">
+  <meta name="description" content="本章主要是讲 hashing 和 sketching 技术。（这两个词确实有点难找到合适的翻译。。。）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="高级算法课程笔记-指纹">
-<meta property="og:url" content="https://songtianhui.github.io/2021/09/09/fingerprinting/index.html">
+<meta property="og:title" content="高级算法课程笔记-Hashing and Sketching">
+<meta property="og:url" content="https://songtianhui.github.io/2021/09/16/hashing-sketching/index.html">
 <meta property="og:site_name" content="Songtianhui&#39;s Blog">
-<meta property="og:description" content="多项式判等 Polynomial Identity TestingPIT问题： 输入两个 $d$ 阶多项式 $f, g \in \mathbb{F}[x]$，输出他们是否相等 $f \equiv g$。 这里 $\mathbb{F}[x]$ 指 $x$ 在域（field）$\mathbb{F}$ 上的多项式环（ring）。 我们可以很自然地将这个问题转化为判断一个 $d$ 阶多项式（$f - g$">
+<meta property="og:description" content="本章主要是讲 hashing 和 sketching 技术。（这两个词确实有点难找到合适的翻译。。。）">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-09-09T14:46:09.000Z">
-<meta property="article:modified_time" content="2021-09-12T11:36:48.429Z">
+<meta property="article:published_time" content="2021-09-16T13:27:58.000Z">
+<meta property="article:modified_time" content="2021-09-17T16:25:09.659Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://songtianhui.github.io/2021/09/09/fingerprinting/">
+<link rel="canonical" href="https://songtianhui.github.io/2021/09/16/hashing-sketching/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>高级算法课程笔记-指纹 | Songtianhui's Blog</title>
+  <title>高级算法课程笔记-Hashing and Sketching | Songtianhui's Blog</title>
   
 
 
@@ -192,7 +192,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/09/09/fingerprinting/">
+    <link itemprop="mainEntityOfPage" href="https://songtianhui.github.io/2021/09/16/hashing-sketching/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -205,7 +205,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          高级算法课程笔记-指纹
+          高级算法课程笔记-Hashing and Sketching
         </h1>
 
         <div class="post-meta">
@@ -215,14 +215,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-09-09 22:46:09" itemprop="dateCreated datePublished" datetime="2021-09-09T22:46:09+08:00">2021-09-09</time>
+              <time title="Created: 2021-09-16 21:27:58" itemprop="dateCreated datePublished" datetime="2021-09-16T21:27:58+08:00">2021-09-16</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-12 19:36:48" itemprop="dateModified" datetime="2021-09-12T19:36:48+08:00">2021-09-12</time>
+                <time title="Modified: 2021-09-18 00:25:09" itemprop="dateModified" datetime="2021-09-18T00:25:09+08:00">2021-09-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,104 +249,81 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="多项式判等-Polynomial-Identity-Testing"><a href="#多项式判等-Polynomial-Identity-Testing" class="headerlink" title="多项式判等 Polynomial Identity Testing"></a>多项式判等 Polynomial Identity Testing</h1><p><strong>PIT问题</strong>：</p>
-<p>输入两个 $d$ 阶多项式 $f, g \in \mathbb{F}[x]$，输出他们是否相等 $f \equiv g$。</p>
-<p>这里 $\mathbb{F}[x]$ 指 $x$ 在域（field）$\mathbb{F}$ 上的多项式环（ring）。</p>
-<p>我们可以很自然地将这个问题转化为判断一个 $d$ 阶多项式（$f - g$）是否恒为 0。</p>
-<p>如果 $f$ 被显式地给出了，我们很容易地可以通过遍历它的系数来判断。为了使问题更加 nontrivial，假设 $f$ 是一个黑盒（black box/ oracle），看不到系数，只能通过输入 $x$ 得到 $f(x)$。</p>
+        <p>本章主要是讲 hashing 和 sketching 技术。（这两个词确实有点难找到合适的翻译。。。）</p>
 <a id="more"></a>
+<h1 id="不同元素-Distinct-Elements"><a href="#不同元素-Distinct-Elements" class="headerlink" title="不同元素 Distinct Elements"></a>不同元素 Distinct Elements</h1><p>一个叫数不同元素的问题：</p>
+<p>$\Omega $ 是一个足够大的全集，输入 $n$ 个元素 $x_1, x_2, …, x_n \in \Omega$，不一定是不同的。要输出的就是共有多少个不同种元素 $z = |\{x_1, x_2, …, x_n\}|$。</p>
+<p>最直接的一个方法就是维护一个字典（dictionary）的数据结构，空间复杂度是 $O(n)$ 的。当 $n$ 很大时开销是大的，但是根据信息理论，如果要计算出精确的 $z$，$O(n)$ 的空间是必要的。</p>
+<p>所以我们又只能考虑牺牲可容忍的精度的近似答案，有一个叫 $(\epsilon, \delta)$<strong>-estimator</strong> 的东西：</p>
+<p>一个随机变量 $\widehat{Z}$ 称为一个量 $z$ 的 $(\epsilon, \delta)$<strong>-estimator</strong> 当 $\text{Pr}[(1 - \epsilon)z \leq \widehat{Z} \leq (1 + \epsilon)z] \geq 1 - \delta$。</p>
 <ul>
-<li>一个直接的确定性方法就是带入 $d+1$ 个不同的数计算 $f(x_1), f(x_2), …,f(x_{d+1})$ 来计算是否全为零，若全为零则根据<strong>代数基本定理</strong>，能保证 $d$ 阶多项式 $f$ 一定恒为零。</li>
+<li><p>当 $\mathbb{E}[\widehat{Z}] = z$ 时称作<strong>无偏估计（unbiased estimator）</strong>。</p>
+</li>
+<li><p>一般的 $\epsilon$ 叫 <strong>approximation error</strong>，$\delta$ 叫 <strong>confidence error</strong>。</p>
+</li>
 </ul>
+<h2 id="使用-hashing-的估计量"><a href="#使用-hashing-的估计量" class="headerlink" title="使用 hashing 的估计量"></a>使用 hashing 的估计量</h2><p>假设我们有一个理想的随机哈希函数 $h : \Omega \to [0, 1]$，是在 $\Omega $ 上的均匀分布。</p>
+<p>对于输入序列 $x_1, …, x_n$，我们可以维护它们的哈希值而不是原来的元素，但是在最坏的情况下我们仍然需要维护 $n$ 个不同的值。但是由于理想的随机哈希函数，区间 $[0,1]$ 将被 $z$ 个不同的哈希值分成 $z+1$ 个子区间。通过这些子区间，我们可以得到一个 $z$ 的估计量。</p>
+<p>首先有一个命题：</p>
 <div class="note info">
-            <p>一个非零 $d$ 阶单变量多项式一定至多有 $d$ 个根。</p>
+            <p>$\mathbb{E}[\min_{1 \leq i \leq n} h(x_i)] = \dfrac{1}{z + 1}$</p>
           </div>
-<p>然后自然地我们有如下算法：</p>
-<ol>
-<li>suppose we have a finite subset $S \subseteq \mathbb{F}$</li>
-<li>pick $r \in S$ uniformly at random</li>
-<li>if $f(r) = 0$ return ‘yes’ else ‘no’</li>
-</ol>
-<p>我们很容易可以得出：</p>
-<ul>
-<li>如果 $f \equiv 0$，算法永远返回 ‘yes’。</li>
-<li>如果 $f \not \equiv 0$，算法可能错误地返回 ‘yes’（假阳性），但这只当 $r$ 是 $f$ 的根时发生。根据代数基本定理，$f$ 最多 $d$ 个根，所以算法出错的可能性有界：<ul>
-<li>$Pr[f(r) = 0] \leq \dfrac{d}{|S|}$。</li>
-<li>我们可以固定 $|S| = 2d$，这样出错的概率最多就是 $1/2$。然后通过独立重复 $\log_{2}{\frac{1}{\delta}}$ 次来将这个概率减小到 $\delta$。</li>
-</ul>
-</li>
-</ul>
-<h2 id="Equality-的通信复杂性"><a href="#Equality-的通信复杂性" class="headerlink" title="Equality 的通信复杂性"></a>Equality 的通信复杂性</h2><p> <strong>通信复杂性</strong>（<a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Communication_complexity">communication complexity</a>）是姚期智先生（对就是那个图灵奖）提出来的多个实体的计算模型。简单来说就是有两个端，分别有两个输入 $a$ 和 $b$，我们要计算一个函数 $f(a,b)$，不考虑计算的复杂性，我们只关心<strong>通信协议（communication protocol）</strong>，也就是两个端传输的信息的比特。</p>
-<p><del>这个其实在问求4讲过不过我一直没搞明白。</del></p>
-<p>在这里我们讨论的函数是 $\mathrm{EQ}: \{0, 1\}^n \times \{0, 1\}^n \to \{0, 1\}$，对任意 $a, b \in \{0, 1\}^n$ 有：</p>
-<p>$\mathrm{EQ}(a, b)= \begin{cases}1 &amp; \text { if } a=b \\ 0 &amp; \text { otherwise }\end{cases}$</p>
-<ul>
-<li>最简单的想法就是把整个 $a$ 或 $b$ 传过去，通信复杂度是 $n$ 个 bit。<ul>
-<li>可证（yao 证出来的）这是最好的确定性通信协议，也就是要确定地保证完全相等，至少需要 n bit的传输。</li>
-<li>这个证明其实远比它看起来要 nontrivial。</li>
-</ul>
-</li>
-</ul>
-<p>我们可以考虑将 $a,b$ 看成 $n$ 阶多项式 $f,g$，然后运用我们刚才的 <strong>PIT</strong> 来解决。</p>
-<p>需要传输 $r, f(r)$，$r \in [2n]$ 所以需要 $O(\log{n})$ 个bit，而 $f(r)$ 实际上是 $f(r) = \sum\limits_{i = 0}^{n-1} a_i r^i = O(r^n) = O(n^n)$ 是一个指数量级，需要 $O(n\log{n})$ 个bit。这比直接传整个数据库过去还多，<del>屁用没有</del>。</p>
-<ul>
-<li>所以根本原因在于我们选的<strong>域</strong>太大了，是和 $n$ 正比的，能不能找到小一点的，最好是一个常数大小的域。<ul>
-<li>很快地我们就能够想到在模意义下取数，也就是 $\mathbb{Z}_p = \{0, 1, …, p-1\}$。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>我们只需要随机取一个质数 $p \in [n^2, 2n^2]$（可证一定能找到），$f,g \in \mathbb{Z}_p[x]$，然后随机取 $r \in [p]$。<ul>
-<li>这样所需要传输的数据 $r, f(r) &lt; p$，只需要 $O(\log{p}) = O(\log{n})$ 的通信复杂度。</li>
-<li>单边错概率是 $\dfrac{n}{p} = O(\dfrac{1}{n})$，w.h.p。</li>
-</ul>
-</li>
-</ul>
-<h2 id="Schwartz-Zippel-定理"><a href="#Schwartz-Zippel-定理" class="headerlink" title="Schwartz-Zippel 定理"></a>Schwartz-Zippel 定理</h2><p>接下来我们再来看<strong>PIT问题</strong>的更一般的形式，也就是推广到多元：</p>
-<p>对于两个 $n$ 元 $d$ 阶多项式 $f, g \in \mathbb{F}[x_1, …, x_n]$，判断它们是否相等 $f \equiv g$。</p>
-<p>仍然我们可以将问题转化成多项式判零：</p>
-<p>$f\left(x_{1}, \ldots, x_{n}\right)=\sum\limits_{i_{1}, \ldots, i_{n} \geq 0} a_{i_{1}, i_{2}, \ldots, i_{n}} x_{1}^{i_{1}} x_{2}^{i_{2} \ldots} x_{n}^{i_{n}} \equiv 0?$</p>
-<p>这里注意一个多元多项式的阶（degree）是指一项中所有变量的幂次的和的最大值，所以进一步的：</p>
-<p>$f\left(x_{1}, \ldots, x_{n}\right)=\sum\limits_{i_{1}, \ldots i_{n} \geq 0 \atop i_{1}+\cdots+i_{n} \leq d} a_{i_{1}, i_{2}, \ldots, i_{n}} x_{1}^{i_{1}} x_{2}^{i_{2} \ldots} x_{n}^{i_{n}}$</p>
-<p>如果 $f$ 是显式地给出的，我们可以遍历所有系数，共最多 $\left(\begin{array}{c} n+d \\ d \end{array}\right) \leq(n+d)^{d}$ 个来检查是否为零（这里其实用到了一点组合知识）。</p>
-<p>一样的 $f$ 会作为一个黑盒，给定 $\vec{x} \in \mathbb{F}^{n}$，返回 $f(\vec{x})$。</p>
-<p>或者作为乘积形式（product form）。比如范德蒙行列式（Vandermonde determinant）：</p>
-<script type="math/tex; mode=display">
-M=\left[\begin{array}{ccccc}
-1 & x_{1} & x_{1}^{2} & \ldots & x_{1}^{n-1} \\
-1 & x_{2} & x_{2}^{2} & \ldots & x_{2}^{n-1} \\
-\vdots & \vdots & \vdots & \ddots & \vdots \\
-1 & x_{n} & x_{n}^{2} & \ldots & x_{n}^{n-1}
-\end{array}\right] \quad f(\vec{x})=\operatorname{det}(M)=\prod\limits_{j<i}\left(x_{i}-x_{j}\right)</script><p>乘积形式的特点就在计算一个点处的函数值非常方便，而展开算系数就会极其复杂。</p>
-<p>如果能存在一个多项式时间的确定性算法解 PIT，那意味着两个本质性问题：$\mathbf{NEXP} \neq \mathbf{P/poly}$ 或者 $\mathbf{\sharp P} \neq \mathbf{FP}$，当然我已经不懂了。</p>
-<p>所以依然和上面类似的我们可以有一个随机算法，在 $S \subseteq \mathbb{F}$ 中随机取点，0返回 yes 否则 no。</p>
-<p>而它的正确性，也就是假阳性，也就是取到它的根的概率由如下 <strong>Schwartz-Zippel 定理</strong> 给出：</p>
+<p>所以所有哈希值中最小的那个 $Y = \min_{1 \leq i \leq n} h(x_i)$ 可以作为 $\frac{1}{z+1}$ 的无偏估计，$\min_{1 \leq i \leq n} h(x_i)$ 显然是可以在常数空间复杂度下得到的。</p>
+<p>但是要记住 $\frac{1}{Y} - 1$ 不一定是 $z$ 的一个好的估计值。</p>
+<h2 id="Flajolet-Martin-算法"><a href="#Flajolet-Martin-算法" class="headerlink" title="Flajolet-Martin 算法"></a>Flajolet-Martin 算法</h2><p>上面的方法表现得不太好的原因是无偏估计量 $\min_{1 \leq i \leq n} h(x_i)$ 的方差太大了，解决方法是我们可以用多个独立的哈希函数，然后取平均值，这也就是 <strong>Flajolet-Martin 算法</strong>的核心思想。</p>
+<p>假设我们可以获得 $k$ 个独立的随机哈希函数 $h_1, h_2, …, h_k$，其中 $k$ 需要根据 $\epsilon, \delta$ 来确定。</p>
+<figure class="highlight plain"><figcaption><span>Flajolet-Martin</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Scan the input sequence x_1, ..., x_n in a single pass to compute:</span><br><span class="line">	Y_j &#x3D; min(h_j(x_i)) for j &#x3D; 1, 2, ..., k</span><br><span class="line">	average value Y_bar &#x3D; sum(Y_j) &#x2F; k</span><br><span class="line">return Z &#x3D; 1 &#x2F; y_bar - 1</span><br></pre></td></tr></table></figure>
+<p>这个算法仍然可以在<strong>数据流模型</strong>下实现，需要储存 $k$ 个哈希值。</p>
+<p>下面这个定理保证了这个算法可以返回一个对于不同元素总数的 $(\epsilon, \delta)$-估计值，给定一个合适的 $k = O(\frac{1}{\epsilon^2 \delta})$：</p>
 <div class="note info">
-            <p>对于 $d$ 阶多项式 $f \in \mathbb{F}[x_1, x_2, …, x_n]$，如果 $f \not \equiv 0$，那么对于任何有限集 $S \in \mathbb{F}$ 和随机均匀独立选取的 $r_1, r_2, …, r_n \in S$，有</p><p>$Pr[f(r_1, r_2, …, r_n) = 0] \leq \dfrac{d}{|S|}$。</p>
+            <p>对于任意的 $\epsilon, \delta&lt;1 / 2$，如果 $k \geq\left[\frac{4}{\epsilon^{2} \delta}\right]$ 则输出 $\widehat{Z}$ 总是给出一个 $z$ 的真实值的 $(\epsilon, \delta)$-estimator。</p>
           </div>
-<p>这个定理也说明了 $d$ 阶 $n$ 元多项式在任意 $S^n$ 中的根的个数至多 $d \times |S|^{n-1}$ 个。</p>
-<p>原证明较复杂，Dana Moshkovitz 在之后给出了一个很简洁优雅的证明，<del>我有空来写一遍</del>。</p>
-<h1 id="指纹技术-Fingerprinting"><a href="#指纹技术-Fingerprinting" class="headerlink" title="指纹技术 Fingerprinting"></a>指纹技术 Fingerprinting</h1><p>有了上面的 PIT 算法和 Schwartz-Zippel 定理，当我们想要比较两个对象 $X$ 和 $Y$ 时，可以不是直接比较，而是计算出他们的随机 <strong>指纹（fingerprint）</strong> $\mathrm{FING}(X), \mathrm{FING}(Y)$，然后再来比较指纹。</p>
-<p>这个指纹需要满足：</p>
+<p><del>证略，一样有空再来填坑。</del></p>
+<h2 id="均匀哈希假设-Uniform-Hash-Assumption"><a href="#均匀哈希假设-Uniform-Hash-Assumption" class="headerlink" title="均匀哈希假设 Uniform Hash Assumption"></a>均匀哈希假设 Uniform Hash Assumption</h2><p>上面的所有方法在将哈希函数换成 $h: \Omega \to [M]$  的情况下都可以获得相同好的表现，这里 $M = poly(n)$，也就是可以用 $O(\log{n})$ 个bit来表示出 $M$。</p>
+<p>即使有这个分析，一个形式为 $h: [N] \to [M]$ 的均匀的随机离散函数都无法被高效地储存和计算。根据信息理论，表示这样一个函数至少需要 $O(N \log{M})$ 个 bit，因为这是均匀随机函数的熵（entropy）。</p>
+<p>所以为了方便分析，我们一般有 <strong>Uniform Hash Assumption(UHA)</strong> 或者叫 <strong>Simple Uniform Hash Assumption (SUHA)</strong>：</p>
+<div class="note info">
+            <p>一个均匀随机函数 $h: [N] \to [M]$ 是可获得且计算高效的。</p>
+          </div>
+<h1 id="集合成员-Set-Membership"><a href="#集合成员-Set-Membership" class="headerlink" title="集合成员 Set Membership"></a>集合成员 Set Membership</h1><p>这个基本的问题就是：</p>
+<p>给定全集 $\Omega $ 下的一个 $n$ 元集合 $S$，我们想用一个数据结构来表示 $S$，使得每次对于元素 $x \in [N]$ 的查询（query），对于 $x$ 是否属于 $S$ 能够高效地回答。</p>
 <ul>
-<li>$\mathrm{FING}()$ 是一个函数，$X = Y \Rightarrow \mathrm{FING}(X) = \mathrm{FING}(Y)$。</li>
-<li>很容易计算和比较。</li>
-<li>理论上，指纹的值域要比原来对象的值域小很多，所以储存和比较指纹会变得容易。也<ul>
-<li>就是说 $\mathrm{FING}()$ 必然不是一个单射（injection），不同的 $X,Y$ 可能映射到同一个指纹。为了解决这个，我们采用随机化，希望 $Pr[\mathrm{FING}(X) = \mathrm{FING}(Y) | X \neq Y]$ 非常小。</li>
-</ul>
+<li><p>有序表、平衡搜索树：$O(n\log{N})$ 的空间复杂度，$O(\log{n})$ 的时间复杂度。</p>
+</li>
+<li><p>好的哈希：$O(n\log{N})$ 的空间复杂度，$O(1)$ 的时间复杂度。</p>
 </li>
 </ul>
-<p>比如前面的比较多项式，我们就可以定义指纹为 $\mathrm{FING}(f) = f(r_1, …, r_n)$，$r_1, …, r_n$ 从 $S \subseteq \mathbb{F}$ 随机选取。</p>
-<h1 id="检查相同性"><a href="#检查相同性" class="headerlink" title="检查相同性"></a>检查相同性</h1><p>它描述的是这样一个问题：$x_1, …, x_n \in \{1,2,…,n\}$，检查 $1,2,…,n$ 是否都只出现一次。</p>
-<p>我们完全可以通过遍历一遍来解决这个问题，线性时间空间复杂度。</p>
-<h2 id="指纹-multisets"><a href="#指纹-multisets" class="headerlink" title="指纹 multisets"></a>指纹 multisets</h2><p>考虑一个更一般的问题 <strong>checking identity of multisets</strong>：两个 multisets $A,B$，$a_i , b_i \in \{1,2,…,n\}$，判断它们是否相等。</p>
-<p>上述问题就可以直接转化成 $A $ 和 $\{1,2,…,n\}$ 是否相等。</p>
-<p>我们可以构造出 multiset 的指纹：</p>
-<p>从区间 $[(n\log{n})^2, 2(n \log{n})^2]$ 随机选择一个质数 $p$，考虑有限域 $\mathbb{Z}_p = [p]$。</p>
-<p>给定一个 multiset $A = [a_1, …, a_n]$，我们定义一个单元多项式 $f_A \in \mathbb{Z}_p[x]$：$f_A(x) = \prod\limits_{i=1}^n (x - a_i)$、</p>
-<p>所有的算术运算都是定义在 $\mathbb{Z}_p$ 上的。</p>
-<p>然后定义一个随机指纹函数：$\mathrm{FING}(A) = f_A(r) = \prod\limits_{i=1}^{n}(r - a_i)$，其中 $r$ 是从 $\mathbb{Z}_p$ 中随机选取的。</p>
-<p>计算指纹的空间复杂度是 $O(\log{p}) = O(\log{n})$。可证假阳性的概率是 $O(\frac{1}{n})$。</p>
+<p>注意到 $\log \left(\begin{array}{l}N \\ n\end{array}\right)=\Theta\left(n \log \frac{N}{n}\right)$ 实际上是 $S$ 的熵，也就是说 $O(n\log{N})$ 的空间开销是不可避免的。但如果我们使用一个损失表示并容忍一个有界的查询误差就可以做的更好，这样的一种数据的有损表示称作<strong>sketch</strong>。</p>
+<h2 id="Bloom-Filter"><a href="#Bloom-Filter" class="headerlink" title="Bloom Filter"></a>Bloom Filter</h2><p>Bloom filter 考虑一个 $cn$ 个 bit 的数组 $A$，$k$ 个哈希函数 $h_1, h_2, …, h_k: \Omega \to [cn]$。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">construction:</span><br><span class="line">	initialize all cn bits of the Boolean array A to 0</span><br><span class="line">	for each x in S, A[hi(x)] &#x3D; 1 for 1 &lt;&#x3D; i &lt;&#x3D; k</span><br><span class="line"></span><br><span class="line">query:</span><br><span class="line">	if A[hi(x)] &#x3D; 1 for 1 &lt;&#x3D; i &lt;&#x3D; k:</span><br><span class="line">		return yes</span><br><span class="line">	else:</span><br><span class="line">		return no</span><br></pre></td></tr></table></figure>
+<p>这个布尔数组就是我们的数据结构，空间复杂度 $O(cn)$，一次查询的时间复杂度 $O(k)$。</p>
+<p>当算法返回 <code>no</code>，也就存在 $1 \leq i \leq k$ 的 $A[h_i(x)] = 0$，就是说 $x$ 一定不属于 $S$。这说明这个算法不存在假阴性。</p>
+<p>当算法返回 <code>yes</code>，对所有 $1 \leq i \leq k$ 的 $A[h_i(x)] = 1$，不过有假阳性，也就是存在 $x \notin S$，所有的 $A[h_i(x)]= 1$，我们需要限制这个误差，也即是当 $x\notin S$ 时：</p>
+<p>$\operatorname{Pr}\left[\forall 1 \leq i \leq k, A\left[h_{i}(x)\right]=1\right] = \operatorname{Pr}\left[A\left[h_{1}(x)\right]=1\right]^{k}=\left(1-\operatorname{Pr}\left[A\left[h_{1}(x)\right]=0\right]\right)^{k}$。</p>
+<p>$A[h_i(x)]$ 逃过所有 $kn$ 次的更新的概率是 $\operatorname{Pr}\left[A\left[h_{1}(x)\right]=0\right]=\left(1-\frac{1}{c n}\right)^{k n} \approx e^{-k / c}$。</p>
+<p>然后就有：</p>
+<p>$\begin{aligned}<br>\operatorname{Pr}[\text { wrongly answer “yes” }] &amp;=\operatorname{Pr}\left[\forall 1 \leq i \leq k, A\left[h_{i}(x)\right]=1\right] \\<br>&amp;=\operatorname{Pr}\left[A\left[h_{1}(x)\right]=1\right]^{k}=\left(1-\operatorname{Pr}\left[A\left[h_{1}(x)\right]=0\right]\right)^{k} \\<br>&amp;=\left(1-\left(1-\frac{1}{c n}\right)^{k n}\right)^{k} \\<br>&amp; \approx\left(1-e^{-k / c}\right)^{k}<br>\end{aligned}$</p>
+<p>当 $k = c\ln{2}$ 时这个概率大概是 $(0.6185)^c$。</p>
+<p>Bloom Filter 解决了这个问题，只有很小的常数单边假阳性误差，$O(n)$ bits的空间开销和 $O(1)$ 的查询时间开销。</p>
+<h1 id="频率估计-Frenquency-Estimation"><a href="#频率估计-Frenquency-Estimation" class="headerlink" title="频率估计 Frenquency Estimation"></a>频率估计 Frenquency Estimation</h1><p>就是对于一串输入 $x_1, x_2, …, x_n \in \Omega$，查询 $x$ 出现的次数 $f_x = |\{i | x_i = x\}|$。</p>
+<p>一样的，储存整个输入开销太大了，我们要找一个 <strong>sketch</strong>，算法返回 $f_x$ 满足：$\operatorname{Pr}\left[\left|\hat{f}_{x}-f_{x}\right| \leq \epsilon n\right] \geq 1-\delta$。</p>
+<h2 id="最小计数-Count-min-sketch"><a href="#最小计数-Count-min-sketch" class="headerlink" title="最小计数 Count-min sketch"></a>最小计数 Count-min sketch</h2><p><strong>Count-min sketch</strong> 是对于频率估计的一个非常优雅的数据结构。</p>
+<p>这个数据结构需要一个 $k \times m$ 的二维数组 CMS，我们仍然假设可以获得 $k$ 个独立均匀分布的哈希函数 $h_1, h_2,…,h_k: \Omega \to [m]$。</p>
+<figure class="highlight plain"><figcaption><span>count-min</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">construct:</span><br><span class="line">	initialize all entries of CMS[k][m] to 0</span><br><span class="line">	for i &#x3D; 1 to n:</span><br><span class="line">		for j &#x3D; 1 to k:</span><br><span class="line">			evaluate hj(xi) and CMS[j][hj(xi)++</span><br><span class="line">			</span><br><span class="line">query:</span><br><span class="line">	return f_x &#x3D; min(CMS[j][hj(xi)])</span><br></pre></td></tr></table></figure>
+<p>空间复杂度 $O(km)$，时间复杂度 $O(k)$。下面我们来分析它的误差边界。</p>
+<p>很显然 $CMS[j][h_j(x_i)] \leq f_x$，因为至少加了 $f_x$ 次，即 $\hat{f}_{x}=\min _{1 \leq j \leq k} C M S[j]\left[h_{j}(x)\right] \geq f_{x}$。</p>
+<p>所以 $\operatorname{Pr}\left[\left|\hat{f}_{x}-f_{x}\right| \geq \epsilon n\right]=\operatorname{Pr}\left[\hat{f}_{x}-f_{x} \geq \epsilon n\right]=\prod_{j=1}^{k} \operatorname{Pr}\left[C M S[j]\left[h_{j}(x)\right]-f_{x} \geq \epsilon n\right]$。</p>
+<p>然后我们就需要界定 $\operatorname{Pr}\left[C M S[j]\left[h_{j}(x)\right]-f_{x} \geq \epsilon n\right]$，可以通过计算 $C M S[j]\left[h_{j}(x)\right]$ 的期望。</p>
+<p>可证如下命题：</p>
+<div class="note info">
+            <p>对任意的 $x\in \Omega$，任意的 $1 \leq j \leq k$，$\mathbb{E}\left[C M S[j]\left[h_{j}(x)\right]\right] \leq f_{x}+\frac{n}{m}$。</p>
+          </div>
+<p>所以有 $\mathbb{E}\left[C M S[j]\left[h_{j}(x)\right] - f_x \right] \leq \frac{n}{m}$。</p>
+<p>因为 $C M S[j]\left[h_{j}(x) \right] \geq f_x$ 所以 $C M S[j]\left[h_{j}(x)\right] - f_x$ 是正随机变量，由马尔科夫不等式：</p>
+<p>$\operatorname{Pr}\left[C M S[j]\left[h_{j}(x)\right]-f_{x} \geq \epsilon n\right] \leq \frac{1}{\epsilon m}$。</p>
+<p>再和上面的结合一下：</p>
+<p>$\operatorname{Pr}\left[\left|\hat{f}_{x}-f_{x}\right| \geq \epsilon n\right]=\left(\operatorname{Pr}\left[C M S[j]\left[h_{j}(x)\right]-f_{x} \geq \epsilon n\right]\right)^{k} \leq \frac{1}{(\epsilon m)^{k}}$。</p>
+<p>令 $m = \left\lceil \frac{e}{\epsilon} \right\rceil, k = \left\lceil \ln{\frac{1}{\delta}} \right\rceil$，这个误差概率可以被限制在 $\frac{1}{(\epsilon m)^k} \leq \delta$。</p>
 
     </div>
 
@@ -362,13 +339,10 @@ M=\left[\begin{array}{ccccc}
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/09/08/digital-image-processing/" rel="prev" title="数字图像处理课程笔记">
-      <i class="fa fa-chevron-left"></i> 数字图像处理课程笔记
+    <a href="/2021/09/09/fingerprinting/" rel="prev" title="高级算法课程笔记-指纹">
+      <i class="fa fa-chevron-left"></i> 高级算法课程笔记-指纹
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/09/16/hashing-sketching/" rel="next" title="高级算法课程笔记-Hashing and Sketching">
-      高级算法课程笔记-Hashing and Sketching <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -427,7 +401,7 @@ M=\left[\begin{array}{ccccc}
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%88%A4%E7%AD%89-Polynomial-Identity-Testing"><span class="nav-number">1.</span> <span class="nav-text">多项式判等 Polynomial Identity Testing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Equality-%E7%9A%84%E9%80%9A%E4%BF%A1%E5%A4%8D%E6%9D%82%E6%80%A7"><span class="nav-number">1.1.</span> <span class="nav-text">Equality 的通信复杂性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Schwartz-Zippel-%E5%AE%9A%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">Schwartz-Zippel 定理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E7%BA%B9%E6%8A%80%E6%9C%AF-Fingerprinting"><span class="nav-number">2.</span> <span class="nav-text">指纹技术 Fingerprinting</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E7%9B%B8%E5%90%8C%E6%80%A7"><span class="nav-number">3.</span> <span class="nav-text">检查相同性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E7%BA%B9-multisets"><span class="nav-number">3.1.</span> <span class="nav-text">指纹 multisets</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E5%85%83%E7%B4%A0-Distinct-Elements"><span class="nav-number">1.</span> <span class="nav-text">不同元素 Distinct Elements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-hashing-%E7%9A%84%E4%BC%B0%E8%AE%A1%E9%87%8F"><span class="nav-number">1.1.</span> <span class="nav-text">使用 hashing 的估计量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flajolet-Martin-%E7%AE%97%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">Flajolet-Martin 算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9D%87%E5%8C%80%E5%93%88%E5%B8%8C%E5%81%87%E8%AE%BE-Uniform-Hash-Assumption"><span class="nav-number">1.3.</span> <span class="nav-text">均匀哈希假设 Uniform Hash Assumption</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E6%88%90%E5%91%98-Set-Membership"><span class="nav-number">2.</span> <span class="nav-text">集合成员 Set Membership</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bloom-Filter"><span class="nav-number">2.1.</span> <span class="nav-text">Bloom Filter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%91%E7%8E%87%E4%BC%B0%E8%AE%A1-Frenquency-Estimation"><span class="nav-number">3.</span> <span class="nav-text">频率估计 Frenquency Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E8%AE%A1%E6%95%B0-Count-min-sketch"><span class="nav-number">3.1.</span> <span class="nav-text">最小计数 Count-min sketch</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

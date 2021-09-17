@@ -978,10 +978,55 @@ q_{k}=\dfrac{\int_{Z_{k}}^{Z_{k+1}} Z p(Z) d Z}{\int_{Z_{k}}^{Z_{k+1}} p(Z) d Z}
 <li>对数变换使一窄带低灰度输入图像值映射为一宽带输出值，这种变换可以用来扩展被压缩的高值图像中的暗像素。</li>
 </ul>
 </li>
-<li>幂次变换 $s = c r^{\gamma}$</li>
+<li>幂次变换 $s = c r^{\gamma}$<ul>
+<li>当 $\gamma &lt; 1$ 时，把输入的窄带暗值映射到宽带输出值，提高灰度级，在正比例函数上方，使图像变亮。</li>
+<li>当 $\gamma &gt; 1$ 时，把输入的窄带亮值映射到宽带输出值，降低灰度级，在正比例函数下方，使图像变暗。</li>
+</ul>
+</li>
+<li>分段线性变换<ul>
+<li>形式可任意合成，有些重要变换的实际应用可由分段线性函数描述。</li>
+<li>主要缺点：需要更多的用户输入。</li>
+<li>对比度拉伸，扩展图像处理时灰度系的动态范围。</li>
+<li>灰度切割，提高特定灰度范围的亮度。</li>
+<li>位平面。</li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<h2 id="直方图处理"><a href="#直方图处理" class="headerlink" title="直方图处理"></a>直方图处理</h2><p>对于一幅给定的图像来说，每一个像素取得 $[0, 1]$区间内的灰度级是随机的，也就是说 $r$ 是一个随机变量。</p>
+<p>假定它们是连续的随机变量，那么就可以用概率密度函数 $p(r)$ 来表示原始图像的灰度分布。</p>
+<p>计算机里只能离散化了：用 $r_k$ 代表灰度级则 $P_r(r_k) = \frac{n_k}{n}, 0 \leq r_k \leq 1$。</p>
+<h3 id="直方图均衡化"><a href="#直方图均衡化" class="headerlink" title="直方图均衡化"></a>直方图均衡化</h3><p>变换函数 $s = T(r)$ 应满足下列条件：</p>
+<ul>
+<li>单调性，在 $0 \leq r \leq 1$ 的区间内，$T(r) $ 的值单调增加。</li>
+<li>有界性，对于 $0 \leq r \leq 1$，有 $0 \leq T(r) \leq 1$。</li>
+</ul>
+<p>从 $s$ 到 $r$ 的反变换：$r = T^{-1}(s)$。</p>
+<p>一幅图像的灰度级可以被视为区间 $[0,1]$ 的随机变量，就可以用概率密度函数（PDF）来描述。</p>
+<p>令 $p_{r}(r)$ 和 $p_{s}(s)$ 分别代表随机变量 $r$ 和 $s$ 的概率密度函数。由概 率论可知：如果 $p_{r}(r)$ 和 $T^{-1}(s)$ 已知，则变换变量 $s$ 的概率密度函数 $p_{s}(s)$ 可由下式得到:</p>
+<script type="math/tex; mode=display">
+p_{s}(s)=p_{r}(r)\left|\frac{d T^{-1}(s)}{d s}\right|=p_{r}(r)\left|\frac{d r}{d s}\right|</script><p>直方图均衡化处理是以累积分布函数变换法为基础的直方图修正法。假定变换函数为：</p>
+<script type="math/tex; mode=display">
+s=T(r)=\int_{0}^{r} p_{r}(\omega) d \omega</script><p>对 $r$ 进行求导带入得：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+p_{s}(s) &=\left[p_{r}(r) \cdot \frac{d r}{d s}\right]_{r=T^{-1}(s)} \\ &=\left[p_{r}(r) \cdot \frac{1}{d s / d r}\right]_{r=T^{-1}(s)} \\
+&=\left[p_{r}(r) \cdot \frac{1}{p_{r}(r)}\right]=1
+\end{aligned}</script><ul>
+<li><p>由上面的推导可见，在变换后的变量 $s$ 在定义域内的概率密度是均匀分布。</p>
+</li>
+<li><p>用 $r$ 的累积分布函数作为变换函数，可产生一幅灰度级分布具有均匀概率密度的图像，其结果扩展了像素取值的动态范围。</p>
+</li>
+<li><p>这都是基于连续随机变量，离散化时用频数近似代替频率，积分换成求和。</p>
+</li>
+<li><p>因此这种方法对于对比度较弱的图像进行处理是很有效的。</p>
+</li>
+</ul>
+<h3 id="直方图的规定化"><a href="#直方图的规定化" class="headerlink" title="直方图的规定化"></a>直方图的规定化</h3><p>使处理的图像具有指定的直方图形状。</p>
+<p>假设 $z$ 表示变化后的连续灰度级，$p_r(r)$表示输入图像的概率密度函数，$p_z(z)$表示输出图像的概率密度函数。</p>
+<p>$T(r)=\int_{0}^{r} p_{r}(u) d u, G(z)=\int_{0}^{z} p_{z}(w) d w$，所以 $z= G^{-1}(T(r))$。</p>
+<h3 id="空间域滤波增强"><a href="#空间域滤波增强" class="headerlink" title="空间域滤波增强"></a>空间域滤波增强</h3><p>卷积（</p>
 ]]></content>
       <categories>
         <category>课程</category>
@@ -4603,5 +4648,89 @@ cost\left(  \theta, \left( x^{(i)} , y^{(i)} \right)  \right) = \dfrac{1}{2}\lef
       <tags>
         <tag>ML</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>高级算法课程笔记-Hashing and Sketching</title>
+    <url>/2021/09/16/hashing-sketching/</url>
+    <content><![CDATA[<p>本章主要是讲 hashing 和 sketching 技术。（这两个词确实有点难找到合适的翻译。。。）</p>
+<a id="more"></a>
+<h1 id="不同元素-Distinct-Elements"><a href="#不同元素-Distinct-Elements" class="headerlink" title="不同元素 Distinct Elements"></a>不同元素 Distinct Elements</h1><p>一个叫数不同元素的问题：</p>
+<p>$\Omega $ 是一个足够大的全集，输入 $n$ 个元素 $x_1, x_2, …, x_n \in \Omega$，不一定是不同的。要输出的就是共有多少个不同种元素 $z = |\{x_1, x_2, …, x_n\}|$。</p>
+<p>最直接的一个方法就是维护一个字典（dictionary）的数据结构，空间复杂度是 $O(n)$ 的。当 $n$ 很大时开销是大的，但是根据信息理论，如果要计算出精确的 $z$，$O(n)$ 的空间是必要的。</p>
+<p>所以我们又只能考虑牺牲可容忍的精度的近似答案，有一个叫 $(\epsilon, \delta)$<strong>-estimator</strong> 的东西：</p>
+<p>一个随机变量 $\widehat{Z}$ 称为一个量 $z$ 的 $(\epsilon, \delta)$<strong>-estimator</strong> 当 $\text{Pr}[(1 - \epsilon)z \leq \widehat{Z} \leq (1 + \epsilon)z] \geq 1 - \delta$。</p>
+<ul>
+<li><p>当 $\mathbb{E}[\widehat{Z}] = z$ 时称作<strong>无偏估计（unbiased estimator）</strong>。</p>
+</li>
+<li><p>一般的 $\epsilon$ 叫 <strong>approximation error</strong>，$\delta$ 叫 <strong>confidence error</strong>。</p>
+</li>
+</ul>
+<h2 id="使用-hashing-的估计量"><a href="#使用-hashing-的估计量" class="headerlink" title="使用 hashing 的估计量"></a>使用 hashing 的估计量</h2><p>假设我们有一个理想的随机哈希函数 $h : \Omega \to [0, 1]$，是在 $\Omega $ 上的均匀分布。</p>
+<p>对于输入序列 $x_1, …, x_n$，我们可以维护它们的哈希值而不是原来的元素，但是在最坏的情况下我们仍然需要维护 $n$ 个不同的值。但是由于理想的随机哈希函数，区间 $[0,1]$ 将被 $z$ 个不同的哈希值分成 $z+1$ 个子区间。通过这些子区间，我们可以得到一个 $z$ 的估计量。</p>
+<p>首先有一个命题：</p>
+<div class="note info">
+            <p>$\mathbb{E}[\min_{1 \leq i \leq n} h(x_i)] = \dfrac{1}{z + 1}$</p>
+          </div>
+<p>所以所有哈希值中最小的那个 $Y = \min_{1 \leq i \leq n} h(x_i)$ 可以作为 $\frac{1}{z+1}$ 的无偏估计，$\min_{1 \leq i \leq n} h(x_i)$ 显然是可以在常数空间复杂度下得到的。</p>
+<p>但是要记住 $\frac{1}{Y} - 1$ 不一定是 $z$ 的一个好的估计值。</p>
+<h2 id="Flajolet-Martin-算法"><a href="#Flajolet-Martin-算法" class="headerlink" title="Flajolet-Martin 算法"></a>Flajolet-Martin 算法</h2><p>上面的方法表现得不太好的原因是无偏估计量 $\min_{1 \leq i \leq n} h(x_i)$ 的方差太大了，解决方法是我们可以用多个独立的哈希函数，然后取平均值，这也就是 <strong>Flajolet-Martin 算法</strong>的核心思想。</p>
+<p>假设我们可以获得 $k$ 个独立的随机哈希函数 $h_1, h_2, …, h_k$，其中 $k$ 需要根据 $\epsilon, \delta$ 来确定。</p>
+<figure class="highlight plain"><figcaption><span>Flajolet-Martin</span></figcaption><table><tr><td class="code"><pre><span class="line">Scan the input sequence x_1, ..., x_n in a single pass to compute:</span><br><span class="line">	Y_j &#x3D; min(h_j(x_i)) for j &#x3D; 1, 2, ..., k</span><br><span class="line">	average value Y_bar &#x3D; sum(Y_j) &#x2F; k</span><br><span class="line">return Z &#x3D; 1 &#x2F; y_bar - 1</span><br></pre></td></tr></table></figure>
+<p>这个算法仍然可以在<strong>数据流模型</strong>下实现，需要储存 $k$ 个哈希值。</p>
+<p>下面这个定理保证了这个算法可以返回一个对于不同元素总数的 $(\epsilon, \delta)$-估计值，给定一个合适的 $k = O(\frac{1}{\epsilon^2 \delta})$：</p>
+<div class="note info">
+            <p>对于任意的 $\epsilon, \delta&lt;1 / 2$，如果 $k \geq\left[\frac{4}{\epsilon^{2} \delta}\right]$ 则输出 $\widehat{Z}$ 总是给出一个 $z$ 的真实值的 $(\epsilon, \delta)$-estimator。</p>
+          </div>
+<p><del>证略，一样有空再来填坑。</del></p>
+<h2 id="均匀哈希假设-Uniform-Hash-Assumption"><a href="#均匀哈希假设-Uniform-Hash-Assumption" class="headerlink" title="均匀哈希假设 Uniform Hash Assumption"></a>均匀哈希假设 Uniform Hash Assumption</h2><p>上面的所有方法在将哈希函数换成 $h: \Omega \to [M]$  的情况下都可以获得相同好的表现，这里 $M = poly(n)$，也就是可以用 $O(\log{n})$ 个bit来表示出 $M$。</p>
+<p>即使有这个分析，一个形式为 $h: [N] \to [M]$ 的均匀的随机离散函数都无法被高效地储存和计算。根据信息理论，表示这样一个函数至少需要 $O(N \log{M})$ 个 bit，因为这是均匀随机函数的熵（entropy）。</p>
+<p>所以为了方便分析，我们一般有 <strong>Uniform Hash Assumption(UHA)</strong> 或者叫 <strong>Simple Uniform Hash Assumption (SUHA)</strong>：</p>
+<div class="note info">
+            <p>一个均匀随机函数 $h: [N] \to [M]$ 是可获得且计算高效的。</p>
+          </div>
+<h1 id="集合成员-Set-Membership"><a href="#集合成员-Set-Membership" class="headerlink" title="集合成员 Set Membership"></a>集合成员 Set Membership</h1><p>这个基本的问题就是：</p>
+<p>给定全集 $\Omega $ 下的一个 $n$ 元集合 $S$，我们想用一个数据结构来表示 $S$，使得每次对于元素 $x \in [N]$ 的查询（query），对于 $x$ 是否属于 $S$ 能够高效地回答。</p>
+<ul>
+<li><p>有序表、平衡搜索树：$O(n\log{N})$ 的空间复杂度，$O(\log{n})$ 的时间复杂度。</p>
+</li>
+<li><p>好的哈希：$O(n\log{N})$ 的空间复杂度，$O(1)$ 的时间复杂度。</p>
+</li>
+</ul>
+<p>注意到 $\log \left(\begin{array}{l}N \\ n\end{array}\right)=\Theta\left(n \log \frac{N}{n}\right)$ 实际上是 $S$ 的熵，也就是说 $O(n\log{N})$ 的空间开销是不可避免的。但如果我们使用一个损失表示并容忍一个有界的查询误差就可以做的更好，这样的一种数据的有损表示称作<strong>sketch</strong>。</p>
+<h2 id="Bloom-Filter"><a href="#Bloom-Filter" class="headerlink" title="Bloom Filter"></a>Bloom Filter</h2><p>Bloom filter 考虑一个 $cn$ 个 bit 的数组 $A$，$k$ 个哈希函数 $h_1, h_2, …, h_k: \Omega \to [cn]$。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">construction:</span><br><span class="line">	initialize all cn bits of the Boolean array A to 0</span><br><span class="line">	for each x in S, A[hi(x)] &#x3D; 1 for 1 &lt;&#x3D; i &lt;&#x3D; k</span><br><span class="line"></span><br><span class="line">query:</span><br><span class="line">	if A[hi(x)] &#x3D; 1 for 1 &lt;&#x3D; i &lt;&#x3D; k:</span><br><span class="line">		return yes</span><br><span class="line">	else:</span><br><span class="line">		return no</span><br></pre></td></tr></table></figure>
+<p>这个布尔数组就是我们的数据结构，空间复杂度 $O(cn)$，一次查询的时间复杂度 $O(k)$。</p>
+<p>当算法返回 <code>no</code>，也就存在 $1 \leq i \leq k$ 的 $A[h_i(x)] = 0$，就是说 $x$ 一定不属于 $S$。这说明这个算法不存在假阴性。</p>
+<p>当算法返回 <code>yes</code>，对所有 $1 \leq i \leq k$ 的 $A[h_i(x)] = 1$，不过有假阳性，也就是存在 $x \notin S$，所有的 $A[h_i(x)]= 1$，我们需要限制这个误差，也即是当 $x\notin S$ 时：</p>
+<p>$\operatorname{Pr}\left[\forall 1 \leq i \leq k, A\left[h_{i}(x)\right]=1\right] = \operatorname{Pr}\left[A\left[h_{1}(x)\right]=1\right]^{k}=\left(1-\operatorname{Pr}\left[A\left[h_{1}(x)\right]=0\right]\right)^{k}$。</p>
+<p>$A[h_i(x)]$ 逃过所有 $kn$ 次的更新的概率是 $\operatorname{Pr}\left[A\left[h_{1}(x)\right]=0\right]=\left(1-\frac{1}{c n}\right)^{k n} \approx e^{-k / c}$。</p>
+<p>然后就有：</p>
+<p>$\begin{aligned}<br>\operatorname{Pr}[\text { wrongly answer “yes” }] &amp;=\operatorname{Pr}\left[\forall 1 \leq i \leq k, A\left[h_{i}(x)\right]=1\right] \\<br>&amp;=\operatorname{Pr}\left[A\left[h_{1}(x)\right]=1\right]^{k}=\left(1-\operatorname{Pr}\left[A\left[h_{1}(x)\right]=0\right]\right)^{k} \\<br>&amp;=\left(1-\left(1-\frac{1}{c n}\right)^{k n}\right)^{k} \\<br>&amp; \approx\left(1-e^{-k / c}\right)^{k}<br>\end{aligned}$</p>
+<p>当 $k = c\ln{2}$ 时这个概率大概是 $(0.6185)^c$。</p>
+<p>Bloom Filter 解决了这个问题，只有很小的常数单边假阳性误差，$O(n)$ bits的空间开销和 $O(1)$ 的查询时间开销。</p>
+<h1 id="频率估计-Frenquency-Estimation"><a href="#频率估计-Frenquency-Estimation" class="headerlink" title="频率估计 Frenquency Estimation"></a>频率估计 Frenquency Estimation</h1><p>就是对于一串输入 $x_1, x_2, …, x_n \in \Omega$，查询 $x$ 出现的次数 $f_x = |\{i | x_i = x\}|$。</p>
+<p>一样的，储存整个输入开销太大了，我们要找一个 <strong>sketch</strong>，算法返回 $f_x$ 满足：$\operatorname{Pr}\left[\left|\hat{f}_{x}-f_{x}\right| \leq \epsilon n\right] \geq 1-\delta$。</p>
+<h2 id="最小计数-Count-min-sketch"><a href="#最小计数-Count-min-sketch" class="headerlink" title="最小计数 Count-min sketch"></a>最小计数 Count-min sketch</h2><p><strong>Count-min sketch</strong> 是对于频率估计的一个非常优雅的数据结构。</p>
+<p>这个数据结构需要一个 $k \times m$ 的二维数组 CMS，我们仍然假设可以获得 $k$ 个独立均匀分布的哈希函数 $h_1, h_2,…,h_k: \Omega \to [m]$。</p>
+<figure class="highlight plain"><figcaption><span>count-min</span></figcaption><table><tr><td class="code"><pre><span class="line">construct:</span><br><span class="line">	initialize all entries of CMS[k][m] to 0</span><br><span class="line">	for i &#x3D; 1 to n:</span><br><span class="line">		for j &#x3D; 1 to k:</span><br><span class="line">			evaluate hj(xi) and CMS[j][hj(xi)++</span><br><span class="line">			</span><br><span class="line">query:</span><br><span class="line">	return f_x &#x3D; min(CMS[j][hj(xi)])</span><br></pre></td></tr></table></figure>
+<p>空间复杂度 $O(km)$，时间复杂度 $O(k)$。下面我们来分析它的误差边界。</p>
+<p>很显然 $CMS[j][h_j(x_i)] \leq f_x$，因为至少加了 $f_x$ 次，即 $\hat{f}_{x}=\min _{1 \leq j \leq k} C M S[j]\left[h_{j}(x)\right] \geq f_{x}$。</p>
+<p>所以 $\operatorname{Pr}\left[\left|\hat{f}_{x}-f_{x}\right| \geq \epsilon n\right]=\operatorname{Pr}\left[\hat{f}_{x}-f_{x} \geq \epsilon n\right]=\prod_{j=1}^{k} \operatorname{Pr}\left[C M S[j]\left[h_{j}(x)\right]-f_{x} \geq \epsilon n\right]$。</p>
+<p>然后我们就需要界定 $\operatorname{Pr}\left[C M S[j]\left[h_{j}(x)\right]-f_{x} \geq \epsilon n\right]$，可以通过计算 $C M S[j]\left[h_{j}(x)\right]$ 的期望。</p>
+<p>可证如下命题：</p>
+<div class="note info">
+            <p>对任意的 $x\in \Omega$，任意的 $1 \leq j \leq k$，$\mathbb{E}\left[C M S[j]\left[h_{j}(x)\right]\right] \leq f_{x}+\frac{n}{m}$。</p>
+          </div>
+<p>所以有 $\mathbb{E}\left[C M S[j]\left[h_{j}(x)\right] - f_x \right] \leq \frac{n}{m}$。</p>
+<p>因为 $C M S[j]\left[h_{j}(x) \right] \geq f_x$ 所以 $C M S[j]\left[h_{j}(x)\right] - f_x$ 是正随机变量，由马尔科夫不等式：</p>
+<p>$\operatorname{Pr}\left[C M S[j]\left[h_{j}(x)\right]-f_{x} \geq \epsilon n\right] \leq \frac{1}{\epsilon m}$。</p>
+<p>再和上面的结合一下：</p>
+<p>$\operatorname{Pr}\left[\left|\hat{f}_{x}-f_{x}\right| \geq \epsilon n\right]=\left(\operatorname{Pr}\left[C M S[j]\left[h_{j}(x)\right]-f_{x} \geq \epsilon n\right]\right)^{k} \leq \frac{1}{(\epsilon m)^{k}}$。</p>
+<p>令 $m = \left\lceil \frac{e}{\epsilon} \right\rceil, k = \left\lceil \ln{\frac{1}{\delta}} \right\rceil$，这个误差概率可以被限制在 $\frac{1}{(\epsilon m)^k} \leq \delta$。</p>
+]]></content>
+      <categories>
+        <category>课程</category>
+        <category>Advanced Algorithm</category>
+      </categories>
   </entry>
 </search>
