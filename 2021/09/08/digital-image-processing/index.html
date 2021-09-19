@@ -29,10 +29,12 @@
 <meta property="og:site_name" content="Songtianhui&#39;s Blog">
 <meta property="og:description" content="Ch1 概述 数字图像是指由被称作像素的小块区域组成的二维矩阵。  将物理图像行列划分后，每个小块区域称为像素（pixel）。 每个像素包括两个属性：位置和亮度 （或色彩）。   数字图像的两个基本问题  像素数目 灰度值的度量 本质问题就是物理信号离散化，数字化">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://songtianhui.github.io/2021/09/08/digital-image-processing/Screenshot%20from%202021-09-19%2015-49-08.png">
 <meta property="article:published_time" content="2021-09-07T17:33:49.000Z">
-<meta property="article:modified_time" content="2021-09-17T09:44:25.980Z">
+<meta property="article:modified_time" content="2021-09-19T08:14:59.647Z">
 <meta property="article:author" content="Hui hui">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://songtianhui.github.io/2021/09/08/digital-image-processing/Screenshot%20from%202021-09-19%2015-49-08.png">
 
 <link rel="canonical" href="https://songtianhui.github.io/2021/09/08/digital-image-processing/">
 
@@ -222,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-17 17:44:25" itemprop="dateModified" datetime="2021-09-17T17:44:25+08:00">2021-09-17</time>
+                <time title="Modified: 2021-09-19 16:14:59" itemprop="dateModified" datetime="2021-09-19T16:14:59+08:00">2021-09-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,7 +251,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Ch1-概述"><a href="#Ch1-概述" class="headerlink" title="Ch1 概述"></a>Ch1 概述</h1><ul>
+        <hr>
+<h1 id="Ch1-概述"><a href="#Ch1-概述" class="headerlink" title="Ch1 概述"></a>Ch1 概述</h1><ul>
 <li><p>数字图像是指由被称作像素的小块区域组成的二维矩阵。</p>
 <ul>
 <li>将物理图像行列划分后，每个小块区域称为像素（pixel）。</li>
@@ -366,6 +369,7 @@ q_{k}=\dfrac{\int_{Z_{k}}^{Z_{k+1}} Z p(Z) d Z}{\int_{Z_{k}}^{Z_{k+1}} p(Z) d Z}
 </ul>
 </li>
 </ul>
+<hr>
 <h1 id="Ch2-二值图像与像素关系"><a href="#Ch2-二值图像与像素关系" class="headerlink" title="Ch2 二值图像与像素关系"></a>Ch2 二值图像与像素关系</h1><h2 id="邻域关系"><a href="#邻域关系" class="headerlink" title="邻域关系"></a>邻域关系</h2><ul>
 <li>4邻域 $N_4(p)$<ul>
 <li>邻域距离：$&lt;=1$。就是上下左右4个点。</li>
@@ -446,6 +450,7 @@ q_{k}=\dfrac{\int_{Z_{k}}^{Z_{k+1}} Z p(Z) d Z}{\int_{Z_{k}}^{Z_{k+1}} p(Z) d Z}
 </ul>
 </li>
 </ul>
+<hr>
 <h1 id="Ch3-灰度直方图与点运算"><a href="#Ch3-灰度直方图与点运算" class="headerlink" title="Ch3 灰度直方图与点运算"></a>Ch3 灰度直方图与点运算</h1><h2 id="灰度直方图-Histogram"><a href="#灰度直方图-Histogram" class="headerlink" title="灰度直方图 Histogram"></a>灰度直方图 Histogram</h2><p>定义：灰度级的函数，描述的是图像中每种灰度级像素的个数，反映图像中每种灰度出现的频率。横坐标是灰度级，纵坐标是灰度级出现的频率。</p>
 <p>$\mathrm{H}(\mathrm{D})=\lim\limits_{\Delta \mathrm{D} \rightarrow 0} \dfrac{\mathrm{A}(\mathrm{D})-\mathrm{A}(\mathrm{D}+\Delta \mathrm{D})}{\mathrm{D}-(\mathrm{D}+\Delta \mathrm{D})}=\lim\limits_{\Delta \mathrm{D} \rightarrow 0} \dfrac{\mathrm{A}(\mathrm{D})-\mathrm{A}(\mathrm{D}+\Delta \mathrm{D})}{-\Delta \mathrm{D}}=-\dfrac{\mathrm{d}}{\mathrm{dD}} \mathrm{A}(\mathrm{D})$</p>
 <p>其中 $A(D)$ 为阈值面积函数：为一幅连续图像中被具有灰度级 $D$ 的所有轮廓线所包围的面积。</p>
@@ -574,6 +579,84 @@ p_{s}(s) &=\left[p_{r}(r) \cdot \frac{d r}{d s}\right]_{r=T^{-1}(s)} \\ &=\left[
 <p>假设 $z$ 表示变化后的连续灰度级，$p_r(r)$表示输入图像的概率密度函数，$p_z(z)$表示输出图像的概率密度函数。</p>
 <p>$T(r)=\int_{0}^{r} p_{r}(u) d u, G(z)=\int_{0}^{z} p_{z}(w) d w$，所以 $z= G^{-1}(T(r))$。</p>
 <h3 id="空间域滤波增强"><a href="#空间域滤波增强" class="headerlink" title="空间域滤波增强"></a>空间域滤波增强</h3><p>卷积（</p>
+<hr>
+<h1 id="Ch4-图像复原与锐化"><a href="#Ch4-图像复原与锐化" class="headerlink" title="Ch4 图像复原与锐化"></a>Ch4 图像复原与锐化</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><strong>图像复原</strong>与<strong>图像增强</strong>的目的都是对图像进行改进，改善图像的视觉效果，但两者使用的方法和评价标准不同。</p>
+<ul>
+<li>图像增强：旨在改善图像质量。<ul>
+<li>不考虑图像降质的原因，只将图像中感兴趣的特征有选择地突出（增强），而衰减其不需要的特征。</li>
+<li>改善后的图像不一定要去逼近原图像。</li>
+<li>主观过程。</li>
+<li>提高图像的可懂度。</li>
+<li>空间域法和频率域法。</li>
+</ul>
+</li>
+<li>图象复原：力求保持图像的本来面目，以保真原则为前提找出图像降质的原因，描述其物理过程，提出数学模型。<ul>
+<li>要考虑图像降质的原因，建立“降质模型“。</li>
+<li>要建立评价复原好坏的客观标准。</li>
+<li>客观过程。</li>
+<li>提高图像的逼真度。</li>
+<li>重点介绍线性复原方法。</li>
+</ul>
+</li>
+</ul>
+<h2 id="图像退化"><a href="#图像退化" class="headerlink" title="图像退化"></a>图像退化</h2><p>图像在形成、记录、处理和传输过程中，由于成像系统、记录设备、传输介质和处理方法的不完善，会导致图像质量下降。这一过程称为<strong>图像的退化</strong>。退化的形式有模糊、失真、有噪声等。</p>
+<p>图像的复原就是要尽可能恢复退化图像的本来面目，它是沿图像降质的逆向过程进行。</p>
+<ul>
+<li>退化过程可以被模型化为一个退化函数和一个加性噪声项，处理一幅输入图像 $f(x,y)$ 产生一幅退化图像 $g(x,y)$。</li>
+<li>给定 $g(x,y)$ 和关于退化函数 $H$ 的一些知识以及外加噪声项 $\eta(x,y)$，图像复原的目的是获得关于原始图像的近似估计 $\hat{f}(x,y)$。</li>
+</ul>
+<p><img data-src="Screenshot from 2021-09-19 15-49-08.png" alt></p>
+<p>如果系统 $H$ 是一个线性，位置不变性的过程，那么在空间域中给出的退化图像由下式给出：</p>
+<script type="math/tex; mode=display">
+g(x,y) = h(x,y)\cdot f(x,y) + \eta(x,y)</script><h2 id="噪声模型"><a href="#噪声模型" class="headerlink" title="噪声模型"></a>噪声模型</h2><ul>
+<li>在实际应用中，往往假设噪声是白噪声，即它的频谱密度为常数，且与图像不相关。</li>
+<li>数字图像的噪声主要来源于图像的获取和传输过程。图像传输器的工作情况受各种因素的影响，如图像获取中的环境条件和传感器件自身的质量。</li>
+<li>高斯噪声<ul>
+<li>$p(z)=\dfrac{1}{\sqrt{2 \pi} \sigma} e^{-(z-\mu)^{2} / \sigma^{2}}$</li>
+<li>高斯噪声的产生源于电子电路噪声和由低照明度或高温带来的传感器噪声。</li>
+</ul>
+</li>
+<li>瑞利噪声<ul>
+<li>$p(z)= \begin{cases}\dfrac{2}{b}(z-2) e^{-(z-\mu)^{2} / 2 \sigma^{2}}, &amp; z \geq a \\ 0, &amp; z&lt;a\end{cases}$</li>
+</ul>
+</li>
+<li><p>伽马噪声</p>
+<ul>
+<li>$p(z)= \begin{cases}\dfrac{a^{b} z^{b-1}}{(b-1) !} e^{-a z}, &amp; z \geq 0 \\ 0, &amp; z&lt;0\end{cases}$</li>
+<li>伽马噪声可应用于激光成像中。</li>
+</ul>
+</li>
+<li><p>指数噪声</p>
+</li>
+<li>均匀噪声</li>
+<li>脉冲噪声（椒盐噪声）<ul>
+<li>双极脉冲噪声也叫椒盐噪声。</li>
+<li>双极脉冲噪声也叫椒盐噪声，在图像上表现为孤立的亮点或暗点。</li>
+</ul>
+</li>
+<li>周期噪声<ul>
+<li>唯一一种空间依赖型噪声。</li>
+<li>可以通过频率域滤波显著减少。</li>
+</ul>
+</li>
+</ul>
+<h2 id="空间滤波复原"><a href="#空间滤波复原" class="headerlink" title="空间滤波复原"></a>空间滤波复原</h2><p>当仅有加性噪声存在时，可以选择空间滤波方法。事实上，在这一特殊情况下，图像的增强和复原几乎是不可区别的。</p>
+<ul>
+<li>算数均值滤波器</li>
+<li>几何均值滤波器<ul>
+<li>几何均值滤波器达到的平滑度可以与算术均值滤波器相比，但在滤波过程中丢失更少的图像细节。</li>
+</ul>
+</li>
+<li>谐波均值滤波器<ul>
+<li>谐波均值滤波器对于“盐” 噪声效果较好，但不适于“胡椒”噪声。它善于处理高斯噪声。</li>
+</ul>
+</li>
+<li>逆谐波均值滤波器<ul>
+<li>$\hat{f}(x, y)=\dfrac{\sum_{(s, t) \in S_{x y}} g(s, t)^{Q+1}}{\sum_{(s, t) \in S_{x y}} g(s, t)^{Q}}$，其中 $Q$ 称为滤波器的阶数。</li>
+<li>当 $Q$ 值为正数时，滤波器用于消除“胡椒”噪声；当 $Q$ 值为负数时，滤波器用于消除“盐”噪声。</li>
+</ul>
+</li>
+</ul>
 
     </div>
 
@@ -654,7 +737,7 @@ p_{s}(s) &=\left[p_{r}(r) \cdot \frac{d r}{d s}\right]_{r=T^{-1}(s)} \\ &=\left[
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch1-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">Ch1 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%8E%B7%E5%8F%96"><span class="nav-number">1.1.</span> <span class="nav-text">图像获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA"><span class="nav-number">1.2.</span> <span class="nav-text">图像显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.3.</span> <span class="nav-text">图像表示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch2-%E4%BA%8C%E5%80%BC%E5%9B%BE%E5%83%8F%E4%B8%8E%E5%83%8F%E7%B4%A0%E5%85%B3%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text">Ch2 二值图像与像素关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%BB%E5%9F%9F%E5%85%B3%E7%B3%BB"><span class="nav-number">2.1.</span> <span class="nav-text">邻域关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%85%B3%E7%B3%BB"><span class="nav-number">2.2.</span> <span class="nav-text">连接关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%BB%E6%8E%A5%E5%85%B3%E7%B3%BB"><span class="nav-number">2.3.</span> <span class="nav-text">邻接关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%9D%E7%A6%BB"><span class="nav-number">2.4.</span> <span class="nav-text">距离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%A8%E6%9E%B6%E6%8A%BD%E5%8F%96"><span class="nav-number">2.5.</span> <span class="nav-text">骨架抽取</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch3-%E7%81%B0%E5%BA%A6%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%B8%8E%E7%82%B9%E8%BF%90%E7%AE%97"><span class="nav-number">3.</span> <span class="nav-text">Ch3 灰度直方图与点运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%81%B0%E5%BA%A6%E7%9B%B4%E6%96%B9%E5%9B%BE-Histogram"><span class="nav-number">3.1.</span> <span class="nav-text">灰度直方图 Histogram</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8%E4%B8%8E%E8%AE%A1%E7%AE%97"><span class="nav-number">3.2.</span> <span class="nav-text">性质与计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E9%80%94"><span class="nav-number">3.3.</span> <span class="nav-text">用途</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E8%BF%90%E7%AE%97-Point-Operation"><span class="nav-number">3.4.</span> <span class="nav-text">点运算 Point Operation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%A4%84%E7%90%86"><span class="nav-number">3.5.</span> <span class="nav-text">直方图处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96"><span class="nav-number">3.5.1.</span> <span class="nav-text">直方图均衡化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE%E7%9A%84%E8%A7%84%E5%AE%9A%E5%8C%96"><span class="nav-number">3.5.2.</span> <span class="nav-text">直方图的规定化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%9F%9F%E6%BB%A4%E6%B3%A2%E5%A2%9E%E5%BC%BA"><span class="nav-number">3.5.3.</span> <span class="nav-text">空间域滤波增强</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch1-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">Ch1 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%8E%B7%E5%8F%96"><span class="nav-number">1.1.</span> <span class="nav-text">图像获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA"><span class="nav-number">1.2.</span> <span class="nav-text">图像显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.3.</span> <span class="nav-text">图像表示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch2-%E4%BA%8C%E5%80%BC%E5%9B%BE%E5%83%8F%E4%B8%8E%E5%83%8F%E7%B4%A0%E5%85%B3%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text">Ch2 二值图像与像素关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%BB%E5%9F%9F%E5%85%B3%E7%B3%BB"><span class="nav-number">2.1.</span> <span class="nav-text">邻域关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%85%B3%E7%B3%BB"><span class="nav-number">2.2.</span> <span class="nav-text">连接关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%BB%E6%8E%A5%E5%85%B3%E7%B3%BB"><span class="nav-number">2.3.</span> <span class="nav-text">邻接关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%9D%E7%A6%BB"><span class="nav-number">2.4.</span> <span class="nav-text">距离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%A8%E6%9E%B6%E6%8A%BD%E5%8F%96"><span class="nav-number">2.5.</span> <span class="nav-text">骨架抽取</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch3-%E7%81%B0%E5%BA%A6%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%B8%8E%E7%82%B9%E8%BF%90%E7%AE%97"><span class="nav-number">3.</span> <span class="nav-text">Ch3 灰度直方图与点运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%81%B0%E5%BA%A6%E7%9B%B4%E6%96%B9%E5%9B%BE-Histogram"><span class="nav-number">3.1.</span> <span class="nav-text">灰度直方图 Histogram</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8%E4%B8%8E%E8%AE%A1%E7%AE%97"><span class="nav-number">3.2.</span> <span class="nav-text">性质与计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E9%80%94"><span class="nav-number">3.3.</span> <span class="nav-text">用途</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E8%BF%90%E7%AE%97-Point-Operation"><span class="nav-number">3.4.</span> <span class="nav-text">点运算 Point Operation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%A4%84%E7%90%86"><span class="nav-number">3.5.</span> <span class="nav-text">直方图处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96"><span class="nav-number">3.5.1.</span> <span class="nav-text">直方图均衡化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE%E7%9A%84%E8%A7%84%E5%AE%9A%E5%8C%96"><span class="nav-number">3.5.2.</span> <span class="nav-text">直方图的规定化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%9F%9F%E6%BB%A4%E6%B3%A2%E5%A2%9E%E5%BC%BA"><span class="nav-number">3.5.3.</span> <span class="nav-text">空间域滤波增强</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch4-%E5%9B%BE%E5%83%8F%E5%A4%8D%E5%8E%9F%E4%B8%8E%E9%94%90%E5%8C%96"><span class="nav-number">4.</span> <span class="nav-text">Ch4 图像复原与锐化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">4.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E9%80%80%E5%8C%96"><span class="nav-number">4.2.</span> <span class="nav-text">图像退化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%99%AA%E5%A3%B0%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.3.</span> <span class="nav-text">噪声模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2%E5%A4%8D%E5%8E%9F"><span class="nav-number">4.4.</span> <span class="nav-text">空间滤波复原</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
