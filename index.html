@@ -212,10 +212,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-09-18 17:38:57 / Modified: 23:20:52" itemprop="dateCreated datePublished" datetime="2021-09-18T17:38:57+08:00">2021-09-18</time>
+              <time title="Created: 2021-09-18 17:38:57" itemprop="dateCreated datePublished" datetime="2021-09-18T17:38:57+08:00">2021-09-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-19 15:12:53" itemprop="dateModified" datetime="2021-09-19T15:12:53+08:00">2021-09-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -247,81 +253,15 @@
 </ul>
 </li>
 <li>无线通信链路（wireless communication link）</li>
-<li><strong>基站（base station）</strong><ul>
-<li>通常负责协调与之相关联的多个无线主机的传输。</li>
-<li>蜂窝塔（cell tower），无线LAN的接入点（access point）。</li>
 </ul>
-</li>
-<li>移动主机可能需要改变与之相关联的基站，叫<strong>切换（handoff）</strong>。</li>
-<li>网络基础设施。无线主机进行通信的更大的网络。</li>
-</ul>
-<h1 id="无线链路和网络特征"><a href="#无线链路和网络特征" class="headerlink" title="无线链路和网络特征"></a>无线链路和网络特征</h1><ul>
-<li>递减的信号强度。（路径损耗 path loss）</li>
-<li>来自其他源的干扰。</li>
-<li>多径传播（multipath propagation）。</li>
-</ul>
-<p>所以无线链路中比特差错比有线链路中更为常见，不仅CRC，还要ARQ协议。</p>
-<ul>
-<li><strong>信噪比（Signal-to-Noise Rate, SNR）</strong>是所收到的信号和噪声强度的相对测量。单位通常是分贝dB。</li>
-<li><strong>比特差错率（Bit Error Rate, BER）</strong>。</li>
-</ul>
-<p>一些特征：</p>
-<ul>
-<li>对于给定的调制方案，SNR越高，BER越低。</li>
-<li>对于给定的SNR，具有较高比特传输率的调制技术将具有较高的BER。</li>
-<li>物理层调制技术的动态选择能用于适配对信道条件的调制技术。</li>
-</ul>
-<h1 id="WiFi-802-11-无线-LAN"><a href="#WiFi-802-11-无线-LAN" class="headerlink" title="WiFi: 802.11 无线 LAN"></a>WiFi: 802.11 无线 LAN</h1><p>我们常用的无线网就是 <strong>IEEE 802.11 无线 LAN</strong>，也就是所说的 <strong>WiFi</strong>。</p>
-<h2 id="802-11-体系结构"><a href="#802-11-体系结构" class="headerlink" title="802.11 体系结构"></a>802.11 体系结构</h2><ul>
-<li><strong>基本服务集（Basic Service Set, BSS）</strong>。<ul>
-<li>一个 BSS 包含一个或多个无线站点和一个称为接入点的中央基站。</li>
-</ul>
-</li>
-<li>配置 AP 的无线 LAN 经常被称作<strong>基础设施无线LAN（Infrastructure wireless LAN）</strong>。</li>
-</ul>
-<h3 id="信道与关联"><a href="#信道与关联" class="headerlink" title="信道与关联"></a>信道与关联</h3><ul>
-<li>当网络管理员安装一个 AP 时，管理员为该接入点分配一个单字或双字的<strong>服务集标识符（Service Set Identifier, SSID）</strong>。管理员还必须为该 AP 分配一个信道。</li>
-<li><strong>WiFi 丛林（jungle）</strong>是一个任意物理位置，在这里无线站点能从两个或多个 AP 中收到很强的信号。</li>
-<li>为了获得因特网接入，无线站点需加入其中一个子网并因此需要与其中一个 AP 相<strong>关联（associate）</strong>。</li>
-<li>每个 AP 需周期性地发送<strong>信标帧（beacon frame）</strong>，包括该 AP 的 SSID 和 MAC地址。</li>
-<li>扫描信道和监听信标帧的过程被称为<strong>被动扫描（passive scanning）</strong>。无线主机也能执行<strong>主动扫描（active scanning）</strong>。</li>
-</ul>
-<h3 id="802-11-MAC-协议"><a href="#802-11-MAC-协议" class="headerlink" title="802.11 MAC 协议"></a>802.11 MAC 协议</h3><p>使用随机访问协议——<strong>带碰撞避免的 CSMA（CSMA with Collision avoidance, CSMA/CA）</strong>。和以太网的 CSMA/CD 相似。</p>
-<ul>
-<li>链路层确认（link-layer acknowledgement）方案<ul>
-<li>目的站点收到一个通过 CRC 校验的帧后，它等待一个被称作<strong>短帧间间隔（Short Inter-Frame Spacing, SIFS）</strong>的一小段时间，然后发回一个确认帧。</li>
-</ul>
-</li>
-<li>CSMA/CA协议<ul>
-<li>如果某站点最初监听到信道空闲，它将在一个被称作<strong>分布式帧间间隔（Distributed Inter-Frame Space, DIFS）</strong>的短时间段后发送该帧。</li>
-<li>否则，该站点选取一个随机回退值并且在侦听信道空闲时递减该值。当侦听到信道忙时，计数值保持不变。</li>
-<li>当计数值减为0时，该站点发送整个数据帧。</li>
-<li>如果收到确认，发送站点知道它的帧已被目的站点正确接收了。如果该站点要发送另一帧，它将从第二步开始 CSMA/CA 协议。如果未收到确认，发送站点将重新进入第二步中的回退阶段，并从一个更大的范围内选取随机值。</li>
-</ul>
-</li>
-<li><strong>请求发送（Request to Send, RTS）</strong></li>
-<li><strong>允许发送（Clear to Send, CTS）</strong></li>
-<li><strong>点协调功能（Point Coordination Functino, PCF）</strong><ul>
-<li><strong>PIFS</strong></li>
-<li>超级帧</li>
-</ul>
-</li>
-</ul>
-<h1 id="MAC-帧"><a href="#MAC-帧" class="headerlink" title="MAC 帧"></a>MAC 帧</h1><ul>
-<li>管理帧（Management Frames）</li>
-<li>控制帧（Control Frames）<ul>
-<li>Power Save-Poll(PS-Poll)</li>
-<li>Contention-Free-End(CF-End)</li>
-</ul>
-</li>
-<li>数据帧（Data Frames）<ul>
-<li>Data/+CF-Ack/+CF-Poll/+CF-Ack+CF-Poll</li>
-<li>Null Function（空帧）</li>
-<li>CF-Ack/CF-Poll/CF-Ack+CF-Poll</li>
-</ul>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/18/internet7/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

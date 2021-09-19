@@ -4742,6 +4742,9 @@ cost\left(  \theta, \left( x^{(i)} , y^{(i)} \right)  \right) = \dfrac{1}{2}\lef
 </ul>
 </li>
 <li>无线通信链路（wireless communication link）</li>
+</ul>
+<a id="more"></a>
+<ul>
 <li><strong>基站（base station）</strong><ul>
 <li>通常负责协调与之相关联的多个无线主机的传输。</li>
 <li>蜂窝塔（cell tower），无线LAN的接入点（access point）。</li>
