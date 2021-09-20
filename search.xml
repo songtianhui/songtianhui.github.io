@@ -3576,6 +3576,36 @@ a_{i}^{[l]} = \dfrac{t_{i}}{\sum\limits_i t_{i}}</script><p>输出的 $a_i$ 就�
 <p>池化的超参数包括过滤器大小 $f$ 和步幅 $s$，很少用 padding。最大池化的输入就是$n_{H} \times n_{W} \times n_{c}$，假设没有padding，则输出$\lfloor\frac{n_{H} - f}{s} +1\rfloor \times \lfloor\frac{n_{w} - f}{s} + 1\rfloor \times n_{c}$。</p>
 <h2 id="为什么使用卷积"><a href="#为什么使用卷积" class="headerlink" title="为什么使用卷积"></a>为什么使用卷积</h2><p>他可以通过<strong>共享参数</strong>和<strong>稀疏连接</strong>来减少参数，以便用更小的训练集来训练它，从而预防过度拟合。</p>
 <p>实际上，我们用同一个过滤器生成各层中，图片的所有像素值，希望网络通过自动学习变得更加健壮，以便更好地取得所期望的平移不变属性。</p>
+<h1 id="Lesson-4-2"><a href="#Lesson-4-2" class="headerlink" title="Lesson 4.2"></a>Lesson 4.2</h1><p>本章是介绍一些经典的实例。</p>
+<h2 id="经典网络-Classic-networks"><a href="#经典网络-Classic-networks" class="headerlink" title="经典网络 Classic networks"></a>经典网络 Classic networks</h2><ul>
+<li>LeNet-5</li>
+<li>AlexNet</li>
+<li>VGGNet</li>
+</ul>
+<h2 id="残差网络-Residual-Networks"><a href="#残差网络-Residual-Networks" class="headerlink" title="残差网络 Residual Networks"></a>残差网络 Residual Networks</h2><p>非常非常深的神经网络是很难训练的，因为存在梯度消失和梯度爆炸问题。跳跃连接（<strong>Skip connection</strong>），它可以从某一层网络层获取激活，然后迅速反馈给另外一层，甚至是神经网络的更深层。</p>
+<p>ResNet 是由 <strong>残差块（Residuak Block）</strong>构建的，就是在后面一层的激活函数中的参数加上一个前面层的激活项 $a^{\left\lbrack l + 2 \right\rbrack} = g\left(z^{\left\lbrack l + 2 \right\rbrack} + a^{[l]}\right)$。也就是一个“捷径“，或者“跳跃连接”，就是指$a^{[l]}$跳过一层或者好几层，从而将信息传递到神经网络的更深层。</p>
+<blockquote>
+<p>如果我们使用标准优化算法训练一个普通网络，比如说梯度下降法，或者其它热门的优化算法。如果没有残差，没有这些捷径或者跳跃连接，凭经验你会发现随着网络深度的加深，训练错误会先减少，然后增多。而理论上，随着网络深度的加深，应该训练得越来越好才对。也就是说，理论上网络深度越深越好。但实际上，如果没有残差网络，对于一个普通网络来说，深度越深意味着用优化算法越难训练。实际上，随着网络深度的加深，训练错误会越来越多。</p>
+<p>但有了<strong>ResNets</strong>就不一样了，即使网络再深，训练的表现却不错，比如说训练误差减少，就算是训练深达100层的网络也不例外。但是对$x$的激活，或者这些中间的激活能够到达网络的更深层。这种方式确实有助于解决梯度消失和梯度爆炸问题，让我们在训练更深网络的同时，又能保证良好的性能。也许从另外一个角度来看，随着网络越来深，网络连接会变得臃肿，但是<strong>ResNet</strong>确实在训练深度网络方面非常有效。</p>
+</blockquote>
+<h2 id="残差网络为什么有用"><a href="#残差网络为什么有用" class="headerlink" title="残差网络为什么有用"></a>残差网络为什么有用</h2><p>大概意思就是如果我们在一个 Big NN 后面再加两层，但是 ResNet 可以很好地学到 $a^{[l+2]} = a^{[l]}$ 恒等函数，就是说给残差网络增加层数并不会导致它的效率逊色于更简单的神经网络，所以理论上就是越深越好啦。</p>
+<p>还有一个细节是，残差块需要保证 $z^{l+2}$ 和 $a^{[l]}$ 的维度相等，所以需要比较多的 same 卷积。当维度不相同时，就需要一个参数矩阵 $W_s$ 来调整 $a^{[l]}$ 的维度。</p>
+<h2 id="1-times-1-卷积"><a href="#1-times-1-卷积" class="headerlink" title="$1 \times 1$ 卷积"></a>$1 \times 1$ 卷积</h2><p>可以压缩通道数。</p>
+<h2 id="谷歌-Inception-网络"><a href="#谷歌-Inception-网络" class="headerlink" title="谷歌 Inception 网络"></a>谷歌 Inception 网络</h2><p>就是用各种形状的过滤器和池化层，same 卷积叠起来。</p>
+<p>基本思想是<strong>Inception</strong>网络不需要人为决定使用哪个过滤器或者是否需要池化，而是由网络自行确定这些参数，可以给网络添加这些参数的所有可能值，然后把这些输出连接起来，让网络自己学习它需要什么样的参数，采用哪些过滤器组合。</p>
+<p>一个最重要的问题就是计算成本，参数太庞大了。我们就要通过 $1 \times 1$ 卷积层来缩小网络（瓶颈层），可以再在之后扩大网络，从而大幅度降低了参数和计算成本。</p>
+<blockquote>
+<p>还有这个特别的<strong>Inception</strong>网络是由<strong>Google</strong>公司的作者所研发的，它被叫做<strong>GoogleLeNet</strong>，这个名字是为了向<strong>LeNet</strong>网络致敬。在之前的视频中你应该了解了<strong>LeNet</strong>网络。我觉得这样非常好，因为深度学习研究人员是如此重视协作，深度学习工作者对彼此的工作成果有一种强烈的敬意。</p>
+</blockquote>
+<h2 id="迁移学习"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习</h2><p>之前讲过，现在在计算机视觉中仍然能用。</p>
+<p>用别人训练好的参数，我们就可以不用从头开始训练或者只要训练后部分很浅层的网络。</p>
+<h2 id="数据增强-Data-augmentation"><a href="#数据增强-Data-augmentation" class="headerlink" title="数据增强 Data augmentation"></a>数据增强 Data augmentation</h2><p>当下在计算机视觉方面，计算机视觉的主要问题是没有办法得到充足的数据。对大多数机器学习应用，这不是问题，但是对计算机视觉，数据就远远不够。所以这就意味着当训练计算机视觉模型的时候，数据扩充会有所帮助。</p>
+<ul>
+<li>垂直镜像对称</li>
+<li>随机裁剪</li>
+<li>色彩转换（PCA颜色增强）</li>
+</ul>
+<p>CPU 加载处理数据，GPU 训练。</p>
 <h1 id="Lesson-5-1"><a href="#Lesson-5-1" class="headerlink" title="Lesson 5.1"></a>Lesson 5.1</h1><p>本节主要讲序列模型（Sequence Models）。</p>
 <h2 id="数学符号-Notation"><a href="#数学符号-Notation" class="headerlink" title="数学符号 Notation"></a>数学符号 Notation</h2><p>$x^{<t>}$：序列的中间位置，$t$ 索引。</t></p>
 <p>$T_x$：输入序列的长度。</p>
