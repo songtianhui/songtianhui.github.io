@@ -3560,6 +3560,22 @@ a_{i}^{[l]} = \dfrac{t_{i}}{\sum\limits_i t_{i}}</script><p>输出的 $a_i$ 就�
 <li>需要大量的数据。</li>
 <li>排除了可能有用的手工设计的组件。</li>
 </ul>
+<h1 id="Lesson-4-1"><a href="#Lesson-4-1" class="headerlink" title="Lesson 4.1"></a>Lesson 4.1</h1><p>本章开始讲卷积神经网络。这到了比较熟悉的一部分内容，我也会省略一些部分，但有些概念及背后原理老师还是阐释得比较清楚。</p>
+<h2 id="padding"><a href="#padding" class="headerlink" title="padding"></a>padding</h2><p>在周围填充像素。</p>
+<ul>
+<li><strong>Valid</strong>：不填充。输出 $(n - f + 1) \times (n - f + 1)$</li>
+<li><strong>Same</strong>：填充到输入和输出大小一样。</li>
+</ul>
+<p>$f$ 通常是奇数，可以有一个中心点，填充也会对称。</p>
+<h2 id="卷积步长-Stride"><a href="#卷积步长-Stride" class="headerlink" title="卷积步长 Stride"></a>卷积步长 Stride</h2><p>$n \times n$ 的输入，$f \times f$ 的过滤器，$p $ 的 padding，$s$ 的步长，输出大小为 $\left \lfloor\dfrac{n + 2p - f}{s} \right \rfloor \times \left \lfloor\dfrac{n + 2p - f}{s} \right \rfloor$。</p>
+<p><em>其实卷积操作真正的名字叫互相关，卷积还包含一个反转操作，不过在神经网络中不重要。</em></p>
+<h2 id="三维卷积"><a href="#三维卷积" class="headerlink" title="三维卷积"></a>三维卷积</h2><p>总结就是一个$n \times n \times n_{c}$（通道数）的输入图像，卷积层必然是 $f \times f \times n_c$（也就是在编程中只需要指定 $f$，框架会自动pad出通道数）。然后就得到了$（n-f+1）×（n-f+1）×n_{c^{‘}}$，这里$n_{c^{‘}}$其实就是下一层的通道数，就是你用的过滤器的个数。</p>
+<h2 id="池化层-Pooling"><a href="#池化层-Pooling" class="headerlink" title="池化层 Pooling"></a>池化层 Pooling</h2><p>卷积网络经常使用池化层来缩减模型的大小，提高计算速度，同时提高所提取特征的鲁棒性。</p>
+<p>max-pooling, average-pooling。</p>
+<p>一个有意思的特点就是，它有一组超参数，但并没有参数需要学习。实际上，梯度下降没有什么可学的，一旦确定了$f$和$s$，它就是一个固定运算，梯度下降无需改变任何值。</p>
+<p>池化的超参数包括过滤器大小 $f$ 和步幅 $s$，很少用 padding。最大池化的输入就是$n_{H} \times n_{W} \times n_{c}$，假设没有padding，则输出$\lfloor\frac{n_{H} - f}{s} +1\rfloor \times \lfloor\frac{n_{w} - f}{s} + 1\rfloor \times n_{c}$。</p>
+<h2 id="为什么使用卷积"><a href="#为什么使用卷积" class="headerlink" title="为什么使用卷积"></a>为什么使用卷积</h2><p>他可以通过<strong>共享参数</strong>和<strong>稀疏连接</strong>来减少参数，以便用更小的训练集来训练它，从而预防过度拟合。</p>
+<p>实际上，我们用同一个过滤器生成各层中，图片的所有像素值，希望网络通过自动学习变得更加健壮，以便更好地取得所期望的平移不变属性。</p>
 <h1 id="Lesson-5-1"><a href="#Lesson-5-1" class="headerlink" title="Lesson 5.1"></a>Lesson 5.1</h1><p>本节主要讲序列模型（Sequence Models）。</p>
 <h2 id="数学符号-Notation"><a href="#数学符号-Notation" class="headerlink" title="数学符号 Notation"></a>数学符号 Notation</h2><p>$x^{<t>}$：序列的中间位置，$t$ 索引。</t></p>
 <p>$T_x$：输入序列的长度。</p>
