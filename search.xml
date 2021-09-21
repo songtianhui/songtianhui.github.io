@@ -3172,7 +3172,7 @@ L(\{p_i\}, \{ t_i\}) = \dfrac{1}{N_{cls}}\sum\limits_{i} L_{cls}(p_i, p_i^{*}) +
     <title>吴恩达深度学习笔记</title>
     <url>/2021/08/04/DL-AN/</url>
     <content><![CDATA[<p><a href="https://www.bilibili.com/video/BV1FT4y1E74V?from=search&amp;seid=7469215768123017337">视频指路</a></p>
-<a id="more"></a>
+<p>&lt;!—more —\rangle </p>
 <hr>
 <h1 id="Lesson-1-1"><a href="#Lesson-1-1" class="headerlink" title="Lesson 1.1"></a>Lesson 1.1</h1><p>本章是对深度学习神经网络的一个介绍，课程的概览。</p>
 <h1 id="Lesson-1-2"><a href="#Lesson-1-2" class="headerlink" title="Lesson 1.2"></a>Lesson 1.2</h1><p>本章主要讲了一下 logisitic 回归，梯度下降，在ML中已经学习了。</p>
@@ -3606,26 +3606,48 @@ a_{i}^{[l]} = \dfrac{t_{i}}{\sum\limits_i t_{i}}</script><p>输出的 $a_i$ 就�
 <li>色彩转换（PCA颜色增强）</li>
 </ul>
 <p>CPU 加载处理数据，GPU 训练。</p>
+<h1 id="Lesson-4-3"><a href="#Lesson-4-3" class="headerlink" title="Lesson 4.3"></a>Lesson 4.3</h1><p>本章主要介绍目标检测（Object detection）的内容。</p>
+<h2 id="目标定位-Object-localization"><a href="#目标定位-Object-localization" class="headerlink" title="目标定位 Object localization"></a>目标定位 Object localization</h2><p>在图像分类问题中，除了分类之外还要确定对象的位置，就让神经网络再多输出4个数字，$b_x, b_y, b_h, b_w$</p>
+<p>，就是对象边界框的中心点坐标和高宽。</p>
+<p>对于网络的输出就可以定义为 $y= \ \begin{bmatrix} p_{c} \\ b_{x} \\ b_{y} \\ b_{h} \\ b_{w} \\ c_{1} \\ c_{2}\\ c_{3} \\\end{bmatrix}$，$p_c$ 表示是否含有对象，同时$c_1, c_2, c_3$ 输出分类，损失函数 $L\left(\hat{y},y \right) = \left( \hat{y_1} - y_{1} \right)^{2} + \left(\hat{y_2} - y_{2}\right)^{2} + \ldots\left( \hat{y_8} - y_{8}\right)^{2}$。如果图中没有对象 $p_c = 0$ 则其他参数就都没有意义，损失函数 $\left(\hat{y_1} - y_{1}\right)^{2}$。</p>
+<h2 id="特征点检测-Landmark-detection"><a href="#特征点检测-Landmark-detection" class="headerlink" title="特征点检测 Landmark detection"></a>特征点检测 Landmark detection</h2><p>运用上面的思想我们就可以检测更多的特征点，比如人脸特征，人体姿态等，用 $(l_{1x}, l_{1y}), (l_{2x}, l_{2y})…$ 等输出各个特征点然后进行回归。</p>
+<h2 id="目标检测-Object-detection"><a href="#目标检测-Object-detection" class="headerlink" title="目标检测 Object detection"></a>目标检测 Object detection</h2><p>滑动窗口的思想，使用不同大小的窗口，遍历整个图片，每个窗口输入网络预测。</p>
+<p>缺点很明显，计算成本。</p>
+<h2 id="滑动窗口的卷积实现"><a href="#滑动窗口的卷积实现" class="headerlink" title="滑动窗口的卷积实现"></a>滑动窗口的卷积实现</h2><p>我们可以在卷积层上应用滑动窗口。</p>
+<p>首先要知道如何把神经网络的全连接层转化为神经层。就是通过维度一样的卷积层，过滤器的个数是全连接单元的个数，就把全连接转化成了和单元相同个数的通道数的层。再往后的全连接层就都只要 $1\times 1$ 卷积。</p>
+<p>然后我们就可以用卷积实现滑动窗口。其实就是把卷积网络的输入作为每一个窗口，按照步长滑动就可以了，最后会得到一个窗口总数也就是各个窗口的输出。我们就可以在并行计算的基础上一次得到所有窗口的输出。</p>
+<p>卷积层上的滑动窗口提高了整个算法的效率。不过这种算法仍然存在一个缺点，就是边界框的位置可能不够准确。</p>
+<h2 id="Bounding-Box-预测"><a href="#Bounding-Box-预测" class="headerlink" title="Bounding Box 预测"></a>Bounding Box 预测</h2><p>YOLO（建议看论文）</p>
+<h2 id="交并比-Intersection-over-union"><a href="#交并比-Intersection-over-union" class="headerlink" title="交并比 Intersection over union"></a>交并比 Intersection over union</h2><p>并交比函数，可以用来评价对象检测算法。</p>
+<p>交并比（<strong>loU</strong>）函数做的是计算两个边界框交集和并集之比。一般约定，在计算机检测任务中，如果$loU≥0.5$，就说检测正确，如果预测器和实际边界框完美重叠，<strong>loU</strong>就是1，因为交集就等于并集。</p>
+<p>人们定义<strong>loU</strong>这个概念是为了评价你的对象定位算法是否精准，但更一般地说，<strong>loU</strong>衡量了两个边界框重叠地相对大小。</p>
+<h2 id="非极大值抑制-Non-max-supression"><a href="#非极大值抑制-Non-max-supression" class="headerlink" title="非极大值抑制 Non-max supression"></a>非极大值抑制 Non-max supression</h2><p>到目前为止学到的对象检测中的一个问题是，算法可能对同一个对象做出多次检测，所以算法不是对某个对象检测出一次，而是检测出多次。非极大值抑制这个方法可以确保你的算法对每个对象只检测一次。</p>
+<p>总之就是每个窗口每个检测结果相关的概率 $p_c$，首先看概率最高的那个，这么做之后，非极大值抑制就会逐一审视剩下的矩形，所有和这个最大的边框有很高交并比，高度重叠的其他边界框，那么这些输出就会被抑制。</p>
+<h2 id="Anchor-Boxes"><a href="#Anchor-Boxes" class="headerlink" title="Anchor Boxes"></a>Anchor Boxes</h2><p>到目前为止，对象检测中存在的一个问题是每个格子只能检测出一个对象，如果你想让一个格子检测出多个对象，你可以这么做，就是使用<strong>anchor box</strong>这个概念。</p>
+<p>就是把标签 $y$ 拼起来（</p>
+<h2 id="候选区域-Region-proposals"><a href="#候选区域-Region-proposals" class="headerlink" title="候选区域 Region proposals"></a>候选区域 Region proposals</h2><p><strong>Regional CNN(R-CNN)</strong>。这个算法尝试选出一些区域，在这些区域上运行卷积网络分类器是有意义的，所以这里不再针对每个滑动窗运行检测算法，而是只选择一些窗口，在少数窗口上运行卷积网络分类器。</p>
+<p>选出候选区域的方法是运行图像分割算法，找出色块（像素语义）。</p>
+<p>太慢了，有 <strong>Fast R-CNN, Faster R-CNN</strong>。</p>
 <h1 id="Lesson-5-1"><a href="#Lesson-5-1" class="headerlink" title="Lesson 5.1"></a>Lesson 5.1</h1><p>本节主要讲序列模型（Sequence Models）。</p>
-<h2 id="数学符号-Notation"><a href="#数学符号-Notation" class="headerlink" title="数学符号 Notation"></a>数学符号 Notation</h2><p>$x^{<t>}$：序列的中间位置，$t$ 索引。</t></p>
+<h2 id="数学符号-Notation"><a href="#数学符号-Notation" class="headerlink" title="数学符号 Notation"></a>数学符号 Notation</h2><p>$x^{\langle t \rangle}$：序列的中间位置，$t$ 索引。</p>
 <p>$T_x$：输入序列的长度。</p>
 <p>$T_y$：输出序列的长度。</p>
 <p><strong>one-hot</strong> 法表示字典中的每一个单词。</p>
 <p><strong>Unknow Word</strong> 伪造单词，&lt;<strong>UNK</strong>&gt;。</p>
-<h2 id="循环神经网络-Recurrent-Neural-Network"><a href="#循环神经网络-Recurrent-Neural-Network" class="headerlink" title="循环神经网络 Recurrent Neural Network"></a>循环神经网络 Recurrent Neural Network</h2><p>简单来说，在时间步 $t$ 中，模型不仅是用 $x^{<t>}$ 来预测 $\hat{y}^{<t>}$，而且还用了前一个时间步中的信息，也就是时间步 $t-1$ 的激活值会传递到 $t$。</t></t></p>
-<p>有一个零时刻的初始激活值 $a^{<0>} = \mathbf{0}$。</0></p>
-<p>循环神经网络是从左向右扫描数据，同时每个时间步的参数也是共享的。$W_{\text{ax}}$ 表示管理着从 $x^{<1>}$ 到隐藏层的连接的一系列参数，每个时间步使用的都是相同的参数 $W_{\text{ax}}$。而激活值也就是水平联系是由参数 $W_{aa}$ 决定的，同时每一个时间步都使用相同的参数 $W_{aa}$，同样的输出结果由 $W_{\text{ya}}$ 决定。</1></p>
+<h2 id="循环神经网络-Recurrent-Neural-Network"><a href="#循环神经网络-Recurrent-Neural-Network" class="headerlink" title="循环神经网络 Recurrent Neural Network"></a>循环神经网络 Recurrent Neural Network</h2><p>简单来说，在时间步 $t$ 中，模型不仅是用 $x^{\langle t \rangle}$ 来预测 $\hat{y}^{\langle t \rangle }$，而且还用了前一个时间步中的信息，也就是时间步 $t-1$ 的激活值会传递到 $t$。</p>
+<p>有一个零时刻的初始激活值 $a^{\langle 0 \rangle} = \mathbf{0}$。</p>
+<p>循环神经网络是从左向右扫描数据，同时每个时间步的参数也是共享的。$W_{\text{ax}}$ 表示管理着从 $x^{\langle t \rangle}$ 到隐藏层的连接的一系列参数，每个时间步使用的都是相同的参数 $W_{\text{ax}}$。而激活值也就是水平联系是由参数 $W_{aa}$ 决定的，同时每一个时间步都使用相同的参数 $W_{aa}$，同样的输出结果由 $W_{\text{ya}}$ 决定。</p>
 <p><img data-src="rnn.png" alt></p>
 <p>这个循环神经网络的一个缺点就是它只使用了这个序列中之前的信息来做出预测。</p>
 <p>计算示例（FPP）：</p>
-<p>$a^{&lt; t &gt;} = g_{1}(W_{aa}a^{&lt; t - 1 &gt;} + W_{ax}x^{&lt; t &gt;} + b_{a})$</p>
-<p>$\hat y^{&lt; t &gt;} = g_{2}(W_a^{&lt; t &gt;} + b_{y})$</p>
+<p>$a^{\langle t \rangle} = g_{1}(W_{aa}a^{\langle t - 1 \rangle} + W_{ax}x^{\langle t \rangle} + b_{a})$</p>
+<p>$\hat y^{\langle t \rangle} = g_{2}(W_{ya}a^{\langle t \rangle} + b_{y})$</p>
 <p>循环神经网络用的激活函数经常是<strong>tanh</strong>。</p>
 <p>简化符号：</p>
-<p>$a^{<t>} =g(W_{a}\left\lbrack a^{&lt; t-1 &gt;},x^{<t>} \right\rbrack +b_{a})$</t></t></p>
-<p>$\hat y^{&lt; t &gt;} = g(W_{y}a^{&lt; t &gt;} +b_{y})$</p>
+<p>$a^{\langle t \rangle} =g(W_{a}\left\lbrack a^{\langle t-1 \rangle},x^{\langle t \rangle} \right\rbrack +b_{a})$</p>
+<p>$\hat y^{\langle t \rangle} = g(W_{y}a^{\langle t \rangle} +b_{y})$</p>
 <p>所以我们定义$W_{a}$的方式是将矩阵$W_{aa}$和矩阵$W_{ax}$水平并列放置，$[ W_{aa}\vdots W_{ax}]=W_{a}$。</p>
-<p>用这个符号（$\left\lbrack a^{&lt; t - 1 &gt;},x^{&lt; t &gt;}\right\rbrack$）的意思是将这两个向量堆在一起，用这个符号表示，即$\begin{bmatrix}a^{&lt; t-1 &gt;} \\ x^{&lt; t &gt;} \\\end{bmatrix}$。</p>
+<p>用这个符号（$\left\lbrack a^{\langle t - 1 \rangle},x^{\langle  t \rangle }\right\rbrack$）的意思是将这两个向量堆在一起，用这个符号表示，即$\begin{bmatrix}a^{\langle  t-1 \rangle } \\ x^{\langle  t \rangle } \\\end{bmatrix}$。</p>
 <p><img data-src="rnn-f.png" alt></p>
 <h2 id="通过时间的反向传播-Backpropagation-through-time"><a href="#通过时间的反向传播-Backpropagation-through-time" class="headerlink" title="通过时间的反向传播 Backpropagation through time"></a>通过时间的反向传播 Backpropagation through time</h2><p><img data-src="rnn_cell_backprop.png" alt></p>
 <h2 id="不同类型的循环神经网络"><a href="#不同类型的循环神经网络" class="headerlink" title="不同类型的循环神经网络"></a>不同类型的循环神经网络</h2><ul>
@@ -3661,13 +3683,13 @@ c^{<t>} = \Gamma_{u} \times \tilde{c}^{<t>} +\left( 1- \Gamma_{u} \right)*c^{<t-
 \Gamma_{o}= \sigma(W_{o}\left\lbrack c^{<t-1>},x^{<t>} \right\rbrack +b_{o})</script><script type="math/tex; mode=display">
 c^{<t>} = \Gamma_u \times \tilde{c}^{<t>} + \Gamma_f \times c^{<t-1>}</script><script type="math/tex; mode=display">
 a^{<t>} = \Gamma_o \times c^{<t>}</script><p>常用的版本可能是门值不仅取决于$a^{<t-1>}$和$x^{<t>}$，有时候也可以偷窥一下$c^{<t-1>}$的值（上图编号13所示），这叫做“窥视孔连接”（<strong>peephole connection</strong>）。</t-1></t></t-1></p>
-<p>只要正确地设置了遗忘门和更新门，<strong>LSTM</strong>是相当容易把$c^{<0>}$的值一直往下传递到右边。这就是为什么<strong>LSTM</strong>和<strong>GRU</strong>非常擅长于长时间记忆某个值，对于存在记忆细胞中的某个值，即使经过很长很长的时间步。</0></p>
+<p>只要正确地设置了遗忘门和更新门，<strong>LSTM</strong>是相当容易把$c^{\langle 0&gt;}$的值一直往下传递到右边。这就是为什么<strong>LSTM</strong>和<strong>GRU</strong>非常擅长于长时间记忆某个值，对于存在记忆细胞中的某个值，即使经过很长很长的时间步。</p>
 <p><img data-src="LSTM.png" alt></p>
 <p><strong>GRU</strong>的优点是这是个更加简单的模型，所以更容易创建一个更大的网络，而且它只有两个门，在计算性上也运行得更快，然后它可以扩大模型的规模。</p>
 <p>但是<strong>LSTM</strong>更加强大和灵活，因为它有三个门而不是两个。<strong>LSTM</strong>在历史进程上是个更优先的选择。</p>
 <h2 id="双向循环神经网络-Bidirectional-RNN"><a href="#双向循环神经网络-Bidirectional-RNN" class="headerlink" title="双向循环神经网络 Bidirectional RNN"></a>双向循环神经网络 Bidirectional RNN</h2><p>就是正着跑一遍再反着跑一遍，是一个无环图（Acyclic graph）。</p>
 <p><img data-src="brnn.png" alt></p>
-<p>会有 $\hat y^{<t>} =g(W_{g}\left\lbrack \overrightarrow{a}^{&lt; t &gt;},\overleftarrow{a}^{&lt; t &gt;} \right\rbrack +b_{y})$。</t></p>
+<p>会有 $\hat y^{\langle t \rangle} =g(W_{g}\left\lbrack \overrightarrow{a}^{\langle  t \rangle },\overleftarrow{a}^{\langle  t \rangle } \right\rbrack +b_{y})$。</p>
 <p>通过这些改变，就可以用一个用<strong>RNN</strong>或<strong>GRU</strong>或<strong>LSTM</strong>构建的模型，并且能够预测任意位置，即使在句子的中间，因为模型能够考虑整个句子的信息。这个双向<strong>RNN</strong>网络模型的缺点就是需要完整的数据的序列，才能预测任意位置。</p>
 <h2 id="深层循环神经网络-Deep-RNNs"><a href="#深层循环神经网络-Deep-RNNs" class="headerlink" title="深层循环神经网络 Deep RNNs"></a>深层循环神经网络 Deep RNNs</h2><p>要学习非常复杂的函数，通常我们会把<strong>RNN</strong>的多个层堆叠在一起构建更深的模型。</p>
 <p>可以堆好几个隐藏层 $a^{[i]}$。</p>

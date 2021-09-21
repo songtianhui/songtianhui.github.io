@@ -553,7 +553,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-20 17:07:04" itemprop="dateModified" datetime="2021-09-20T17:07:04+08:00">2021-09-20</time>
+                <time title="Modified: 2021-09-21 21:20:13" itemprop="dateModified" datetime="2021-09-21T21:20:13+08:00">2021-09-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -577,14 +577,531 @@
 
       
           <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1FT4y1E74V?from=search&amp;seid=7469215768123017337">视频指路</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/04/DL-AN/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<p>&lt;!—more —\rangle </p>
+<hr>
+<h1 id="Lesson-1-1"><a href="#Lesson-1-1" class="headerlink" title="Lesson 1.1"></a>Lesson 1.1</h1><p>本章是对深度学习神经网络的一个介绍，课程的概览。</p>
+<h1 id="Lesson-1-2"><a href="#Lesson-1-2" class="headerlink" title="Lesson 1.2"></a>Lesson 1.2</h1><p>本章主要讲了一下 logisitic 回归，梯度下降，在ML中已经学习了。</p>
+<p>然后介绍了 <code>python</code> 中的一些知识，向量化、广播、<code>numpy</code>、jupyter notebook等，都可以 <strong>rtfm</strong>，不在此赘述。</p>
+<p>唯一有一点就是符号上的表示，andrew 喜欢用 $m$ 表示样本个数，$n$ 表示特征数。我习惯 mit 的课教的 $n$ 表示样本数，$d$ 表示特征维数。</p>
+<h1 id="Lesson-1-3"><a href="#Lesson-1-3" class="headerlink" title="Lesson 1.3"></a>Lesson 1.3</h1><p>本章算是一个神经网络的引入，介绍一些基本概念，浅层神经网络（shallow neural network）。</p>
+<p><img data-src="L1_week3_6.png" alt></p>
+<p>每个神经单元就是这么个计算过程，有输入 $x$，权重 $w$，偏移 $b$，激活函数（activation function） $h$。</p>
+<ul>
+<li>$z = w^T x + b$</li>
+<li>$a = h(z)$</li>
+</ul>
+<p>符号： $a_1^{<a href="1">1</a>} $ ，右上角中括号表示层数，右上角括号中表示第几个样本，右下角表示该层第几个神经元。</p>
+<p>对于一个输入样本，避免一层内的 for 循环，向量化计算：</p>
+<script type="math/tex; mode=display">
+z^{[i]} = W^{[i]} a^{[i-1]} + b^{[i]}\\
+a^{[i]} = h(z^{[i]})</script><p>$W^{[i]}$ 是第 $i$ 层每个神经元的权重排成的矩阵。</p>
+<p>举例图示：</p>
+<script type="math/tex; mode=display">
+\left[
+        \begin{array}{c}
+        z^{[1]}_{1}\\
+        z^{[1]}_{2}\\
+        z^{[1]}_{3}\\
+        z^{[1]}_{4}\\
+        \end{array}
+        \right]
+         =
+    \overbrace{
+    \left[
+        \begin{array}{c}
+        ...W^{[1]T}_{1}...\\
+        ...W^{[1]T}_{2}...\\
+        ...W^{[1]T}_{3}...\\
+        ...W^{[1]T}_{4}...
+        \end{array}
+        \right]
+        }^{W^{[1]}}
+        *
+    \overbrace{
+    \left[
+        \begin{array}{c}
+        x_1\\
+        x_2\\
+        x_3\\
+        \end{array}
+        \right]
+        }^{input}
+        +
+    \overbrace{
+    \left[
+        \begin{array}{c}
+        b^{[1]}_1\\
+        b^{[1]}_2\\
+        b^{[1]}_3\\
+        b^{[1]}_4\\
+        \end{array}
+        \right]
+        }^{b^{[1]}}</script><p>对于所有样本，避免 for 遍历样本，向量化计算：</p>
+<script type="math/tex; mode=display">
+Z^{[i]} = W^{[i]}A^{[i-1]} + b^{[i]}\\
+A^{[i]} = h(Z^{[i]})</script><p>其中 $Z^{[i]},A^{[i]}$ 是第 $i$ 层所有样本输出排成的矩阵。</p>
+<p>激活函数：<strong>sigmoid</strong>（主要在二分类）, <strong>tanh</strong>（比 sigmoid 常用），<strong>ReLU</strong>（在神经网络中很常用），Leaky ReLU。</p>
+<p>前两个有梯度消失的风险。</p>
+<p>这里提到一个很重要的问题就是为什么要使用非线性函数而不是直接 $a = z$。因为全用线性激活函数（identity）会使神经网络退化成一个单层模型。</p>
+<h2 id="反向传播-Back-Propagation"><a href="#反向传播-Back-Propagation" class="headerlink" title="反向传播 Back Propagation"></a>反向传播 Back Propagation</h2><p>也就是神经网络的梯度下降（Gradient Descent）。比较重要，理解一下推倒，本质上是函数求导的链式法则。</p>
+<p>代价函数：</p>
+<script type="math/tex; mode=display">
+J(W, b) = \dfrac{1}{m}\sum\limits_{i= 1}^{m}L(\hat{y}, y)</script><p>当参数初始化成某些值后，每次梯度下降都会循环计算以下预测值：$\hat{y}^{(i)},(i=1,2,…,m)$。</p>
+<p>有 $dW^{[i]} = \dfrac{\partial J}{\partial W^{[i]}}$, $d b^{[i]} = \dfrac{\partial J}{\partial b^{[i]}}$。</p>
+<p>在梯度下降时每一次更新：$W^{[i]}\implies{W^{[i]} - \eta dW^{[i]}},b^{[i]}\implies{b^{[i]} -\eta db^{[i]}}$, $\eta$ 为步长。</p>
+<p>反向传播时，就是一个链式求导：</p>
+<script type="math/tex; mode=display">
+\underbrace{
+    \left.
+    \begin{array}{l}
+    x \\
+    w \\
+    b 
+    \end{array}
+    \right\}
+    }_{dw=dz \cdot x, db =dz}
+    \impliedby \underbrace{z=w^Tx+b}_{dz=da\cdot g^{'}(z),
+    g(z)=\sigma(z),
+    \frac{dL}{dz}} = \frac{dL}{da} \cdot \frac{da}{dz},
+    \frac{d}{ dz} g(z)=g^{'}(z)
+    \impliedby \underbrace{a = \sigma(z) 
+    \impliedby L(a,y)}_{da=\frac{d}{da}L\left(a,y \right)=(-y\log{\alpha} - (1 - y)\log(1 - a))^{'}=-\frac{y}{a} + \frac{1 - y}{1 - a} }</script><p>所以有：</p>
+<p>$dz^{[L]} = A^{[L]} - Y$</p>
+<p>$dW^{[i]} = \dfrac{1}{m} dZ^{[i]}A^{[i-1]T}$</p>
+<p>$db^{[i]} = \dfrac{1}{m}$ <code>np.sum(dZ^&#123;[i]&#125;, axis=1)​</code></p>
+<script type="math/tex; mode=display">
+dz^{[i]} = \underbrace{W^{[i + 1]T} dz^{[i+1]}}_{(n^{[i]},m)}\quad \times  \underbrace{g^{[i]'}}_{activation \; function \; of \; hidden \; layer}\times  \quad\underbrace{(z^{[i]})}_{(n^{[1]},m)}</script><ul>
+<li>随机初始化，不要初始化成相同的参数。</li>
+</ul>
+<h1 id="Lesson-1-4"><a href="#Lesson-1-4" class="headerlink" title="Lesson 1.4"></a>Lesson 1.4</h1><p>本章介绍深层神经网络，主要就是把前一章讲的只有两层的网络更推广一下，而我们在上一章其实已经推广过了。</p>
+<h2 id="为什么使用深层表示？"><a href="#为什么使用深层表示？" class="headerlink" title="为什么使用深层表示？"></a>为什么使用深层表示？</h2><p>深度神经网络的这许多隐藏层中，较早的前几层能学习一些低层次的简单特征，等到后几层，就能把简单的特征结合起来，去探测更加复杂的东西。</p>
+<p>深层的网络隐藏单元数量相对较少，隐藏层数目较多，如果浅层的网络想要达到同样的计算结果则需要指数级增长的单元数量才能达到。</p>
+<blockquote>
+<p>说实话，我认为“深度学习”这个名字挺唬人的，这些概念以前都统称为有很多隐藏层的神经网络，但是深度学习听起来多高大上，太深奥了，对么？这个词流传出去以后，这是神经网络的重新包装或是多隐藏层神经网络的重新包装，激发了大众的想象力。    ——Andrew</p>
+</blockquote>
+<h2 id="搭建神经网络块"><a href="#搭建神经网络块" class="headerlink" title="搭建神经网络块"></a>搭建神经网络块</h2><p>其实就是对于每一层，权重矩阵，偏移值，激活函数，在前向传播的时候缓存（cache）好 $z,a$ 等值，用反向传播时计算 $dW,db$ 等。</p>
+<p>就放一张老师的板书吧（</p>
+<p><img data-src="network.png" alt="building blocks"></p>
+<h2 id="参数和超参数"><a href="#参数和超参数" class="headerlink" title="参数和超参数"></a>参数和超参数</h2><p>算法中的<strong>learning rate</strong> $a$（学习率）、<strong>iterations</strong>(梯度下降法循环的数量)、$L$（隐藏层数目）、$n^{[l]}$（隐藏层单元数目）、<strong>choice of activation function</strong>（激活函数的选择）都需要你来设置，这些数字实际上控制了最后的参数$W$和$b$的值，所以它们被称作超参数（Hyperparameter）。</p>
+<p>如何寻找超参数：走<strong>Idea—Code—Experiment—Idea</strong>这个循环，尝试各种不同的参数，实现模型并观察是否成功，然后再迭代。</p>
+<blockquote>
+<p>应用深度学习领域，一个很大程度基于经验的过程，凭经验的过程通俗来说，就是试直到你找到合适的数值。</p>
+<p>如果你所解决的问题需要很多年时间，只要经常试试不同的超参数，勤于检验结果，看看有没有更好的超参数数值，相信你慢慢会得到设定超参数的直觉，知道你的问题最好用什么数值。</p>
+</blockquote>
+<hr>
+<h1 id="Lesson-2-1"><a href="#Lesson-2-1" class="headerlink" title="Lesson 2.1"></a>Lesson 2.1</h1><p>本章主要讲改善神经网络，超参数调试、正则化等内容。</p>
+<ul>
+<li>当我们有百万量级以上的数据，可以拿 99% 以上的数据来进行训练，几万条用来交叉验证（dev）和测试就可以了。</li>
+</ul>
+<h2 id="方差-偏差"><a href="#方差-偏差" class="headerlink" title="方差/偏差"></a>方差/偏差</h2><ul>
+<li>高偏差（<strong>high bias</strong>），欠拟合（<strong>underfitting</strong>）。</li>
+<li>高方差（<strong>high variance</strong>），过拟合（<strong>overfitting</strong>）。</li>
+</ul>
+<p>通过训练集和验证集误差判断：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Training set error</th>
+<th style="text-align:center">Dev set error</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1%</td>
+<td style="text-align:center">15%</td>
+<td style="text-align:center">high variance</td>
+</tr>
+<tr>
+<td style="text-align:center">15%</td>
+<td style="text-align:center">16%</td>
+<td style="text-align:center">high bias</td>
+</tr>
+<tr>
+<td style="text-align:center">15%</td>
+<td style="text-align:center">30%</td>
+<td style="text-align:center">high variance &amp; bias</td>
+</tr>
+<tr>
+<td style="text-align:center">0.5%</td>
+<td style="text-align:center">1%</td>
+<td style="text-align:center">low variance &amp; bias</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h2><blockquote>
+<p>初始模型训练完成后，我首先要知道算法的偏差高不高，如果偏差较高，试着评估训练集或训练数据的性能。如果偏差的确很高，甚至无法拟合训练集，那么你要做的就是选择一个新的网络，比如含有更多隐藏层或者隐藏单元的网络，或者花费更多时间来训练网络，或者尝试更先进的优化算法，后面我们会讲到这部分内容。</p>
+</blockquote>
+<ul>
+<li>只要正则适度，通常构建一个更大的网络便可以，在不影响方差的同时减少偏差，而采用更多数据通常可以在不过多影响偏差的同时减少方差。</li>
+<li>训练网络，选择网络或者准备更多数据，现在我们有工具可以做到在减少偏差或方差的同时，不对另一方产生过多不良影响。</li>
+</ul>
+<h2 id="正则化（Regularization）"><a href="#正则化（Regularization）" class="headerlink" title="正则化（Regularization）"></a>正则化（Regularization）</h2><p>深度学习可能存在过拟合问题——高方差，有两个解决方法，一个是正则化，另一个是准备更多的数据，正则化通常有助于避免过拟合或减少你的网络误差。</p>
+<p>就是在代价函数里加一个正则化项，一般用 $\dfrac{\lambda}{2m}$乘以$w$范数的平方,其中$\left| w \right|_2^2$是$w$的欧几里德范数的平方，$L2$ 正则化。</p>
+<p>神经网络中的正则项就是为$\dfrac{\lambda }{2m}\sum\limits_{l = 1}^{L}| W^{[l]}|^{2}$，我们称${||W^{\left[l\right]}||}^{2}$为范数平方，这个矩阵范数${||W^{\left[l\right]}||}^{2}$（即平方范数），被定义为矩阵中所有元素的平方求和。该矩阵范数被称作“弗罗贝尼乌斯范数”，用下标$F$标注。</p>
+<p>带正则化的梯度下降中，对$W^{[l]}$的偏导数，把$W^{[l]}$替换为$W^{[l]}$减去学习率乘以$dW$。现在我们要做的就是给$dW$加上这一项$\dfrac {\lambda}{m}W^{[l]}$，然后计算这个更新项，使用新定义的$dW^{[l]}$，它的定义含有相关参数代价函数导数和，以及最后添加的额外正则项。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+W^{[l]} :&= W^{[l]}  - \alpha \times \left[(\text{from backpap}) + \dfrac{\lambda}{m}W^{[l]}\right]\\ &= (1 - \frac{\alpha \lambda}{m}) W^{[l]} - \alpha \times (\text{from backpap})
+\end{aligned}</script><p><em>正则化预防过拟合的原因：极限思想，当lambda很大权重为0，退化成欠拟合，有个right fit 的中间态。</em></p>
+<h2 id="dropout-正则化"><a href="#dropout-正则化" class="headerlink" title="dropout 正则化"></a>dropout 正则化</h2><p>就是随机消掉一些神经元。。。</p>
+<ul>
+<li><strong>inverted dropout</strong>（反向随机失活）<ul>
+<li>首先要定义向量$d$，$d^{[3]}$表示网络第三层的<strong>dropout</strong>向量：<code>d3 = np.random.rand(a3.shape[0],a3.shape[1])</code> 。</li>
+<li>然后看它是否小于某数，我们称之为<strong>keep-prob</strong>，<strong>keep-prob</strong>是一个具体数字，它表示保留某个隐藏单元的概率。</li>
+<li>接下来要做的就是从第三层中获取$a^{[3]}$，$a^{[3]}$含有要计算的激活函数，$a^{[3]}$等于上面的$a^{[3]}$乘以 $d^{[3]}$，就是把 $d$ 中 0 对应位置的数归零。（$d$ 实际上是一个布尔数组）</li>
+<li>最后，我们向外扩展$a^{[3]}$，用它除以<strong>keep-prob</strong>参数。</li>
+</ul>
+</li>
+</ul>
+<p>显然在测试阶段，我们不使用<strong>dropout</strong>。要同时在 <strong>fpp</strong> 和 <strong>bpp</strong> 中使用 dropout。</p>
+<p><em>dropout 预防过拟合的原因，dropout 的功能类似于$L2$正则化，与$L2$正则化不同的是应用方式不同会带来一点点小变化，甚至更适用于不同的输入范围。</em></p>
+<ul>
+<li><p>如果你担心某些层比其它层更容易发生过拟合，可以把某些层的<strong>keep-prob</strong>值设置得比其它层更低，缺点是为了使用交叉验证，你要搜索更多的超级参数，另一种方案是在一些层上应用<strong>dropout</strong>，而有些层不用<strong>dropout</strong>，应用<strong>dropout</strong>的层只含有一个超级参数，就是<strong>keep-prob</strong>。</p>
+</li>
+<li><p>它在其它领域应用得比较少，主要存在于计算机视觉领域，因为我们通常没有足够的数据，所以一直存在过拟合。</p>
+</li>
+<li><strong>dropout</strong>一大缺点就是代价函数$J$不再被明确定义，每次迭代，都会随机移除一些节点，如果再三检查梯度下降的性能，实际上是很难进行复查的。</li>
+</ul>
+<h2 id="其他正则化方法"><a href="#其他正则化方法" class="headerlink" title="其他正则化方法"></a>其他正则化方法</h2><ul>
+<li>数据扩增</li>
+<li><strong>early stopping</strong><ul>
+<li>缺点是不能独立处理梯度下降和优化代价函数。</li>
+</ul>
+</li>
+</ul>
+<h2 id="归一化输入（Normalizing）"><a href="#归一化输入（Normalizing）" class="headerlink" title="归一化输入（Normalizing）"></a>归一化输入（Normalizing）</h2><p>训练神经网络，其中一个加速训练的方法就是归一化输入。归一化需要两个步骤：</p>
+<ol>
+<li>零均值<ul>
+<li>$\mu = \frac{1}{m}\sum\limits_{i =1}^{m}x^{(i)}$，它是一个向量，$x$ 等于每个训练数据 $x$ 减去 $\mu$，意思是移动训练集，直到它完成零均值化。 </li>
+</ul>
+</li>
+<li>归一化方差<ul>
+<li>$ \sigma^{2}= \frac{1}{m}\sum\limits_{i =1}^{m}(x^{(i)})^{2} $，$\sigma^{2}$是一个向量，它的每个特征都有方差，把所有数据除以向量$\sigma^{2}$。</li>
+</ul>
+</li>
+</ol>
+<h2 id="梯度消失-梯度爆炸（Vanishing-Exploding-gradients）"><a href="#梯度消失-梯度爆炸（Vanishing-Exploding-gradients）" class="headerlink" title="梯度消失/梯度爆炸（Vanishing / Exploding gradients）"></a>梯度消失/梯度爆炸（Vanishing / Exploding gradients）</h2><p>神经网络层数多了，激活函数就会以指数级递增或递减。</p>
+<h2 id="神经网络权重的初始化"><a href="#神经网络权重的初始化" class="headerlink" title="神经网络权重的初始化"></a>神经网络权重的初始化</h2><p>针对梯度消失/爆炸，有一个方案就是更谨慎地选择随机初始化参数。</p>
+<p>$z = w_{1}x_{1} + w_{2}x_{2} + \ldots +w_{n}x_{n}$，为了预防$z$值过大或过小，希望每项值更小，最合理的方法就是设置$w_{i}=\frac{1}{n}$，$n$表示神经元的输入特征数量。</p>
+<p>实际上，你要做的就是设置某层权重矩阵 <code>W[l] = np.random.randn(shape) * np.sqrt(1 / n[l-1])</code>，$n^{[l - 1]}$ 就是我喂给第$l$层神经单元的数量（即第$l-1$层神经元数量）。</p>
+<p>如果你是用的是<strong>Relu</strong>激活函数，而不是$\frac{1}{n}$，方差设置为$\frac{2}{n}$，效果会更好。</p>
+<p>对于<strong>tanh</strong>函数来说，用$\sqrt{\frac{1}{n^{[l-1]}}}$。</p>
+<h2 id="梯度的数值逼近-Numerical-approximation-of-gradients"><a href="#梯度的数值逼近-Numerical-approximation-of-gradients" class="headerlink" title="梯度的数值逼近 Numerical approximation of gradients"></a>梯度的数值逼近 Numerical approximation of gradients</h2><p>就是导数定义，双边误差，即$\frac{f\left(\theta + \varepsilon \right) - f(\theta -\varepsilon)}{2\varepsilon}$。</p>
+<p>先将所有的参数 $W, b$ 展开成一个大向量 $\theta$，在<strong>bpp</strong>中，算完梯度之后所有的梯度 $dW, db$ 就是 $d\theta$。</p>
+<p>然后比较 $d\theta_{\text{approx}}\left[i \right] = \frac{J\left( \theta_{1},\theta_{2},\ldots\theta_{i} + \varepsilon,\ldots \right) - J\left( \theta_{1},\theta_{2},\ldots\theta_{i} - \varepsilon,\ldots \right)}{2\varepsilon}$ 和 $d\theta[i]$ 的值接不接近。</p>
+<p>就计算它们的欧式距离再归一化，$\dfrac{||d\theta_{\text{approx}} -d\theta||_{2}}{||d\theta_{\text{approx}}||_2 + ||d\theta||_2}$。计算得到的值为$10^{-7}$或更小，这就很好；如果它的值在$10^{-5}$范围内，就要小心了，也许这个值没问题，但再次检查这个向量的所有项，确保没有一项误差过大，可能这里有<strong>bug</strong>。如果比$10^{-3}$大很多，就会很担心是否存在<strong>bug</strong>，这时应该仔细检查所有$\theta$项，看是否有一个具体的$i$值，使得$d\theta_{\text{approx}}\left[i \right]$与$ d\theta[i]$大不相同，并用它来追踪一些求导计算是否正确。</p>
+<h2 id="梯度检验的注意事项"><a href="#梯度检验的注意事项" class="headerlink" title="梯度检验的注意事项"></a>梯度检验的注意事项</h2><ol>
+<li>不要在训练中使用梯度检验，它只用于调试。</li>
+<li>如果算法的梯度检验失败，要检查所有项，检查每一项，并试着找出<strong>bug</strong>。</li>
+<li>在实施梯度检验时，如果使用正则化，请注意正则项。</li>
+<li>梯度检验不能与<strong>dropout</strong>同时使用，因为每次迭代过程中，<strong>dropout</strong>会随机消除隐藏层单元的不同子集，难以计算<strong>dropout</strong>在梯度下降上的代价函数$J$。</li>
+</ol>
+<h1 id="Lesson-2-2"><a href="#Lesson-2-2" class="headerlink" title="Lesson 2.2"></a>Lesson 2.2</h1><p>本节课主要讲优化算法，也就是我们如何更新参数。</p>
+<h2 id="Mini-batch-梯度下降"><a href="#Mini-batch-梯度下降" class="headerlink" title="Mini-batch 梯度下降"></a>Mini-batch 梯度下降</h2><p>你可以把训练集分割为小一点的子集训练，这些子集被取名为<strong>mini-batch</strong>，每个子集记作 $X^{\{i\}}$。就是把原来梯度下降时代入整个训练集改成代入一个mini-batch，然后多梯度下降几次。</p>
+<p>使用<strong>mini-batch</strong>梯度下降法，如果作出成本函数在整个过程中的图，则并不是每次迭代都是下降的，特别是在每次迭代中，你要处理的是$X^{\{t\}}$和$Y^{\{ t\}}$。如果要作出成本函数$J$的图，你很可能会看到这样的结果，走向朝下，但有更多的噪声。</p>
+<p>需要决定的变量之一是<strong>mini-batch</strong>的大小。首先，如果训练集较小，直接使用<strong>batch</strong>梯度下降法。样本数目较大的话，一般的<strong>mini-batch</strong>大小为64到512，考虑到电脑内存设置和使用的方式，如果<strong>mini-batch</strong>大小是2的$n$次方，代码会运行地快一些。</p>
+<h2 id="指数加权平均数-Exponentially-weighted-averages"><a href="#指数加权平均数-Exponentially-weighted-averages" class="headerlink" title="指数加权平均数 Exponentially weighted averages"></a>指数加权平均数 Exponentially weighted averages</h2><p>递推式：</p>
+<script type="math/tex; mode=display">
+v_t = \beta v_{t - 1} + (1 - \beta)\theta_t</script><p>如果我们将其展开，这就是一个加权平均，是从 $0$ 到 $t$ 每个 $\theta_i$ 的平均，越远权重越小。</p>
+<p>考虑 $\beta^{x} = \frac{1}{e}$，这个算的大约就是 $x$ 天的平均数。</p>
+<p>指数加权平均数公式的好处之一在于，它占用极少内存，电脑内存中只占用一行数字而已，然后把最新数据代入公式，不断覆盖就可以了。</p>
+<p>不过有可能会遇到 <strong>偏差修正（bias corrections）的问题</strong></p>
+<p>因为我们取 $v_0 = 0$，所以会使得 $i$ 较小时 $v_i$ 所占权重都很小，估算不准确。</p>
+<p>我们可以在估测初期，不用 $v_t$，而是 $\dfrac{v_t}{1 - \beta^t}$。</p>
+<p>不过在机器学习中，在计算指数加权平均数的大部分时候，大家不在乎执行偏差修正。</p>
+<h2 id="动量梯度下降法-Gradient-descent-with-Momentum"><a href="#动量梯度下降法-Gradient-descent-with-Momentum" class="headerlink" title="动量梯度下降法 Gradient descent with Momentum"></a>动量梯度下降法 Gradient descent with Momentum</h2><p>有一种算法叫做<strong>Momentum</strong>，或者叫做动量梯度下降法，运行速度几乎总是快于标准的梯度下降算法，基本的想法就是计算梯度的指数加权平均数，并利用该梯度更新你的权重。</p>
+<p>计算动量：</p>
+<script type="math/tex; mode=display">
+v_{dW} = \beta v_{dW} + (1 - \beta) dW</script><script type="math/tex; mode=display">
+v_{db} = \beta v_{db} + (1 - \beta) db</script><p>再更新参数：</p>
+<script type="math/tex; mode=display">
+W := W - \alpha v_{dW}</script><script type="math/tex; mode=display">
+b := b - \alpha v_{db}</script><p>这样就可以减缓梯度下降的幅度。<em>它们能够最小化碗状函数，这些微分项，想象它们为从山上往下滚的一个球，提供了加速度，<strong>Momentum</strong>项相当于速度。</em></p>
+<p>所以有两个超参数，学习率 $a$ 以及参数 $\beta$，$\beta$ 控制着指数加权平均数。$\beta$ 最常用的值是0.9，是很棒的鲁棒数。</p>
+<p>有一个版本是 $v_{dW} = \beta v_{dW} + dW$，本质上没有区别。</p>
+<h2 id="RMSprop"><a href="#RMSprop" class="headerlink" title="RMSprop"></a>RMSprop</h2><p><strong>root mean square prop</strong>算法，它也可以加速梯度下降，通过加快损失下降的方向，减缓无关方向，减少摆动。</p>
+<script type="math/tex; mode=display">
+S_{dW}= \beta S_{dW} + (1 -\beta) (dW)^{2}</script><script type="math/tex; mode=display">
+S_{db}= \beta S_{db} + (1 - \beta)(db)^{2}</script><p>再更新参数：</p>
+<script type="math/tex; mode=display">
+W:= W -\alpha \dfrac{dW}{\sqrt{S_{dW}}}</script><script type="math/tex; mode=display">
+b:=b -\alpha \dfrac{db}{\sqrt{S_{db}}}</script><p>为了确保数值稳定，在实际操练的时候，要在分母上加上一个很小很小的$\varepsilon$，$\varepsilon$是多少没关系，$10^{-8}$是个不错的选择.</p>
+<h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><p>把前面两个缝起来。</p>
+<p>首先初始化：$v_{dW} = 0$，$S_{dW} =0$，$v_{db} = 0$，$S_{db} =0$。</p>
+<script type="math/tex; mode=display">
+v_{dW}= \beta_{1}v_{dW} + ( 1 - \beta_{1})dW</script><script type="math/tex; mode=display">
+v_{db}= \beta_{1}v_{db} + ( 1 -\beta_{1} )db</script><script type="math/tex; mode=display">
+S_{dW}=\beta_{2}S_{dW} + ( 1 - \beta_{2})(dW)^{2}</script><script type="math/tex; mode=display">
+S_{db} =\beta_{2}S_{db} + ( 1 - \beta_{2} )(db)^{2}</script><p>一般使用<strong>Adam</strong>算法的时候，要计算偏差修正，$v_{dW}^{\text{corrected}}$，修正也就是在偏差修正之后：</p>
+<script type="math/tex; mode=display">
+v_{dW}^{\text{corrected}}= \dfrac{v_{dW}}{1 - \beta_{1}^{t}}</script><script type="math/tex; mode=display">
+v_{db}^{\text{corrected}} =\dfrac{v_{db}}{1 -\beta_{1}^{t}}</script><script type="math/tex; mode=display">
+S_{dW}^{\text{corrected}} =\dfrac{S_{dW}}{1 - \beta_{2}^{t}}</script><script type="math/tex; mode=display">
+S_{db}^{\text{corrected}} =\dfrac{S_{db}}{1 - \beta_{2}^{t}}</script><p>最后更新权重：</p>
+<script type="math/tex; mode=display">
+W:= W - \dfrac{\alpha v_{dW}^{\text{corrected}}}{\sqrt{S_{dW}^{\text{corrected}}} +\varepsilon}</script><script type="math/tex; mode=display">
+b:=b - \frac{\alpha v_{\text{db}}^{\text{corrected}}}{\sqrt{S_{\text{db}}^{\text{corrected}}} +\varepsilon}</script><p><strong>Adam</strong> 是一种极其常用的学习算法，被证明能有效适用于不同神经网络，适用于广泛的结构。</p>
+<p>本算法中有很多超参数，超参数学习率$a$很重要，也经常需要调试，你可以尝试一系列值，然后看哪个有效。$\beta_{1}$常用的缺省值为0.9。超参数$\beta_{2}$，<strong>Adam</strong>论文作者，也就是<strong>Adam</strong>算法的发明者，推荐使用0.999。关于$\varepsilon$的选择其实没那么重要，<strong>Adam</strong>论文的作者建议$\varepsilon$为$10^{-8}$。</p>
+<h2 id="学习率衰减-Learning-rate-decay"><a href="#学习率衰减-Learning-rate-decay" class="headerlink" title="学习率衰减 Learning rate decay"></a>学习率衰减 Learning rate decay</h2><p>慢慢减少$a$的本质在于，在学习初期，你能承受较大的步伐，但当开始收敛的时候，小一些的学习率能让你步伐小一些。</p>
+<p>$a= \dfrac{1}{1 + decayrate \times \text{epoch}\text{-num}}a_{0}$，（<strong>decay-rate</strong>称为衰减率，<strong>epoch-num</strong>为代数，$\alpha_{0}$为初始学习率），注意这个衰减率是另一个需要调整的超参数。</p>
+<p>人们用到的其它公式有$a =\dfrac{k}{\sqrt{\text{epoch-num}}}a_{0}$或者$a =\dfrac{k}{\sqrt{t}}a_{0}$（$t$为<strong>mini-batch</strong>的数字）。</p>
+<h2 id="局部最优问题-Local-optima"><a href="#局部最优问题-Local-optima" class="headerlink" title="局部最优问题 Local optima"></a>局部最优问题 Local optima</h2><p>在深度学习研究早期，人们总是担心优化算法会困在极差的局部最优，不过随着深度学习理论不断发展，我们对局部最优的理解也发生了改变。</p>
+<p>事实上，如果你要创建一个神经网络，通常梯度为零的点并不是这个图中的局部最优点，实际上成本函数的零梯度点，通常是鞍点。</p>
+<p>意思就是一个最优点需要所有维度都是极小，在现在高维特征下很难遇到，所以碰到的所谓局部最优一般都不是最优，都可以跑出来。</p>
+<h1 id="Lesson-2-3"><a href="#Lesson-2-3" class="headerlink" title="Lesson 2.3"></a>Lesson 2.3</h1><p>本章主要讲了超参数调试，归一化和深度学习框架。</p>
+<h2 id="调试处理-Tuning-process"><a href="#调试处理-Tuning-process" class="headerlink" title="调试处理 Tuning process"></a>调试处理 Tuning process</h2><p>画格子取点。</p>
+<p>超参数范围，对数尺。</p>
+<p><strong>Pandas</strong>，小模型，每天逐渐变化超参数。</p>
+<p><strong>Caviar</strong>，大模型，多个参数同时跑几天。</p>
+<h2 id="归一化激活函数-Normalizing-activation"><a href="#归一化激活函数-Normalizing-activation" class="headerlink" title="归一化激活函数 Normalizing activation"></a>归一化激活函数 Normalizing activation</h2><p>就是 <strong>Batch 归一化</strong>，会使你的参数搜索问题变得很容易，使神经网络对超参数的选择更加稳定。</p>
+<p>实践中，经常做的是归一化$z^{[i]}$。</p>
+<script type="math/tex; mode=display">
+\mu = \dfrac{1}{m} \sum\limits_i z^{(i)}</script><script type="math/tex; mode=display">
+\sigma^2 = \dfrac{1}{m} \sum\limits_i (z_i - \mu)^2</script><script type="math/tex; mode=display">
+z_{norm}^{(i)} = \dfrac{z^{(i)} - \mu}{\sqrt{\sigma^2 + \varepsilon}}</script><p>所以现在我们已把这些$z$值标准化，化为含平均值0和标准单位方差，所以$z$的每一个分量都含有平均值0和方差1，但我们不想让隐藏单元总是含有平均值0和方差1，也许隐藏单元有了不同的分布会有意义，所以我们所要做的就是计算 $\tilde{z}^{(i)} = \gamma z_{norm}^{(i)} + \beta$，这里$\gamma$和$\beta$是你模型的学习参数，作用是可以随意设置${\tilde{z}}^{(i)}$的平均值。</p>
+<p><em>应用Batch归一化了一些隐藏单元值中的平均值和方差，不过训练输入和这些隐藏单元值的一个区别是，你也许不想隐藏单元值必须是平均值0和方差1。它真正的作用是，使隐藏单元值的均值和方差标准化，即$z^{(i)}$有固定的均值和方差，均值和方差可以是0和1，也可以是其它值，它是由$\gamma$和$\beta$两参数控制的。</em></p>
+<p>至于如何将 <em>BN</em> 层放进神经网络——tensorflow(</p>
+<h2 id="Batch-Norm-为什么有用"><a href="#Batch-Norm-为什么有用" class="headerlink" title="Batch Norm 为什么有用"></a>Batch Norm 为什么有用</h2><p>通过归一化所有的输入特征值$x$，以获得类似范围的值，可以加速学习，不仅仅对于这里的输入值，还有隐藏单元的值。</p>
+<p><strong>Batch</strong>归一化有效的第二个原因是，它可以使权重比你的网络更滞后或更深层。对于网络的泛化能力，浅层网络不一定能做的很好，所以我们尝试改变数据的分布，有个有点怪的名字“<strong>Covariate shift</strong>”。如果你已经学习了$x$到$y$ 的映射，如果$x$ 的分布改变了，那么你可能需要重新训练你的学习算法。这种做法同样适用于，如果真实函数由$x$ 到$y$ 映射保持不变。</p>
+<p>按我的理解，就是前一层对于后一层的影响。当前一层的分布变化之后，后一层就要面临 <strong>Covariate shift</strong> 的问题，就会不稳定。而 Batch 归一化做的就是它减少了这些隐藏值分布变化的数量，使分布更稳定，神经网络的之后层就会有更坚实的基础。它限制了在前层的参数更新，会影响数值分布的程度，在后一层看到的这种情况，因此得到学习。</p>
+<p><em>即使使输入分布改变了一些，它会改变得更少。它做的是当前层保持学习，当改变时，迫使后层适应的程度减小了，你可以这样想，它减弱了前层参数的作用与后层参数的作用之间的联系，它使得网络每层都可以自己学习，稍稍独立于其它层，这有助于加速整个网络的学习。</em></p>
+<p>还有轻微的正则化的作用。因为均值和方差有一点小噪音，因为它只是由一小部分数据估计得出的。</p>
+<h2 id="Softmax-回归"><a href="#Softmax-回归" class="headerlink" title="Softmax 回归"></a>Softmax 回归</h2><p>有一种<strong>logistic</strong>回归的一般形式，叫做<strong>Softmax</strong>回归，能让你在试图识别某一分类时做出预测，或者说是多种分类中的一个，不只是识别两个分类。</p>
+<script type="math/tex; mode=display">
+t=e^{z^{[l]}}</script><script type="math/tex; mode=display">
+a_{i}^{[l]} = \dfrac{t_{i}}{\sum\limits_i t_{i}}</script><p>输出的 $a_i$ 就是第 $i$ 类的概率。</p>
+<p>训练 softmax 分类器用的损失    函数一般是 $L(\hat{y},y ) = - \sum\limits_{j}y_{j}\log{\hat{y}_{j}}$。</p>
+<h2 id="深度学习框架"><a href="#深度学习框架" class="headerlink" title="深度学习框架"></a>深度学习框架</h2><ul>
+<li>Caffe/Caffe2</li>
+<li>NCTK</li>
+<li>DL4J</li>
+<li>Keras</li>
+<li>Lasagne</li>
+<li>mxnet</li>
+<li>PaddlePaddle</li>
+<li>TensorFlow</li>
+<li>Theano</li>
+<li>Torch</li>
+</ul>
+<h1 id="Lesson-3-1"><a href="#Lesson-3-1" class="headerlink" title="Lesson 3.1"></a>Lesson 3.1</h1><p>本章主要介绍机器学习策略。很多事思想意识上的东西，可能很多照搬原话（</p>
+<h2 id="正交化-Orthogonalization"><a href="#正交化-Orthogonalization" class="headerlink" title="正交化 Orthogonalization"></a>正交化 Orthogonalization</h2><p>意思大概就是把所有特征正交到几个相互独立的特征上。</p>
+<blockquote>
+<p>在机器学习中，如果你可以观察你的系统，然后说这一部分是错的，它在训练集上做的不好、在开发集上做的不好、它在测试集上做的不好，或者它在测试集上做的不错，但在现实世界中不好，这就很好。必须弄清楚到底是什么地方出问题了，然后我们刚好有对应的旋钮，或者一组对应的旋钮，刚好可以解决那个问题，那个限制了机器学习系统性能的问题。</p>
+</blockquote>
+<h2 id="单一数字评估指标-Single-number-evaluation-metric"><a href="#单一数字评估指标-Single-number-evaluation-metric" class="headerlink" title="单一数字评估指标 Single number evaluation metric"></a>单一数字评估指标 Single number evaluation metric</h2><p>无论是调整超参数，或者是尝试不同的学习算法，或者在搭建机器学习系统时尝试不同手段，如果你有一个单实数评估指标，进展会快得多，它可以快速告诉你，新尝试的手段比之前的手段好还是差。所以当团队开始进行机器学习项目时，推荐为问题设置一个单实数评估指标（F1 分数，平均值）。</p>
+<p>有一个开发集，加上单实数评估指标，迭代速度肯定会很快，它可以加速改进机器学习算法的迭代过程。</p>
+<h2 id="满足和优化指标-Satisficing-and-optimizing-metrics"><a href="#满足和优化指标-Satisficing-and-optimizing-metrics" class="headerlink" title="满足和优化指标 Satisficing and optimizing metrics"></a>满足和优化指标 Satisficing and optimizing metrics</h2><p>要把顾及到的所有事情组合成单实数评估指标有时并不容易，在那些情况里，有时候设立满足和优化指标是很重要的。</p>
+<p>优化指标，想要准确度最大化，想做的尽可能准确。</p>
+<p>满足指标，意思是它必须足够好，达到标准之后，不那么在乎这指标有多好。</p>
+<p>通过定义优化和满足指标，就可以提供一个明确的方式，去选择“最好的”分类器。</p>
+<h2 id="训练-开发-测试集划分-train-dev-test-distributions"><a href="#训练-开发-测试集划分-train-dev-test-distributions" class="headerlink" title="训练/开发/测试集划分 train/dev/test distributions"></a>训练/开发/测试集划分 train/dev/test distributions</h2><p>开发（<strong>dev</strong>）集也叫做开发集（<strong>development set</strong>），有时称为保留交叉验证集（<strong>hold out cross validation set</strong>）。然后，机器学习中的工作流程是，尝试很多思路，用训练集训练不同的模型，然后使用开发集来评估不同的思路，然后选择一个，然后不断迭代去改善开发集的性能，直到最后可以得到一个令你满意的成本，然后你再用测试集去评估。</p>
+<p>让开发集和测试集来自同一分布，通过将所有数据随机洗牌。</p>
+<p>大小 98:1:1.</p>
+<p><em>处理机器学习问题时，应该把它切分成独立的步骤。一步是弄清楚如何定义一个指标来衡量你想做的事情的表现，然后我们可以分开考虑如何改善系统在这个指标上的表现。要把机器学习任务看成两个独立的步骤，用目标这个比喻，第一步就是设定目标。所以要定义你要瞄准的目标，这是完全独立的一步，这是你可以调节的一个旋钮。如何设立目标是一个完全独立的问题，把它看成是一个单独的旋钮，可以调试算法表现的旋钮，如何精确瞄准，如何命中目标，定义指标是第一步。</em></p>
+<p><em>然后第二步要做别的事情，在逼近目标的时候，也许学习算法针对某个成本函数优化，要最小化训练集上的损失。可以做的其中一件事是，修改这个，为了引入权重，也许最后需要修改这个归一化常数。</em></p>
+<p>如何定义$J$并不重要，关键在于正交化的思路。将定义指标看成一步，然后在定义了指标之后，你才能想如何优化系统来提高这个指标评分。比如改变你神经网络要优化的成本函数$J$。</p>
+<blockquote>
+<p>所以我的建议是，即使你无法定义出一个很完美的评估指标和开发集，你直接快速设立出来，然后使用它们来驱动你们团队的迭代速度。如果在这之后，你发现选的不好，你有更好的想法，那么完全可以马上改。对于大多数团队，我建议最好不要在没有评估指标和开发集时跑太久，因为那样可能会减慢你的团队迭代和改善算法的速度。</p>
+</blockquote>
+<h2 id="为什么是人的表现-Why-human-level-performance"><a href="#为什么是人的表现-Why-human-level-performance" class="headerlink" title="为什么是人的表现 Why human-level performance?"></a>为什么是人的表现 Why human-level performance?</h2><p>在过去的几年里，更多的机器学习团队一直在讨论如何比较机器学习系统和人类的表现。</p>
+<blockquote>
+<p>我认为有两个主要原因，首先是因为深度学习系统的进步，机器学习算法突然变得更好了。在许多机器学习的应用领域已经开始见到算法已经可以威胁到人类的表现了。其次，事实证明，当你试图让机器做人类能做的事情时，可以精心设计机器学习系统的工作流程，让工作流程效率更高，所以在这些场合，比较人类和机器是很自然的，或者你要让机器模仿人类的行为。</p>
+</blockquote>
+<p>当这个算法表现比人类更好时，进展和精确度的提升就变得更慢了。也许它还会越来越好，但是在超越人类水平之后，它还可以变得更好，但性能增速，准确度上升的速度这个斜率，会变得越来越平缓，我们都希望能达到理论最佳性能水平。随着时间的推移，当继续训练算法时，可能模型越来越大，数据越来越多，但是性能无法超过某个理论上限，这就是所谓的贝叶斯最优错误率（<strong>Bayes optimal error</strong>）。</p>
+<p>所以贝叶斯最优错误率一般认为是理论上可能达到的最优错误率，就是说没有任何办法设计出一个$x$到$y$的函数，让它能够超过一定的准确度。</p>
+<h2 id="可避免偏差-Avoidable-bias"><a href="#可避免偏差-Avoidable-bias" class="headerlink" title="可避免偏差 Avoidable bias"></a>可避免偏差 Avoidable bias</h2><p>在之前的课程关于偏差和方差的讨论中，我们主要假设有一些任务的贝叶斯错误率几乎为0。根据定义，人类水平错误率比贝叶斯错误率高一点，因为贝叶斯错误率是理论上限，但人类水平错误率离贝叶斯错误率不会太远。</p>
+<p>对贝叶斯错误率的估计和训练错误率之间的差值称为可避免偏差。这个训练错误率和开发错误率之前的差值，就大概说明你的算法在方差问题上还有多少改善空间。</p>
+<p><em>理解偏差和方差，那么在人类可以做得很好的任务中，你可以估计人类水平的错误率，你可以使用人类水平错误率来估计贝叶斯错误率。所以你到贝叶斯错误率估计值的差距，告诉你可避免偏差问题有多大，可避免偏差问题有多严重，而训练错误率和开发错误率之间的差值告诉你方差上的问题有多大，你的算法是否能够从训练集泛化推广到开发集。</em></p>
+<p>要达到超越人类的表现往往不容易，但如果有足够多的数据，已经有很多深度学习系统，在单一监督学习问题上已经超越了人类的水平，所以这对在开发的应用是有意义的。</p>
+<h1 id="Lesson-3-2"><a href="#Lesson-3-2" class="headerlink" title="Lesson 3.2"></a>Lesson 3.2</h1><p>本章还是机器学习策略。</p>
+<h2 id="误差分析-Error-analysis"><a href="#误差分析-Error-analysis" class="headerlink" title="误差分析 Error analysis"></a>误差分析 Error analysis</h2><p>进行错误分析，应该找一组错误样本，可能在你的开发集里或者测试集里，观察错误标记的样本，看看假阳性（<strong>false positives</strong>）和假阴性（<strong>false negatives</strong>），统计属于不同错误类型的错误数量。在这个过程中，可能会得到启发，归纳出新的错误类型。</p>
+<p>通过统计不同错误标记类型占总数的百分比，可以帮你发现哪些问题需要优先解决，或者给你构思新优化方向的灵感。</p>
+<h2 id="清楚标记错误的数据-Cleaning-up-incorrectly-labeled-data"><a href="#清楚标记错误的数据-Cleaning-up-incorrectly-labeled-data" class="headerlink" title="清楚标记错误的数据 Cleaning up incorrectly labeled data"></a>清楚标记错误的数据 Cleaning up incorrectly labeled data</h2><p>首先，考虑训练集，事实证明，深度学习算法对于训练集中的随机错误是相当健壮的（<strong>robust</strong>）。标记出错的样本，只要这些错误样本离随机错误不太远，有时可能做标记的人没有注意或者不小心，按错键了，如果错误足够随机，那么放着这些错误不管可能也没问题，而不要花太多时间修复它们。</p>
+<p>如果这些标记错误严重影响了在开发集上评估算法的能力，那么就应该去花时间修正错误的标签。但是，如果它们没有严重影响到用开发集评估成本偏差的能力，那么可能就不应该花宝贵的时间去处理。</p>
+<ul>
+<li>对开发集和测试集做同样的处理来确保他们保持同样的分布。</li>
+<li>同时检验算法判断正确和错误的样本。</li>
+<li>训练集和开发/测试集可能来自不同分布。</li>
+</ul>
+<blockquote>
+<p>首先，深度学习研究人员有时会喜欢这样说：“我只是把数据提供给算法，我训练过了，效果拔群”。这话说出了很多深度学习错误的真相，更多时候，我们把数据喂给算法，然后训练它，并减少人工干预，减少使用人类的见解。但我认为，在构造实际系统时，通常需要更多的人工错误分析，更多的人类见解来架构这些系统，尽管深度学习的研究人员不愿意承认这点。</p>
+<p>其次，不知道为什么，我看一些工程师和研究人员不愿意亲自去看这些样本，也许做这些事情很无聊，坐下来看100或几百个样本来统计错误数量，但我经常亲自这么做。当我带领一个机器学习团队时，我想知道它所犯的错误，我会亲自去看看这些数据，尝试和一部分错误作斗争。我想就因为花了这几分钟，或者几个小时去亲自统计数据，真的可以帮你找到需要优先处理的任务，我发现花时间亲自检查数据非常值得，所以我强烈建议你们这样做，如果你在搭建你的机器学习系统的话，然后你想确定应该优先尝试哪些想法，或者哪些方向。</p>
+</blockquote>
+<p><del>大佬之所以是大佬</del>。</p>
+<h2 id="迁移学习-Transfer-learning"><a href="#迁移学习-Transfer-learning" class="headerlink" title="迁移学习 Transfer learning"></a>迁移学习 Transfer learning</h2><p>深度学习中，最强大的理念之一就是，有的时候神经网络可以从一个任务中习得知识，并将这些知识应用到另一个独立的任务中。所以例如，也许你已经训练好一个神经网络，能够识别像猫这样的对象，然后使用那些知识，或者部分习得的知识去帮助您更好地阅读x射线扫描图，这就是所谓的迁移学习。</p>
+<p>具体来说，在第一阶段训练过程中，当进行图像识别任务训练时，可以训练神经网络的所有常用参数，所有的权重，所有的层，然后就得到了一个能够做图像识别预测的网络。在训练了这个神经网络后，要实现迁移学习，现在要做的是，把数据集换成新的$(x,y)$对，现在这些变成放射科图像，而$y$是想要预测的诊断，要做的是初始化最后一层的权重，在这个新数据集上重新训练网络。</p>
+<p>经验规则是，如果有一个小数据集，就只训练输出层前的最后一层，或者也许是最后一两层。但是如果有很多数据，那么也许可以重新训练网络中的所有参数。如果重新训练神经网络中的所有参数，那么这个在图像识别数据的初期训练阶段，有时称为预训练（<strong>pre-training</strong>），因为在用图像识别数据去预先初始化，或者预训练神经网络的权重。然后，如果以后更新所有权重，有时这个过程叫微调（<strong>fine tuning</strong>）。</p>
+<p>迁移学习起作用的场合是，在迁移来源问题中你有很多数据，但迁移目标问题你没有那么多数据。</p>
+<ul>
+<li>任务 A 和 B 有相同的输入 $x$。</li>
+<li>A 有比 B 更多的数据。</li>
+<li>A 的低级特征对于 B 的学习有帮助。</li>
+</ul>
+<h2 id="多任务学习-Multi-task-learning"><a href="#多任务学习-Multi-task-learning" class="headerlink" title="多任务学习 Multi-task learning"></a>多任务学习 Multi-task learning</h2><p>在迁移学习中，你的步骤是串行的，你从任务$A$里学习只是然后迁移到任务$B$。在多任务学习中，你是同时开始学习的，试图让单个神经网络同时做几件事情，然后希望这里每个任务都能帮到其他所有任务。</p>
+<p>输出 $y^{(i)}$ 不再是一个标签，而是几个标签，表示不同的任务输出，网络的最后一层变成矩阵 $Y$。损失函数就是所有的输出损失求和。</p>
+<p>多任务学习什么时候有意义：</p>
+<ul>
+<li><p>训练的一组任务可以共用低层次特征。</p>
+</li>
+<li><p>每个任务的数据量很接近。</p>
+</li>
+<li>可以训练一个足够大的神经网络，同时做好所有的工作。</li>
+</ul>
+<h2 id="端到端的深度学习-End-to-end-deep-learning"><a href="#端到端的深度学习-End-to-end-deep-learning" class="headerlink" title="端到端的深度学习 End-to-end deep learning"></a>端到端的深度学习 End-to-end deep learning</h2><p>终于知道所说的端到端是啥意思了。。。</p>
+<p>简而言之，以前有一些数据处理系统或者学习系统，它们需要多个阶段的处理。那么端到端深度学习就是忽略所有这些不同的阶段，用单个神经网络代替它。</p>
+<p>它表现可以很好，也可以简化系统架构，不需要搭建那么多手工设计的单独组件，但它也不是灵丹妙药，并不是每次都能成功。</p>
+<p>优点：</p>
+<ul>
+<li><p>只通过数据，而不引入更多的人为概念。（Let the data speak）</p>
+</li>
+<li><p>更少的手工设计的组件。</p>
+</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>需要大量的数据。</li>
+<li>排除了可能有用的手工设计的组件。</li>
+</ul>
+<h1 id="Lesson-4-1"><a href="#Lesson-4-1" class="headerlink" title="Lesson 4.1"></a>Lesson 4.1</h1><p>本章开始讲卷积神经网络。这到了比较熟悉的一部分内容，我也会省略一些部分，但有些概念及背后原理老师还是阐释得比较清楚。</p>
+<h2 id="padding"><a href="#padding" class="headerlink" title="padding"></a>padding</h2><p>在周围填充像素。</p>
+<ul>
+<li><strong>Valid</strong>：不填充。输出 $(n - f + 1) \times (n - f + 1)$</li>
+<li><strong>Same</strong>：填充到输入和输出大小一样。</li>
+</ul>
+<p>$f$ 通常是奇数，可以有一个中心点，填充也会对称。</p>
+<h2 id="卷积步长-Stride"><a href="#卷积步长-Stride" class="headerlink" title="卷积步长 Stride"></a>卷积步长 Stride</h2><p>$n \times n$ 的输入，$f \times f$ 的过滤器，$p $ 的 padding，$s$ 的步长，输出大小为 $\left \lfloor\dfrac{n + 2p - f}{s} \right \rfloor \times \left \lfloor\dfrac{n + 2p - f}{s} \right \rfloor$。</p>
+<p><em>其实卷积操作真正的名字叫互相关，卷积还包含一个反转操作，不过在神经网络中不重要。</em></p>
+<h2 id="三维卷积"><a href="#三维卷积" class="headerlink" title="三维卷积"></a>三维卷积</h2><p>总结就是一个$n \times n \times n_{c}$（通道数）的输入图像，卷积层必然是 $f \times f \times n_c$（也就是在编程中只需要指定 $f$，框架会自动pad出通道数）。然后就得到了$（n-f+1）×（n-f+1）×n_{c^{‘}}$，这里$n_{c^{‘}}$其实就是下一层的通道数，就是你用的过滤器的个数。</p>
+<h2 id="池化层-Pooling"><a href="#池化层-Pooling" class="headerlink" title="池化层 Pooling"></a>池化层 Pooling</h2><p>卷积网络经常使用池化层来缩减模型的大小，提高计算速度，同时提高所提取特征的鲁棒性。</p>
+<p>max-pooling, average-pooling。</p>
+<p>一个有意思的特点就是，它有一组超参数，但并没有参数需要学习。实际上，梯度下降没有什么可学的，一旦确定了$f$和$s$，它就是一个固定运算，梯度下降无需改变任何值。</p>
+<p>池化的超参数包括过滤器大小 $f$ 和步幅 $s$，很少用 padding。最大池化的输入就是$n_{H} \times n_{W} \times n_{c}$，假设没有padding，则输出$\lfloor\frac{n_{H} - f}{s} +1\rfloor \times \lfloor\frac{n_{w} - f}{s} + 1\rfloor \times n_{c}$。</p>
+<h2 id="为什么使用卷积"><a href="#为什么使用卷积" class="headerlink" title="为什么使用卷积"></a>为什么使用卷积</h2><p>他可以通过<strong>共享参数</strong>和<strong>稀疏连接</strong>来减少参数，以便用更小的训练集来训练它，从而预防过度拟合。</p>
+<p>实际上，我们用同一个过滤器生成各层中，图片的所有像素值，希望网络通过自动学习变得更加健壮，以便更好地取得所期望的平移不变属性。</p>
+<h1 id="Lesson-4-2"><a href="#Lesson-4-2" class="headerlink" title="Lesson 4.2"></a>Lesson 4.2</h1><p>本章是介绍一些经典的实例。</p>
+<h2 id="经典网络-Classic-networks"><a href="#经典网络-Classic-networks" class="headerlink" title="经典网络 Classic networks"></a>经典网络 Classic networks</h2><ul>
+<li>LeNet-5</li>
+<li>AlexNet</li>
+<li>VGGNet</li>
+</ul>
+<h2 id="残差网络-Residual-Networks"><a href="#残差网络-Residual-Networks" class="headerlink" title="残差网络 Residual Networks"></a>残差网络 Residual Networks</h2><p>非常非常深的神经网络是很难训练的，因为存在梯度消失和梯度爆炸问题。跳跃连接（<strong>Skip connection</strong>），它可以从某一层网络层获取激活，然后迅速反馈给另外一层，甚至是神经网络的更深层。</p>
+<p>ResNet 是由 <strong>残差块（Residuak Block）</strong>构建的，就是在后面一层的激活函数中的参数加上一个前面层的激活项 $a^{\left\lbrack l + 2 \right\rbrack} = g\left(z^{\left\lbrack l + 2 \right\rbrack} + a^{[l]}\right)$。也就是一个“捷径“，或者“跳跃连接”，就是指$a^{[l]}$跳过一层或者好几层，从而将信息传递到神经网络的更深层。</p>
+<blockquote>
+<p>如果我们使用标准优化算法训练一个普通网络，比如说梯度下降法，或者其它热门的优化算法。如果没有残差，没有这些捷径或者跳跃连接，凭经验你会发现随着网络深度的加深，训练错误会先减少，然后增多。而理论上，随着网络深度的加深，应该训练得越来越好才对。也就是说，理论上网络深度越深越好。但实际上，如果没有残差网络，对于一个普通网络来说，深度越深意味着用优化算法越难训练。实际上，随着网络深度的加深，训练错误会越来越多。</p>
+<p>但有了<strong>ResNets</strong>就不一样了，即使网络再深，训练的表现却不错，比如说训练误差减少，就算是训练深达100层的网络也不例外。但是对$x$的激活，或者这些中间的激活能够到达网络的更深层。这种方式确实有助于解决梯度消失和梯度爆炸问题，让我们在训练更深网络的同时，又能保证良好的性能。也许从另外一个角度来看，随着网络越来深，网络连接会变得臃肿，但是<strong>ResNet</strong>确实在训练深度网络方面非常有效。</p>
+</blockquote>
+<h2 id="残差网络为什么有用"><a href="#残差网络为什么有用" class="headerlink" title="残差网络为什么有用"></a>残差网络为什么有用</h2><p>大概意思就是如果我们在一个 Big NN 后面再加两层，但是 ResNet 可以很好地学到 $a^{[l+2]} = a^{[l]}$ 恒等函数，就是说给残差网络增加层数并不会导致它的效率逊色于更简单的神经网络，所以理论上就是越深越好啦。</p>
+<p>还有一个细节是，残差块需要保证 $z^{l+2}$ 和 $a^{[l]}$ 的维度相等，所以需要比较多的 same 卷积。当维度不相同时，就需要一个参数矩阵 $W_s$ 来调整 $a^{[l]}$ 的维度。</p>
+<h2 id="1-times-1-卷积"><a href="#1-times-1-卷积" class="headerlink" title="$1 \times 1$ 卷积"></a>$1 \times 1$ 卷积</h2><p>可以压缩通道数。</p>
+<h2 id="谷歌-Inception-网络"><a href="#谷歌-Inception-网络" class="headerlink" title="谷歌 Inception 网络"></a>谷歌 Inception 网络</h2><p>就是用各种形状的过滤器和池化层，same 卷积叠起来。</p>
+<p>基本思想是<strong>Inception</strong>网络不需要人为决定使用哪个过滤器或者是否需要池化，而是由网络自行确定这些参数，可以给网络添加这些参数的所有可能值，然后把这些输出连接起来，让网络自己学习它需要什么样的参数，采用哪些过滤器组合。</p>
+<p>一个最重要的问题就是计算成本，参数太庞大了。我们就要通过 $1 \times 1$ 卷积层来缩小网络（瓶颈层），可以再在之后扩大网络，从而大幅度降低了参数和计算成本。</p>
+<blockquote>
+<p>还有这个特别的<strong>Inception</strong>网络是由<strong>Google</strong>公司的作者所研发的，它被叫做<strong>GoogleLeNet</strong>，这个名字是为了向<strong>LeNet</strong>网络致敬。在之前的视频中你应该了解了<strong>LeNet</strong>网络。我觉得这样非常好，因为深度学习研究人员是如此重视协作，深度学习工作者对彼此的工作成果有一种强烈的敬意。</p>
+</blockquote>
+<h2 id="迁移学习"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习</h2><p>之前讲过，现在在计算机视觉中仍然能用。</p>
+<p>用别人训练好的参数，我们就可以不用从头开始训练或者只要训练后部分很浅层的网络。</p>
+<h2 id="数据增强-Data-augmentation"><a href="#数据增强-Data-augmentation" class="headerlink" title="数据增强 Data augmentation"></a>数据增强 Data augmentation</h2><p>当下在计算机视觉方面，计算机视觉的主要问题是没有办法得到充足的数据。对大多数机器学习应用，这不是问题，但是对计算机视觉，数据就远远不够。所以这就意味着当训练计算机视觉模型的时候，数据扩充会有所帮助。</p>
+<ul>
+<li>垂直镜像对称</li>
+<li>随机裁剪</li>
+<li>色彩转换（PCA颜色增强）</li>
+</ul>
+<p>CPU 加载处理数据，GPU 训练。</p>
+<h1 id="Lesson-4-3"><a href="#Lesson-4-3" class="headerlink" title="Lesson 4.3"></a>Lesson 4.3</h1><p>本章主要介绍目标检测（Object detection）的内容。</p>
+<h2 id="目标定位-Object-localization"><a href="#目标定位-Object-localization" class="headerlink" title="目标定位 Object localization"></a>目标定位 Object localization</h2><p>在图像分类问题中，除了分类之外还要确定对象的位置，就让神经网络再多输出4个数字，$b_x, b_y, b_h, b_w$</p>
+<p>，就是对象边界框的中心点坐标和高宽。</p>
+<p>对于网络的输出就可以定义为 $y= \ \begin{bmatrix} p_{c} \\ b_{x} \\ b_{y} \\ b_{h} \\ b_{w} \\ c_{1} \\ c_{2}\\ c_{3} \\\end{bmatrix}$，$p_c$ 表示是否含有对象，同时$c_1, c_2, c_3$ 输出分类，损失函数 $L\left(\hat{y},y \right) = \left( \hat{y_1} - y_{1} \right)^{2} + \left(\hat{y_2} - y_{2}\right)^{2} + \ldots\left( \hat{y_8} - y_{8}\right)^{2}$。如果图中没有对象 $p_c = 0$ 则其他参数就都没有意义，损失函数 $\left(\hat{y_1} - y_{1}\right)^{2}$。</p>
+<h2 id="特征点检测-Landmark-detection"><a href="#特征点检测-Landmark-detection" class="headerlink" title="特征点检测 Landmark detection"></a>特征点检测 Landmark detection</h2><p>运用上面的思想我们就可以检测更多的特征点，比如人脸特征，人体姿态等，用 $(l_{1x}, l_{1y}), (l_{2x}, l_{2y})…$ 等输出各个特征点然后进行回归。</p>
+<h2 id="目标检测-Object-detection"><a href="#目标检测-Object-detection" class="headerlink" title="目标检测 Object detection"></a>目标检测 Object detection</h2><p>滑动窗口的思想，使用不同大小的窗口，遍历整个图片，每个窗口输入网络预测。</p>
+<p>缺点很明显，计算成本。</p>
+<h2 id="滑动窗口的卷积实现"><a href="#滑动窗口的卷积实现" class="headerlink" title="滑动窗口的卷积实现"></a>滑动窗口的卷积实现</h2><p>我们可以在卷积层上应用滑动窗口。</p>
+<p>首先要知道如何把神经网络的全连接层转化为神经层。就是通过维度一样的卷积层，过滤器的个数是全连接单元的个数，就把全连接转化成了和单元相同个数的通道数的层。再往后的全连接层就都只要 $1\times 1$ 卷积。</p>
+<p>然后我们就可以用卷积实现滑动窗口。其实就是把卷积网络的输入作为每一个窗口，按照步长滑动就可以了，最后会得到一个窗口总数也就是各个窗口的输出。我们就可以在并行计算的基础上一次得到所有窗口的输出。</p>
+<p>卷积层上的滑动窗口提高了整个算法的效率。不过这种算法仍然存在一个缺点，就是边界框的位置可能不够准确。</p>
+<h2 id="Bounding-Box-预测"><a href="#Bounding-Box-预测" class="headerlink" title="Bounding Box 预测"></a>Bounding Box 预测</h2><p>YOLO（建议看论文）</p>
+<h2 id="交并比-Intersection-over-union"><a href="#交并比-Intersection-over-union" class="headerlink" title="交并比 Intersection over union"></a>交并比 Intersection over union</h2><p>并交比函数，可以用来评价对象检测算法。</p>
+<p>交并比（<strong>loU</strong>）函数做的是计算两个边界框交集和并集之比。一般约定，在计算机检测任务中，如果$loU≥0.5$，就说检测正确，如果预测器和实际边界框完美重叠，<strong>loU</strong>就是1，因为交集就等于并集。</p>
+<p>人们定义<strong>loU</strong>这个概念是为了评价你的对象定位算法是否精准，但更一般地说，<strong>loU</strong>衡量了两个边界框重叠地相对大小。</p>
+<h2 id="非极大值抑制-Non-max-supression"><a href="#非极大值抑制-Non-max-supression" class="headerlink" title="非极大值抑制 Non-max supression"></a>非极大值抑制 Non-max supression</h2><p>到目前为止学到的对象检测中的一个问题是，算法可能对同一个对象做出多次检测，所以算法不是对某个对象检测出一次，而是检测出多次。非极大值抑制这个方法可以确保你的算法对每个对象只检测一次。</p>
+<p>总之就是每个窗口每个检测结果相关的概率 $p_c$，首先看概率最高的那个，这么做之后，非极大值抑制就会逐一审视剩下的矩形，所有和这个最大的边框有很高交并比，高度重叠的其他边界框，那么这些输出就会被抑制。</p>
+<h2 id="Anchor-Boxes"><a href="#Anchor-Boxes" class="headerlink" title="Anchor Boxes"></a>Anchor Boxes</h2><p>到目前为止，对象检测中存在的一个问题是每个格子只能检测出一个对象，如果你想让一个格子检测出多个对象，你可以这么做，就是使用<strong>anchor box</strong>这个概念。</p>
+<p>就是把标签 $y$ 拼起来（</p>
+<h2 id="候选区域-Region-proposals"><a href="#候选区域-Region-proposals" class="headerlink" title="候选区域 Region proposals"></a>候选区域 Region proposals</h2><p><strong>Regional CNN(R-CNN)</strong>。这个算法尝试选出一些区域，在这些区域上运行卷积网络分类器是有意义的，所以这里不再针对每个滑动窗运行检测算法，而是只选择一些窗口，在少数窗口上运行卷积网络分类器。</p>
+<p>选出候选区域的方法是运行图像分割算法，找出色块（像素语义）。</p>
+<p>太慢了，有 <strong>Fast R-CNN, Faster R-CNN</strong>。</p>
+<h1 id="Lesson-5-1"><a href="#Lesson-5-1" class="headerlink" title="Lesson 5.1"></a>Lesson 5.1</h1><p>本节主要讲序列模型（Sequence Models）。</p>
+<h2 id="数学符号-Notation"><a href="#数学符号-Notation" class="headerlink" title="数学符号 Notation"></a>数学符号 Notation</h2><p>$x^{\langle t \rangle}$：序列的中间位置，$t$ 索引。</p>
+<p>$T_x$：输入序列的长度。</p>
+<p>$T_y$：输出序列的长度。</p>
+<p><strong>one-hot</strong> 法表示字典中的每一个单词。</p>
+<p><strong>Unknow Word</strong> 伪造单词，&lt;<strong>UNK</strong>&gt;。</p>
+<h2 id="循环神经网络-Recurrent-Neural-Network"><a href="#循环神经网络-Recurrent-Neural-Network" class="headerlink" title="循环神经网络 Recurrent Neural Network"></a>循环神经网络 Recurrent Neural Network</h2><p>简单来说，在时间步 $t$ 中，模型不仅是用 $x^{\langle t \rangle}$ 来预测 $\hat{y}^{\langle t \rangle }$，而且还用了前一个时间步中的信息，也就是时间步 $t-1$ 的激活值会传递到 $t$。</p>
+<p>有一个零时刻的初始激活值 $a^{\langle 0 \rangle} = \mathbf{0}$。</p>
+<p>循环神经网络是从左向右扫描数据，同时每个时间步的参数也是共享的。$W_{\text{ax}}$ 表示管理着从 $x^{\langle t \rangle}$ 到隐藏层的连接的一系列参数，每个时间步使用的都是相同的参数 $W_{\text{ax}}$。而激活值也就是水平联系是由参数 $W_{aa}$ 决定的，同时每一个时间步都使用相同的参数 $W_{aa}$，同样的输出结果由 $W_{\text{ya}}$ 决定。</p>
+<p><img data-src="rnn.png" alt></p>
+<p>这个循环神经网络的一个缺点就是它只使用了这个序列中之前的信息来做出预测。</p>
+<p>计算示例（FPP）：</p>
+<p>$a^{\langle t \rangle} = g_{1}(W_{aa}a^{\langle t - 1 \rangle} + W_{ax}x^{\langle t \rangle} + b_{a})$</p>
+<p>$\hat y^{\langle t \rangle} = g_{2}(W_{ya}a^{\langle t \rangle} + b_{y})$</p>
+<p>循环神经网络用的激活函数经常是<strong>tanh</strong>。</p>
+<p>简化符号：</p>
+<p>$a^{\langle t \rangle} =g(W_{a}\left\lbrack a^{\langle t-1 \rangle},x^{\langle t \rangle} \right\rbrack +b_{a})$</p>
+<p>$\hat y^{\langle t \rangle} = g(W_{y}a^{\langle t \rangle} +b_{y})$</p>
+<p>所以我们定义$W_{a}$的方式是将矩阵$W_{aa}$和矩阵$W_{ax}$水平并列放置，$[ W_{aa}\vdots W_{ax}]=W_{a}$。</p>
+<p>用这个符号（$\left\lbrack a^{\langle t - 1 \rangle},x^{\langle  t \rangle }\right\rbrack$）的意思是将这两个向量堆在一起，用这个符号表示，即$\begin{bmatrix}a^{\langle  t-1 \rangle } \\ x^{\langle  t \rangle } \\\end{bmatrix}$。</p>
+<p><img data-src="rnn-f.png" alt></p>
+<h2 id="通过时间的反向传播-Backpropagation-through-time"><a href="#通过时间的反向传播-Backpropagation-through-time" class="headerlink" title="通过时间的反向传播 Backpropagation through time"></a>通过时间的反向传播 Backpropagation through time</h2><p><img data-src="rnn_cell_backprop.png" alt></p>
+<h2 id="不同类型的循环神经网络"><a href="#不同类型的循环神经网络" class="headerlink" title="不同类型的循环神经网络"></a>不同类型的循环神经网络</h2><ul>
+<li>多对多</li>
+<li>多对一</li>
+<li>一对一</li>
+<li>一对多</li>
+</ul>
+<h2 id="语言模型和序列生成-Sequence-generation"><a href="#语言模型和序列生成-Sequence-generation" class="headerlink" title="语言模型和序列生成 Sequence generation"></a>语言模型和序列生成 Sequence generation</h2><p>所以语言模型所做的就是，预测某个特定的句子它出现的概率是多少。</p>
+<p>为了使用<strong>RNN</strong>建立出这样的模型，首先需要一个训练集，包含一个很大的英文文本语料库（<strong>corpus</strong>）或者其它的语言，用于构建模型的语言的语料库。语料库是自然语言处理的一个专有名词，就是很长的或者说数量众多的英文句子组成的文本。</p>
+<p>就是根据前面所给的单词，在下一个时间步预测出下一个单词的分布。</p>
+<h2 id="新序列采样-Sampling-novel-sequences"><a href="#新序列采样-Sampling-novel-sequences" class="headerlink" title="新序列采样 Sampling novel sequences"></a>新序列采样 Sampling novel sequences</h2><p>就是把每一个时间步的输出传递到下一个时间步，直到 <strong>EOS</strong>。</p>
+<h2 id="循环神经网络的梯度消失-Vanishing-gradients-with-RNNs"><a href="#循环神经网络的梯度消失-Vanishing-gradients-with-RNNs" class="headerlink" title="循环神经网络的梯度消失 Vanishing gradients with RNNs"></a>循环神经网络的梯度消失 Vanishing gradients with RNNs</h2><p>一个很深很深的网络，对这个网络从左到右做前向传播然后再反向传播。如果这是个很深的神经网络，从输出$\hat y$得到的梯度很难传播回去，很难影响靠前层的权重，很难影响前面层的计算。</p>
+<p><strong>RNN</strong> 一个时间步的输出，基本上很难受到序列靠前的输入的影响，这是因为不管输出是什么，不管是对的，还是错的，这个区域都很难反向传播到序列的前面部分，也因此网络很难调整序列前面的计算。</p>
+<h2 id="门控循环单元-Gated-Recurrent-Unit"><a href="#门控循环单元-Gated-Recurrent-Unit" class="headerlink" title="门控循环单元 Gated Recurrent Unit"></a>门控循环单元 Gated Recurrent Unit</h2><p><strong>GRU</strong> 能够改变 <strong>RNN</strong> 的隐藏层，使其可以更好地捕捉深层连接，并改善了梯度消失问题。</p>
+<p>有个新的变量称为$c$，代表细胞（<strong>cell</strong>），即记忆细胞，记忆细胞的作用是提供了记忆的能力。实际上用的就是激活值 $c^{<t>} = a^{<t>}$。</t></t></p>
+<p>在每个时间步，将用一个候选值重写记忆细胞，用 <strong>tanh</strong> 来激活。</p>
+<script type="math/tex; mode=display">
+\tilde{c}^{<t>} = \tanh{\left( W_c [c^{<t-1>}, x^{<t>}] + b_c \right)}</script><p>在<strong>GRU</strong>中真正重要的思想是有一个门，叫做$\Gamma_{u}$，这是个下标为 $u$ 的大写希腊字母 $\Gamma$，$u$ 代表更新（update），这是一个0到1之间的值。</p>
+<script type="math/tex; mode=display">
+\Gamma_{u}= \sigma(W_{u}\left\lbrack c^{<t-1>},x^{<t>} \right\rbrack +b_{u})</script><p>然后门决定是否要真的更新它。</p>
+<script type="math/tex; mode=display">
+c^{<t>} = \Gamma_{u} \times \tilde{c}^{<t>} +\left( 1- \Gamma_{u} \right)*c^{<t-1>}</script><p>因为$\Gamma_{u}$很接近0，可能是0.000001或者更小，这就不会有梯度消失的问题了。因为$\Gamma_{u}$很接近0，这就是说$c^{<t>}$几乎就等于$c^{<t-1>}$，而且$c^{<t>}$的值也很好地被维持了，即使经过很多很多的时间步。</t></t-1></t></p>
+<p>对于完整的 <strong>GRU</strong>，还有一个门 $\Gamma_r$，$r$ 表示相关性（relevance），这个 $\Gamma_{r}$ 门告诉你计算出的下一个$c^{<t>}$的候选值${\tilde{c}}^{<t>}$跟$c^{<t-1>}$有多大的相关性。</t-1></t></t></p>
+<script type="math/tex; mode=display">
+\Gamma_{r}= \sigma(W_{r}\left\lbrack c^{<t-1>},x^{<t>} \right\rbrack + b_{r})</script><blockquote>
+<p>这是多年来研究者们试验过很多很多不同可能的方法来设计这些单元，去尝试让神经网络有更深层的连接，去尝试产生更大范围的影响，还有解决梯度消失的问题，<strong>GRU</strong>就是其中一个研究者们最常使用的版本，也被发现在很多不同的问题上也是非常健壮和实用的。你可以尝试发明新版本的单元，只要你愿意。但是<strong>GRU</strong>是一个标准版本，也就是最常使用的。</p>
+</blockquote>
+<h2 id="长短期记忆-Long-short-term-memory"><a href="#长短期记忆-Long-short-term-memory" class="headerlink" title="长短期记忆 Long short term memory"></a>长短期记忆 Long short term memory</h2><script type="math/tex; mode=display">
+\tilde{c}^{<t>} = \tanh{(W_c\left\lbrack c^{<t-1>},x^{<t>} \right\rbrack) + b_c}</script><script type="math/tex; mode=display">
+\Gamma_{u}= \sigma(W_{u}\left\lbrack c^{<t-1>},x^{<t>} \right\rbrack +b_{u})</script><script type="math/tex; mode=display">
+\Gamma_{f}= \sigma(W_{f}\left\lbrack c^{<t-1>},x^{<t>} \right\rbrack +b_{f})</script><script type="math/tex; mode=display">
+\Gamma_{o}= \sigma(W_{o}\left\lbrack c^{<t-1>},x^{<t>} \right\rbrack +b_{o})</script><script type="math/tex; mode=display">
+c^{<t>} = \Gamma_u \times \tilde{c}^{<t>} + \Gamma_f \times c^{<t-1>}</script><script type="math/tex; mode=display">
+a^{<t>} = \Gamma_o \times c^{<t>}</script><p>常用的版本可能是门值不仅取决于$a^{<t-1>}$和$x^{<t>}$，有时候也可以偷窥一下$c^{<t-1>}$的值（上图编号13所示），这叫做“窥视孔连接”（<strong>peephole connection</strong>）。</t-1></t></t-1></p>
+<p>只要正确地设置了遗忘门和更新门，<strong>LSTM</strong>是相当容易把$c^{\langle 0&gt;}$的值一直往下传递到右边。这就是为什么<strong>LSTM</strong>和<strong>GRU</strong>非常擅长于长时间记忆某个值，对于存在记忆细胞中的某个值，即使经过很长很长的时间步。</p>
+<p><img data-src="LSTM.png" alt></p>
+<p><strong>GRU</strong>的优点是这是个更加简单的模型，所以更容易创建一个更大的网络，而且它只有两个门，在计算性上也运行得更快，然后它可以扩大模型的规模。</p>
+<p>但是<strong>LSTM</strong>更加强大和灵活，因为它有三个门而不是两个。<strong>LSTM</strong>在历史进程上是个更优先的选择。</p>
+<h2 id="双向循环神经网络-Bidirectional-RNN"><a href="#双向循环神经网络-Bidirectional-RNN" class="headerlink" title="双向循环神经网络 Bidirectional RNN"></a>双向循环神经网络 Bidirectional RNN</h2><p>就是正着跑一遍再反着跑一遍，是一个无环图（Acyclic graph）。</p>
+<p><img data-src="brnn.png" alt></p>
+<p>会有 $\hat y^{\langle t \rangle} =g(W_{g}\left\lbrack \overrightarrow{a}^{\langle  t \rangle },\overleftarrow{a}^{\langle  t \rangle } \right\rbrack +b_{y})$。</p>
+<p>通过这些改变，就可以用一个用<strong>RNN</strong>或<strong>GRU</strong>或<strong>LSTM</strong>构建的模型，并且能够预测任意位置，即使在句子的中间，因为模型能够考虑整个句子的信息。这个双向<strong>RNN</strong>网络模型的缺点就是需要完整的数据的序列，才能预测任意位置。</p>
+<h2 id="深层循环神经网络-Deep-RNNs"><a href="#深层循环神经网络-Deep-RNNs" class="headerlink" title="深层循环神经网络 Deep RNNs"></a>深层循环神经网络 Deep RNNs</h2><p>要学习非常复杂的函数，通常我们会把<strong>RNN</strong>的多个层堆叠在一起构建更深的模型。</p>
+<p>可以堆好几个隐藏层 $a^{[i]}$。</p>
+<p>可以输出后再叠非循环层。</p>
+<p><img data-src="drnn.png" alt></p>
+<p>由于深层的<strong>RNN</strong>训练需要很多计算资源，需要很长的时间，尽管看起来没有多少循环层，这个也就是在时间上连接了三个深层的循环层，看不到多少深层的循环层，不像卷积神经网络一样有大量的隐含层。</p>
+
       
     </div>
 
